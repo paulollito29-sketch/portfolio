@@ -34,19 +34,19 @@ export default function Certificates() {
 
         {/* Certificate grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {certificates.map((cert, i) => (
+          {certificates.map((cert) => (
             <div
               key={cert.file}
-              className="brutalist-card overflow-hidden cursor-pointer"
-              onClick={() => setSelected(i)}
+              className="flat-card overflow-hidden cursor-pointer"
+              onClick={() => setSelected(certificates.indexOf(cert))}
             >
               {/* Top accent bar */}
-              <div className="h-2 bg-fg" />
+              <div className="h-1 bg-fg" />
 
               <div className="p-6">
                 {/* Icon + title */}
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="flex items-center justify-center w-12 h-12 border-[3px] border-border bg-bg-alt shrink-0 text-xl">
+                  <div className="flex items-center justify-center w-12 h-12 border border-border bg-bg-alt shrink-0 text-xl">
                     {cert.icon}
                   </div>
                   <div className="min-w-0">
@@ -58,7 +58,7 @@ export default function Certificates() {
                 </div>
 
                 {/* Footer actions */}
-                <div className="flex items-center justify-between pt-3 border-t-[3px] border-border">
+                <div className="flex items-center justify-between pt-3 border-t border-border">
                   <span className="flex items-center gap-1.5 text-xs font-mono font-bold text-accent uppercase">
                     Ver certificado
                   </span>
@@ -68,7 +68,7 @@ export default function Certificates() {
                     rel="noopener noreferrer"
                     download={cert.file}
                     onClick={(e) => e.stopPropagation()}
-                    className="flex items-center justify-center w-8 h-8 border-[3px] border-border bg-bg-alt hover:bg-fg hover:text-bg transition-colors"
+                    className="flex items-center justify-center w-8 h-8 border border-border bg-bg-alt hover:bg-fg hover:text-bg transition-colors"
                     aria-label="Descargar"
                   >
                     <Download className="w-3.5 h-3.5" />
@@ -90,11 +90,11 @@ export default function Certificates() {
 
             {/* Modal content */}
             <div
-              className="relative w-full max-w-4xl max-h-[90vh] border-[3px] border-border bg-card overflow-hidden"
+              className="relative w-full max-w-4xl max-h-[90vh] border border-border bg-card overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Header */}
-              <div className="flex items-center justify-between px-6 py-4 border-b-[3px] border-border">
+              <div className="flex items-center justify-between px-6 py-4 border-b border-border">
                 <div className="flex items-center gap-3">
                   <FileText className="w-5 h-5 text-accent" />
                   <div>
@@ -109,14 +109,14 @@ export default function Certificates() {
                     href={`/certificates/${encodeURIComponent(certificates[selected].file)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 px-3 py-1.5 border-[3px] border-border text-xs font-mono font-bold uppercase text-accent hover:bg-fg hover:text-bg transition-colors"
+                    className="flex items-center gap-1.5 px-3 py-1.5 border border-border text-xs font-mono font-bold uppercase text-accent hover:bg-fg hover:text-bg transition-colors"
                   >
                     <ExternalLink className="w-3.5 h-3.5" />
                     ABRIR
                   </a>
                   <button
                     onClick={() => setSelected(null)}
-                    className="flex items-center justify-center w-8 h-8 border-[3px] border-border hover:bg-accent hover:text-white transition-colors"
+                    className="flex items-center justify-center w-8 h-8 border border-border hover:bg-accent hover:text-white transition-colors"
                   >
                     <X className="w-4 h-4" />
                   </button>

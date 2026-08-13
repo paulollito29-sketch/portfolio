@@ -29,7 +29,7 @@ const articles = [
 
 export default function Blog() {
   return (
-    <section className="section-padding relative border-b-[3px] border-border">
+    <section className="section-padding relative border-b border-border">
       <div className="mx-auto max-w-6xl">
         {/* Section header */}
         <div className="text-center mb-14">
@@ -45,13 +45,13 @@ export default function Blog() {
 
         {/* Articles grid */}
         <div className="grid md:grid-cols-3 gap-6">
-          {articles.map((article, i) => (
+          {articles.map((article) => (
             <article
               key={article.title}
-              className="brutalist-card overflow-hidden cursor-pointer"
+              className="flat-card overflow-hidden cursor-pointer"
             >
               {/* Image placeholder */}
-              <div className="h-44 bg-bg-alt border-b-[3px] border-border flex items-center justify-center">
+              <div className="h-44 bg-bg-alt border-b border-border flex items-center justify-center">
                 <FileText className="w-12 h-12 text-fg-muted/30" />
               </div>
 
@@ -80,7 +80,7 @@ export default function Blog() {
                   {article.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-[11px] font-mono font-bold px-2 py-0.5 border-2 border-border bg-bg-alt"
+                      className="text-[11px] font-mono font-bold px-2 py-0.5 border border-border bg-bg-alt"
                     >
                       {tag}
                     </span>

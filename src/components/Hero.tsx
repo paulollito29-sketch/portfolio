@@ -44,12 +44,12 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center border-b-[3px] border-border"
+      className="min-h-screen flex items-center justify-center border-b border-border"
       style={{ paddingTop: "80px" }}
     >
       <div className="text-center px-6 max-w-4xl mx-auto">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 border-[3px] border-border bg-accent text-white text-sm font-mono font-bold mb-8">
+        <div className="inline-flex items-center gap-2 px-4 py-2 border border-border bg-accent text-white text-sm font-mono font-bold mb-8">
           <span className="relative flex h-2 w-2">
             <span className="relative inline-flex rounded-full h-2 w-2 bg-white animate-pulse" />
           </span>
@@ -78,13 +78,13 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <button
             onClick={() => scrollToSection("projects")}
-            className="brutalist-btn px-8 py-3.5 text-sm"
+            className="flat-btn px-8 py-3.5 text-sm"
           >
             VER PROYECTOS
           </button>
           <button
             onClick={() => scrollToSection("contact")}
-            className="brutalist-btn-outline px-8 py-3.5 text-sm"
+            className="flat-btn-outline px-8 py-3.5 text-sm"
           >
             CONTACTARME
           </button>
@@ -93,7 +93,7 @@ export default function Hero() {
         {/* Tech stack */}
         <div className="flex items-center justify-center gap-3 mt-12 text-xs font-mono text-fg-muted flex-wrap">
           {["Java", "Spring Boot", "C# .NET", "React", "Next.js"].map((tech) => (
-            <span key={tech} className="px-3 py-1.5 border-[3px] border-border bg-bg-alt font-bold uppercase">
+            <span key={tech} className="px-3 py-1.5 border border-border bg-bg-alt font-bold uppercase">
               {tech}
             </span>
           ))}

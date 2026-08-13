@@ -35,9 +35,9 @@ export default function Contact() {
           <div className="space-y-4">
             <a
               href="mailto:paulespinoza951@gmail.com"
-              className="brutalist-card p-6 flex items-center gap-4 group"
+              className="flat-card p-6 flex items-center gap-4"
             >
-              <div className="flex items-center justify-center w-12 h-12 border-[3px] border-border bg-bg-alt shrink-0">
+              <div className="flex items-center justify-center w-12 h-12 border border-border bg-bg-alt shrink-0">
                 <Mail className="w-5 h-5" />
               </div>
               <div>
@@ -52,9 +52,9 @@ export default function Contact() {
               href="https://wa.me/51906920958"
               target="_blank"
               rel="noopener noreferrer"
-              className="brutalist-card p-6 flex items-center gap-4 group"
+              className="flat-card p-6 flex items-center gap-4"
             >
-              <div className="flex items-center justify-center w-12 h-12 border-[3px] border-border bg-bg-alt shrink-0">
+              <div className="flex items-center justify-center w-12 h-12 border border-border bg-bg-alt shrink-0">
                 <Phone className="w-5 h-5" />
               </div>
               <div>
@@ -70,7 +70,7 @@ export default function Contact() {
                 href="https://github.com/paulollito29-sketch"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-12 h-12 border-[3px] border-border bg-bg-alt font-bold hover:bg-fg hover:text-bg transition-colors"
+                className="flex items-center justify-center w-12 h-12 border border-border bg-bg-alt font-bold hover:bg-fg hover:text-bg transition-colors"
                 aria-label="GitHub"
               >
                 <Github className="w-5 h-5" />
@@ -79,14 +79,14 @@ export default function Contact() {
                 href="https://www.linkedin.com/in/paulo-espinoza9/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-12 h-12 border-[3px] border-border bg-bg-alt font-bold hover:bg-fg hover:text-bg transition-colors"
+                className="flex items-center justify-center w-12 h-12 border border-border bg-bg-alt font-bold hover:bg-fg hover:text-bg transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
               </a>
             </div>
 
-            <div className="border-[3px] border-border bg-card p-6">
+            <div className="border border-border bg-card p-6">
               <h4 className="text-xs font-mono font-bold text-fg mb-3 uppercase">
                 DISPONIBILIDAD
               </h4>
@@ -98,7 +98,7 @@ export default function Contact() {
           </div>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="border-[3px] border-border bg-card p-6 md:p-8 space-y-5">
+          <form onSubmit={handleSubmit} className="border border-border bg-card p-6 md:p-8 space-y-5">
             <div>
               <label htmlFor="name" className="block text-xs font-mono font-bold text-fg mb-1.5 uppercase">
                 Nombre
@@ -111,7 +111,7 @@ export default function Contact() {
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
                 required
                 autoComplete="name"
-                className="w-full px-4 py-3 border-[3px] border-border bg-bg font-mono text-sm text-fg placeholder:text-fg-muted focus:outline-none focus:border-accent transition-colors"
+                className="w-full px-4 py-3 border border-border bg-bg font-mono text-sm text-fg placeholder:text-fg-muted focus:outline-none focus:border-accent transition-colors"
                 placeholder="Tu nombre"
               />
             </div>
@@ -128,7 +128,7 @@ export default function Contact() {
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 required
                 autoComplete="email"
-                className="w-full px-4 py-3 border-[3px] border-border bg-bg font-mono text-sm text-fg placeholder:text-fg-muted focus:outline-none focus:border-accent transition-colors"
+                className="w-full px-4 py-3 border border-border bg-bg font-mono text-sm text-fg placeholder:text-fg-muted focus:outline-none focus:border-accent transition-colors"
                 placeholder="tu@email.com"
               />
             </div>
@@ -145,7 +145,7 @@ export default function Contact() {
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
                 required
                 autoComplete="off"
-                className="w-full px-4 py-3 border-[3px] border-border bg-bg font-mono text-sm text-fg placeholder:text-fg-muted focus:outline-none focus:border-accent transition-colors resize-none"
+                className="w-full px-4 py-3 border border-border bg-bg font-mono text-sm text-fg placeholder:text-fg-muted focus:outline-none focus:border-accent transition-colors resize-none"
                 placeholder="Cuéntame sobre tu proyecto..."
               />
             </div>
@@ -153,9 +153,9 @@ export default function Contact() {
             <button
               type="submit"
               disabled={status === "sending" || status === "sent"}
-              className={`w-full flex items-center justify-center gap-2 px-6 py-3.5 font-mono font-bold text-sm uppercase border-[3px] border-border transition-all disabled:opacity-70 ${
+              className={`w-full flex items-center justify-center gap-2 px-6 py-3.5 font-mono font-bold text-sm uppercase border border-border transition-all disabled:opacity-70 ${
                 status === "sent"
-                  ? "bg-green-600 text-white"
+                  ? "bg-green-600 text-white border-green-600"
                   : "bg-fg text-bg hover:bg-accent"
               }`}
             >

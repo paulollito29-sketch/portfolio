@@ -52,7 +52,7 @@ export default function Skills() {
   const activeCategory = categories.find((c) => c.id === active)!;
 
   return (
-    <section id="skills" className="section-padding relative border-b-[3px] border-border">
+    <section id="skills" className="section-padding relative border-b border-border">
       <div className="mx-auto max-w-6xl">
         {/* Section header */}
         <div className="text-center mb-14">
@@ -70,7 +70,7 @@ export default function Skills() {
               <button
                 key={cat.id}
                 onClick={() => setActive(cat.id)}
-                className={`flex items-center gap-3 px-5 py-3 border-[3px] text-sm font-mono font-bold uppercase whitespace-nowrap transition-all ${
+                className={`flex items-center gap-3 px-5 py-3 border text-sm font-mono font-bold uppercase whitespace-nowrap transition-all ${
                   active === cat.id
                     ? "border-border bg-accent text-white"
                     : "border-border bg-bg-alt text-fg hover:bg-fg hover:text-bg"
@@ -84,9 +84,9 @@ export default function Skills() {
 
           {/* Skills list */}
           <div className="flex-1 min-w-0">
-            <div className="border-[3px] border-border bg-card p-6 md:p-8">
+            <div className="border border-border bg-card p-6 md:p-8">
               <div className="flex items-center gap-3 mb-8">
-                <div className="flex items-center justify-center w-10 h-10 border-[3px] border-border bg-bg-alt">
+                <div className="flex items-center justify-center w-10 h-10 border border-border bg-bg-alt">
                   <activeCategory.icon className="w-5 h-5" />
                 </div>
                 <div>
@@ -108,7 +108,7 @@ export default function Skills() {
                         {skill.level}%
                       </span>
                     </div>
-                    <div className="h-3 border-[3px] border-border bg-bg-alt">
+                    <div className="h-3 border border-border bg-bg-alt">
                       <div
                         className="h-full bg-fg transition-all duration-700"
                         style={{ width: `${skill.level}%` }}

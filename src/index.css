@@ -71,62 +71,42 @@
     }
   }
 
-  .brutalist-border {
-    border: 3px solid var(--color-border);
-  }
-
-  .brutalist-card {
-    border: 3px solid var(--color-border);
+  .flat-card {
     background: var(--color-card);
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    border: 1px solid var(--color-border);
+    transition: background 0.15s ease;
   }
 
-  .brutalist-card:hover {
-    transform: translate(-4px, -4px);
-    box-shadow: 6px 6px 0 var(--color-border);
+  .flat-card:hover {
+    background: var(--color-bg-alt);
   }
 
-  .brutalist-btn {
-    border: 3px solid var(--color-border);
+  .flat-btn {
     background: var(--color-fg);
     color: var(--color-bg);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    transition: all 0.1s ease;
+    transition: background 0.15s ease;
   }
 
-  .brutalist-btn:hover {
+  .flat-btn:hover {
     background: var(--color-accent);
-    transform: translate(-2px, -2px);
-    box-shadow: 4px 4px 0 var(--color-border);
   }
 
-  .brutalist-btn:active {
-    transform: translate(0, 0);
-    box-shadow: none;
-  }
-
-  .brutalist-btn-outline {
-    border: 3px solid var(--color-border);
+  .flat-btn-outline {
+    border: 1px solid var(--color-border);
     background: transparent;
     color: var(--color-fg);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    transition: all 0.1s ease;
+    transition: all 0.15s ease;
   }
 
-  .brutalist-btn-outline:hover {
+  .flat-btn-outline:hover {
     background: var(--color-fg);
     color: var(--color-bg);
-    transform: translate(-2px, -2px);
-    box-shadow: 4px 4px 0 var(--color-border);
-  }
-
-  .accent-block {
-    background: var(--color-accent);
-    color: white;
   }
 
   .mono {

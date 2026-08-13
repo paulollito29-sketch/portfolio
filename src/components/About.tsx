@@ -26,7 +26,7 @@ const stats = [
 
 export default function About() {
   return (
-    <section id="about" className="section-padding relative border-b-[3px] border-border">
+    <section id="about" className="section-padding relative border-b border-border">
       <div className="mx-auto max-w-6xl">
         {/* Section header */}
         <div className="text-center mb-16">
@@ -42,7 +42,7 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Avatar */}
           <div className="relative flex justify-center">
-            <div className="w-64 h-64 md:w-80 md:h-80 border-[3px] border-border bg-bg-alt flex items-center justify-center">
+            <div className="w-64 h-64 md:w-80 md:h-80 border border-border bg-bg-alt flex items-center justify-center">
               <span className="text-6xl font-black font-mono text-accent">PE</span>
             </div>
           </div>
@@ -67,7 +67,7 @@ export default function About() {
               {stats.map((stat) => (
                 <div
                   key={stat.label}
-                  className="text-center p-4 border-[3px] border-border bg-card hover:bg-accent hover:text-white transition-colors cursor-default"
+                  className="text-center p-4 border border-border bg-card hover:bg-bg-alt transition-colors cursor-default"
                 >
                   <div className="text-2xl font-black font-mono">{stat.value}</div>
                   <div className="text-xs font-mono text-fg-muted mt-1">{stat.label}</div>
@@ -82,9 +82,9 @@ export default function About() {
           {highlights.map((item) => (
             <div
               key={item.title}
-              className="brutalist-card p-6"
+              className="flat-card p-6"
             >
-              <div className="inline-flex items-center justify-center w-12 h-12 border-[3px] border-border bg-bg-alt mb-4">
+              <div className="inline-flex items-center justify-center w-12 h-12 border border-border bg-bg-alt mb-4">
                 <item.icon className="w-6 h-6" />
               </div>
               <h3 className="font-mono font-bold text-fg mb-2 uppercase text-sm">{item.title}</h3>

@@ -21,14 +21,14 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-bg border-b-[3px] border-border">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-bg border-b border-border">
         <div className="mx-auto max-w-6xl flex items-center justify-between px-6 py-4">
           <a
             href="#hero"
             onClick={(e) => { e.preventDefault(); handleClick("#hero"); }}
-            className="flex items-center gap-2 group"
+            className="flex items-center gap-2"
           >
-            <div className="w-8 h-8 bg-accent border-[3px] border-border flex items-center justify-center">
+            <div className="w-8 h-8 bg-accent flex items-center justify-center">
               <Code2 className="w-4 h-4 text-white" />
             </div>
             <span className="font-bold text-lg font-mono tracking-tight">
@@ -42,7 +42,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => { e.preventDefault(); handleClick(link.href); }}
-                className="px-3 py-2 text-sm font-mono font-bold uppercase hover:bg-accent hover:text-white transition-colors border-[3px] border-transparent hover:border-border"
+                className="px-3 py-2 text-sm font-mono font-bold uppercase hover:bg-accent hover:text-white transition-colors"
               >
                 {link.label}
               </a>
@@ -51,7 +51,7 @@ export default function Navbar() {
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden relative z-50 p-2 border-[3px] border-border bg-bg"
+            className="md:hidden relative z-50 p-2 border border-border bg-bg"
             aria-label="Menú"
           >
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -73,7 +73,7 @@ export default function Navbar() {
           ))}
           <button
             onClick={() => setMobileOpen(false)}
-            className="mt-6 brutalist-btn px-6 py-3 text-sm"
+            className="mt-6 flat-btn px-6 py-3 text-sm"
           >
             Cerrar
           </button>

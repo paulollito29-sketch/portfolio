@@ -48,22 +48,22 @@ const categories = [
 ];
 
 const tagColors: Record<string, string> = {
-  Java: "border-orange-500 bg-orange-100",
-  "Spring Boot": "border-green-600 bg-green-100",
-  "SQL Server": "border-red-500 bg-red-100",
-  "C#": "border-purple-500 bg-purple-100",
-  ".NET Framework": "border-blue-500 bg-blue-100",
-  "Entity Framework": "border-blue-500 bg-blue-100",
-  Thymeleaf: "border-teal-500 bg-teal-100",
-  JWT: "border-yellow-500 bg-yellow-100",
-  JPA: "border-indigo-500 bg-indigo-100",
-  MySQL: "border-cyan-500 bg-cyan-100",
-  "Windows Forms": "border-sky-500 bg-sky-100",
-  "Game Dev": "border-pink-500 bg-pink-100",
-  "Next.js": "border-gray-600 bg-gray-100",
+  Java: "border-orange-500 bg-orange-50",
+  "Spring Boot": "border-green-600 bg-green-50",
+  "SQL Server": "border-red-500 bg-red-50",
+  "C#": "border-purple-500 bg-purple-50",
+  ".NET Framework": "border-blue-500 bg-blue-50",
+  "Entity Framework": "border-blue-500 bg-blue-50",
+  Thymeleaf: "border-teal-500 bg-teal-50",
+  JWT: "border-yellow-500 bg-yellow-50",
+  JPA: "border-indigo-500 bg-indigo-50",
+  MySQL: "border-cyan-500 bg-cyan-50",
+  "Windows Forms": "border-sky-500 bg-sky-50",
+  "Game Dev": "border-pink-500 bg-pink-50",
+  "Next.js": "border-gray-600 bg-gray-50",
   React: "border-blue-400 bg-blue-50",
   TypeScript: "border-indigo-600 bg-indigo-50",
-  Bootstrap: "border-violet-500 bg-violet-100",
+  Bootstrap: "border-violet-500 bg-violet-50",
   Vite: "border-yellow-600 bg-yellow-50",
   Tailwind: "border-teal-600 bg-teal-50",
 };
@@ -77,7 +77,7 @@ export default function Projects() {
       : projects.filter((p) => p.category === filter);
 
   return (
-    <section id="projects" className="section-padding relative border-b-[3px] border-border">
+    <section id="projects" className="section-padding relative border-b border-border">
       <div className="mx-auto max-w-6xl">
         {/* Section header */}
         <div className="text-center mb-12">
@@ -94,7 +94,7 @@ export default function Projects() {
             <button
               key={cat.id}
               onClick={() => setFilter(cat.id)}
-              className={`px-4 py-2 border-[3px] border-border text-sm font-mono font-bold uppercase transition-all ${
+              className={`px-4 py-2 border border-border text-sm font-mono font-bold uppercase transition-all ${
                 filter === cat.id
                   ? "bg-accent text-white"
                   : "bg-bg-alt text-fg hover:bg-fg hover:text-bg"
@@ -108,13 +108,13 @@ export default function Projects() {
         {/* Project grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map((project) => (
-            <div key={project.title} className="brutalist-card overflow-hidden h-full flex flex-col">
+            <div key={project.title} className="flat-card overflow-hidden h-full flex flex-col">
               {/* Top accent bar */}
-              <div className="h-3 bg-accent" />
+              <div className="h-2 bg-accent" />
               <div className="p-6 flex-1 flex flex-col">
                 {/* Icon + title */}
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="flex items-center justify-center w-10 h-10 border-[3px] border-border bg-bg-alt">
+                  <div className="flex items-center justify-center w-10 h-10 border border-border bg-bg-alt">
                     <project.icon className="w-5 h-5" />
                   </div>
                   <h3 className="font-mono font-bold text-fg uppercase text-sm">
@@ -131,7 +131,7 @@ export default function Projects() {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className={`text-[11px] font-mono font-bold px-2 py-0.5 border-2 ${
+                      className={`text-[11px] font-mono font-bold px-2 py-0.5 border ${
                         tagColors[tag] || "border-border bg-bg-alt"
                       }`}
                     >
@@ -141,7 +141,7 @@ export default function Projects() {
                 </div>
 
                 {/* Actions */}
-                <div className="flex gap-3 pt-3 border-t-[3px] border-border">
+                <div className="flex gap-3 pt-3 border-t border-border">
                   <button className="flex items-center gap-1.5 text-xs font-mono font-bold text-fg hover:text-accent transition-colors">
                     <Github className="w-3.5 h-3.5" />
                     CÓDIGO
