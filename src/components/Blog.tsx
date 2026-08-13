@@ -1,98 +1,33 @@
 import { Calendar, Clock, ArrowRight, FileText } from "lucide-react";
 
 const articles = [
-  {
-    title: "Cómo integrar Spring Boot con React para aplicaciones web modernas",
-    excerpt:
-      "Guía paso a paso para construir una aplicación full stack usando Spring Boot en el backend y React en el frontend.",
-    date: "15 Jun 2026",
-    readTime: "8 min",
-    tags: ["Spring Boot", "React", "Full Stack"],
-  },
-  {
-    title: "Buenas prácticas en desarrollo con C# y .NET Framework",
-    excerpt:
-      "Consejos y patrones de diseño esenciales para escribir código limpio y mantenible en aplicaciones .NET.",
-    date: "28 May 2026",
-    readTime: "6 min",
-    tags: ["C#", ".NET", "Clean Code"],
-  },
-  {
-    title: "Desarrollo asistido con IA: cómo potenciar tu productividad",
-    excerpt:
-      "Mi experiencia usando herramientas de IA en el flujo de desarrollo diario y cómo ha transformado mi forma de programar.",
-    date: "10 May 2026",
-    readTime: "5 min",
-    tags: ["IA", "Productividad", "Herramientas"],
-  },
+  { title: "Cómo integrar Spring Boot con React", excerpt: "Guía paso a paso para construir una aplicación full stack.", date: "15 Jun 2026", readTime: "8 min", tags: ["Spring Boot", "React"] },
+  { title: "Buenas prácticas en C# y .NET", excerpt: "Consejos y patrones de diseño esenciales para código limpio.", date: "28 May 2026", readTime: "6 min", tags: ["C#", ".NET"] },
+  { title: "Desarrollo asistido con IA", excerpt: "Mi experiencia usando herramientas de IA en el desarrollo diario.", date: "10 May 2026", readTime: "5 min", tags: ["IA", "Productividad"] },
 ];
 
 export default function Blog() {
   return (
-    <section className="section-padding relative border-b border-border">
-      <div className="mx-auto max-w-6xl">
-        {/* Section header */}
-        <div className="text-center mb-14">
-          <span className="inline-block text-xs font-mono font-bold tracking-[0.15em] uppercase text-accent mb-3">
-            // BLOG
-          </span>
-          <h2 className="section-title font-mono">ARTÍCULOS</h2>
-          <div className="mx-auto mt-4 h-[4px] w-16 bg-accent" />
-          <p className="font-mono text-fg-muted mt-4 max-w-lg mx-auto">
-            Conocimiento y experiencia en desarrollo de software.
-          </p>
-        </div>
-
-        {/* Articles grid */}
-        <div className="grid md:grid-cols-3 gap-6">
-          {articles.map((article) => (
-            <article
-              key={article.title}
-              className="flat-card overflow-hidden cursor-pointer"
-            >
-              {/* Image placeholder */}
-              <div className="h-44 bg-bg-alt border-b border-border flex items-center justify-center">
-                <FileText className="w-12 h-12 text-fg-muted/30" />
+    <section className="section-pad">
+      <div className="mx-auto max-w-4xl">
+        <p className="text-xs text-zinc-400 mb-4 uppercase tracking-wider">Blog</p>
+        <h2 className="text-2xl font-bold mb-8">Artículos</h2>
+        <div className="space-y-6">
+          {articles.map((a) => (
+            <div key={a.title} className="border-b border-zinc-100 pb-6">
+              <div className="flex items-center gap-3 text-xs text-zinc-400 mb-2">
+                <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {a.date}</span>
+                <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {a.readTime}</span>
               </div>
-
-              <div className="p-6">
-                {/* Meta */}
-                <div className="flex items-center gap-3 text-xs font-mono text-fg-muted mb-3">
-                  <span className="flex items-center gap-1">
-                    <Calendar className="w-3 h-3" />
-                    {article.date}
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <Clock className="w-3 h-3" />
-                    {article.readTime}
-                  </span>
-                </div>
-
-                <h3 className="font-mono font-bold text-fg mb-2 uppercase text-sm leading-snug">
-                  {article.title}
-                </h3>
-                <p className="text-sm font-mono text-fg-muted leading-relaxed mb-4">
-                  {article.excerpt}
-                </p>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-1.5 mb-4">
-                  {article.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-[11px] font-mono font-bold px-2 py-0.5 border border-border bg-bg-alt"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="flex items-center gap-1 text-xs font-mono font-bold text-accent uppercase">
-                  LEER ARTÍCULO
-                  <ArrowRight className="w-3 h-3" />
-                </div>
+              <h3 className="font-semibold text-sm mb-1">{a.title}</h3>
+              <p className="text-sm text-zinc-500 mb-3">{a.excerpt}</p>
+              <div className="flex flex-wrap gap-2 mb-3">
+                {a.tags.map((t) => <span key={t} className="text-xs text-zinc-400 bg-zinc-50 px-2 py-0.5">{t}</span>)}
               </div>
-            </article>
+              <div className="flex items-center gap-1 text-xs text-zinc-400">
+                Leer artículo <ArrowRight className="w-3 h-3" />
+              </div>
+            </div>
           ))}
         </div>
       </div>

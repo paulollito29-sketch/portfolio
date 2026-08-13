@@ -37,65 +37,33 @@ export default function Hero() {
     return () => clearTimeout(timeout);
   }, [charIndex, isDeleting, wordIndex]);
 
-  const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
+  const go = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 
   return (
-    <section
-      id="hero"
-      className="min-h-screen flex items-center justify-center border-b border-border"
-      style={{ paddingTop: "80px" }}
-    >
-      <div className="text-center px-6 max-w-4xl mx-auto">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 border border-border bg-accent text-white text-sm font-mono font-bold mb-8">
-          <span className="relative flex h-2 w-2">
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-white animate-pulse" />
-          </span>
-          DISPONIBLE PARA PROYECTOS
-        </div>
-
-        {/* Main title */}
-        <h1 className="text-4xl sm:text-5xl md:text-7xl font-black leading-[1.05] tracking-tight mb-6 font-mono">
-          HOLA, SOY{" "}
-          <span className="text-accent">PAULO</span>
-          <br />
-          <span className="text-fg-muted">ESPINOZA</span>
+    <section id="hero" className="min-h-screen flex items-center justify-center px-6" style={{ paddingTop: "72px" }}>
+      <div className="text-center max-w-2xl">
+        <p className="text-sm text-zinc-400 mb-6">Paulo Espinoza</p>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4">
+          Hola, soy Paulo.
         </h1>
-
-        {/* Typing effect subtitle */}
-        <div className="text-lg md:text-xl text-fg-muted font-mono max-w-2xl mx-auto mb-4 h-8">
+        <p className="text-zinc-500 mb-2 h-6 text-sm">
           <span>{words[wordIndex].substring(0, charIndex)}</span>
-          <span className="inline-block w-[2px] h-5 bg-accent ml-0.5 align-middle animate-pulse" />
-        </div>
-
-        <p className="text-base text-fg-muted font-mono max-w-xl mx-auto mb-10">
+          <span className="inline-block w-px h-4 bg-zinc-400 ml-0.5 align-middle animate-pulse" />
+        </p>
+        <p className="text-xs text-zinc-400 mb-8">
           Estudiante de Ingeniería de Sistemas de Información en UPC · 6to ciclo
         </p>
-
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button
-            onClick={() => scrollToSection("projects")}
-            className="flat-btn px-8 py-3.5 text-sm"
-          >
-            VER PROYECTOS
+        <div className="flex items-center justify-center gap-3">
+          <button onClick={() => go("projects")} className="px-5 py-2 bg-zinc-900 text-white text-sm font-medium hover:bg-zinc-700 transition-colors">
+            Ver proyectos
           </button>
-          <button
-            onClick={() => scrollToSection("contact")}
-            className="flat-btn-outline px-8 py-3.5 text-sm"
-          >
-            CONTACTARME
+          <button onClick={() => go("contact")} className="px-5 py-2 border border-zinc-300 text-sm hover:bg-zinc-50 transition-colors">
+            Contactarme
           </button>
         </div>
-
-        {/* Tech stack */}
-        <div className="flex items-center justify-center gap-3 mt-12 text-xs font-mono text-fg-muted flex-wrap">
-          {["Java", "Spring Boot", "C# .NET", "React", "Next.js"].map((tech) => (
-            <span key={tech} className="px-3 py-1.5 border border-border bg-bg-alt font-bold uppercase">
-              {tech}
-            </span>
+        <div className="flex items-center justify-center gap-3 mt-10 text-xs text-zinc-400 flex-wrap">
+          {["Java", "Spring Boot", "C#", "React", "Next.js"].map((t) => (
+            <span key={t}>{t}</span>
           ))}
         </div>
       </div>

@@ -18,118 +18,54 @@ export default function Certificates() {
   const [selected, setSelected] = useState<number | null>(null);
 
   return (
-    <section id="certificates" className="section-padding relative">
-      <div className="mx-auto max-w-6xl">
-        {/* Section header */}
-        <div className="text-center mb-14">
-          <span className="inline-block text-xs font-mono font-bold tracking-[0.15em] uppercase text-accent mb-3">
-            // CERTIFICACIONES
-          </span>
-          <h2 className="section-title font-mono">LOGROS</h2>
-          <div className="mx-auto mt-4 h-[4px] w-16 bg-accent" />
-          <p className="font-mono text-fg-muted mt-4 max-w-lg mx-auto">
-            Cursos y certificaciones que respaldan mis conocimientos.
-          </p>
-        </div>
+    <section id="certificates" className="section-pad">
+      <div className="mx-auto max-w-4xl">
+        <p className="text-xs text-zinc-400 mb-4 uppercase tracking-wider">Certificaciones</p>
+        <h2 className="text-2xl font-bold mb-8">Logros</h2>
 
-        {/* Certificate grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {certificates.map((cert) => (
-            <div
-              key={cert.file}
-              className="flat-card overflow-hidden cursor-pointer"
-              onClick={() => setSelected(certificates.indexOf(cert))}
-            >
-              {/* Top accent bar */}
-              <div className="h-1 bg-fg" />
-
-              <div className="p-6">
-                {/* Icon + title */}
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="flex items-center justify-center w-12 h-12 border border-border bg-bg-alt shrink-0 text-xl">
-                    {cert.icon}
-                  </div>
-                  <div className="min-w-0">
-                    <h3 className="font-mono font-bold text-fg uppercase text-sm leading-snug">
-                      {cert.title}
-                    </h3>
-                    <p className="text-xs font-mono text-fg-muted mt-1">{cert.issuer}</p>
-                  </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {certificates.map((cert, i) => (
+            <div key={cert.file} className="group cursor-pointer" onClick={() => setSelected(i)}>
+              <div className="bg-zinc-50 p-4 mb-2 flex items-start gap-3">
+                <span className="text-xl">{cert.icon}</span>
+                <div>
+                  <h3 className="text-sm font-medium">{cert.title}</h3>
+                  <p className="text-xs text-zinc-400 mt-0.5">{cert.issuer}</p>
                 </div>
-
-                {/* Footer actions */}
-                <div className="flex items-center justify-between pt-3 border-t border-border">
-                  <span className="flex items-center gap-1.5 text-xs font-mono font-bold text-accent uppercase">
-                    Ver certificado
-                  </span>
-                  <a
-                    href={`/certificates/${encodeURIComponent(cert.file)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    download={cert.file}
-                    onClick={(e) => e.stopPropagation()}
-                    className="flex items-center justify-center w-8 h-8 border border-border bg-bg-alt hover:bg-fg hover:text-bg transition-colors"
-                    aria-label="Descargar"
-                  >
-                    <Download className="w-3.5 h-3.5" />
-                  </a>
-                </div>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-xs text-zinc-400">Ver certificado</span>
+                <a href={`/certificates/${encodeURIComponent(cert.file)}`} target="_blank" rel="noopener noreferrer" download={cert.file} onClick={(e) => e.stopPropagation()} className="w-7 h-7 flex items-center justify-center text-zinc-400 hover:text-zinc-900 transition-colors" aria-label="Descargar">
+                  <Download className="w-3.5 h-3.5" />
+                </a>
               </div>
             </div>
           ))}
         </div>
 
-        {/* PDF Modal */}
         {selected !== null && (
-          <div
-            className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8"
-            onClick={() => setSelected(null)}
-          >
-            {/* Backdrop */}
-            <div className="absolute inset-0 bg-bg/95" />
-
-            {/* Modal content */}
-            <div
-              className="relative w-full max-w-4xl max-h-[90vh] border border-border bg-card overflow-hidden"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {/* Header */}
-              <div className="flex items-center justify-between px-6 py-4 border-b border-border">
-                <div className="flex items-center gap-3">
-                  <FileText className="w-5 h-5 text-accent" />
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8" onClick={() => setSelected(null)}>
+            <div className="absolute inset-0 bg-white/95" />
+            <div className="relative w-full max-w-4xl max-h-[90vh] bg-white overflow-hidden" onClick={(e) => e.stopPropagation()}>
+              <div className="flex items-center justify-between px-4 py-3 border-b border-zinc-100">
+                <div className="flex items-center gap-2">
+                  <FileText className="w-4 h-4 text-zinc-400" />
                   <div>
-                    <h3 className="font-mono font-bold text-fg text-sm uppercase">
-                      {certificates[selected].title}
-                    </h3>
-                    <p className="text-xs font-mono text-fg-muted">{certificates[selected].issuer}</p>
+                    <h3 className="text-sm font-medium">{certificates[selected].title}</h3>
+                    <p className="text-xs text-zinc-400">{certificates[selected].issuer}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
-                  <a
-                    href={`/certificates/${encodeURIComponent(certificates[selected].file)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 px-3 py-1.5 border border-border text-xs font-mono font-bold uppercase text-accent hover:bg-fg hover:text-bg transition-colors"
-                  >
-                    <ExternalLink className="w-3.5 h-3.5" />
-                    ABRIR
+                  <a href={`/certificates/${encodeURIComponent(certificates[selected].file)}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-xs text-zinc-400 hover:text-zinc-900 transition-colors">
+                    <ExternalLink className="w-3 h-3" /> Abrir
                   </a>
-                  <button
-                    onClick={() => setSelected(null)}
-                    className="flex items-center justify-center w-8 h-8 border border-border hover:bg-accent hover:text-white transition-colors"
-                  >
+                  <button onClick={() => setSelected(null)} className="w-7 h-7 flex items-center justify-center text-zinc-400 hover:text-zinc-900 transition-colors">
                     <X className="w-4 h-4" />
                   </button>
                 </div>
               </div>
-
-              {/* PDF iframe */}
-              <div className="bg-bg-alt" style={{ height: "calc(90vh - 64px)" }}>
-                <iframe
-                  src={`/certificates/${encodeURIComponent(certificates[selected].file)}`}
-                  className="w-full h-full"
-                  title={certificates[selected].title}
-                />
+              <div style={{ height: "calc(90vh - 56px)" }}>
+                <iframe src={`/certificates/${encodeURIComponent(certificates[selected].file)}`} className="w-full h-full" title={certificates[selected].title} />
               </div>
             </div>
           </div>

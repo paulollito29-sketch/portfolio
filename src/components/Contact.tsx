@@ -16,159 +16,68 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="section-padding relative">
-      <div className="mx-auto max-w-6xl">
-        {/* Section header */}
-        <div className="text-center mb-14">
-          <span className="inline-block text-xs font-mono font-bold tracking-[0.15em] uppercase text-accent mb-3">
-            // CONTACTO
-          </span>
-          <h2 className="section-title font-mono">HABLEMOS</h2>
-          <div className="mx-auto mt-4 h-[4px] w-16 bg-accent" />
-          <p className="font-mono text-fg-muted mt-4 max-w-lg mx-auto">
-            ¿Tienes un proyecto en mente? Estoy abierto a nuevas oportunidades.
-          </p>
-        </div>
+    <section id="contact" className="section-pad">
+      <div className="mx-auto max-w-4xl">
+        <p className="text-xs text-zinc-400 mb-4 uppercase tracking-wider">Contacto</p>
+        <h2 className="text-2xl font-bold mb-8">Hablemos</h2>
 
-        <div className="grid md:grid-cols-2 gap-10 items-start">
-          {/* Contact info */}
-          <div className="space-y-4">
-            <a
-              href="mailto:paulespinoza951@gmail.com"
-              className="flat-card p-6 flex items-center gap-4"
-            >
-              <div className="flex items-center justify-center w-12 h-12 border border-border bg-bg-alt shrink-0">
-                <Mail className="w-5 h-5" />
+        <div className="grid md:grid-cols-2 gap-10">
+          <div className="space-y-6">
+            <a href="mailto:paulespinoza951@gmail.com" className="flex items-center gap-4 group">
+              <div className="w-10 h-10 bg-zinc-50 flex items-center justify-center shrink-0">
+                <Mail className="w-4 h-4 text-zinc-400" />
               </div>
               <div>
-                <div className="text-xs font-mono text-fg-muted">EMAIL</div>
-                <div className="font-mono font-bold text-fg text-sm">
-                  paulespinoza951@gmail.com
-                </div>
+                <div className="text-xs text-zinc-400">Email</div>
+                <div className="text-sm font-medium group-hover:text-zinc-500 transition-colors">paulespinoza951@gmail.com</div>
               </div>
             </a>
 
-            <a
-              href="https://wa.me/51906920958"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flat-card p-6 flex items-center gap-4"
-            >
-              <div className="flex items-center justify-center w-12 h-12 border border-border bg-bg-alt shrink-0">
-                <Phone className="w-5 h-5" />
+            <a href="https://wa.me/51906920958" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
+              <div className="w-10 h-10 bg-zinc-50 flex items-center justify-center shrink-0">
+                <Phone className="w-4 h-4 text-zinc-400" />
               </div>
               <div>
-                <div className="text-xs font-mono text-fg-muted">WHATSAPP</div>
-                <div className="font-mono font-bold text-fg text-sm">
-                  +51 906 920 958
-                </div>
+                <div className="text-xs text-zinc-400">WhatsApp</div>
+                <div className="text-sm font-medium group-hover:text-zinc-500 transition-colors">+51 906 920 958</div>
               </div>
             </a>
 
             <div className="flex gap-3">
-              <a
-                href="https://github.com/paulollito29-sketch"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center w-12 h-12 border border-border bg-bg-alt font-bold hover:bg-fg hover:text-bg transition-colors"
-                aria-label="GitHub"
-              >
-                <Github className="w-5 h-5" />
+              <a href="https://github.com/paulollito29-sketch" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-zinc-50 flex items-center justify-center text-zinc-400 hover:text-zinc-900 transition-colors" aria-label="GitHub">
+                <Github className="w-4 h-4" />
               </a>
-              <a
-                href="https://www.linkedin.com/in/paulo-espinoza9/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center w-12 h-12 border border-border bg-bg-alt font-bold hover:bg-fg hover:text-bg transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-5 h-5" />
+              <a href="https://www.linkedin.com/in/paulo-espinoza9/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-zinc-50 flex items-center justify-center text-zinc-400 hover:text-zinc-900 transition-colors" aria-label="LinkedIn">
+                <Linkedin className="w-4 h-4" />
               </a>
             </div>
 
-            <div className="border border-border bg-card p-6">
-              <h4 className="text-xs font-mono font-bold text-fg mb-3 uppercase">
-                DISPONIBILIDAD
-              </h4>
-              <div className="flex items-center gap-2 text-sm font-mono text-green-600">
-                <span className="w-2 h-2 rounded-full bg-green-600" />
+            <div>
+              <p className="text-xs text-zinc-400 mb-1">Disponibilidad</p>
+              <div className="flex items-center gap-2 text-sm text-green-600">
+                <span className="w-1.5 h-1.5 rounded-full bg-green-600" />
                 Disponible para proyectos freelance
               </div>
             </div>
           </div>
 
-          {/* Form */}
-          <form onSubmit={handleSubmit} className="border border-border bg-card p-6 md:p-8 space-y-5">
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label htmlFor="name" className="block text-xs font-mono font-bold text-fg mb-1.5 uppercase">
-                Nombre
-              </label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                value={form.name}
-                onChange={(e) => setForm({ ...form, name: e.target.value })}
-                required
-                autoComplete="name"
-                className="w-full px-4 py-3 border border-border bg-bg font-mono text-sm text-fg placeholder:text-fg-muted focus:outline-none focus:border-accent transition-colors"
-                placeholder="Tu nombre"
-              />
+              <label htmlFor="name" className="block text-xs text-zinc-400 mb-1">Nombre</label>
+              <input id="name" name="name" type="text" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} required className="w-full px-3 py-2 text-sm border border-zinc-200 focus:outline-none focus:border-zinc-400 transition-colors" placeholder="Tu nombre" />
             </div>
-
             <div>
-              <label htmlFor="email" className="block text-xs font-mono font-bold text-fg mb-1.5 uppercase">
-                Email
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                value={form.email}
-                onChange={(e) => setForm({ ...form, email: e.target.value })}
-                required
-                autoComplete="email"
-                className="w-full px-4 py-3 border border-border bg-bg font-mono text-sm text-fg placeholder:text-fg-muted focus:outline-none focus:border-accent transition-colors"
-                placeholder="tu@email.com"
-              />
+              <label htmlFor="email" className="block text-xs text-zinc-400 mb-1">Email</label>
+              <input id="email" name="email" type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} required className="w-full px-3 py-2 text-sm border border-zinc-200 focus:outline-none focus:border-zinc-400 transition-colors" placeholder="tu@email.com" />
             </div>
-
             <div>
-              <label htmlFor="message" className="block text-xs font-mono font-bold text-fg mb-1.5 uppercase">
-                Mensaje
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={4}
-                value={form.message}
-                onChange={(e) => setForm({ ...form, message: e.target.value })}
-                required
-                autoComplete="off"
-                className="w-full px-4 py-3 border border-border bg-bg font-mono text-sm text-fg placeholder:text-fg-muted focus:outline-none focus:border-accent transition-colors resize-none"
-                placeholder="Cuéntame sobre tu proyecto..."
-              />
+              <label htmlFor="message" className="block text-xs text-zinc-400 mb-1">Mensaje</label>
+              <textarea id="message" name="message" rows={4} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} required className="w-full px-3 py-2 text-sm border border-zinc-200 focus:outline-none focus:border-zinc-400 transition-colors resize-none" placeholder="Tu mensaje..." />
             </div>
-
-            <button
-              type="submit"
-              disabled={status === "sending" || status === "sent"}
-              className={`w-full flex items-center justify-center gap-2 px-6 py-3.5 font-mono font-bold text-sm uppercase border border-border transition-all disabled:opacity-70 ${
-                status === "sent"
-                  ? "bg-green-600 text-white border-green-600"
-                  : "bg-fg text-bg hover:bg-accent"
-              }`}
-            >
-              {status === "idle" && <>
-                <Send className="w-4 h-4" />
-                ENVIAR MENSAJE
-              </>}
-              {status === "sending" && <>
-                ENVIANDO...
-              </>}
-              {status === "sent" && <>
-                MENSAJE ENVIADO ✓
-              </>}
+            <button type="submit" disabled={status === "sending" || status === "sent"} className="w-full px-4 py-2.5 bg-zinc-900 text-white text-sm font-medium hover:bg-zinc-700 transition-colors disabled:opacity-50">
+              {status === "idle" && "Enviar mensaje"}
+              {status === "sending" && "Enviando..."}
+              {status === "sent" && "Mensaje enviado ✓"}
             </button>
           </form>
         </div>

@@ -1,115 +1,35 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #f5f0e8;
-  --color-bg-alt: #ebe6dc;
-  --color-fg: #1a1a1a;
-  --color-fg-muted: #6b6b6b;
-  --color-accent: #e63946;
-  --color-accent-hover: #c1121f;
-  --color-secondary: #457b9d;
-  --color-card: #ffffff;
-  --color-border: #1a1a1a;
-  --font-sans: "Space Mono", ui-monospace, monospace;
-  --font-display: "Space Mono", ui-monospace, monospace;
+  --color-fg: #111;
+  --color-muted: #666;
+  --color-accent: #111;
+  --color-bg: #fff;
+  --font-mono: "Space Mono", ui-monospace, monospace;
 }
 
 @layer base {
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: var(--color-fg) var(--color-bg-alt);
-  }
-
-  *::-webkit-scrollbar {
-    width: 8px;
-  }
-  *::-webkit-scrollbar-track {
-    background: var(--color-bg-alt);
-  }
-  *::-webkit-scrollbar-thumb {
-    background: var(--color-fg);
-  }
-
   html {
     scroll-behavior: smooth;
   }
-
   body {
-    overflow-x: hidden;
-    background-color: var(--color-bg);
+    background: var(--color-bg);
     color: var(--color-fg);
+    font-family: var(--font-mono);
   }
-
   ::selection {
     background: var(--color-accent);
-    color: white;
+    color: #fff;
   }
 }
 
 @layer utilities {
-  .section-padding {
-    padding: 4rem 1.5rem;
+  .section-pad {
+    padding: 5rem 1.5rem;
   }
-
   @media (min-width: 768px) {
-    .section-padding {
-      padding: 5rem 2rem;
+    .section-pad {
+      padding: 6rem 2rem;
     }
-  }
-
-  .section-title {
-    font-size: 2rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: -0.02em;
-    line-height: 1.1;
-  }
-
-  @media (min-width: 768px) {
-    .section-title {
-      font-size: 2.5rem;
-    }
-  }
-
-  .flat-card {
-    background: var(--color-card);
-    border: 1px solid var(--color-border);
-    transition: background 0.15s ease;
-  }
-
-  .flat-card:hover {
-    background: var(--color-bg-alt);
-  }
-
-  .flat-btn {
-    background: var(--color-fg);
-    color: var(--color-bg);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    transition: background 0.15s ease;
-  }
-
-  .flat-btn:hover {
-    background: var(--color-accent);
-  }
-
-  .flat-btn-outline {
-    border: 1px solid var(--color-border);
-    background: transparent;
-    color: var(--color-fg);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    transition: all 0.15s ease;
-  }
-
-  .flat-btn-outline:hover {
-    background: var(--color-fg);
-    color: var(--color-bg);
-  }
-
-  .mono {
-    font-family: var(--font-sans);
   }
 }

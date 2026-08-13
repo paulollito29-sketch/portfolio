@@ -15,68 +15,50 @@ export default function Navbar() {
 
   const handleClick = (href: string) => {
     setMobileOpen(false);
-    const id = href.slice(1);
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById(href.slice(1))?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-bg border-b border-border">
-        <div className="mx-auto max-w-6xl flex items-center justify-between px-6 py-4">
-          <a
-            href="#hero"
-            onClick={(e) => { e.preventDefault(); handleClick("#hero"); }}
-            className="flex items-center gap-2"
-          >
-            <div className="w-8 h-8 bg-accent flex items-center justify-center">
-              <Code2 className="w-4 h-4 text-white" />
-            </div>
-            <span className="font-bold text-lg font-mono tracking-tight">
-              PAULO<span className="text-accent">.</span>
-            </span>
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm">
+        <div className="mx-auto max-w-4xl flex items-center justify-between px-6 py-4">
+          <a href="#hero" onClick={(e) => { e.preventDefault(); handleClick("#hero"); }} className="flex items-center gap-2">
+            <Code2 className="w-5 h-5" />
+            <span className="font-bold text-sm">Paulo Espinoza</span>
           </a>
 
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={(e) => { e.preventDefault(); handleClick(link.href); }}
-                className="px-3 py-2 text-sm font-mono font-bold uppercase hover:bg-accent hover:text-white transition-colors"
+                className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors"
               >
                 {link.label}
               </a>
             ))}
           </div>
 
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden relative z-50 p-2 border border-border bg-bg"
-            aria-label="Menú"
-          >
+          <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden" aria-label="Menú">
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </nav>
 
       {mobileOpen && (
-        <div className="fixed inset-0 z-40 md:hidden bg-bg flex flex-col items-center justify-center gap-4">
+        <div className="fixed inset-0 z-40 bg-white flex flex-col items-center justify-center gap-6">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={(e) => { e.preventDefault(); handleClick(link.href); }}
-              className="text-2xl font-mono font-bold uppercase hover:text-accent transition-colors"
+              className="text-xl"
             >
               {link.label}
             </a>
           ))}
-          <button
-            onClick={() => setMobileOpen(false)}
-            className="mt-6 flat-btn px-6 py-3 text-sm"
-          >
-            Cerrar
-          </button>
+          <button onClick={() => setMobileOpen(false)} className="mt-4 text-sm text-zinc-500">Cerrar</button>
         </div>
       )}
     </>
