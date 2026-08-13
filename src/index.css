@@ -1,35 +1,33 @@
 @import "tailwindcss";
 
 @theme {
-  --color-dark-900: #0a0a0f;
-  --color-dark-800: #12121a;
-  --color-dark-700: #1a1a25;
-  --color-dark-600: #22222f;
-  --color-accent-400: #818cf8;
-  --color-accent-500: #6366f1;
-  --color-accent-600: #4f46e5;
-  --color-accent-glow: rgba(99, 102, 241, 0.3);
-  --color-teal-400: #2dd4bf;
-  --color-teal-500: #14b8a6;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-bg: #f5f0e8;
+  --color-bg-alt: #ebe6dc;
+  --color-fg: #1a1a1a;
+  --color-fg-muted: #6b6b6b;
+  --color-accent: #e63946;
+  --color-accent-hover: #c1121f;
+  --color-secondary: #457b9d;
+  --color-card: #ffffff;
+  --color-border: #1a1a1a;
+  --font-sans: "Space Mono", ui-monospace, monospace;
+  --font-display: "Space Mono", ui-monospace, monospace;
 }
 
 @layer base {
   * {
     scrollbar-width: thin;
-    scrollbar-color: var(--color-accent-500) var(--color-dark-800);
+    scrollbar-color: var(--color-fg) var(--color-bg-alt);
   }
 
   *::-webkit-scrollbar {
-    width: 6px;
+    width: 8px;
   }
   *::-webkit-scrollbar-track {
-    background: var(--color-dark-800);
+    background: var(--color-bg-alt);
   }
   *::-webkit-scrollbar-thumb {
-    background: var(--color-accent-500);
-    border-radius: 3px;
+    background: var(--color-fg);
   }
 
   html {
@@ -38,168 +36,100 @@
 
   body {
     overflow-x: hidden;
+    background-color: var(--color-bg);
+    color: var(--color-fg);
   }
 
   ::selection {
-    background: var(--color-accent-500);
+    background: var(--color-accent);
     color: white;
   }
 }
 
 @layer utilities {
-  .text-gradient {
-    background: linear-gradient(135deg, #818cf8, #2dd4bf);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .text-gradient-alt {
-    background: linear-gradient(135deg, #f472b6, #818cf8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .glass {
-    background: rgba(18, 18, 26, 0.6);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(99, 102, 241, 0.1);
-  }
-
-  .glass-card {
-    background: rgba(26, 26, 37, 0.5);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(99, 102, 241, 0.08);
-    transition: all 0.3s ease;
-  }
-
-  .glass-card:hover {
-    background: rgba(26, 26, 37, 0.8);
-    border-color: rgba(99, 102, 241, 0.25);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(99, 102, 241, 0.1);
-  }
-
-  .glow-border {
-    position: relative;
-  }
-
-  .glow-border::after {
-    content: "";
-    position: absolute;
-    inset: -1px;
-    border-radius: inherit;
-    padding: 1px;
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.5), rgba(45, 212, 191, 0.5));
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
-  }
-
-  .shimmer {
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(99, 102, 241, 0.08),
-      transparent
-    );
-    background-size: 200% 100%;
-    animation: shimmer 3s ease-in-out infinite;
-  }
-
-  @keyframes shimmer {
-    0% {
-      background-position: -200% 0;
-    }
-    100% {
-      background-position: 200% 0;
-    }
-  }
-
-  .gradient-bg {
-    background: radial-gradient(ellipse 80% 60% at 50% -20%, rgba(99, 102, 241, 0.15), transparent),
-                radial-gradient(ellipse 60% 40% at 80% 50%, rgba(45, 212, 191, 0.08), transparent),
-                radial-gradient(ellipse 40% 50% at 20% 80%, rgba(244, 114, 182, 0.06), transparent);
-  }
-
   .section-padding {
-    padding: 5rem 1.5rem;
+    padding: 4rem 1.5rem;
   }
 
   @media (min-width: 768px) {
     .section-padding {
-      padding: 6rem 2rem;
+      padding: 5rem 2rem;
     }
   }
 
   .section-title {
-    font-size: 2.25rem;
-    font-weight: 800;
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
     line-height: 1.1;
   }
 
   @media (min-width: 768px) {
     .section-title {
-      font-size: 3rem;
+      font-size: 2.5rem;
     }
   }
 
-  .floating {
-    animation: float 6s ease-in-out infinite;
+  .brutalist-border {
+    border: 3px solid var(--color-border);
   }
 
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
+  .brutalist-card {
+    border: 3px solid var(--color-border);
+    background: var(--color-card);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
   }
 
-  .pulse-glow {
-    animation: pulseGlow 3s ease-in-out infinite;
+  .brutalist-card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 6px 6px 0 var(--color-border);
   }
 
-  @keyframes pulseGlow {
-    0%, 100% {
-      box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
-    }
-    50% {
-      box-shadow: 0 0 40px rgba(99, 102, 241, 0.4);
-    }
+  .brutalist-btn {
+    border: 3px solid var(--color-border);
+    background: var(--color-fg);
+    color: var(--color-bg);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.1s ease;
   }
 
-  .skill-bar {
-    position: relative;
-    overflow: hidden;
+  .brutalist-btn:hover {
+    background: var(--color-accent);
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 var(--color-border);
   }
 
-  .skill-bar-fill {
-    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+  .brutalist-btn:active {
+    transform: translate(0, 0);
+    box-shadow: none;
   }
 
-  .skill-bar-fill::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    animation: skillShimmer 3s ease-in-out infinite;
+  .brutalist-btn-outline {
+    border: 3px solid var(--color-border);
+    background: transparent;
+    color: var(--color-fg);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.1s ease;
   }
 
-  @keyframes skillShimmer {
-    0% {
-      left: -100%;
-    }
-    100% {
-      left: 200%;
-    }
+  .brutalist-btn-outline:hover {
+    background: var(--color-fg);
+    color: var(--color-bg);
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 var(--color-border);
+  }
+
+  .accent-block {
+    background: var(--color-accent);
+    color: white;
+  }
+
+  .mono {
+    font-family: var(--font-sans);
   }
 }

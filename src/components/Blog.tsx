@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Calendar, Clock, ArrowRight, FileText } from "lucide-react";
 
 const articles = [
@@ -30,50 +29,35 @@ const articles = [
 
 export default function Blog() {
   return (
-    <section className="section-padding relative">
+    <section className="section-padding relative border-b-[3px] border-border">
       <div className="mx-auto max-w-6xl">
         {/* Section header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-14"
-        >
-          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-accent-400 mb-3">
-            Blog
+        <div className="text-center mb-14">
+          <span className="inline-block text-xs font-mono font-bold tracking-[0.15em] uppercase text-accent mb-3">
+            // BLOG
           </span>
-          <h2 className="section-title">
-            Artículos y{" "}
-            <span className="text-gradient">tutoriales</span>
-          </h2>
-          <div className="mx-auto mt-4 h-1 w-16 rounded-full bg-gradient-to-r from-accent-500 to-teal-400" />
-          <p className="text-gray-400 mt-4 max-w-lg mx-auto">
-            Comparto mi conocimiento y experiencia en desarrollo de software, 
-            tecnologías y mejores prácticas.
+          <h2 className="section-title font-mono">ARTÍCULOS</h2>
+          <div className="mx-auto mt-4 h-[4px] w-16 bg-accent" />
+          <p className="font-mono text-fg-muted mt-4 max-w-lg mx-auto">
+            Conocimiento y experiencia en desarrollo de software.
           </p>
-        </motion.div>
+        </div>
 
         {/* Articles grid */}
         <div className="grid md:grid-cols-3 gap-6">
           {articles.map((article, i) => (
-            <motion.article
+            <article
               key={article.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="glass-card rounded-2xl overflow-hidden group cursor-pointer"
+              className="brutalist-card overflow-hidden cursor-pointer"
             >
               {/* Image placeholder */}
-              <div className="h-44 bg-gradient-to-br from-accent-500/10 via-dark-700 to-teal-500/10 flex items-center justify-center relative overflow-hidden">
-                <FileText className="w-12 h-12 text-accent-400/30 group-hover:scale-110 transition-transform duration-500" />
-                <div className="absolute inset-0 shimmer opacity-50" />
+              <div className="h-44 bg-bg-alt border-b-[3px] border-border flex items-center justify-center">
+                <FileText className="w-12 h-12 text-fg-muted/30" />
               </div>
 
               <div className="p-6">
                 {/* Meta */}
-                <div className="flex items-center gap-3 text-xs text-gray-500 mb-3">
+                <div className="flex items-center gap-3 text-xs font-mono text-fg-muted mb-3">
                   <span className="flex items-center gap-1">
                     <Calendar className="w-3 h-3" />
                     {article.date}
@@ -84,10 +68,10 @@ export default function Blog() {
                   </span>
                 </div>
 
-                <h3 className="font-semibold text-white mb-2 group-hover:text-accent-400 transition-colors line-clamp-2">
+                <h3 className="font-mono font-bold text-fg mb-2 uppercase text-sm leading-snug">
                   {article.title}
                 </h3>
-                <p className="text-sm text-gray-400 leading-relaxed line-clamp-3 mb-4">
+                <p className="text-sm font-mono text-fg-muted leading-relaxed mb-4">
                   {article.excerpt}
                 </p>
 
@@ -96,19 +80,19 @@ export default function Blog() {
                   {article.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-[11px] px-2.5 py-1 rounded-full border border-dark-500 bg-dark-600/50 text-gray-300 font-medium"
+                      className="text-[11px] font-mono font-bold px-2 py-0.5 border-2 border-border bg-bg-alt"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex items-center gap-1 text-xs text-accent-400 font-medium group-hover:gap-2 transition-all">
-                  Leer artículo
+                <div className="flex items-center gap-1 text-xs font-mono font-bold text-accent uppercase">
+                  LEER ARTÍCULO
                   <ArrowRight className="w-3 h-3" />
                 </div>
               </div>
-            </motion.article>
+            </article>
           ))}
         </div>
       </div>

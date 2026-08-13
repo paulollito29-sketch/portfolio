@@ -1,26 +1,23 @@
-import { motion } from "framer-motion";
-import { Code2, Heart } from "lucide-react";
+import { Code2 } from "lucide-react";
 
 export default function Footer() {
   return (
-    <motion.footer
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      className="border-t border-dark-600/50 py-8 px-6"
-    >
+    <footer className="border-t-[3px] border-border py-8 px-6">
       <div className="mx-auto max-w-6xl flex flex-col md:flex-row items-center justify-between gap-4">
-        <div className="flex items-center gap-2 text-sm text-gray-500">
-          <Code2 className="w-4 h-4 text-accent-400" />
+        <div className="flex items-center gap-2 text-sm font-mono text-fg-muted">
+          <div className="w-6 h-6 border-2 border-border flex items-center justify-center">
+            <Code2 className="w-3 h-3 text-accent" />
+          </div>
           <span>
-            Built with <Heart className="w-3 h-3 inline text-red-400 fill-red-400" /> by{" "}
-            <span className="text-gray-300 font-medium">Paulo Espinoza</span>
+            HECHO CON{" "}
+            <span className="text-accent font-bold">♥</span>{" "}
+            POR <span className="text-fg font-bold">PAULO ESPINOZA</span>
           </span>
         </div>
-        <div className="text-sm text-gray-600">
-          &copy; {new Date().getFullYear()} Todos los derechos reservados.
+        <div className="text-sm font-mono text-fg-muted">
+          © {new Date().getFullYear()} TODOS LOS DERECHOS RESERVADOS
         </div>
       </div>
-    </motion.footer>
+    </footer>
   );
 }

@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { motion, useScroll, useSpring } from "framer-motion";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -11,58 +10,30 @@ import Blog from "./components/Blog";
 import Certificates from "./components/Certificates";
 import Footer from "./components/Footer";
 
-function ScrollProgress() {
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001,
-  });
-
+function ScrollToTop({ visible }: { visible: boolean }) {
   return (
-    <motion.div
-      className="fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-accent-500 via-teal-400 to-accent-500 z-[60] origin-left"
-      style={{ scaleX }}
-    />
+    <button
+      onClick={() => window.scrollTo({ top: 0 })}
+      className="fixed bottom-6 right-6 z-50 w-12 h-12 brutalist-btn text-sm font-bold hidden md:flex items-center justify-center"
+      aria-label="Volver arriba"
+      style={{ opacity: visible ? 1 : 0, pointerEvents: visible ? "auto" : "none", transition: "opacity 0.2s" }}
+    >
+      ↑
+    </button>
   );
 }
 
-function ScrollToTop() {
-  const [visible, setVisible] = useState(false);
+export default function App() {
+  const [showScroll, setShowScroll] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setVisible(window.scrollY > 500);
+    const onScroll = () => setShowScroll(window.scrollY > 500);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
-    <motion.button
-      initial={{ opacity: 0, scale: 0 }}
-      animate={visible ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
-      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      className="fixed bottom-8 right-8 z-50 w-12 h-12 rounded-full glass text-accent-400 hover:text-white hover:border-accent-500/30 transition-all shadow-lg shadow-accent-500/10"
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
-      aria-label="Volver arriba"
-    >
-      <svg
-        className="w-5 h-5 mx-auto"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        strokeWidth={2}
-      >
-        <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
-      </svg>
-    </motion.button>
-  );
-}
-
-export default function App() {
-  return (
-    <div className="min-h-screen bg-dark-900 text-white">
-      <ScrollProgress />
+    <div className="min-h-screen bg-bg text-fg">
       <Navbar />
       <main>
         <Hero />
@@ -74,7 +45,7 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
-      <ScrollToTop />
+      <ScrollToTop visible={showScroll} />
     </div>
   );
 }

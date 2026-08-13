@@ -1,16 +1,14 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
-import { Send, Mail, Phone, Github, Linkedin, AlertCircle, CheckCircle2, Loader2 } from "lucide-react";
+import { Send, Mail, Phone, Github, Linkedin } from "lucide-react";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.name || !form.email || !form.message) return;
     setStatus("sending");
-    // Simulate send
     await new Promise((r) => setTimeout(r, 1500));
     setStatus("sent");
     setForm({ name: "", email: "", message: "" });
@@ -21,46 +19,30 @@ export default function Contact() {
     <section id="contact" className="section-padding relative">
       <div className="mx-auto max-w-6xl">
         {/* Section header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-14"
-        >
-          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-accent-400 mb-3">
-            Contacto
+        <div className="text-center mb-14">
+          <span className="inline-block text-xs font-mono font-bold tracking-[0.15em] uppercase text-accent mb-3">
+            // CONTACTO
           </span>
-          <h2 className="section-title">
-            Hablemos sobre tu{" "}
-            <span className="text-gradient">próximo proyecto</span>
-          </h2>
-          <div className="mx-auto mt-4 h-1 w-16 rounded-full bg-gradient-to-r from-accent-500 to-teal-400" />
-          <p className="text-gray-400 mt-4 max-w-lg mx-auto">
-            ¿Tienes un proyecto en mente o quieres colaborar? Estoy abierto a nuevas 
-            oportunidades y siempre dispuesto a conversar.
+          <h2 className="section-title font-mono">HABLEMOS</h2>
+          <div className="mx-auto mt-4 h-[4px] w-16 bg-accent" />
+          <p className="font-mono text-fg-muted mt-4 max-w-lg mx-auto">
+            ¿Tienes un proyecto en mente? Estoy abierto a nuevas oportunidades.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid md:grid-cols-2 gap-10 items-start">
           {/* Contact info */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6 }}
-            className="space-y-6"
-          >
+          <div className="space-y-4">
             <a
               href="mailto:paulespinoza951@gmail.com"
-              className="glass-card rounded-2xl p-6 flex items-center gap-4 group transition-all"
+              className="brutalist-card p-6 flex items-center gap-4 group"
             >
-              <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-accent-500/10 shrink-0 group-hover:scale-110 transition-transform">
-                <Mail className="w-5 h-5 text-accent-400" />
+              <div className="flex items-center justify-center w-12 h-12 border-[3px] border-border bg-bg-alt shrink-0">
+                <Mail className="w-5 h-5" />
               </div>
               <div>
-                <div className="text-sm text-gray-500">Email</div>
-                <div className="text-white font-medium group-hover:text-accent-400 transition-colors">
+                <div className="text-xs font-mono text-fg-muted">EMAIL</div>
+                <div className="font-mono font-bold text-fg text-sm">
                   paulespinoza951@gmail.com
                 </div>
               </div>
@@ -70,14 +52,14 @@ export default function Contact() {
               href="https://wa.me/51906920958"
               target="_blank"
               rel="noopener noreferrer"
-              className="glass-card rounded-2xl p-6 flex items-center gap-4 group transition-all"
+              className="brutalist-card p-6 flex items-center gap-4 group"
             >
-              <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-accent-500/10 shrink-0 group-hover:scale-110 transition-transform">
-                <Phone className="w-5 h-5 text-accent-400" />
+              <div className="flex items-center justify-center w-12 h-12 border-[3px] border-border bg-bg-alt shrink-0">
+                <Phone className="w-5 h-5" />
               </div>
               <div>
-                <div className="text-sm text-gray-500">WhatsApp / Teléfono</div>
-                <div className="text-white font-medium group-hover:text-accent-400 transition-colors">
+                <div className="text-xs font-mono text-fg-muted">WHATSAPP</div>
+                <div className="font-mono font-bold text-fg text-sm">
                   +51 906 920 958
                 </div>
               </div>
@@ -88,7 +70,7 @@ export default function Contact() {
                 href="https://github.com/paulollito29-sketch"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-12 h-12 rounded-xl glass text-gray-400 hover:text-accent-400 hover:border-accent-500/30 transition-all"
+                className="flex items-center justify-center w-12 h-12 border-[3px] border-border bg-bg-alt font-bold hover:bg-fg hover:text-bg transition-colors"
                 aria-label="GitHub"
               >
                 <Github className="w-5 h-5" />
@@ -97,35 +79,28 @@ export default function Contact() {
                 href="https://www.linkedin.com/in/paulo-espinoza9/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-12 h-12 rounded-xl glass text-gray-400 hover:text-accent-400 hover:border-accent-500/30 transition-all"
+                className="flex items-center justify-center w-12 h-12 border-[3px] border-border bg-bg-alt font-bold hover:bg-fg hover:text-bg transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
               </a>
             </div>
 
-            <div className="glass-card rounded-2xl p-6">
-              <h4 className="text-sm font-semibold text-white mb-3">
-                Disponibilidad
+            <div className="border-[3px] border-border bg-card p-6">
+              <h4 className="text-xs font-mono font-bold text-fg mb-3 uppercase">
+                DISPONIBILIDAD
               </h4>
-              <div className="flex items-center gap-2 text-sm text-teal-400">
-                <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse" />
+              <div className="flex items-center gap-2 text-sm font-mono text-green-600">
+                <span className="w-2 h-2 rounded-full bg-green-600" />
                 Disponible para proyectos freelance
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Form */}
-          <motion.form
-            onSubmit={handleSubmit}
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6 }}
-            className="glass-card rounded-2xl p-6 md:p-8 space-y-5"
-          >
+          <form onSubmit={handleSubmit} className="border-[3px] border-border bg-card p-6 md:p-8 space-y-5">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1.5">
+              <label htmlFor="name" className="block text-xs font-mono font-bold text-fg mb-1.5 uppercase">
                 Nombre
               </label>
               <input
@@ -136,13 +111,13 @@ export default function Contact() {
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
                 required
                 autoComplete="name"
-                className="w-full px-4 py-3 rounded-xl bg-dark-700 border border-dark-600 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-accent-500/50 focus:ring-1 focus:ring-accent-500/20 transition-all"
+                className="w-full px-4 py-3 border-[3px] border-border bg-bg font-mono text-sm text-fg placeholder:text-fg-muted focus:outline-none focus:border-accent transition-colors"
                 placeholder="Tu nombre"
               />
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1.5">
+              <label htmlFor="email" className="block text-xs font-mono font-bold text-fg mb-1.5 uppercase">
                 Email
               </label>
               <input
@@ -153,13 +128,13 @@ export default function Contact() {
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 required
                 autoComplete="email"
-                className="w-full px-4 py-3 rounded-xl bg-dark-700 border border-dark-600 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-accent-500/50 focus:ring-1 focus:ring-accent-500/20 transition-all"
+                className="w-full px-4 py-3 border-[3px] border-border bg-bg font-mono text-sm text-fg placeholder:text-fg-muted focus:outline-none focus:border-accent transition-colors"
                 placeholder="tu@email.com"
               />
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1.5">
+              <label htmlFor="message" className="block text-xs font-mono font-bold text-fg mb-1.5 uppercase">
                 Mensaje
               </label>
               <textarea
@@ -170,7 +145,7 @@ export default function Contact() {
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
                 required
                 autoComplete="off"
-                className="w-full px-4 py-3 rounded-xl bg-dark-700 border border-dark-600 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-accent-500/50 focus:ring-1 focus:ring-accent-500/20 transition-all resize-none"
+                className="w-full px-4 py-3 border-[3px] border-border bg-bg font-mono text-sm text-fg placeholder:text-fg-muted focus:outline-none focus:border-accent transition-colors resize-none"
                 placeholder="Cuéntame sobre tu proyecto..."
               />
             </div>
@@ -178,38 +153,24 @@ export default function Contact() {
             <button
               type="submit"
               disabled={status === "sending" || status === "sent"}
-              className={`w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm transition-all duration-300 ${
+              className={`w-full flex items-center justify-center gap-2 px-6 py-3.5 font-mono font-bold text-sm uppercase border-[3px] border-border transition-all disabled:opacity-70 ${
                 status === "sent"
-                  ? "bg-teal-500 text-white"
-                  : "bg-accent-500 text-white hover:bg-accent-600 hover:shadow-lg hover:shadow-accent-500/25"
-              } disabled:opacity-70 active:scale-95`}
+                  ? "bg-green-600 text-white"
+                  : "bg-fg text-bg hover:bg-accent"
+              }`}
             >
-              {status === "idle" && (
-                <>
-                  <Send className="w-4 h-4" />
-                  Enviar mensaje
-                </>
-              )}
-              {status === "sending" && (
-                <>
-                  <Loader2 className="w-4 h-4 animate-spin" />
-                  Enviando...
-                </>
-              )}
-              {status === "sent" && (
-                <>
-                  <CheckCircle2 className="w-4 h-4" />
-                  Mensaje enviado
-                </>
-              )}
-              {status === "error" && (
-                <>
-                  <AlertCircle className="w-4 h-4" />
-                  Error al enviar
-                </>
-              )}
+              {status === "idle" && <>
+                <Send className="w-4 h-4" />
+                ENVIAR MENSAJE
+              </>}
+              {status === "sending" && <>
+                ENVIANDO...
+              </>}
+              {status === "sent" && <>
+                MENSAJE ENVIADO ✓
+              </>}
             </button>
-          </motion.form>
+          </form>
         </div>
       </div>
     </section>
