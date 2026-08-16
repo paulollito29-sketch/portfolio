@@ -1,12 +1,14 @@
 import { useState } from "react";
-import { ExternalLink, Github, Code2, Building2, Gamepad2, Database } from "lucide-react";
+import { ExternalLink, Github, Code2, Building2, Gamepad2, Database, ClipboardList, Binary } from "lucide-react";
 
 const projects = [
-  { title: "Vault Vintage", desc: "Sistema de gestión de inventario para tienda de ropa vintage con autenticación y reportes.", tags: ["Java", "Spring Boot", "SQL Server"], icon: Building2, category: "fullstack" },
-  { title: "Store Backend", desc: "API RESTful con microservicios, autenticación JWT y documentación con Swagger.", tags: ["Java", "Spring Boot", "JWT", "MySQL"], icon: Code2, category: "backend" },
-  { title: "Flappy Bird Clone", desc: "Clon del juego Flappy Bird en C# con Windows Forms y física básica.", tags: ["C#", "Windows Forms"], icon: Gamepad2, category: "game" },
-  { title: "LimaSync", desc: "Aplicación web para sincronización de horarios y gestión de eventos en Lima.", tags: ["Next.js", "React", "TypeScript"], icon: Code2, category: "frontend" },
-  { title: "Nutrigo", desc: "App de seguimiento nutricional con cálculos de calorías y macros personalizados.", tags: ["React", "TypeScript", "Tailwind"], icon: Database, category: "fullstack" },
+  { title: "Vault Vintage", desc: "Sistema de gestión de inventario para tienda de ropa vintage con autenticación y reportes.", tags: ["Java", "Spring Boot", "SQL Server"], icon: Building2, category: "fullstack", repo: "https://github.com/paulollito29-sketch/vault-vintage-frontend" },
+  { title: "Store Backend", desc: "API RESTful con microservicios, autenticación JWT y documentación con Swagger.", tags: ["Java", "Spring Boot", "JWT", "MySQL"], icon: Code2, category: "backend", repo: "https://github.com/paulollito29-sketch/store-backend-v2" },
+  { title: "Flappy Bird Clone", desc: "Clon del juego Flappy Bird en C# con Windows Forms y física básica.", tags: ["C#", "Windows Forms"], icon: Gamepad2, category: "game", repo: "https://github.com/paulollito29-sketch/Trabajo_juego" },
+  { title: "LimaSync", desc: "Aplicación web para sincronización de horarios y gestión de eventos en Lima.", tags: ["Next.js", "React", "TypeScript"], icon: Code2, category: "frontend", repo: "https://github.com/paulollito29-sketch/LimaSync" },
+  { title: "Nutrigo", desc: "App de seguimiento nutricional con cálculos de calorías y macros personalizados.", tags: ["React", "TypeScript", "Tailwind"], icon: Database, category: "fullstack", repo: "https://github.com/paulollito29-sketch/cams" },
+  { title: "Programa de Asistencia", desc: "Sistema de registro de asistencia para restaurante KAIROS con soporte PWA.", tags: ["Java", "Spring Boot", "PWA"], icon: ClipboardList, category: "fullstack", repo: "https://github.com/paulollito29-sketch/kairos-asistencia" },
+  { title: "Huffman Compressor", desc: "Compresor de archivos basado en el algoritmo de Huffman con interfaz gráfica.", tags: ["Python", "Algoritmos"], icon: Binary, category: "backend", repo: "https://github.com/paulollito29-sketch/huffman-compressor" },
 ];
 
 const categories = [
@@ -51,9 +53,15 @@ export default function Projects() {
                     ))}
                   </div>
                   <div className="flex gap-4">
-                    <button className="flex items-center gap-1 text-xs text-zinc-400 hover:text-zinc-900 transition-colors">
-                      <Github className="w-3 h-3" /> Código
-                    </button>
+                    {p.repo ? (
+                      <a href={p.repo} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-xs text-zinc-400 hover:text-zinc-900 transition-colors">
+                        <Github className="w-3 h-3" /> Código
+                      </a>
+                    ) : (
+                      <button disabled className="flex items-center gap-1 text-xs text-zinc-300 cursor-not-allowed">
+                        <Github className="w-3 h-3" /> Código
+                      </button>
+                    )}
                     <button className="flex items-center gap-1 text-xs text-zinc-400 hover:text-zinc-900 transition-colors">
                       <ExternalLink className="w-3 h-3" /> Demo
                     </button>
