@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Code2, Github, Linkedin, Mail, MapPin, Building, ShieldCheck, Briefcase } from "lucide-react";
 
 const specializations = [
+  "Ingeniero de Sistemas de Información · UPC",
   "Desarrollador Backend & Full Stack",
   "Arquitectura Java (Spring Boot) & C# (.NET)",
   "Bases de Datos Relacionales (SQL Server / Oracle)",
@@ -67,7 +68,7 @@ export default function HeroInteractive() {
             </span>
             <span className="font-semibold text-emerald-400">Open to Work</span>
             <span className="text-slate-600">|</span>
-            <span className="text-slate-300">Disponible para Prácticas Preprofesionales &amp; Roles de Ingeniería</span>
+            <span className="text-slate-300">Disponible para Roles de Ingeniería de Software &amp; Desarrollo Full Stack</span>
           </div>
 
           <div className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full glass-card border border-white/10 text-xs text-slate-400 font-mono">
@@ -84,7 +85,7 @@ export default function HeroInteractive() {
             className="flex items-center justify-center gap-2 mb-3 text-xs sm:text-sm font-mono text-sky-400 uppercase tracking-widest"
           >
             <Building className="w-4 h-4" />
-            <span>Perfil Profesional de Ingeniería de Software</span>
+            <span>Ingeniero de Sistemas de Información · UPC</span>
           </motion.div>
 
           <motion.h1
@@ -118,7 +119,7 @@ export default function HeroInteractive() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-sm sm:text-lg text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed font-normal"
           >
-            Estudiante de <strong>Ingeniería de Sistemas de Información en la UPC (6to ciclo)</strong>. Especializado en el diseño e implementación de servicios backend robustos en <strong className="text-sky-300">Java / Spring Boot</strong> y <strong className="text-indigo-300">C# / .NET</strong>, bases de datos relacionales y aplicaciones web modernas con <strong className="text-emerald-300">React &amp; Astro</strong>, aplicando patrones de arquitectura limpia y desarrollo acelerado con IA.
+            <strong>Ingeniero de Sistemas de Información de la Universidad Peruana de Ciencias Aplicadas (UPC)</strong>. Especializado en el diseño e implementación de servicios backend robustos en <strong className="text-sky-300">Java / Spring Boot</strong> y <strong className="text-indigo-300">C# / .NET</strong>, bases de datos relacionales y aplicaciones web modernas con <strong className="text-emerald-300">React &amp; Astro</strong>, aplicando patrones de arquitectura limpia y desarrollo acelerado con IA.
           </motion.p>
 
           {/* Recruiter Action Buttons */}

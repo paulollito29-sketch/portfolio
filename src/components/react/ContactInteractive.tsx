@@ -70,7 +70,7 @@ export default function ContactInteractive() {
               <div>
                 <h3 className="text-lg font-bold text-white mb-2">Información para Reclutadores</h3>
                 <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                  Estoy activamente evaluando oportunidades para incorporarme como <strong className="text-white">Practicante Preprofesional de Ingeniería de Software</strong> o desarrollador Junior.
+                  Estoy activamente evaluando oportunidades para incorporarme como <strong className="text-white">Ingeniero de Software / Desarrollador Full Stack &amp; Backend</strong> en proyectos de alto impacto.
                 </p>
               </div>
 
@@ -86,7 +86,7 @@ export default function ContactInteractive() {
                 </div>
                 <div className="flex items-center gap-2.5">
                   <Calendar className="w-4 h-4 text-indigo-400 shrink-0" />
-                  <span><strong>Formación:</strong> UPC · 6to Ciclo</span>
+                  <span><strong>Título / Carrera:</strong> Ing. de Sistemas de Información · UPC</span>
                 </div>
               </div>
 

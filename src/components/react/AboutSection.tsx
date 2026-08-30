@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { GraduationCap, Award, ShieldCheck, CheckCircle2, Terminal, Cpu, Database, Briefcase } from "lucide-react";
 
 const stats = [
-  { value: "6to", label: "Ciclo Universitario", detail: "Ingeniería de Sistemas · UPC", color: "from-sky-500/20 to-blue-500/10 text-sky-400" },
+  { value: "UPC", label: "Alma Máter & Formación", detail: "Ing. Sistemas de Información", color: "from-sky-500/20 to-blue-500/10 text-sky-400" },
   { value: "10+", label: "Certificaciones", detail: "Meta, Oracle Academy, UMich", color: "from-emerald-500/20 to-teal-500/10 text-emerald-400" },
   { value: "15+", label: "Sistemas & Proyectos", detail: "Full Stack, APIs y Microservicios", color: "from-blue-500/20 to-indigo-500/10 text-blue-400" },
   { value: "100%", label: "Orientado a Resultados", detail: "Clean Code & Patrones de Diseño", color: "from-purple-500/20 to-pink-500/10 text-purple-400" },
@@ -69,7 +69,7 @@ export default function AboutSection() {
           >
             <div className="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
               <p>
-                Como futuro <strong className="text-white">Ingeniero de Sistemas de Información de la UPC</strong>, combino una sólida base teórica en ciencias de la computación con capacidad práctica para desarrollar soluciones de software listas para producción.
+                Como <strong className="text-white">Ingeniero de Sistemas de Información de la UPC</strong>, combino una sólida formación en ciencias de la computación con capacidad demostrada para diseñar, desarrollar y desplegar soluciones de software listas para producción.
               </p>
               <p>
                 Mi enfoque técnico se centra en el <strong className="text-sky-300">desarrollo backend empresarial</strong> (Java con Spring Boot y C# con .NET), garantizando servicios seguros, escalables y con alta disponibilidad, complementado con experiencia en el desarrollo de interfaces modernas en <strong className="text-emerald-300">React 19, TypeScript y Astro</strong>.
@@ -82,7 +82,7 @@ export default function AboutSection() {
             <div className="mt-6 pt-5 border-t border-white/10 grid sm:grid-cols-2 gap-3 text-xs text-slate-300 font-mono">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Disponibilidad inmediata para prácticas</span>
+                <span>Disponibilidad inmediata para contratación</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" />
