@@ -1,0 +1,45 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/astro/Navbar.astro";
+import Footer from "../components/astro/Footer.astro";
+import ScrollProgress from "../components/react/ScrollProgress";
+import BackgroundScroll from "../components/react/BackgroundScroll";
+import HeroInteractive from "../components/react/HeroInteractive";
+import AboutSection from "../components/react/AboutSection";
+import SkillsMatrix from "../components/react/SkillsMatrix";
+import ProjectsShowcase from "../components/react/ProjectsShowcase";
+import CertificatesModal from "../components/react/CertificatesModal";
+import TestimonialsTrack from "../components/react/TestimonialsTrack";
+import BlogSection from "../components/react/BlogSection";
+import ContactInteractive from "../components/react/ContactInteractive";
+import ScrollToTop from "../components/react/ScrollToTop";
+---
+
+<Layout>
+  <!-- Scroll Progress Indicator -->
+  <ScrollProgress client:load />
+
+  <!-- Animated Interactive Scroll Video & Mesh Canvas Background -->
+  <BackgroundScroll client:load />
+
+  <!-- Fixed Blur Navbar -->
+  <Navbar />
+
+  <!-- Main Content Sections -->
+  <main class="relative z-10">
+    <HeroInteractive client:load />
+    <AboutSection client:visible />
+    <SkillsMatrix client:visible />
+    <ProjectsShowcase client:visible />
+    <CertificatesModal client:visible />
+    <TestimonialsTrack client:visible />
+    <BlogSection client:visible />
+    <ContactInteractive client:visible />
+  </main>
+
+  <!-- Footer -->
+  <Footer />
+
+  <!-- Scroll to top floating trigger -->
+  <ScrollToTop client:load />
+</Layout>
