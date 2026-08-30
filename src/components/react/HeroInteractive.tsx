@@ -1,224 +1,194 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, Code2, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowRight, CheckCircle2, Code2, Github, Linkedin, Mail, MapPin, Building, ShieldCheck, Briefcase } from "lucide-react";
 
-const roles = [
-  "Desarrollador Full Stack",
-  "Ingeniería de Sistemas · UPC (6to ciclo)",
-  "Especialista Java · Spring Boot",
-  "Desarrollador C# · .NET",
-  "Frontend React · Next.js · Astro",
-  "Desarrollo Acelerado con IA",
+const specializations = [
+  "Desarrollador Backend & Full Stack",
+  "Arquitectura Java (Spring Boot) & C# (.NET)",
+  "Bases de Datos Relacionales (SQL Server / Oracle)",
+  "Frontend Moderno (React 19 / TypeScript / Astro)",
+  "Ingeniería Asistida con Inteligencia Artificial",
 ];
 
-const techStack = [
-  { name: "Java", color: "from-orange-500/20 to-red-500/20 text-orange-400 border-orange-500/30" },
-  { name: "Spring Boot", color: "from-emerald-500/20 to-green-500/20 text-emerald-400 border-emerald-500/30" },
-  { name: "C# / .NET", color: "from-purple-500/20 to-indigo-500/20 text-purple-400 border-purple-500/30" },
-  { name: "React", color: "from-cyan-500/20 to-blue-500/20 text-cyan-400 border-cyan-500/30" },
-  { name: "Astro", color: "from-pink-500/20 to-rose-500/20 text-pink-400 border-pink-500/30" },
-  { name: "SQL Server", color: "from-blue-500/20 to-cyan-500/20 text-blue-400 border-blue-500/30" },
-  { name: "Docker", color: "from-sky-500/20 to-blue-500/20 text-sky-400 border-sky-500/30" },
+const enterpriseStrengths = [
+  { label: "Backend Core", desc: "Spring Boot & .NET" },
+  { label: "Data Integrity", desc: "SQL Server & Oracle" },
+  { label: "Frontend Speed", desc: "React & TypeScript" },
+  { label: "AI Acceleration", desc: "High-Velocity Dev" },
 ];
 
 export default function HeroInteractive() {
-  const [roleIndex, setRoleIndex] = useState(0);
+  const [specIndex, setSpecIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    const current = roles[roleIndex];
+    const current = specializations[specIndex];
     const timer = setTimeout(
       () => {
         if (!isDeleting) {
           if (charIndex < current.length) {
             setCharIndex((prev) => prev + 1);
           } else {
-            setTimeout(() => setIsDeleting(true), 2200);
+            setTimeout(() => setIsDeleting(true), 2400);
           }
         } else {
           if (charIndex > 0) {
             setCharIndex((prev) => prev - 1);
           } else {
             setIsDeleting(false);
-            setRoleIndex((prev) => (prev + 1) % roles.length);
+            setSpecIndex((prev) => (prev + 1) % specializations.length);
           }
         }
       },
-      isDeleting ? 30 : 65
+      isDeleting ? 25 : 55
     );
     return () => clearTimeout(timer);
-  }, [charIndex, isDeleting, roleIndex]);
+  }, [charIndex, isDeleting, specIndex]);
 
   const scrollTo = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-4 sm:px-6 z-10">
-      <div className="max-w-5xl mx-auto w-full">
-        {/* Top Status Badge */}
+    <section id="hero" className="relative min-h-[92vh] flex items-center justify-center pt-28 pb-16 px-4 sm:px-6 z-10">
+      <div className="max-w-6xl mx-auto w-full">
+        {/* Recruiter Top Notice Bar */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex justify-center mb-6"
+          className="flex flex-wrap items-center justify-center gap-3 mb-8"
         >
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-card border border-cyan-500/20 text-xs text-zinc-300 shadow-[0_0_15px_rgba(6,182,212,0.15)]">
-            <span className="relative flex h-2 w-2">
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full glass-card border border-emerald-500/30 text-xs text-slate-200 shadow-[0_0_20px_rgba(16,185,129,0.15)]">
+            <span className="relative flex h-2.5 w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
             </span>
-            <span className="font-mono text-zinc-400">UPC · Sistemas de Información</span>
-            <span className="text-zinc-600">|</span>
-            <span className="text-cyan-400 font-medium flex items-center gap-1">
-              <Sparkles className="w-3 h-3" /> Disponible para proyectos
-            </span>
+            <span className="font-semibold text-emerald-400">Open to Work</span>
+            <span className="text-slate-600">|</span>
+            <span className="text-slate-300">Disponible para Prácticas Preprofesionales &amp; Roles de Ingeniería</span>
+          </div>
+
+          <div className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full glass-card border border-white/10 text-xs text-slate-400 font-mono">
+            <MapPin className="w-3.5 h-3.5 text-sky-400" /> Lima, Perú · Modalidad Remota / Híbrida
           </div>
         </motion.div>
 
-        {/* Main Headline */}
-        <div className="text-center">
+        {/* Executive Headline & Value Proposition */}
+        <div className="text-center max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="flex items-center justify-center gap-2 mb-3 text-xs sm:text-sm font-mono text-sky-400 uppercase tracking-widest"
+          >
+            <Building className="w-4 h-4" />
+            <span>Perfil Profesional de Ingeniería de Software</span>
+          </motion.div>
+
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-4 leading-tight"
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-5 leading-[1.1]"
           >
-            Hola, soy{" "}
-            <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
-              Paulo Espinoza
+            Paulo Espinoza
+            <span className="block text-2xl sm:text-4xl lg:text-5xl mt-2 font-bold gradient-accent">
+              Software Engineer &amp; Full Stack
             </span>
           </motion.h1>
 
-          {/* Typewriter text */}
+          {/* Dynamic Specialization Bar */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="h-9 sm:h-11 flex items-center justify-center text-lg sm:text-2xl font-mono text-zinc-300 mb-6"
+            className="h-10 flex items-center justify-center text-base sm:text-xl font-mono text-slate-300 mb-6"
           >
-            <span className="text-cyan-400 mr-2">$</span>
-            <span>{roles[roleIndex].substring(0, charIndex)}</span>
-            <span className="w-2.5 h-6 bg-cyan-400 ml-1 animate-pulse inline-block align-middle" />
+            <span className="text-sky-400 font-bold mr-2">&gt;</span>
+            <span>{specializations[specIndex].substring(0, charIndex)}</span>
+            <span className="w-2 h-5 bg-sky-400 ml-1 animate-pulse inline-block align-middle" />
           </motion.div>
 
+          {/* Recruiter Elevator Pitch */}
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="max-w-2xl mx-auto text-sm sm:text-base text-zinc-400 mb-10 leading-relaxed"
+            className="text-sm sm:text-lg text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed font-normal"
           >
-            Construyendo soluciones de software robustas y escalables con arquitectura moderna,
-            backend en <strong className="text-zinc-200">Java &amp; .NET</strong>, interfaces reactivas y desarrollo acelerado con inteligencia artificial.
+            Estudiante de <strong>Ingeniería de Sistemas de Información en la UPC (6to ciclo)</strong>. Especializado en el diseño e implementación de servicios backend robustos en <strong className="text-sky-300">Java / Spring Boot</strong> y <strong className="text-indigo-300">C# / .NET</strong>, bases de datos relacionales y aplicaciones web modernas con <strong className="text-emerald-300">React &amp; Astro</strong>, aplicando patrones de arquitectura limpia y desarrollo acelerado con IA.
           </motion.p>
 
-          {/* Action CTAs */}
+          {/* Recruiter Action Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="flex flex-wrap items-center justify-center gap-4 mb-12"
+            className="flex flex-wrap items-center justify-center gap-3.5 mb-14"
           >
             <button
-              onClick={() => scrollTo("projects")}
-              className="group px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white text-sm font-semibold shadow-[0_0_25px_rgba(59,130,246,0.4)] hover:shadow-[0_0_35px_rgba(6,182,212,0.6)] transition-all duration-300 flex items-center gap-2 cursor-pointer"
+              onClick={() => scrollTo("contact")}
+              className="px-7 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 via-sky-600 to-indigo-600 hover:from-blue-500 hover:to-sky-500 text-white text-sm font-semibold shadow-[0_0_30px_rgba(37,99,235,0.45)] hover:shadow-[0_0_40px_rgba(14,165,233,0.65)] transition-all duration-300 flex items-center gap-2 cursor-pointer"
             >
-              Explorar Proyectos
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <Briefcase className="w-4 h-4" />
+              <span>Contactar para Entrevista</span>
             </button>
 
             <button
-              onClick={() => scrollTo("contact")}
-              className="px-6 py-3 rounded-xl glass-card text-zinc-200 hover:text-white hover:border-zinc-500 text-sm font-medium transition-all duration-300 flex items-center gap-2 cursor-pointer"
+              onClick={() => scrollTo("projects")}
+              className="px-6 py-3.5 rounded-xl glass-card border border-white/15 hover:border-sky-400/50 text-slate-200 hover:text-white text-sm font-semibold transition-all duration-300 flex items-center gap-2 cursor-pointer"
             >
-              <Mail className="w-4 h-4 text-cyan-400" />
-              Contactarme
+              <span>Ver Casos de Estudio</span>
+              <ArrowRight className="w-4 h-4 text-sky-400" />
             </button>
-
-            <a
-              href="https://github.com/paulollito29-sketch"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-xl glass-card text-zinc-400 hover:text-white hover:border-cyan-500/40 transition-all duration-300"
-              aria-label="GitHub"
-            >
-              <Github className="w-4 h-4" />
-            </a>
 
             <a
               href="https://www.linkedin.com/in/paulo-espinoza9/"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-xl glass-card text-zinc-400 hover:text-white hover:border-blue-500/40 transition-all duration-300"
-              aria-label="LinkedIn"
+              className="p-3.5 rounded-xl glass-card border border-white/15 text-slate-300 hover:text-white hover:border-blue-500/50 transition-all"
+              aria-label="Perfil de LinkedIn de Paulo Espinoza"
+              title="LinkedIn Profesional"
             >
-              <Linkedin className="w-4 h-4" />
+              <Linkedin className="w-4.5 h-4.5 text-[#0a66c2]" />
             </a>
-          </motion.div>
 
-          {/* Interactive Tech Badge Bar */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-wrap items-center justify-center gap-2.5 max-w-3xl mx-auto"
-          >
-            {techStack.map((tech, i) => (
-              <motion.span
-                key={tech.name}
-                whileHover={{ scale: 1.08, y: -2 }}
-                transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                className={`px-3 py-1 text-xs font-mono rounded-lg bg-gradient-to-b border ${tech.color} backdrop-blur-sm cursor-default shadow-sm`}
-              >
-                {tech.name}
-              </motion.span>
-            ))}
+            <a
+              href="https://github.com/paulollito29-sketch"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3.5 rounded-xl glass-card border border-white/15 text-slate-300 hover:text-white hover:border-sky-500/50 transition-all"
+              aria-label="GitHub de Paulo Espinoza"
+              title="Repositorios de GitHub"
+            >
+              <Github className="w-4.5 h-4.5 text-slate-200" />
+            </a>
           </motion.div>
         </div>
 
-        {/* Animated Terminal / Code Preview Canvas Card */}
+        {/* Enterprise Strengths Metric Cards */}
         <motion.div
-          initial={{ opacity: 0, y: 35 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.7 }}
-          className="mt-14 max-w-3xl mx-auto rounded-2xl glass-card border border-white/10 overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.8)]"
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto"
         >
-          <div className="flex items-center justify-between px-4 py-3 bg-zinc-950/70 border-b border-white/5">
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-red-500/80" />
-              <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-              <div className="w-3 h-3 rounded-full bg-green-500/80" />
-              <span className="text-xs font-mono text-zinc-500 ml-2">paulo-dev@portfolio:~</span>
+          {enterpriseStrengths.map((item) => (
+            <div
+              key={item.label}
+              className="glass-card p-4 sm:p-5 rounded-2xl border border-white/10 hover:border-sky-500/30 transition-all flex items-start gap-3.5"
+            >
+              <div className="w-8 h-8 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 shrink-0 mt-0.5">
+                <ShieldCheck className="w-4 h-4" />
+              </div>
+              <div>
+                <div className="text-xs text-slate-400 font-mono">{item.label}</div>
+                <div className="text-sm font-bold text-white mt-0.5">{item.desc}</div>
+              </div>
             </div>
-            <div className="flex items-center gap-2 text-xs font-mono text-zinc-500">
-              <Code2 className="w-3.5 h-3.5 text-cyan-400" />
-              <span>FullStack.ts</span>
-            </div>
-          </div>
-          <div className="p-5 font-mono text-xs sm:text-sm text-zinc-300 space-y-2 bg-[#070a12]/80">
-            <p className="text-zinc-500">// Perfil de ingeniería de software</p>
-            <p>
-              <span className="text-purple-400">const</span>{" "}
-              <span className="text-cyan-300">developer</span> = &#123;
-            </p>
-            <p className="pl-4">
-              <span className="text-blue-400">name:</span> <span className="text-emerald-300">"Paulo Espinoza"</span>,
-            </p>
-            <p className="pl-4">
-              <span className="text-blue-400">university:</span> <span className="text-emerald-300">"UPC - 6to Ciclo"</span>,
-            </p>
-            <p className="pl-4">
-              <span className="text-blue-400">focus:</span> [<span className="text-yellow-300">"Spring Boot"</span>, <span className="text-yellow-300">".NET"</span>, <span className="text-yellow-300">"React"</span>, <span className="text-yellow-300">"AI-Driven Dev"</span>],
-            </p>
-            <p className="pl-4">
-              <span className="text-blue-400">status:</span> <span className="text-emerald-400">"Open to internships &amp; high-impact roles"</span>
-            </p>
-            <p>&#125;;</p>
-          </div>
+          ))}
         </motion.div>
       </div>
     </section>

@@ -1,90 +1,167 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Server, Globe, Database, Sparkles, Cpu } from "lucide-react";
+import { Server, Globe, Database, Sparkles, Cpu, CheckCircle2, ShieldCheck } from "lucide-react";
 
-interface SkillItem {
+interface Competency {
   name: string;
-  level: number;
-  tags?: string[];
+  levelText: "Avanzado" | "Competente / Sólido" | "Intermedio Alto";
+  levelPercent: number;
+  description: string;
+  tags: string[];
 }
 
-interface SkillCategory {
+interface Category {
   id: string;
   label: string;
   icon: any;
-  description: string;
-  skills: SkillItem[];
+  summary: string;
+  competencies: Competency[];
 }
 
-const categories: SkillCategory[] = [
+const enterpriseCategories: Category[] = [
   {
     id: "backend",
-    label: "Backend & APIs",
+    label: "Backend & Microservicios",
     icon: Server,
-    description: "Desarrollo de servicios robustos, arquitecturas en capas y APIs RESTful seguras.",
-    skills: [
-      { name: "Java / Spring Boot", level: 90, tags: ["Spring Security", "JPA/Hibernate", "REST API"] },
-      { name: "C# / .NET", level: 85, tags: [".NET Core", "Entity Framework", "LINQ"] },
-      { name: "Python", level: 82, tags: ["Scripting", "Data Processing", "Algoritmos"] },
-      { name: "Arquitectura en Capas / MVC", level: 88, tags: ["SOLID", "Clean Code", "Patrones"] },
-    ],
-  },
-  {
-    id: "frontend",
-    label: "Frontend & UI",
-    icon: Globe,
-    description: "Creación de experiencias web dinámicas, reactivas y visualmente atractivas.",
-    skills: [
-      { name: "React / React 19", level: 88, tags: ["Hooks", "Context", "Componentes"] },
-      { name: "TypeScript / JavaScript", level: 85, tags: ["Tipado estricto", "ESNext"] },
-      { name: "Next.js & Astro", level: 82, tags: ["SSR", "Static Site Gen", "Islands"] },
-      { name: "Tailwind CSS & Framer Motion", level: 90, tags: ["Responsive", "Animaciones UI", "Design Systems"] },
-      { name: "Angular", level: 78, tags: ["TypeScript", "Directivas", "Servicios"] },
+    summary: "Ingeniería de servidores, diseño de APIs RESTful escalables, seguridad de datos y arquitectura desacoplada.",
+    competencies: [
+      {
+        name: "Java & Ecosistema Spring Boot",
+        levelText: "Avanzado",
+        levelPercent: 90,
+        description: "Construcción de APIs RESTful, inyección de dependencias, Spring Security con JWT, JPA/Hibernate y validaciones.",
+        tags: ["Spring Boot", "Spring Security", "JPA/Hibernate", "REST APIs", "Maven/Gradle"],
+      },
+      {
+        name: "C# & Plataforma .NET Core",
+        levelText: "Competente / Sólido",
+        levelPercent: 86,
+        description: "Desarrollo backend en .NET, LINQ, Entity Framework Core y arquitecturas orientadas a objetos.",
+        tags: [".NET Core", "Entity Framework", "LINQ", "C# Moderno", "Windows Forms"],
+      },
+      {
+        name: "Arquitectura de Software & Buenas Prácticas",
+        levelText: "Avanzado",
+        levelPercent: 88,
+        description: "Aplicación rigurosa de principios SOLID, Clean Architecture, separación de capas y patrones de diseño (Factory, Singleton, Repository).",
+        tags: ["SOLID", "Clean Code", "Design Patterns", "Layered Architecture"],
+      },
+      {
+        name: "Python & Procesamiento de Datos",
+        levelText: "Competente / Sólido",
+        levelPercent: 84,
+        description: "Desarrollo de scripts, estructuras de datos avanzadas y algoritmos de optimización.",
+        tags: ["Python 3", "Algoritmos", "Estructuras de Datos", "Data Processing"],
+      },
     ],
   },
   {
     id: "database",
-    label: "Bases de Datos",
+    label: "Bases de Datos & Persistencia",
     icon: Database,
-    description: "Modelado relacional, consultas optimizadas, integridad de datos e índices.",
-    skills: [
-      { name: "SQL Server (T-SQL)", level: 88, tags: ["Procedimientos", "Triggers", "Consultas complejas"] },
-      { name: "Oracle SQL & PL/SQL", level: 85, tags: ["Oracle Academy Cert", "Vistas", "Funciones"] },
-      { name: "MySQL / PostgreSQL", level: 82, tags: ["Transacciones", "Normalización"] },
+    summary: "Modelado relacional, consultas optimizadas, integridad transaccional ACID y procedimientos almacenados.",
+    competencies: [
+      {
+        name: "Microsoft SQL Server & T-SQL",
+        levelText: "Avanzado",
+        levelPercent: 88,
+        description: "Modelado relacional, normalización (3FN), creación de índices, triggers, transacciones complejas y procedimientos almacenados.",
+        tags: ["SQL Server", "T-SQL", "Stored Procedures", "Triggers", "Índices"],
+      },
+      {
+        name: "Oracle SQL & PL/SQL (Certificación Oracle)",
+        levelText: "Competente / Sólido",
+        levelPercent: 86,
+        description: "Acreditado por Oracle Academy en diseño de bases de datos relacionales, vistas complejas y funciones.",
+        tags: ["Oracle Academy", "PL/SQL", "Relational Design", "Vistas"],
+      },
+      {
+        name: "MySQL & PostgreSQL",
+        levelText: "Competente / Sólido",
+        levelPercent: 82,
+        description: "Persistencia para microservicios, migraciones de esquemas y conexión con ORMs modernos.",
+        tags: ["PostgreSQL", "MySQL", "JPA Mappings", "ACID Compliance"],
+      },
     ],
   },
   {
-    id: "tools",
-    label: "Herramientas & IA",
+    id: "frontend",
+    label: "Frontend & Interfaces Web",
+    icon: Globe,
+    summary: "Experiencias de usuario de alto impacto visual, reactividad fluida, rendimiento web óptimo y tipado estricto.",
+    competencies: [
+      {
+        name: "React 19 & TypeScript",
+        levelText: "Avanzado",
+        levelPercent: 88,
+        description: "Componentes funcionales, Custom Hooks, gestión de estado, consumo de APIs y tipado estricto sin 'any'.",
+        tags: ["React 19", "TypeScript", "Custom Hooks", "Context API", "Vite"],
+      },
+      {
+        name: "Astro & Next.js (SSR / SSG)",
+        levelText: "Competente / Sólido",
+        levelPercent: 85,
+        description: "Arquitectura de islas (Islands), generación de sitios estáticos ultrarrápidos y Server-Side Rendering.",
+        tags: ["Astro 5", "Next.js", "Islands Architecture", "SEO Optimization"],
+      },
+      {
+        name: "Tailwind CSS & Framer Motion",
+        levelText: "Avanzado",
+        levelPercent: 90,
+        description: "Diseño responsivo, glassmorphism empresarial, animaciones basadas en física y diseño accesible.",
+        tags: ["Tailwind CSS", "Framer Motion", "Responsive Design", "Microinteracciones"],
+      },
+    ],
+  },
+  {
+    id: "devops-ai",
+    label: "DevOps & Desarrollo Acelerado con IA",
     icon: Sparkles,
-    description: "Flujos de trabajo modernos con contenedores, control de versiones y agentes de IA.",
-    skills: [
-      { name: "Desarrollo Asistido con IA", level: 94, tags: ["Prompt Engineering", "Cursor/Copilot", "Hermes", "OpenCode"] },
-      { name: "Docker & Contenedores", level: 86, tags: ["Dockerfiles", "Docker Compose", "Multi-stage"] },
-      { name: "Git & GitHub", level: 90, tags: ["Branching", "Pull Requests", "CI/CD Básico"] },
-      { name: "Swagger / OpenAPI / Postman", level: 88, tags: ["Documentación API", "Testing de endpoints"] },
+    summary: "Herramientas de contenedorización, flujos de trabajo en equipo y técnicas avanzadas de desarrollo asistido con IA.",
+    competencies: [
+      {
+        name: "Ingeniería Asistida con IA",
+        levelText: "Avanzado",
+        levelPercent: 94,
+        description: "Aceleración de desarrollo mediante modelos avanzados, generación sistemática de tests y refactorización guiada.",
+        tags: ["AI-Augmented Dev", "Prompt Engineering", "Test Generation", "Code Review IA"],
+      },
+      {
+        name: "Docker & Contenedores",
+        levelText: "Competente / Sólido",
+        levelPercent: 86,
+        description: "Dockerfiles multi-stage para Java/.NET/Node, composición de entornos con Docker Compose y redes virtuales.",
+        tags: ["Docker", "Docker Compose", "Multi-stage Builds", "Containerization"],
+      },
+      {
+        name: "Git & Flujo de Trabajo en Equipo",
+        levelText: "Avanzado",
+        levelPercent: 90,
+        description: "Control de versiones, Git Flow, resolución de conflictos, Pull Requests y documentación técnica mediante OpenAPI / Swagger.",
+        tags: ["Git", "GitHub", "Git Flow", "Swagger/OpenAPI", "Postman"],
+      },
     ],
   },
 ];
 
 export default function SkillsMatrix() {
-  const [activeTab, setActiveTab] = useState(categories[0].id);
-  const currentCategory = categories.find((c) => c.id === activeTab) || categories[0];
+  const [activeTab, setActiveTab] = useState(enterpriseCategories[0].id);
+  const currentCategory = enterpriseCategories.find((c) => c.id === activeTab) || enterpriseCategories[0];
 
   return (
     <section id="skills" className="py-24 px-4 sm:px-6 relative z-10">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <div className="mb-14 text-center sm:text-left">
+        <div className="mb-12 text-center sm:text-left">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-card border-purple-500/20 text-xs font-mono text-purple-400 mb-3"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-card border border-purple-500/30 text-xs font-mono text-purple-400 mb-3"
           >
-            <Cpu className="w-3.5 h-3.5" />
-            <span>STACK TECNOLÓGICO</span>
+            <Cpu className="w-4 h-4" />
+            <span>MATRIZ DE COMPETENCIAS TÉCNICAS</span>
           </motion.div>
 
           <motion.h2
@@ -92,34 +169,34 @@ export default function SkillsMatrix() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl sm:text-4xl font-bold text-white tracking-tight"
+            className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight"
           >
-            Habilidades &amp; Competencias
+            Capacidades de Ingeniería &amp; Stack Tecnológico
           </motion.h2>
         </div>
 
         {/* Tab Navigation */}
-        <div className="flex flex-wrap gap-2.5 mb-8 p-1.5 glass-card rounded-2xl border border-white/10 w-fit">
-          {categories.map((cat) => {
+        <div className="flex flex-wrap gap-2 mb-8 p-1.5 glass-card rounded-2xl border border-white/10 w-fit">
+          {enterpriseCategories.map((cat) => {
             const Icon = cat.icon;
             const isActive = activeTab === cat.id;
             return (
               <button
                 key={cat.id}
                 onClick={() => setActiveTab(cat.id)}
-                className={`relative px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition-all duration-300 flex items-center gap-2 cursor-pointer ${
-                  isActive ? "text-white" : "text-zinc-400 hover:text-zinc-200"
+                className={`relative px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center gap-2.5 cursor-pointer ${
+                  isActive ? "text-white" : "text-slate-400 hover:text-slate-200"
                 }`}
               >
                 {isActive && (
                   <motion.div
-                    layoutId="activeSkillTab"
-                    className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-purple-500/20 border border-cyan-500/40 rounded-xl shadow-[0_0_20px_rgba(6,182,212,0.2)]"
+                    layoutId="activeEnterpriseSkillTab"
+                    className="absolute inset-0 bg-blue-600/25 border border-sky-400/40 rounded-xl shadow-[0_0_20px_rgba(14,165,233,0.2)]"
                     transition={{ type: "spring", stiffness: 500, damping: 35 }}
                   />
                 )}
                 <span className="relative z-10 flex items-center gap-2">
-                  <Icon className={`w-4 h-4 ${isActive ? "text-cyan-400" : "text-zinc-400"}`} />
+                  <Icon className={`w-4 h-4 ${isActive ? "text-sky-400" : "text-slate-400"}`} />
                   {cat.label}
                 </span>
               </button>
@@ -127,7 +204,7 @@ export default function SkillsMatrix() {
           })}
         </div>
 
-        {/* Tab Content Panels */}
+        {/* Competencies Panel */}
         <AnimatePresence mode="wait">
           <motion.div
             key={currentCategory.id}
@@ -137,50 +214,51 @@ export default function SkillsMatrix() {
             transition={{ duration: 0.35 }}
             className="glass-card p-6 sm:p-8 rounded-2xl border border-white/10"
           >
-            <p className="text-xs sm:text-sm text-zinc-400 mb-6 font-mono">
-              {currentCategory.description}
+            <p className="text-xs sm:text-sm text-slate-300 mb-8 font-mono bg-zinc-950/40 p-3.5 rounded-xl border border-white/5">
+              💡 {currentCategory.summary}
             </p>
 
             <div className="grid md:grid-cols-2 gap-6">
-              {currentCategory.skills.map((skill, index) => (
+              {currentCategory.competencies.map((comp, index) => (
                 <div
-                  key={skill.name}
-                  className="p-4 rounded-xl bg-zinc-950/40 border border-white/5 hover:border-cyan-500/20 transition-all group"
+                  key={comp.name}
+                  className="p-5 rounded-xl bg-zinc-950/50 border border-white/5 hover:border-sky-500/30 transition-all group flex flex-col justify-between"
                 >
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-semibold text-zinc-200 group-hover:text-cyan-300 transition-colors">
-                      {skill.name}
-                    </span>
-                    <span className="text-xs font-mono text-cyan-400 font-bold">
-                      {skill.level}%
-                    </span>
-                  </div>
-
-                  {/* Progress Bar with glowing fill */}
-                  <div className="h-2 w-full bg-zinc-800/80 rounded-full overflow-hidden mb-3">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      animate={{ width: `${skill.level}%` }}
-                      transition={{ duration: 0.8, delay: index * 0.1, ease: "easeOut" }}
-                      className="h-full bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 rounded-full relative"
-                    >
-                      <div className="absolute right-0 top-0 bottom-0 w-2 bg-white/60 blur-[1px]" />
-                    </motion.div>
-                  </div>
-
-                  {/* Tags */}
-                  {skill.tags && (
-                    <div className="flex flex-wrap gap-1.5">
-                      {skill.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="px-2 py-0.5 text-[10px] font-mono rounded bg-white/5 text-zinc-400 border border-white/5"
-                        >
-                          {tag}
-                        </span>
-                      ))}
+                  <div>
+                    <div className="flex items-center justify-between mb-2">
+                      <h4 className="text-sm font-bold text-white group-hover:text-sky-300 transition-colors">
+                        {comp.name}
+                      </h4>
+                      <span className="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400">
+                        {comp.levelText}
+                      </span>
                     </div>
-                  )}
+
+                    <p className="text-xs text-slate-400 leading-relaxed mb-4">
+                      {comp.description}
+                    </p>
+
+                    {/* Progress indicator */}
+                    <div className="h-1.5 w-full bg-zinc-800 rounded-full overflow-hidden mb-4">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        animate={{ width: `${comp.levelPercent}%` }}
+                        transition={{ duration: 0.8, delay: index * 0.1, ease: "easeOut" }}
+                        className="h-full bg-gradient-to-r from-blue-500 via-sky-400 to-indigo-400 rounded-full"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="flex flex-wrap gap-1.5 pt-2">
+                    {comp.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2 py-0.5 text-[10px] font-mono rounded bg-white/5 text-slate-300 border border-white/5"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>
