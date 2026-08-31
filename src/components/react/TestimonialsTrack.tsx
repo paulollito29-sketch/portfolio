@@ -27,7 +27,7 @@ const testimonials: Testimonial[] = [
   },
   {
     name: "Compromiso & Adaptabilidad",
-    role: "Ingeniería de Software",
+    role: "Ingeniería de Sistemas",
     text: "Curva de aprendizaje sobresaliente para asimilar nuevos frameworks, resolver incidentes y adoptar herramientas de frontend y backend con solidez técnica.",
     rating: 5,
     tags: ["Resolución de Problemas", "React", ".NET"],

@@ -70,7 +70,7 @@ export default function ContactInteractive() {
               <div>
                 <h3 className="text-lg font-bold text-white mb-2">Información para Reclutadores</h3>
                 <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                  Estoy activamente evaluando oportunidades para incorporarme como <strong className="text-white">Ingeniero de Software / Desarrollador Full Stack &amp; Backend</strong> en proyectos de alto impacto.
+                  Estoy activamente evaluando oportunidades para incorporarme como <strong className="text-white">Ingeniero de Sistemas de Información / Desarrollador Full Stack &amp; Backend</strong> en proyectos de alto impacto.
                 </p>
               </div>
 

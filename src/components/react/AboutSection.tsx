@@ -10,7 +10,7 @@ const stats = [
 
 const capabilities = [
   {
-    title: "Ingeniería de Software & Arquitectura",
+    title: "Arquitectura de Sistemas & Backend",
     desc: "Dominio de principios SOLID, arquitecturas desacopladas (Clean/Hexagonal), inyección de dependencias y diseño de APIs RESTful con Spring Boot y .NET Core.",
     icon: Terminal,
     tags: ["SOLID", "Clean Architecture", "RESTful Standards", "Design Patterns"],
@@ -23,7 +23,7 @@ const capabilities = [
   },
   {
     title: "Desarrollo Asistido por Inteligencia Artificial",
-    desc: "Aceleración sistemática del ciclo de vida del software utilizando herramientas de IA para generación de tests, refactorización y documentación técnica sin perder rigurosidad.",
+    desc: "Aceleración sistemática del ciclo de vida de los sistemas de información utilizando herramientas de IA para generación de tests, refactorización y documentación técnica sin perder rigurosidad.",
     icon: Cpu,
     tags: ["DevOps AI", "Prompt Engineering", "Testing Automatizado", "Alta Velocidad"],
   },
@@ -69,7 +69,7 @@ export default function AboutSection() {
           >
             <div className="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
               <p>
-                Como <strong className="text-white">Ingeniero de Sistemas de Información de la UPC</strong>, combino una sólida formación en ciencias de la computación con capacidad demostrada para diseñar, desarrollar y desplegar soluciones de software listas para producción.
+                Como <strong className="text-white">Ingeniero de Sistemas de Información de la UPC</strong>, combino una sólida formación en sistemas computacionales con capacidad demostrada para diseñar, desarrollar y desplegar sistemas de información listos para producción.
               </p>
               <p>
                 Mi enfoque técnico se centra en el <strong className="text-sky-300">desarrollo backend empresarial</strong> (Java con Spring Boot y C# con .NET), garantizando servicios seguros, escalables y con alta disponibilidad, complementado con experiencia en el desarrollo de interfaces modernas en <strong className="text-emerald-300">React 19, TypeScript y Astro</strong>.

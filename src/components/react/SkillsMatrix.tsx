@@ -40,11 +40,11 @@ const enterpriseCategories: Category[] = [
         tags: [".NET Core", "Entity Framework", "LINQ", "C# Moderno", "Windows Forms"],
       },
       {
-        name: "Arquitectura de Software & Buenas Prácticas",
+        name: "Arquitectura de Sistemas & Buenas Prácticas",
         levelText: "Avanzado",
         levelPercent: 88,
         description: "Aplicación rigurosa de principios SOLID, Clean Architecture, separación de capas y patrones de diseño (Factory, Singleton, Repository).",
-        tags: ["SOLID", "Clean Code", "Design Patterns", "Layered Architecture"],
+        tags: ["SOLID", "Clean Architecture", "Design Patterns", "Layered Architecture"],
       },
       {
         name: "Python & Procesamiento de Datos",

@@ -68,7 +68,7 @@ export default function HeroInteractive() {
             </span>
             <span className="font-semibold text-emerald-400">Open to Work</span>
             <span className="text-slate-600">|</span>
-            <span className="text-slate-300">Disponible para Roles de Ingeniería de Software &amp; Desarrollo Full Stack</span>
+            <span className="text-slate-300">Disponible para Roles en Ingeniería de Sistemas &amp; Desarrollo Full Stack</span>
           </div>
 
           <div className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full glass-card border border-white/10 text-xs text-slate-400 font-mono">
@@ -96,7 +96,7 @@ export default function HeroInteractive() {
           >
             Paulo Espinoza
             <span className="block text-2xl sm:text-4xl lg:text-5xl mt-2 font-bold gradient-accent">
-              Software Engineer &amp; Full Stack
+              Ingeniero de Sistemas de Información
             </span>
           </motion.h1>
 
@@ -119,7 +119,7 @@ export default function HeroInteractive() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-sm sm:text-lg text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed font-normal"
           >
-            <strong>Ingeniero de Sistemas de Información de la Universidad Peruana de Ciencias Aplicadas (UPC)</strong>. Especializado en el diseño e implementación de servicios backend robustos en <strong className="text-sky-300">Java / Spring Boot</strong> y <strong className="text-indigo-300">C# / .NET</strong>, bases de datos relacionales y aplicaciones web modernas con <strong className="text-emerald-300">React &amp; Astro</strong>, aplicando patrones de arquitectura limpia y desarrollo acelerado con IA.
+            <strong>Ingeniero de Sistemas de Información de la Universidad Peruana de Ciencias Aplicadas (UPC)</strong>. Especializado en el diseño e implementación de sistemas backend robustos en <strong className="text-sky-300">Java / Spring Boot</strong> y <strong className="text-indigo-300">C# / .NET</strong>, bases de datos relacionales y aplicaciones web modernas con <strong className="text-emerald-300">React &amp; Astro</strong>, aplicando patrones de arquitectura de sistemas y desarrollo acelerado con IA.
           </motion.p>
 
           {/* Recruiter Action Buttons */}

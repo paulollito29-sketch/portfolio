@@ -87,8 +87,8 @@ const enterpriseProjects: Project[] = [
   {
     title: "Nutrigo - Health & Nutrition Tracker",
     categoryName: "Aplicación Web Reactiva",
-    role: "Full Stack Engineer",
-    desc: "Software de cálculo metabólico y seguimiento nutricional personalizado con cálculos dinámicos de macronutrientes.",
+    role: "Full Stack Developer",
+    desc: "Sistema de cálculo metabólico y seguimiento nutricional personalizado con cálculos dinámicos de macronutrientes.",
     architecture: "Client-side state management con React Hooks y cálculo reactivo en tiempo real.",
     impactHighlights: [
       "Fórmulas metabólicas automáticas según metas del usuario",
@@ -103,7 +103,7 @@ const enterpriseProjects: Project[] = [
   {
     title: "Huffman File Compressor & Decompressor",
     categoryName: "Algoritmos & Estructuras de Datos",
-    role: "Software Developer",
+    role: "Systems Developer",
     desc: "Herramienta de compresión de archivos sin pérdida basada en árboles binarios y frecuencias de Huffman con interfaz gráfica.",
     architecture: "Implementación matemática de árboles de codificación de prefijo variable.",
     impactHighlights: [
@@ -118,8 +118,8 @@ const enterpriseProjects: Project[] = [
   },
   {
     title: "Flappy Bird Clone (Motor de Físicas en C#)",
-    categoryName: "Desarrollo de Software en .NET",
-    role: "Software Developer",
+    categoryName: "Desarrollo de Sistemas en .NET",
+    role: "Systems Developer",
     desc: "Recreación del clásico videojuego utilizando el runtime de C# y .NET con simulación matemática de gravedad y colisiones.",
     architecture: "Game loop síncrono con control de framerate y detección de bounding-box en Windows Forms.",
     impactHighlights: [
