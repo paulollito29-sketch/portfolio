@@ -1,18 +1,19 @@
 ---
-import { Github, Linkedin, Mail, Phone, Menu, X, ExternalLink, ShieldCheck, GraduationCap, Briefcase } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, Menu, X, ShieldCheck, GraduationCap, Briefcase } from "lucide-react";
+
+const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
 
 const navLinks = [
-  { label: "Inicio", href: "#home" },
-  { label: "Perfil", href: "#profile" },
-  { label: "Paneles", href: "#facets" },
-  { label: "Servicios", href: "#services" },
-  { label: "Casos de Estudio", href: "#portfolios" },
-  { label: "Certificaciones", href: "#certificates" },
-  { label: "Contacto", href: "#contact" },
+  { label: "Inicio", href: "/" },
+  { label: "Perfil", href: "/profile" },
+  { label: "Servicios", href: "/services" },
+  { label: "Portafolio", href: "/portfolio" },
+  { label: "Certificaciones", href: "/certificates" },
+  { label: "Contacto", href: "/contact" },
 ];
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-[#05070c]/90 backdrop-blur-md border-b border-white/5 transition-all" id="mainHeader">
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#05070c]/95 backdrop-blur-md border-b border-white/5 transition-all" id="mainHeader">
   <!-- Glowing Neon Top Line -->
   <div class="nav-top-line">
     <span class="nav-top-line-glow top"></span>
@@ -21,7 +22,7 @@ const navLinks = [
 
   <div class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-8 py-3.5">
     <!-- Brand Logo with Divider -->
-    <a href="#home" class="flex items-center gap-3 group">
+    <a href="/" class="flex items-center gap-3 group">
       <div class="flex items-center gap-2">
         <span class="font-display font-bold text-base sm:text-lg tracking-widest text-white group-hover:text-cyan-400 transition-colors uppercase">
           PAULO ESPINOZA
@@ -33,16 +34,23 @@ const navLinks = [
       </div>
     </a>
 
-    <!-- Desktop Navigation Links -->
+    <!-- Desktop Navigation Links with Active State -->
     <nav class="hidden lg:flex items-center gap-1">
-      {navLinks.map((link) => (
-        <a
-          href={link.href}
-          class="px-3.5 py-1.5 text-xs font-mono tracking-wider text-zinc-400 hover:text-white hover:bg-white/5 rounded-md transition-all uppercase"
-        >
-          {link.label}
-        </a>
-      ))}
+      {navLinks.map((link) => {
+        const isActive = (link.href === "/" && pathname === "/") || (link.href !== "/" && pathname.startsWith(link.href));
+        return (
+          <a
+            href={link.href}
+            class={`px-3.5 py-1.5 text-xs font-mono tracking-wider rounded-md transition-all uppercase ${
+              isActive
+                ? "bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 font-semibold shadow-[0_0_10px_rgba(0,229,255,0.2)]"
+                : "text-zinc-400 hover:text-white hover:bg-white/5"
+            }`}
+          >
+            {link.label}
+          </a>
+        );
+      })}
     </nav>
 
     <!-- Utilities / Social Icons -->
@@ -89,8 +97,12 @@ const navLinks = [
       </div>
 
       <a
-        href="#contact"
-        class="px-3 py-1.5 rounded-md bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 text-xs font-mono tracking-wider transition-all uppercase"
+        href="/contact"
+        class={`px-3.5 py-1.5 rounded-md text-xs font-mono tracking-wider transition-all uppercase ${
+          pathname === "/contact"
+            ? "bg-cyan-500 text-[#05070c] font-bold shadow-[0_0_12px_rgba(0,229,255,0.4)]"
+            : "bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/30"
+        }`}
       >
         Contacto
       </a>
@@ -122,16 +134,23 @@ const navLinks = [
       </div>
 
       <ul class="space-y-3 mb-8">
-        {navLinks.map((link) => (
-          <li>
-            <a
-              href={link.href}
-              class="mobile-nav-link block py-2 px-3 text-base font-display font-semibold tracking-wider text-zinc-300 hover:text-cyan-400 hover:bg-white/5 rounded-lg transition-colors uppercase"
-            >
-              {link.label}
-            </a>
-          </li>
-        ))}
+        {navLinks.map((link) => {
+          const isActive = (link.href === "/" && pathname === "/") || (link.href !== "/" && pathname.startsWith(link.href));
+          return (
+            <li>
+              <a
+                href={link.href}
+                class={`mobile-nav-link block py-2.5 px-3 text-base font-display font-semibold tracking-wider rounded-lg transition-colors uppercase ${
+                  isActive
+                    ? "bg-cyan-500/15 text-cyan-400 border border-cyan-500/30"
+                    : "text-zinc-300 hover:text-cyan-400 hover:bg-white/5"
+                }`}
+              >
+                {link.label}
+              </a>
+            </li>
+          );
+        })}
       </ul>
 
       {/* Dual Preview Panels inside Mobile Menu */}
@@ -143,8 +162,8 @@ const navLinks = [
           <p class="text-xs text-zinc-400 mb-3">
             Arquitectura de sistemas backend, microservicios en Spring Boot &amp; .NET y bases de datos relacionales.
           </p>
-          <a href="#portfolios" class="mobile-nav-link text-xs font-mono text-white underline underline-offset-4 hover:text-cyan-400">
-            Ver Portafolio →
+          <a href="/portfolio" class="mobile-nav-link text-xs font-mono text-white underline underline-offset-4 hover:text-cyan-400">
+            Ir a Portafolio →
           </a>
         </div>
 
@@ -155,8 +174,8 @@ const navLinks = [
           <p class="text-xs text-zinc-400 mb-3">
             Formación en la UPC y acreditaciones oficiales por Meta, Oracle Academy y University of Michigan.
           </p>
-          <a href="#certificates" class="mobile-nav-link text-xs font-mono text-white underline underline-offset-4 hover:text-cyan-400">
-            Ver Certificaciones →
+          <a href="/certificates" class="mobile-nav-link text-xs font-mono text-white underline underline-offset-4 hover:text-cyan-400">
+            Ir a Certificaciones →
           </a>
         </div>
       </div>

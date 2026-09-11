@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ChevronLeft, ChevronRight, Sparkles, Terminal, Database, Server, Layers, ShieldCheck, ExternalLink } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 
 const slides = [
   {
@@ -27,17 +27,17 @@ const highlights = [
   {
     tag: "Sistemas Backend",
     title: "Arquitectura de Microservicios & Seguridad JWT en Spring Boot",
-    href: "#portfolios",
+    href: "/portfolio",
   },
   {
     tag: "Acreditación Oficial",
     title: "Certificaciones emitidas por Meta, Oracle Academy y Univ. of Michigan",
-    href: "#certificates",
+    href: "/certificates",
   },
   {
     tag: "Sistemas & IA",
     title: "Desarrollo acelerado mediante flujos asistidos con Inteligencia Artificial",
-    href: "#services",
+    href: "/services",
   },
 ];
 
@@ -64,13 +64,9 @@ export default function HeroSlider() {
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
 
-  const scrollTo = (id: string) => {
-    document.getElementById(id.replace("#", ""))?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
-    <section id="home" className="relative min-h-screen flex flex-col justify-between pt-24 pb-8 px-4 sm:px-8 z-10">
-      <div className="max-w-7xl mx-auto w-full flex-1 flex flex-col justify-center py-12">
+    <section id="home" className="relative min-h-[85vh] flex flex-col justify-between pt-24 pb-8 px-4 sm:px-8 z-10">
+      <div className="max-w-7xl mx-auto w-full flex-1 flex flex-col justify-center py-10">
         {/* Main Cinematic Hero Slide Content */}
         <div className="relative min-h-[320px] sm:min-h-[360px] flex flex-col justify-center">
           <AnimatePresence mode="wait">
@@ -167,10 +163,6 @@ export default function HeroSlider() {
                 >
                   <a
                     href={highlights[currentHighlight].href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollTo(highlights[currentHighlight].href);
-                    }}
                     className="text-xs sm:text-sm font-mono text-zinc-300 hover:text-cyan-400 transition-colors truncate"
                   >
                     <span className="text-cyan-400 font-semibold mr-2">[{highlights[currentHighlight].tag}]</span>
@@ -184,23 +176,20 @@ export default function HeroSlider() {
           {/* Quick Action Pillars */}
           <div className="lg:col-span-6 flex items-center justify-between gap-2 overflow-x-auto text-xs font-mono">
             <a
-              href="#portfolios"
-              onClick={(e) => { e.preventDefault(); scrollTo("#portfolios"); }}
-              className="px-3 py-1.5 rounded bg-white/5 hover:bg-cyan-500/20 hover:text-cyan-300 border border-white/10 transition-all text-zinc-300 truncate"
+              href="/portfolio"
+              className="px-3.5 py-1.5 rounded bg-white/5 hover:bg-cyan-500/20 hover:text-cyan-300 border border-white/10 transition-all text-zinc-300 truncate"
             >
-              💼 Casos de Estudio
+              💼 Ver Portafolio
             </a>
             <a
-              href="#services"
-              onClick={(e) => { e.preventDefault(); scrollTo("#services"); }}
-              className="px-3 py-1.5 rounded bg-white/5 hover:bg-cyan-500/20 hover:text-cyan-300 border border-white/10 transition-all text-zinc-300 truncate"
+              href="/services"
+              className="px-3.5 py-1.5 rounded bg-white/5 hover:bg-cyan-500/20 hover:text-cyan-300 border border-white/10 transition-all text-zinc-300 truncate"
             >
-              ⚙️ Servicios de Sistemas
+              ⚙️ Ver Servicios
             </a>
             <a
-              href="#certificates"
-              onClick={(e) => { e.preventDefault(); scrollTo("#certificates"); }}
-              className="px-3 py-1.5 rounded bg-white/5 hover:bg-cyan-500/20 hover:text-cyan-300 border border-white/10 transition-all text-zinc-300 truncate"
+              href="/certificates"
+              className="px-3.5 py-1.5 rounded bg-white/5 hover:bg-cyan-500/20 hover:text-cyan-300 border border-white/10 transition-all text-zinc-300 truncate"
             >
               🎓 Certificaciones
             </a>

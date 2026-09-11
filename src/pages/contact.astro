@@ -1,0 +1,39 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/astro/Navbar.astro";
+import Footer from "../components/astro/Footer.astro";
+import ScrollProgress from "../components/react/ScrollProgress";
+import BackgroundScroll from "../components/react/BackgroundScroll";
+import ContactInteractive from "../components/react/ContactInteractive";
+import ScrollToTop from "../components/react/ScrollToTop";
+---
+
+<Layout
+  title="Contacto & Contratación | Paulo Espinoza · Ingeniero de Sistemas"
+  description="Canal oficial de contacto y reclutamiento para Paulo Espinoza. Disponibilidad inmediata para roles en Ingeniería de Sistemas, Backend y Full Stack."
+>
+  <ScrollProgress client:load />
+  <BackgroundScroll client:load />
+  <Navbar />
+
+  <main class="relative z-10 pt-24 pb-16 space-y-12">
+    <!-- Page Header Banner -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 pt-8">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-xs font-mono text-cyan-400 uppercase tracking-widest mb-4">
+        <span>CANAL OFICIAL DE COMUNICACIÓN</span>
+      </div>
+      <h1 class="text-4xl sm:text-6xl font-display font-bold text-white uppercase tracking-tight">
+        Contacto &amp; Contratación
+      </h1>
+      <p class="text-base sm:text-xl text-slate-300 font-light max-w-3xl mt-3 leading-relaxed">
+        Comunícate directamente para coordinar entrevistas técnicas, evaluar propuestas laborales o consultar disponibilidad de consultoría de sistemas.
+      </p>
+    </div>
+
+    <!-- Contact Interactive Form -->
+    <ContactInteractive client:load />
+  </main>
+
+  <Footer />
+  <ScrollToTop client:load />
+</Layout>

@@ -2,10 +2,6 @@ import { motion } from "framer-motion";
 import { Github, Linkedin, ExternalLink, Award, FileText, ArrowRight, Server, GraduationCap, Building, ShieldCheck } from "lucide-react";
 
 export default function DualPanels() {
-  const scrollTo = (id: string) => {
-    document.getElementById(id.replace("#", ""))?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <section id="facets" className="max-w-7xl mx-auto px-4 sm:px-8 py-16 relative z-10">
       <div className="grid lg:grid-cols-2 gap-8">
@@ -49,7 +45,7 @@ export default function DualPanels() {
             </p>
 
             {/* Featured Lead Card with Floating Badge */}
-            <div className="relative rounded-xl overflow-hidden border border-white/10 bg-[#05070c]/80 p-5 mb-8 hover:border-cyan-400/50 transition-all">
+            <a href="/portfolio" className="block relative rounded-xl overflow-hidden border border-white/10 bg-[#05070c]/80 p-5 mb-8 hover:border-cyan-400/50 transition-all group/card">
               <div className="floating-badge">
                 LATEST<br />SOLUTIONS
               </div>
@@ -60,7 +56,7 @@ export default function DualPanels() {
                 <span>Sistemas Empresariales</span>
               </div>
 
-              <h3 className="text-base sm:text-lg font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">
+              <h3 className="text-base sm:text-lg font-bold text-white mb-2 group-hover/card:text-cyan-300 transition-colors">
                 Vault Vintage &amp; Store Backend Ecosystem
               </h3>
               <p className="text-xs text-zinc-400 line-clamp-2 mb-4 leading-relaxed">
@@ -74,30 +70,18 @@ export default function DualPanels() {
                   </span>
                 ))}
               </div>
-            </div>
+            </a>
           </div>
 
           {/* Bottom Nav Links */}
           <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono uppercase tracking-wider text-zinc-400">
-            <a
-              href="#portfolios"
-              onClick={(e) => { e.preventDefault(); scrollTo("#portfolios"); }}
-              className="hover:text-cyan-400 transition-colors flex items-center gap-1"
-            >
+            <a href="/portfolio" className="hover:text-cyan-400 transition-colors flex items-center gap-1">
               Portafolio <ArrowRight className="w-3 h-3" />
             </a>
-            <a
-              href="#services"
-              onClick={(e) => { e.preventDefault(); scrollTo("#services"); }}
-              className="hover:text-cyan-400 transition-colors flex items-center gap-1"
-            >
+            <a href="/services" className="hover:text-cyan-400 transition-colors flex items-center gap-1">
               Servicios <ArrowRight className="w-3 h-3" />
             </a>
-            <a
-              href="#contact"
-              onClick={(e) => { e.preventDefault(); scrollTo("#contact"); }}
-              className="hover:text-cyan-400 transition-colors flex items-center gap-1"
-            >
+            <a href="/contact" className="hover:text-cyan-400 transition-colors flex items-center gap-1">
               Contacto <ArrowRight className="w-3 h-3" />
             </a>
           </div>
@@ -120,15 +104,13 @@ export default function DualPanels() {
 
               <div className="flex items-center gap-2">
                 <a
-                  href="#certificates"
-                  onClick={(e) => { e.preventDefault(); scrollTo("#certificates"); }}
+                  href="/profile"
                   className="px-4 py-2 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-[#05070c] font-display font-bold text-xs tracking-wider uppercase transition-all shadow-[0_0_15px_rgba(0,229,255,0.4)] flex items-center gap-1.5"
                 >
                   <GraduationCap className="w-3.5 h-3.5" /> UPC
                 </a>
                 <a
-                  href="#certificates"
-                  onClick={(e) => { e.preventDefault(); scrollTo("#certificates"); }}
+                  href="/certificates"
                   className="px-4 py-2 rounded-lg border border-white/20 hover:border-cyan-400 hover:text-cyan-400 text-white font-display font-bold text-xs tracking-wider uppercase transition-all flex items-center gap-1.5"
                 >
                   <Award className="w-3.5 h-3.5" /> Certificaciones
@@ -141,7 +123,7 @@ export default function DualPanels() {
             </p>
 
             {/* Featured Lead Card with Floating Badge */}
-            <div className="relative rounded-xl overflow-hidden border border-white/10 bg-[#05070c]/80 p-5 mb-8 hover:border-cyan-400/50 transition-all">
+            <a href="/certificates" className="block relative rounded-xl overflow-hidden border border-white/10 bg-[#05070c]/80 p-5 mb-8 hover:border-cyan-400/50 transition-all group/card">
               <div className="floating-badge">
                 ACCREDITED<br />LOGROS
               </div>
@@ -152,7 +134,7 @@ export default function DualPanels() {
                 <span>Acreditaciones Oficiales</span>
               </div>
 
-              <h3 className="text-base sm:text-lg font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">
+              <h3 className="text-base sm:text-lg font-bold text-white mb-2 group-hover/card:text-cyan-300 transition-colors">
                 Meta, Oracle Academy &amp; Michigan
               </h3>
               <p className="text-xs text-zinc-400 line-clamp-2 mb-4 leading-relaxed">
@@ -166,30 +148,18 @@ export default function DualPanels() {
                   </span>
                 ))}
               </div>
-            </div>
+            </a>
           </div>
 
           {/* Bottom Nav Links */}
           <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono uppercase tracking-wider text-zinc-400">
-            <a
-              href="#certificates"
-              onClick={(e) => { e.preventDefault(); scrollTo("#certificates"); }}
-              className="hover:text-cyan-400 transition-colors flex items-center gap-1"
-            >
+            <a href="/certificates" className="hover:text-cyan-400 transition-colors flex items-center gap-1">
               Certificados <ArrowRight className="w-3 h-3" />
             </a>
-            <a
-              href="#skills"
-              onClick={(e) => { e.preventDefault(); scrollTo("#skills"); }}
-              className="hover:text-cyan-400 transition-colors flex items-center gap-1"
-            >
-              Competencias <ArrowRight className="w-3 h-3" />
+            <a href="/profile" className="hover:text-cyan-400 transition-colors flex items-center gap-1">
+              Perfil &amp; UPC <ArrowRight className="w-3 h-3" />
             </a>
-            <a
-              href="#contact"
-              onClick={(e) => { e.preventDefault(); scrollTo("#contact"); }}
-              className="hover:text-cyan-400 transition-colors flex items-center gap-1"
-            >
+            <a href="/contact" className="hover:text-cyan-400 transition-colors flex items-center gap-1">
               Contacto <ArrowRight className="w-3 h-3" />
             </a>
           </div>

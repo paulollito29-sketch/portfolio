@@ -1,0 +1,59 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/astro/Navbar.astro";
+import Footer from "../components/astro/Footer.astro";
+import ScrollProgress from "../components/react/ScrollProgress";
+import BackgroundScroll from "../components/react/BackgroundScroll";
+import ProjectsShowcase from "../components/react/ProjectsShowcase";
+import ScrollToTop from "../components/react/ScrollToTop";
+---
+
+<Layout
+  title="Portafolio & Casos de Estudio | Paulo Espinoza · Ingeniero de Sistemas"
+  description="Casos de estudio y sistemas empresariales desarrollados por Paulo Espinoza: microservicios en Spring Boot, aplicaciones comerciales en SQL Server, sistemas offline PWA y algoritmos."
+>
+  <ScrollProgress client:load />
+  <BackgroundScroll client:load />
+  <Navbar />
+
+  <main class="relative z-10 pt-24 pb-16 space-y-12">
+    <!-- Page Header Banner -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 pt-8">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-xs font-mono text-cyan-400 uppercase tracking-widest mb-4">
+        <span>SISTEMAS DESARROLLADOS &amp; CASOS DE ESTUDIO</span>
+      </div>
+      <h1 class="text-4xl sm:text-6xl font-display font-bold text-white uppercase tracking-tight">
+        Portafolio de Sistemas
+      </h1>
+      <p class="text-base sm:text-xl text-slate-300 font-light max-w-3xl mt-3 leading-relaxed">
+        Colección de sistemas empresariales, microservicios backend, arquitecturas de persistencia relacional y proyectos listos para producción.
+      </p>
+    </div>
+
+    <!-- Projects Showcase Component with lead case and filters -->
+    <ProjectsShowcase client:load />
+
+    <!-- GitHub CTA Card -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center py-12">
+      <div class="p-8 sm:p-10 rounded-2xl bg-[#0a0e18] border border-cyan-500/30 shadow-2xl">
+        <h3 class="text-2xl sm:text-3xl font-display font-bold text-white uppercase mb-3">
+          ¿Deseas explorar más código fuente?
+        </h3>
+        <p class="text-xs sm:text-sm text-zinc-400 max-w-xl mx-auto mb-6">
+          Visita mi repositorio en GitHub para revisar los commits, la estructuración de clases, controladores y pruebas técnicas.
+        </p>
+        <a
+          href="https://github.com/paulollito29-sketch"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-[#05070c] font-display font-bold text-sm tracking-wider uppercase transition-all shadow-[0_0_20px_rgba(0,229,255,0.4)]"
+        >
+          Ver Perfil en GitHub →
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+  <ScrollToTop client:load />
+</Layout>

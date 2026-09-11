@@ -1,0 +1,90 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/astro/Navbar.astro";
+import Footer from "../components/astro/Footer.astro";
+import ScrollProgress from "../components/react/ScrollProgress";
+import BackgroundScroll from "../components/react/BackgroundScroll";
+import ServicesSection from "../components/react/ServicesSection";
+import ScrollToTop from "../components/react/ScrollToTop";
+---
+
+<Layout
+  title="Servicios Especializados | Paulo Espinoza · Soluciones de Sistemas"
+  description="Servicios profesionales de ingeniería de sistemas de información: auditoría y arquitectura de sistemas, desarrollo backend en Spring Boot y .NET, modelado de bases de datos y soluciones web con IA."
+>
+  <ScrollProgress client:load />
+  <BackgroundScroll client:load />
+  <Navbar />
+
+  <main class="relative z-10 pt-24 pb-16 space-y-12">
+    <!-- Page Header Banner -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 pt-8">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-xs font-mono text-cyan-400 uppercase tracking-widest mb-4">
+        <span>SOLUCIONES &amp; CAPACIDADES TÉCNICAS</span>
+      </div>
+      <h1 class="text-4xl sm:text-6xl font-display font-bold text-white uppercase tracking-tight">
+        Servicios de Ingeniería de Sistemas
+      </h1>
+      <p class="text-base sm:text-xl text-slate-300 font-light max-w-3xl mt-3 leading-relaxed">
+        Soluciones técnicas estructuradas para empresas y startups que requieren servicios escalables, persistencia relacional confiable y arquitecturas desacopladas.
+      </p>
+    </div>
+
+    <!-- Services Section with interactive overlays -->
+    <ServicesSection client:load />
+
+    <!-- Methodology & Quality Process -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 py-12">
+      <div class="luxury-divider">
+        <div class="luxury-divider-diamond"></div>
+      </div>
+
+      <div class="text-center mb-12">
+        <h2 class="text-2xl sm:text-4xl font-display font-bold text-white uppercase tracking-wider">
+          Metodología de Desarrollo &amp; Calidad
+        </h2>
+        <div class="title-underline"></div>
+        <p class="text-xs sm:text-sm font-mono text-zinc-400 uppercase tracking-widest">
+          Estándares Rigurosos de Ingeniería Aplicados de Principio a Fin
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="p-6 rounded-xl bg-[#090d16] border border-white/10 space-y-3">
+          <span class="text-xs font-mono text-cyan-400 font-bold">FASE 01</span>
+          <h3 class="text-base font-bold text-white">Análisis &amp; Requerimientos</h3>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            Modelado de dominio, diagramas de arquitectura de sistemas y diseño de contratos de API mediante especificación OpenAPI.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-xl bg-[#090d16] border border-white/10 space-y-3">
+          <span class="text-xs font-mono text-cyan-400 font-bold">FASE 02</span>
+          <h3 class="text-base font-bold text-white">Arquitectura &amp; Persistencia</h3>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            Diseño del esquema relacional en SQL Server / Oracle con restricciones de integridad ACID y separación en capas de servicio.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-xl bg-[#090d16] border border-white/10 space-y-3">
+          <span class="text-xs font-mono text-cyan-400 font-bold">FASE 03</span>
+          <h3 class="text-base font-bold text-white">Construcción &amp; Seguridad</h3>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            Implementación en Spring Boot / .NET Core con seguridad JWT, validación de inputs y manejo centralizado de excepciones.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-xl bg-[#090d16] border border-white/10 space-y-3">
+          <span class="text-xs font-mono text-cyan-400 font-bold">FASE 04</span>
+          <h3 class="text-base font-bold text-white">Pruebas &amp; Contenedorización</h3>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            Tests automatizados, empaquetado en contenedores Docker y configuración de despliegue reproducible.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+  <ScrollToTop client:load />
+</Layout>

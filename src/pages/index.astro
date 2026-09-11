@@ -9,33 +9,45 @@ import OfficialUpdatePanel from "../components/react/OfficialUpdatePanel";
 import DualPanels from "../components/react/DualPanels";
 import ServicesSection from "../components/react/ServicesSection";
 import ProjectsShowcase from "../components/react/ProjectsShowcase";
-import SkillsMatrix from "../components/react/SkillsMatrix";
 import CertificatesModal from "../components/react/CertificatesModal";
-import TestimonialsTrack from "../components/react/TestimonialsTrack";
 import ContactInteractive from "../components/react/ContactInteractive";
 import ScrollToTop from "../components/react/ScrollToTop";
 ---
 
-<Layout>
+<Layout
+  title="Paulo Espinoza | Ingeniero de Sistemas de Información · Sitio Oficial"
+  description="Sitio oficial de Paulo Espinoza — Ingeniero de Sistemas de Información de la UPC. Especializado en arquitectura backend en Java (Spring Boot), .NET, bases de datos relacionales y desarrollo asistido por IA."
+>
   <!-- Top Progress Bar -->
   <ScrollProgress client:load />
 
   <!-- Dynamic Ambient Mesh Canvas Background -->
   <BackgroundScroll client:load />
 
-  <!-- Executive Navbar with Glowing Neon Top Line & Dual Panels Menu -->
+  <!-- Executive Navbar with Glowing Neon Top Line & Multi-page Navigation -->
   <Navbar />
 
   <!-- Main Content Flow (Elio Navarrete Luxury Dark Architecture) -->
-  <main class="relative z-10 space-y-8">
+  <main class="relative z-10 space-y-12">
+    <!-- Hero Slider with Cinematic Slides and Highlights Ticker -->
     <HeroSlider client:load />
+
+    <!-- Official Live Facts Collapsible Bar -->
     <OfficialUpdatePanel client:load />
+
+    <!-- Dual Facets Panels (Professional & Academic) -->
     <DualPanels client:visible />
+
+    <!-- Featured Services Overview -->
     <ServicesSection client:visible />
+
+    <!-- Featured Portfolio Cases -->
     <ProjectsShowcase client:visible />
-    <SkillsMatrix client:visible />
+
+    <!-- Verified Credentials & Certificates -->
     <CertificatesModal client:visible />
-    <TestimonialsTrack client:visible />
+
+    <!-- Official Recruiter Contact Section -->
     <ContactInteractive client:visible />
   </main>
 

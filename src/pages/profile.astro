@@ -1,0 +1,69 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/astro/Navbar.astro";
+import Footer from "../components/astro/Footer.astro";
+import ScrollProgress from "../components/react/ScrollProgress";
+import BackgroundScroll from "../components/react/BackgroundScroll";
+import OfficialUpdatePanel from "../components/react/OfficialUpdatePanel";
+import AboutSection from "../components/react/AboutSection";
+import SkillsMatrix from "../components/react/SkillsMatrix";
+import TestimonialsTrack from "../components/react/TestimonialsTrack";
+import ScrollToTop from "../components/react/ScrollToTop";
+---
+
+<Layout
+  title="Perfil Oficial | Paulo Espinoza · Ingeniero de Sistemas de Información (UPC)"
+  description="Perfil profesional, trayectoria académica en la UPC, pilares de ingeniería de sistemas y matriz de habilidades técnicas de Paulo Espinoza."
+>
+  <ScrollProgress client:load />
+  <BackgroundScroll client:load />
+  <Navbar />
+
+  <main class="relative z-10 pt-24 pb-16 space-y-12">
+    <!-- Page Header Banner -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 pt-8">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-xs font-mono text-cyan-400 uppercase tracking-widest mb-4">
+        <span>PERFIL PROFESIONAL &amp; TRAYECTORIA</span>
+      </div>
+      <h1 class="text-4xl sm:text-6xl font-display font-bold text-white uppercase tracking-tight">
+        Ingeniero de Sistemas de Información
+      </h1>
+      <p class="text-base sm:text-xl text-slate-300 font-light max-w-3xl mt-3 leading-relaxed">
+        Formación universitaria rigurosa en la <strong class="text-white">Universidad Peruana de Ciencias Aplicadas (UPC)</strong>, orientada al diseño de sistemas backend escalables, persistencia de datos relacional y arquitecturas de microservicios.
+      </p>
+    </div>
+
+    <!-- Official Live Facts -->
+    <OfficialUpdatePanel client:load />
+
+    <!-- Executive About & Core Capabilities -->
+    <AboutSection client:visible />
+
+    <!-- Technical Skills Matrix -->
+    <SkillsMatrix client:visible />
+
+    <!-- Testimonials & Soft Skills Track -->
+    <TestimonialsTrack client:visible />
+
+    <!-- Direct CTA -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center py-12">
+      <div class="p-8 sm:p-10 rounded-2xl bg-[#0a0e18] border border-cyan-500/30 shadow-2xl">
+        <h3 class="text-2xl sm:text-3xl font-display font-bold text-white uppercase mb-3">
+          ¿Interesado en coordinar una entrevista técnica?
+        </h3>
+        <p class="text-xs sm:text-sm text-zinc-400 max-w-xl mx-auto mb-6">
+          Disponible para incorporación inmediata en roles de Ingeniería de Sistemas, Backend en Java / .NET o Desarrollo Full Stack.
+        </p>
+        <a
+          href="/contact"
+          class="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-[#05070c] font-display font-bold text-sm tracking-wider uppercase transition-all shadow-[0_0_20px_rgba(0,229,255,0.4)]"
+        >
+          Ir a Contacto &amp; Contratación →
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+  <ScrollToTop client:load />
+</Layout>
