@@ -1,75 +1,196 @@
 @import "tailwindcss";
 
 @theme {
-  --color-corporate-950: #080b11;
-  --color-corporate-900: #0d121d;
-  --color-corporate-850: #121826;
-  --color-corporate-800: #182032;
-  --color-corporate-700: #232d44;
-  --color-corporate-600: #334155;
-  --color-accent-blue: #2563eb;
-  --color-accent-sky: #0ea5e9;
-  --color-accent-cyan: #06b6d4;
-  --color-accent-emerald: #10b981;
+  --color-luxury-black: #05070c;
+  --color-luxury-dark: #0a0d14;
+  --color-luxury-card: #0f1420;
+  --color-luxury-border: rgba(255, 255, 255, 0.09);
+  --color-luxury-cyan: #00e5ff;
+  --color-luxury-blue: #2563eb;
+  --color-luxury-sky: #38bdf8;
+  --color-luxury-gold: #e2b768;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
     color-scheme: dark;
+    background-color: #05070c;
   }
   body {
-    background-color: #080b11;
+    background-color: #05070c;
     color: #e2e8f0;
-    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     overflow-x: hidden;
   }
   ::selection {
-    background: #2563eb;
-    color: #ffffff;
+    background: #00e5ff;
+    color: #05070c;
   }
 }
 
-/* Executive Glassmorphism & Enterprise Card Styles */
+/* Typography styles */
+.font-display {
+  font-family: 'Rajdhani', 'Plus Jakarta Sans', sans-serif;
+}
+.font-serif-lux {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+/* Nav Top Line & Glow Effect */
+.nav-top-line {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00e5ff 25%, #3b82f6 50%, #8b5cf6 75%, transparent);
+}
+.nav-top-line-glow {
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  height: 8px;
+  background: linear-gradient(90deg, transparent, rgba(0, 229, 255, 0.8), rgba(59, 130, 246, 0.8), transparent);
+  filter: blur(4px);
+  pointer-events: none;
+}
+.nav-top-line-glow.top {
+  top: -3px;
+}
+.nav-top-line-glow.bottom {
+  bottom: -3px;
+}
+
+/* Glassmorphism Luxury Cards */
 .glass-card {
-  background: rgba(13, 18, 29, 0.75);
+  background: rgba(12, 16, 26, 0.78);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .glass-card-hover {
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .glass-card-hover:hover {
-  background: rgba(18, 24, 38, 0.9);
-  border-color: rgba(56, 189, 248, 0.35);
-  box-shadow: 0 16px 40px -12px rgba(14, 165, 233, 0.18);
-  transform: translateY(-2px);
+  background: rgba(18, 24, 38, 0.92);
+  border-color: rgba(0, 229, 255, 0.4);
+  box-shadow: 0 16px 40px -10px rgba(0, 229, 255, 0.15);
+  transform: translateY(-3px);
 }
 
-.executive-badge {
-  background: rgba(37, 99, 235, 0.08);
-  border: 1px solid rgba(56, 189, 248, 0.25);
-  color: #38bdf8;
+/* Section Luxury Divider with Diamond Center */
+.luxury-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto 3rem auto;
+  position: relative;
+}
+.luxury-divider::before,
+.luxury-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+}
+.luxury-divider-diamond {
+  width: 9px;
+  height: 9px;
+  margin: 0 16px;
+  transform: rotate(45deg);
+  background: #00e5ff;
+  box-shadow: 0 0 10px #00e5ff;
 }
 
-/* Enterprise Grid & Radial Patterns */
-.bg-enterprise-grid {
-  background-size: 48px 48px;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+/* Underline decoration */
+.title-underline {
+  width: 50px;
+  height: 2px;
+  background: #00e5ff;
+  margin: 0.75rem auto 1.5rem auto;
+  box-shadow: 0 0 8px rgba(0, 229, 255, 0.6);
 }
 
-.gradient-headline {
-  background: linear-gradient(135deg, #ffffff 30%, #cbd5e1 70%, #94a3b8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* Service Card with Overlay Effects */
+.service-card {
+  position: relative;
+  background: #0a0e17;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 2rem;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.service-card:hover {
+  border-color: rgba(0, 229, 255, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 45px -10px rgba(0, 229, 255, 0.12);
+}
+.service-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8, 12, 20, 0.96) 0%, rgba(5, 7, 12, 0.98) 100%);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(8px);
+}
+.service-card:hover .service-card-overlay {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
-.gradient-accent {
-  background: linear-gradient(135deg, #38bdf8 0%, #3b82f6 50%, #6366f1 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* Floating Badges */
+.floating-badge {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 229, 255, 0.15) 0%, transparent 70%);
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #00e5ff;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
+  transform: rotate(12deg);
+}
+
+/* Scroll Vertical Indicator */
+.scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Rajdhani', monospace;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+}
+.scroll-line {
+  width: 1px;
+  height: 45px;
+  background: linear-gradient(180deg, #00e5ff 0%, transparent 100%);
+  animation: scrollPulse 2s infinite ease-in-out;
+}
+@keyframes scrollPulse {
+  0% { transform: scaleY(0); transform-origin: top; opacity: 0; }
+  50% { transform: scaleY(1); transform-origin: top; opacity: 1; }
+  100% { transform: scaleY(1); transform-origin: bottom; opacity: 0; }
 }

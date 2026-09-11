@@ -44,28 +44,20 @@ export default function TestimonialsTrack() {
   return (
     <section className="py-24 px-4 sm:px-6 relative z-10">
       <div className="max-w-4xl mx-auto">
+        {/* Luxury Divider */}
+        <div className="luxury-divider">
+          <div className="luxury-divider-diamond" />
+        </div>
+
         {/* Header */}
         <div className="mb-14 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-card border-yellow-500/20 text-xs font-mono text-yellow-400 mb-3"
-          >
-            <MessageSquareQuote className="w-3.5 h-3.5" />
-            <span>RECONOCIMIENTOS</span>
-          </motion.div>
-
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl sm:text-4xl font-bold text-white tracking-tight"
-          >
-            Feedback &amp; Aptitudes Clave
-          </motion.h2>
+          <h2 className="text-3xl sm:text-5xl font-display font-bold tracking-widest text-white uppercase">
+            Aptitudes &amp; Feedback Técnico
+          </h2>
+          <div className="title-underline" />
+          <p className="text-xs sm:text-sm font-mono text-zinc-400 uppercase tracking-widest">
+            Apreciación de Desempeño Profesional y Enfoque en Sistemas
+          </p>
         </div>
 
         {/* Card Carousel */}

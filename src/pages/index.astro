@@ -4,10 +4,12 @@ import Navbar from "../components/astro/Navbar.astro";
 import Footer from "../components/astro/Footer.astro";
 import ScrollProgress from "../components/react/ScrollProgress";
 import BackgroundScroll from "../components/react/BackgroundScroll";
-import HeroInteractive from "../components/react/HeroInteractive";
-import AboutSection from "../components/react/AboutSection";
-import SkillsMatrix from "../components/react/SkillsMatrix";
+import HeroSlider from "../components/react/HeroSlider";
+import OfficialUpdatePanel from "../components/react/OfficialUpdatePanel";
+import DualPanels from "../components/react/DualPanels";
+import ServicesSection from "../components/react/ServicesSection";
 import ProjectsShowcase from "../components/react/ProjectsShowcase";
+import SkillsMatrix from "../components/react/SkillsMatrix";
 import CertificatesModal from "../components/react/CertificatesModal";
 import TestimonialsTrack from "../components/react/TestimonialsTrack";
 import ContactInteractive from "../components/react/ContactInteractive";
@@ -15,29 +17,31 @@ import ScrollToTop from "../components/react/ScrollToTop";
 ---
 
 <Layout>
-  <!-- Scroll Progress Indicator -->
+  <!-- Top Progress Bar -->
   <ScrollProgress client:load />
 
-  <!-- Animated Interactive Scroll Video & Mesh Canvas Background -->
+  <!-- Dynamic Ambient Mesh Canvas Background -->
   <BackgroundScroll client:load />
 
-  <!-- Fixed Blur Navbar -->
+  <!-- Executive Navbar with Glowing Neon Top Line & Dual Panels Menu -->
   <Navbar />
 
-  <!-- Main Content Sections -->
-  <main class="relative z-10">
-    <HeroInteractive client:load />
-    <AboutSection client:visible />
-    <SkillsMatrix client:visible />
+  <!-- Main Content Flow (Elio Navarrete Luxury Dark Architecture) -->
+  <main class="relative z-10 space-y-8">
+    <HeroSlider client:load />
+    <OfficialUpdatePanel client:load />
+    <DualPanels client:visible />
+    <ServicesSection client:visible />
     <ProjectsShowcase client:visible />
+    <SkillsMatrix client:visible />
     <CertificatesModal client:visible />
     <TestimonialsTrack client:visible />
     <ContactInteractive client:visible />
   </main>
 
-  <!-- Footer -->
+  <!-- Official Footer -->
   <Footer />
 
-  <!-- Scroll to top floating trigger -->
+  <!-- Floating Back to Top Button -->
   <ScrollToTop client:load />
 </Layout>

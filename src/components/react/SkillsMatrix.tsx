@@ -151,28 +151,20 @@ export default function SkillsMatrix() {
   return (
     <section id="skills" className="py-24 px-4 sm:px-6 relative z-10">
       <div className="max-w-6xl mx-auto">
-        {/* Section Header */}
-        <div className="mb-12 text-center sm:text-left">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-card border border-purple-500/30 text-xs font-mono text-purple-400 mb-3"
-          >
-            <Cpu className="w-4 h-4" />
-            <span>MATRIZ DE COMPETENCIAS TÉCNICAS</span>
-          </motion.div>
+        {/* Luxury Divider */}
+        <div className="luxury-divider">
+          <div className="luxury-divider-diamond" />
+        </div>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight"
-          >
-            Capacidades de Ingeniería &amp; Stack Tecnológico
-          </motion.h2>
+        {/* Section Header */}
+        <div className="mb-14 text-center">
+          <h2 className="text-3xl sm:text-5xl font-display font-bold tracking-widest text-white uppercase">
+            Matriz de Competencias
+          </h2>
+          <div className="title-underline" />
+          <p className="text-xs sm:text-sm font-mono text-zinc-400 uppercase tracking-widest">
+            Capacidades Técnicas &amp; Dominio Tecnológico en Sistemas
+          </p>
         </div>
 
         {/* Tab Navigation */}
