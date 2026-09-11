@@ -8,7 +8,7 @@ interface Props {
 
 const {
   title = "Paulo Espinoza | Ingeniero de Sistemas de Información · Sitio Oficial",
-  description = "Sitio oficial de Paulo Espinoza — Ingeniero de Sistemas de Información de la UPC. Especialista en arquitectura backend en Java (Spring Boot), .NET, bases de datos relacionales y desarrollo asistido por IA.",
+  description = "Sitio oficial de Paulo Espinoza — Ingeniero de Sistemas de Información de la UPC. Especialista en arquitectura backend en Java (Spring Boot), metodología SDD (Spec-Driven Development), bases de datos relacionales y desarrollo asistido por IA.",
 } = Astro.props;
 ---
 
@@ -25,7 +25,7 @@ const {
     <meta name="title" content={title} />
     <meta name="description" content={description} />
     <meta name="author" content="Paulo Espinoza" />
-    <meta name="theme-color" content="#09090b" />
+    <meta name="theme-color" content="#0b1120" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -33,15 +33,15 @@ const {
     <meta property="og:description" content={description} />
     <meta property="og:locale" content="es_PE" />
 
-    <!-- Google Fonts for Flat Typography -->
+    <!-- Google Fonts for Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rajdhani:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
       rel="stylesheet"
     />
   </head>
-  <body class="bg-[#09090b] text-zinc-100 min-h-screen antialiased selection:bg-cyan-500 selection:text-black">
+  <body class="bg-[#0b1120] text-slate-100 min-h-screen antialiased selection:bg-sky-400 selection:text-slate-900">
     <slot />
   </body>
 </html>

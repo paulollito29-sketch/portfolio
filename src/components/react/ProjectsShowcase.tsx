@@ -124,15 +124,15 @@ export default function ProjectsShowcase({ hideHeader = false }: ProjectsShowcas
         </div>
       )}
 
-      {/* Lead Featured Case Study (Flat) */}
-      <div className="mb-10 rounded-lg bg-[#121215] border border-zinc-800 p-6 sm:p-8">
+      {/* Lead Featured Case Study (Friendly Slate) */}
+      <div className="mb-10 rounded-xl bg-[#131d33] border border-slate-800 p-6 sm:p-8 shadow-sm">
         <div className="flex flex-col lg:flex-row items-start justify-between gap-6">
           <div className="flex-1 space-y-3">
             <div className="flex items-center gap-2">
-              <span className="px-2.5 py-0.5 rounded bg-white text-black font-bold text-xs uppercase tracking-wider">
+              <span className="px-2.5 py-0.5 rounded bg-white text-slate-950 font-bold text-xs uppercase tracking-wider">
                 {featuredLeadProject.badge}
               </span>
-              <span className="text-xs font-mono text-zinc-400">
+              <span className="text-xs font-mono text-slate-400">
                 {featuredLeadProject.kicker}
               </span>
             </div>
@@ -213,30 +213,30 @@ export default function ProjectsShowcase({ hideHeader = false }: ProjectsShowcas
         </div>
       </div>
 
-      {/* Portfolio Grid (Flat) */}
+      {/* Portfolio Grid */}
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
         {filtered.map((p) => (
           <article
             key={p.title}
-            className="bg-[#121215] border border-zinc-800 rounded-lg p-5 flex flex-col justify-between hover:border-zinc-700 transition-colors"
+            className="bg-[#131d33] border border-slate-800 rounded-xl p-5 flex flex-col justify-between hover:border-sky-500/50 hover:bg-[#1a2744] transition-all shadow-sm"
           >
             <div>
               <div className="flex items-center justify-between gap-2 mb-2">
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-900 text-cyan-400 border border-zinc-800 uppercase">
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-900/80 text-sky-400 border border-slate-800 uppercase">
                   {p.categoryName}
                 </span>
-                <span className="text-xs font-mono text-zinc-500">{p.year}</span>
+                <span className="text-xs font-mono text-slate-400">{p.year}</span>
               </div>
 
               <h4 className="text-sm sm:text-base font-bold text-white mb-2 line-clamp-2">
                 {p.title}
               </h4>
 
-              <p className="text-xs text-zinc-400 leading-relaxed mb-3 line-clamp-3">
+              <p className="text-xs text-slate-300 leading-relaxed mb-3 line-clamp-3">
                 {p.desc}
               </p>
 
-              <p className="text-[11px] font-mono text-zinc-400 mb-4 border-l border-cyan-500/60 pl-2">
+              <p className="text-[11px] font-mono text-slate-300 mb-4 border-l-2 border-sky-400 pl-2">
                 {p.impact}
               </p>
             </div>

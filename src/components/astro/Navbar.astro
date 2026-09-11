@@ -13,7 +13,7 @@ const navLinks = [
 ];
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-[#09090b] border-b border-zinc-800 transition-all" id="mainHeader">
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#0b1120]/90 backdrop-blur-md border-b border-slate-800/80 transition-all" id="mainHeader">
   <div class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-8 py-3">
     <!-- Brand Logo with Flat Divider -->
     <a href="/" class="flex items-center gap-3 group">
@@ -147,28 +147,28 @@ const navLinks = [
         })}
       </ul>
 
-      {/* Dual Preview Panels inside Mobile Menu (Flat) */}
+      {/* Dual Preview Panels inside Mobile Menu (Friendly Slate) */}
       <div class="grid sm:grid-cols-2 gap-3 mb-8">
-        <div class="p-4 rounded bg-[#121215] border border-zinc-800">
-          <div class="flex items-center gap-2 text-xs font-mono text-cyan-400 mb-1.5 uppercase tracking-wider">
+        <div class="p-4 rounded-xl bg-[#131d33] border border-slate-800">
+          <div class="flex items-center gap-2 text-xs font-mono text-sky-400 mb-1.5 uppercase tracking-wider">
             <Briefcase className="w-3.5 h-3.5" /> Profesional
           </div>
-          <p class="text-xs text-zinc-400 mb-3">
+          <p class="text-xs text-slate-300 mb-3">
             Arquitectura backend en Spring Boot &amp; .NET y bases de datos relacionales.
           </p>
-          <a href="/portfolio" class="mobile-nav-link text-xs font-mono text-white underline underline-offset-4 hover:text-cyan-400">
+          <a href="/portfolio" class="mobile-nav-link text-xs font-mono text-white underline underline-offset-4 hover:text-sky-400">
             Ir a Portafolio →
           </a>
         </div>
 
-        <div class="p-4 rounded bg-[#121215] border border-zinc-800">
-          <div class="flex items-center gap-2 text-xs font-mono text-cyan-400 mb-1.5 uppercase tracking-wider">
+        <div class="p-4 rounded-xl bg-[#131d33] border border-slate-800">
+          <div class="flex items-center gap-2 text-xs font-mono text-sky-400 mb-1.5 uppercase tracking-wider">
             <GraduationCap className="w-3.5 h-3.5" /> Académico
           </div>
-          <p class="text-xs text-zinc-400 mb-3">
+          <p class="text-xs text-slate-300 mb-3">
             Formación en la UPC y acreditaciones por Meta, Oracle Academy y Univ. of Michigan.
           </p>
-          <a href="/certificates" class="mobile-nav-link text-xs font-mono text-white underline underline-offset-4 hover:text-cyan-400">
+          <a href="/certificates" class="mobile-nav-link text-xs font-mono text-white underline underline-offset-4 hover:text-sky-400">
             Ir a Certificaciones →
           </a>
         </div>

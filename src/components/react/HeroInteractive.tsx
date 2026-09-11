@@ -4,18 +4,18 @@ import { ArrowRight, CheckCircle2, Code2, Github, Linkedin, Mail, MapPin, Buildi
 
 const specializations = [
   "Ingeniero de Sistemas de Información · UPC",
-  "Desarrollador Backend & Full Stack",
-  "Arquitectura Java (Spring Boot) & C# (.NET)",
-  "Bases de Datos Relacionales (SQL Server / Oracle)",
-  "Frontend Moderno (React 19 / TypeScript / Astro)",
-  "Ingeniería Asistida con Inteligencia Artificial",
+  "Desarrollo Asistido por Inteligencia Artificial (IA)",
+  "Metodología SDD (Spec-Driven Development)",
+  "Arquitectura Backend en Java (Spring Boot) & C# (.NET)",
+  "Bases de Datos Relacionales (PostgreSQL / SQL Server)",
+  "Frontend Moderno (Angular / React / Next.js / Astro)",
 ];
 
 const enterpriseStrengths = [
-  { label: "Backend Core", desc: "Spring Boot & .NET" },
-  { label: "Data Integrity", desc: "SQL Server & Oracle" },
-  { label: "Frontend Speed", desc: "React & TypeScript" },
-  { label: "AI Acceleration", desc: "High-Velocity Dev" },
+  { label: "Metodología SDD", desc: "Spec-Driven Dev" },
+  { label: "Desarrollo con IA", desc: "Workflows con LLMs" },
+  { label: "Backend Core", desc: "Spring Boot & Java" },
+  { label: "Data Integrity", desc: "PostgreSQL & SQL Server" },
 ];
 
 export default function HeroInteractive() {
