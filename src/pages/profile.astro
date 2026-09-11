@@ -19,17 +19,17 @@ import ScrollToTop from "../components/react/ScrollToTop";
   <BackgroundScroll client:load />
   <Navbar />
 
-  <main class="relative z-10 pt-24 pb-16 space-y-12">
+  <main class="relative z-10 pt-20 pb-16 space-y-8">
     <!-- Page Header Banner -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-8 pt-8">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-xs font-mono text-cyan-400 uppercase tracking-widest mb-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 pt-6">
+      <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-xs font-mono text-cyan-400 uppercase tracking-widest mb-3">
         <span>PERFIL PROFESIONAL &amp; TRAYECTORIA</span>
       </div>
-      <h1 class="text-4xl sm:text-6xl font-display font-bold text-white uppercase tracking-tight">
+      <h1 class="text-3xl sm:text-5xl font-display font-bold text-white uppercase tracking-tight">
         Ingeniero de Sistemas de Información
       </h1>
-      <p class="text-base sm:text-xl text-slate-300 font-light max-w-3xl mt-3 leading-relaxed">
-        Formación universitaria rigurosa en la <strong class="text-white">Universidad Peruana de Ciencias Aplicadas (UPC)</strong>, orientada al diseño de sistemas backend escalables, persistencia de datos relacional y arquitecturas de microservicios.
+      <p class="text-xs sm:text-sm text-zinc-400 max-w-3xl mt-2 leading-relaxed">
+        Formación universitaria en la <strong class="text-white">Universidad Peruana de Ciencias Aplicadas (UPC)</strong>, orientada al diseño de sistemas backend escalables, persistencia de datos relacional y arquitecturas de microservicios.
       </p>
     </div>
 
@@ -37,28 +37,30 @@ import ScrollToTop from "../components/react/ScrollToTop";
     <OfficialUpdatePanel client:load />
 
     <!-- Executive About & Core Capabilities -->
-    <AboutSection client:visible />
+    <AboutSection client:load />
 
     <!-- Technical Skills Matrix -->
-    <SkillsMatrix client:visible />
+    <SkillsMatrix client:load />
 
-    <!-- Testimonials & Soft Skills Track -->
-    <TestimonialsTrack client:visible />
+    <!-- Testimonials Track -->
+    <TestimonialsTrack client:load />
 
-    <!-- Direct CTA -->
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center py-12">
-      <div class="p-8 sm:p-10 rounded-2xl bg-[#0a0e18] border border-cyan-500/30 shadow-2xl">
-        <h3 class="text-2xl sm:text-3xl font-display font-bold text-white uppercase mb-3">
-          ¿Interesado en coordinar una entrevista técnica?
-        </h3>
-        <p class="text-xs sm:text-sm text-zinc-400 max-w-xl mx-auto mb-6">
-          Disponible para incorporación inmediata en roles de Ingeniería de Sistemas, Backend en Java / .NET o Desarrollo Full Stack.
-        </p>
+    <!-- Direct CTA (Flat) -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 py-6">
+      <div class="p-6 rounded-lg bg-[#121215] border border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>
+          <h3 class="text-lg font-bold text-white uppercase mb-1">
+            ¿Interesado en coordinar una entrevista técnica?
+          </h3>
+          <p class="text-xs text-zinc-400">
+            Disponible para incorporación inmediata en roles de Sistemas, Backend en Java / .NET o Desarrollo Full Stack.
+          </p>
+        </div>
         <a
           href="/contact"
-          class="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-[#05070c] font-display font-bold text-sm tracking-wider uppercase transition-all shadow-[0_0_20px_rgba(0,229,255,0.4)]"
+          class="px-5 py-2.5 rounded bg-white hover:bg-cyan-400 text-black font-semibold text-xs uppercase tracking-wider transition-colors shrink-0"
         >
-          Ir a Contacto &amp; Contratación →
+          Contactar Ahora →
         </a>
       </div>
     </div>

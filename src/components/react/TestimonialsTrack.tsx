@@ -1,35 +1,30 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, Star, Quote, MessageSquareQuote } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Testimonial {
   name: string;
   role: string;
   text: string;
-  rating: number;
   tags: string[];
 }
 
 const testimonials: Testimonial[] = [
   {
-    name: "Trabajo en Equipo & Liderazgo Técnico",
-    role: "Evaluación Académica y Colaboración",
-    text: "Destaca por su capacidad para coordinar entregables técnicos, estructurar código modular y comunicar soluciones arquitectónicas de manera clara bajo plazos exigentes.",
-    rating: 5,
-    tags: ["Colaboración", "Spring Boot", "Git Flow"],
+    name: "Calidad Técnica & Arquitectura",
+    role: "Evaluación de Desempeño",
+    text: "Demuestra gran rigor en el diseño estructurado de bases de datos relacionales, normalización y aplicación de principios de Clean Architecture en microservicios backend.",
+    tags: ["Clean Code", "Microservicios", "SQL Server", "Spring Boot"],
   },
   {
     name: "Innovación & Productividad con IA",
     role: "Desarrollo Acelerado",
-    text: "Demuestra gran criterio al integrar modelos y agentes de IA en su flujo de trabajo diario, logrando prototipar y construir sistemas completos en tiempos récord sin sacrificar calidad de código.",
-    rating: 5,
+    text: "Criterio sobresaliente al integrar modelos y agentes de IA en su flujo de trabajo diario, logrando prototipar y construir sistemas completos en tiempos récord sin sacrificar calidad.",
     tags: ["IA Integrada", "Full Stack", "Clean Architecture"],
   },
   {
     name: "Compromiso & Adaptabilidad",
     role: "Ingeniería de Sistemas",
-    text: "Curva de aprendizaje sobresaliente para asimilar nuevos frameworks, resolver incidentes y adoptar herramientas de frontend y backend con solidez técnica.",
-    rating: 5,
+    text: "Curva de aprendizaje acelerada para asimilar nuevos frameworks, resolver incidentes y adoptar herramientas de frontend y backend con solidez técnica.",
     tags: ["Resolución de Problemas", "React", ".NET"],
   },
 ];
@@ -42,106 +37,60 @@ export default function TestimonialsTrack() {
   const prev = () => setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length);
 
   return (
-    <section className="py-24 px-4 sm:px-6 relative z-10">
-      <div className="max-w-4xl mx-auto">
-        {/* Luxury Divider */}
-        <div className="luxury-divider">
-          <div className="luxury-divider-diamond" />
-        </div>
-
-        {/* Header */}
-        <div className="mb-14 text-center">
-          <h2 className="text-3xl sm:text-5xl font-display font-bold tracking-widest text-white uppercase">
-            Aptitudes &amp; Feedback Técnico
+    <section className="py-12 px-4 sm:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto">
+        {/* Flat Header */}
+        <div className="mb-10 text-center sm:text-left border-b border-zinc-800 pb-5">
+          <span className="text-xs font-mono uppercase tracking-widest text-cyan-400 font-bold block mb-1">
+            APTITUDES PROFESIONALES
+          </span>
+          <h2 className="text-2xl sm:text-4xl font-display font-bold text-white uppercase tracking-tight">
+            Feedback &amp; Apreciación Técnica
           </h2>
-          <div className="title-underline" />
-          <p className="text-xs sm:text-sm font-mono text-zinc-400 uppercase tracking-widest">
-            Apreciación de Desempeño Profesional y Enfoque en Sistemas
-          </p>
         </div>
 
-        {/* Card Carousel */}
-        <div className="relative glass-card rounded-3xl p-8 sm:p-12 border border-white/10 overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.6)]">
-          <Quote className="absolute -top-6 -left-6 w-32 h-32 text-white/5 pointer-events-none" />
-
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={current}
-              initial={{ opacity: 0, x: 25 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -25 }}
-              transition={{ duration: 0.35 }}
-              className="relative z-10"
-            >
-              {/* Stars */}
-              <div className="flex gap-1 mb-6">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star
-                    key={i}
-                    className={`w-4 h-4 ${
-                      i < t.rating ? "text-yellow-400 fill-yellow-400" : "text-zinc-700"
-                    }`}
-                  />
-                ))}
-              </div>
-
-              {/* Quote Text */}
-              <p className="text-base sm:text-xl text-zinc-200 font-medium leading-relaxed mb-8">
-                &ldquo;{t.text}&rdquo;
-              </p>
-
-              {/* Author & Tags */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-6 border-t border-white/10">
-                <div>
-                  <h4 className="text-base font-bold text-white">{t.name}</h4>
-                  <p className="text-xs text-zinc-400">{t.role}</p>
-                </div>
-
-                <div className="flex flex-wrap gap-1.5">
-                  {t.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-2.5 py-1 text-[11px] font-mono rounded-lg bg-white/5 text-cyan-400 border border-cyan-500/20"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          </AnimatePresence>
-
-          {/* Navigation Controls */}
-          <div className="flex items-center justify-between mt-8 pt-4">
-            <div className="flex gap-2">
-              {testimonials.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setCurrent(idx)}
-                  className={`h-2 rounded-full transition-all cursor-pointer ${
-                    idx === current ? "w-8 bg-cyan-400" : "w-2 bg-zinc-700 hover:bg-zinc-500"
-                  }`}
-                  aria-label={`Ir al testimonio ${idx + 1}`}
-                />
-              ))}
+        {/* Card (Flat) */}
+        <div className="bg-[#121215] border border-zinc-800 rounded-lg p-6 sm:p-8 space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <h3 className="text-base sm:text-lg font-bold text-white">{t.name}</h3>
+              <p className="text-xs font-mono text-cyan-400">{t.role}</p>
             </div>
 
-            <div className="flex gap-2">
+            <div className="flex items-center gap-1.5">
               <button
                 onClick={prev}
-                className="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-300 hover:text-white border border-white/10 transition-all cursor-pointer"
-                aria-label="Testimonio anterior"
+                className="p-1.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white transition-colors cursor-pointer"
+                aria-label="Anterior"
               >
-                <ChevronLeft className="w-5 h-5" />
+                <ChevronLeft className="w-4 h-4" />
               </button>
+              <span className="text-xs font-mono text-zinc-500 px-2">
+                {current + 1} / {testimonials.length}
+              </span>
               <button
                 onClick={next}
-                className="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-300 hover:text-white border border-white/10 transition-all cursor-pointer"
-                aria-label="Siguiente testimonio"
+                className="p-1.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white transition-colors cursor-pointer"
+                aria-label="Siguiente"
               >
-                <ChevronRight className="w-5 h-5" />
+                <ChevronRight className="w-4 h-4" />
               </button>
             </div>
+          </div>
+
+          <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed italic border-l-2 border-zinc-700 pl-4">
+            &ldquo;{t.text}&rdquo;
+          </p>
+
+          <div className="flex flex-wrap gap-1 pt-3 border-t border-zinc-800">
+            {t.tags.map((tag) => (
+              <span
+                key={tag}
+                className="px-2 py-0.5 text-[10px] font-mono rounded bg-zinc-900 border border-zinc-800 text-zinc-400"
+              >
+                {tag}
+              </span>
+            ))}
           </div>
         </div>
       </div>

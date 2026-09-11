@@ -13,38 +13,32 @@ const navLinks = [
 ];
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-[#05070c]/95 backdrop-blur-md border-b border-white/5 transition-all" id="mainHeader">
-  <!-- Glowing Neon Top Line -->
-  <div class="nav-top-line">
-    <span class="nav-top-line-glow top"></span>
-    <span class="nav-top-line-glow bottom"></span>
-  </div>
-
-  <div class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-8 py-3.5">
-    <!-- Brand Logo with Divider -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#09090b] border-b border-zinc-800 transition-all" id="mainHeader">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-8 py-3">
+    <!-- Brand Logo with Flat Divider -->
     <a href="/" class="flex items-center gap-3 group">
       <div class="flex items-center gap-2">
-        <span class="font-display font-bold text-base sm:text-lg tracking-widest text-white group-hover:text-cyan-400 transition-colors uppercase">
+        <span class="font-display font-bold text-base sm:text-lg tracking-wider text-white group-hover:text-cyan-400 transition-colors uppercase">
           PAULO ESPINOZA
         </span>
-        <span class="text-zinc-600 font-light">|</span>
-        <span class="text-[10px] font-mono text-cyan-400 tracking-wider hidden sm:inline-block uppercase">
-          Ingeniero de Sistemas de Información · UPC
+        <span class="text-zinc-700 font-light">/</span>
+        <span class="text-[11px] font-mono text-zinc-400 tracking-wider hidden sm:inline-block uppercase">
+          Ingeniero de Sistemas · UPC
         </span>
       </div>
     </a>
 
-    <!-- Desktop Navigation Links with Active State -->
+    <!-- Desktop Navigation Links with Flat Active State -->
     <nav class="hidden lg:flex items-center gap-1">
       {navLinks.map((link) => {
         const isActive = (link.href === "/" && pathname === "/") || (link.href !== "/" && pathname.startsWith(link.href));
         return (
           <a
             href={link.href}
-            class={`px-3.5 py-1.5 text-xs font-mono tracking-wider rounded-md transition-all uppercase ${
+            class={`px-3 py-1.5 text-xs font-mono tracking-wider rounded transition-all uppercase ${
               isActive
-                ? "bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 font-semibold shadow-[0_0_10px_rgba(0,229,255,0.2)]"
-                : "text-zinc-400 hover:text-white hover:bg-white/5"
+                ? "bg-zinc-800 text-white font-bold border border-zinc-700"
+                : "text-zinc-400 hover:text-white hover:bg-zinc-900"
             }`}
           >
             {link.label}
@@ -53,14 +47,14 @@ const navLinks = [
       })}
     </nav>
 
-    <!-- Utilities / Social Icons -->
+    <!-- Utilities / Social Icons (Flat) -->
     <div class="hidden sm:flex items-center gap-3">
-      <div class="flex items-center gap-2 pr-3 border-r border-white/10">
+      <div class="flex items-center gap-1.5 pr-3 border-r border-zinc-800">
         <a
           href="https://github.com/paulollito29-sketch"
           target="_blank"
           rel="noopener noreferrer"
-          class="p-1.5 rounded-lg text-zinc-400 hover:text-cyan-400 hover:bg-white/5 transition-colors"
+          class="p-1.5 rounded text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors"
           aria-label="GitHub"
           title="GitHub de Paulo Espinoza"
         >
@@ -70,7 +64,7 @@ const navLinks = [
           href="https://www.linkedin.com/in/paulo-espinoza9/"
           target="_blank"
           rel="noopener noreferrer"
-          class="p-1.5 rounded-lg text-zinc-400 hover:text-cyan-400 hover:bg-white/5 transition-colors"
+          class="p-1.5 rounded text-zinc-400 hover:text-cyan-400 hover:bg-zinc-800 transition-colors"
           aria-label="LinkedIn"
           title="LinkedIn de Paulo Espinoza"
         >
@@ -80,7 +74,7 @@ const navLinks = [
           href="https://wa.me/51906920958"
           target="_blank"
           rel="noopener noreferrer"
-          class="p-1.5 rounded-lg text-zinc-400 hover:text-emerald-400 hover:bg-white/5 transition-colors"
+          class="p-1.5 rounded text-zinc-400 hover:text-emerald-400 hover:bg-zinc-800 transition-colors"
           aria-label="WhatsApp"
           title="WhatsApp de Paulo Espinoza"
         >
@@ -88,7 +82,7 @@ const navLinks = [
         </a>
         <a
           href="mailto:paulespinoza951@gmail.com"
-          class="p-1.5 rounded-lg text-zinc-400 hover:text-sky-400 hover:bg-white/5 transition-colors"
+          class="p-1.5 rounded text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors"
           aria-label="Email"
           title="Email corporativo"
         >
@@ -98,10 +92,10 @@ const navLinks = [
 
       <a
         href="/contact"
-        class={`px-3.5 py-1.5 rounded-md text-xs font-mono tracking-wider transition-all uppercase ${
+        class={`px-3.5 py-1.5 rounded text-xs font-mono tracking-wider transition-all uppercase ${
           pathname === "/contact"
-            ? "bg-cyan-500 text-[#05070c] font-bold shadow-[0_0_12px_rgba(0,229,255,0.4)]"
-            : "bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/30"
+            ? "bg-white text-black font-bold"
+            : "bg-zinc-900 hover:bg-zinc-800 text-zinc-200 border border-zinc-800 hover:border-zinc-700"
         }`}
       >
         Contacto
@@ -111,39 +105,39 @@ const navLinks = [
     <!-- Mobile Hamburger Toggle -->
     <button
       id="menuToggle"
-      class="lg:hidden p-2 rounded-lg text-zinc-300 hover:text-white hover:bg-white/5 transition-colors"
+      class="lg:hidden p-2 rounded text-zinc-300 hover:text-white hover:bg-zinc-800 transition-colors"
       aria-label="Abrir menú de navegación"
     >
       <Menu className="w-5 h-5" />
     </button>
   </div>
 
-  <!-- Mobile Overlay Menu (Elio Navarrete style with Dual Panels) -->
+  <!-- Mobile Overlay Menu (Flat Design) -->
   <div
     id="mobileMenu"
-    class="lg:hidden fixed inset-0 top-[57px] bg-[#05070c]/98 backdrop-blur-2xl border-t border-white/10 p-6 overflow-y-auto opacity-0 pointer-events-none transition-all duration-300 z-50 flex flex-col justify-between"
+    class="lg:hidden fixed inset-0 top-[53px] bg-[#09090b] border-t border-zinc-800 p-6 overflow-y-auto opacity-0 pointer-events-none transition-opacity duration-200 z-50 flex flex-col justify-between"
   >
     <div>
-      <div class="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
-        <span class="font-mono text-xs text-cyan-400 uppercase tracking-widest flex items-center gap-2">
-          <ShieldCheck className="w-4 h-4" /> Menú Oficial · Navegación
+      <div class="flex items-center justify-between pb-4 border-b border-zinc-800 mb-6">
+        <span class="font-mono text-xs text-zinc-400 uppercase tracking-widest flex items-center gap-2">
+          <ShieldCheck className="w-4 h-4 text-cyan-400" /> Menú Oficial · Navegación
         </span>
         <button id="mobileMenuClose" class="p-1 text-zinc-400 hover:text-white" aria-label="Cerrar">
           <X className="w-5 h-5" />
         </button>
       </div>
 
-      <ul class="space-y-3 mb-8">
+      <ul class="space-y-2 mb-8">
         {navLinks.map((link) => {
           const isActive = (link.href === "/" && pathname === "/") || (link.href !== "/" && pathname.startsWith(link.href));
           return (
             <li>
               <a
                 href={link.href}
-                class={`mobile-nav-link block py-2.5 px-3 text-base font-display font-semibold tracking-wider rounded-lg transition-colors uppercase ${
+                class={`mobile-nav-link block py-2.5 px-3 text-sm font-mono tracking-wider rounded transition-colors uppercase ${
                   isActive
-                    ? "bg-cyan-500/15 text-cyan-400 border border-cyan-500/30"
-                    : "text-zinc-300 hover:text-cyan-400 hover:bg-white/5"
+                    ? "bg-zinc-800 text-white font-bold border border-zinc-700"
+                    : "text-zinc-300 hover:text-white hover:bg-zinc-900"
                 }`}
               >
                 {link.label}
@@ -153,26 +147,26 @@ const navLinks = [
         })}
       </ul>
 
-      {/* Dual Preview Panels inside Mobile Menu */}
-      <div class="grid sm:grid-cols-2 gap-4 mb-8">
-        <div class="p-4 rounded-xl bg-zinc-950 border border-white/10">
+      {/* Dual Preview Panels inside Mobile Menu (Flat) */}
+      <div class="grid sm:grid-cols-2 gap-3 mb-8">
+        <div class="p-4 rounded bg-[#121215] border border-zinc-800">
           <div class="flex items-center gap-2 text-xs font-mono text-cyan-400 mb-1.5 uppercase tracking-wider">
             <Briefcase className="w-3.5 h-3.5" /> Profesional
           </div>
           <p class="text-xs text-zinc-400 mb-3">
-            Arquitectura de sistemas backend, microservicios en Spring Boot &amp; .NET y bases de datos relacionales.
+            Arquitectura backend en Spring Boot &amp; .NET y bases de datos relacionales.
           </p>
           <a href="/portfolio" class="mobile-nav-link text-xs font-mono text-white underline underline-offset-4 hover:text-cyan-400">
             Ir a Portafolio →
           </a>
         </div>
 
-        <div class="p-4 rounded-xl bg-zinc-950 border border-white/10">
+        <div class="p-4 rounded bg-[#121215] border border-zinc-800">
           <div class="flex items-center gap-2 text-xs font-mono text-cyan-400 mb-1.5 uppercase tracking-wider">
             <GraduationCap className="w-3.5 h-3.5" /> Académico
           </div>
           <p class="text-xs text-zinc-400 mb-3">
-            Formación en la UPC y acreditaciones oficiales por Meta, Oracle Academy y University of Michigan.
+            Formación en la UPC y acreditaciones por Meta, Oracle Academy y Univ. of Michigan.
           </p>
           <a href="/certificates" class="mobile-nav-link text-xs font-mono text-white underline underline-offset-4 hover:text-cyan-400">
             Ir a Certificaciones →
@@ -181,15 +175,15 @@ const navLinks = [
       </div>
     </div>
 
-    <div class="pt-6 border-t border-white/10 flex items-center justify-between">
+    <div class="pt-6 border-t border-zinc-800 flex items-center justify-between">
       <div class="flex items-center gap-4">
-        <a href="https://github.com/paulollito29-sketch" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-cyan-400">
+        <a href="https://github.com/paulollito29-sketch" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-white">
           <Github className="w-4 h-4" />
         </a>
         <a href="https://www.linkedin.com/in/paulo-espinoza9/" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-cyan-400">
           <Linkedin className="w-4 h-4" />
         </a>
-        <a href="mailto:paulespinoza951@gmail.com" class="text-zinc-400 hover:text-cyan-400">
+        <a href="mailto:paulespinoza951@gmail.com" class="text-zinc-400 hover:text-white">
           <Mail className="w-4 h-4" />
         </a>
       </div>

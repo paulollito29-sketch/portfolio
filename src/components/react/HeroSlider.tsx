@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowRight, Server, Database, Layers } from "lucide-react";
 
 const slides = [
   {
     title: "Ingeniería de Sistemas",
     subtitle: "Arquitectura Backend & Soluciones Empresariales Escalables",
-    badge: "Oficial · UPC",
+    badge: "UPC · Sistemas de Información",
     tags: ["Arquitectura en Capas", "Microservicios REST", "Clean Architecture", "IA Integrada"],
   },
   {
@@ -65,142 +64,112 @@ export default function HeroSlider() {
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <section id="home" className="relative min-h-[85vh] flex flex-col justify-between pt-24 pb-8 px-4 sm:px-8 z-10">
-      <div className="max-w-7xl mx-auto w-full flex-1 flex flex-col justify-center py-10">
-        {/* Main Cinematic Hero Slide Content */}
-        <div className="relative min-h-[320px] sm:min-h-[360px] flex flex-col justify-center">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentSlide}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.6, ease: "easeInOut" }}
-              className="space-y-6"
-            >
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-xs font-mono text-cyan-400 uppercase tracking-widest">
-                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping" />
-                <span>{slides[currentSlide].badge}</span>
-              </div>
+    <section id="home" className="relative min-h-[75vh] flex flex-col justify-between pt-20 pb-6 px-4 sm:px-8 z-10">
+      <div className="max-w-7xl mx-auto w-full flex-1 flex flex-col justify-center py-8">
+        {/* Main Flat Hero Slide Content */}
+        <div className="relative min-h-[280px] flex flex-col justify-center space-y-5">
+          {/* Flat Badge */}
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-mono text-cyan-400 uppercase tracking-widest w-fit">
+            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+            <span>{slides[currentSlide].badge}</span>
+          </div>
 
-              {/* Title */}
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-display font-bold tracking-tight text-white uppercase leading-[1.05]">
-                {slides[currentSlide].title}
-              </h1>
+          {/* Title */}
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-display font-bold tracking-tight text-white uppercase leading-tight">
+            {slides[currentSlide].title}
+          </h1>
 
-              {/* Subtitle */}
-              <p className="text-base sm:text-xl lg:text-2xl font-light text-slate-300 max-w-3xl leading-relaxed">
-                {slides[currentSlide].subtitle}
-              </p>
+          {/* Subtitle */}
+          <p className="text-sm sm:text-lg font-normal text-zinc-300 max-w-3xl leading-relaxed">
+            {slides[currentSlide].subtitle}
+          </p>
 
-              {/* Tag Badges */}
-              <div className="flex flex-wrap gap-2 pt-2">
-                {slides[currentSlide].tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-3 py-1 text-xs font-mono rounded bg-white/5 border border-white/10 text-slate-300"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-          </AnimatePresence>
+          {/* Tag Badges (Flat) */}
+          <div className="flex flex-wrap gap-1.5 pt-1">
+            {slides[currentSlide].tags.map((tag) => (
+              <span
+                key={tag}
+                className="px-2.5 py-0.5 text-xs font-mono rounded bg-zinc-900 border border-zinc-800 text-zinc-300"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
 
-          {/* Slide Navigation Dots & Arrows */}
-          <div className="flex items-center gap-4 mt-10">
-            <div className="flex gap-2">
+          {/* Slide Navigation Dots & Controls */}
+          <div className="flex items-center gap-4 pt-4">
+            <div className="flex gap-1.5">
               {slides.map((_, idx) => (
                 <button
                   key={idx}
                   onClick={() => setCurrentSlide(idx)}
-                  className={`h-1.5 transition-all cursor-pointer ${
-                    idx === currentSlide ? "w-10 bg-cyan-400" : "w-3 bg-white/20 hover:bg-white/40"
+                  className={`h-1 transition-all cursor-pointer ${
+                    idx === currentSlide ? "w-8 bg-cyan-400" : "w-2.5 bg-zinc-700 hover:bg-zinc-500"
                   }`}
                   aria-label={`Ir al slide ${idx + 1}`}
                 />
               ))}
             </div>
 
-            <div className="flex items-center gap-1.5 ml-4">
+            <div className="flex items-center gap-1 ml-4">
               <button
                 onClick={prevSlide}
-                className="p-2 rounded border border-white/10 text-zinc-400 hover:text-white hover:border-cyan-400/50 transition-all cursor-pointer"
+                className="p-1.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-600 transition-colors cursor-pointer"
                 aria-label="Slide anterior"
               >
-                <ChevronLeft className="w-4 h-4" />
+                <ChevronLeft className="w-3.5 h-3.5" />
               </button>
               <button
                 onClick={nextSlide}
-                className="p-2 rounded border border-white/10 text-zinc-400 hover:text-white hover:border-cyan-400/50 transition-all cursor-pointer"
+                className="p-1.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-600 transition-colors cursor-pointer"
                 aria-label="Slide siguiente"
               >
-                <ChevronRight className="w-4 h-4" />
+                <ChevronRight className="w-3.5 h-3.5" />
               </button>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Latest Highlights Banner Ticker (Elio Navarrete style) */}
+      {/* Latest Highlights Banner Ticker (Flat) */}
       <div className="max-w-7xl mx-auto w-full mt-auto">
-        <div className="grid lg:grid-cols-12 gap-4 p-4 rounded-xl glass-card border border-white/10 items-center">
+        <div className="grid lg:grid-cols-12 gap-3 p-3.5 rounded bg-[#121215] border border-zinc-800 items-center">
           {/* Ticker Column */}
-          <div className="lg:col-span-6 flex items-center gap-3 pr-4 lg:border-r border-white/10">
-            <div className="px-2.5 py-1 rounded bg-cyan-500 text-[#05070c] font-display font-bold text-xs tracking-wider uppercase shrink-0">
+          <div className="lg:col-span-6 flex items-center gap-3 pr-4 lg:border-r border-zinc-800">
+            <div className="px-2 py-0.5 rounded bg-zinc-800 border border-zinc-700 text-zinc-200 font-mono font-bold text-[11px] tracking-wider uppercase shrink-0">
               DESTACADOS
             </div>
-            <div className="flex-1 overflow-hidden h-7 flex items-center">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentHighlight}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.35 }}
-                  className="flex items-center justify-between w-full"
-                >
-                  <a
-                    href={highlights[currentHighlight].href}
-                    className="text-xs sm:text-sm font-mono text-zinc-300 hover:text-cyan-400 transition-colors truncate"
-                  >
-                    <span className="text-cyan-400 font-semibold mr-2">[{highlights[currentHighlight].tag}]</span>
-                    <span>{highlights[currentHighlight].title}</span>
-                  </a>
-                </motion.div>
-              </AnimatePresence>
+            <div className="flex-1 overflow-hidden h-6 flex items-center">
+              <a
+                href={highlights[currentHighlight].href}
+                className="text-xs font-mono text-zinc-300 hover:text-cyan-400 transition-colors truncate"
+              >
+                <span className="text-cyan-400 font-semibold mr-1.5">[{highlights[currentHighlight].tag}]</span>
+                <span>{highlights[currentHighlight].title}</span>
+              </a>
             </div>
           </div>
 
-          {/* Quick Action Pillars */}
+          {/* Action Links */}
           <div className="lg:col-span-6 flex items-center justify-between gap-2 overflow-x-auto text-xs font-mono">
             <a
               href="/portfolio"
-              className="px-3.5 py-1.5 rounded bg-white/5 hover:bg-cyan-500/20 hover:text-cyan-300 border border-white/10 transition-all text-zinc-300 truncate"
+              className="px-3 py-1 rounded bg-zinc-900 hover:bg-zinc-800 text-zinc-200 border border-zinc-800 transition-colors truncate"
             >
-              💼 Ver Portafolio
+              Portafolio →
             </a>
             <a
               href="/services"
-              className="px-3.5 py-1.5 rounded bg-white/5 hover:bg-cyan-500/20 hover:text-cyan-300 border border-white/10 transition-all text-zinc-300 truncate"
+              className="px-3 py-1 rounded bg-zinc-900 hover:bg-zinc-800 text-zinc-200 border border-zinc-800 transition-colors truncate"
             >
-              ⚙️ Ver Servicios
+              Servicios →
             </a>
             <a
               href="/certificates"
-              className="px-3.5 py-1.5 rounded bg-white/5 hover:bg-cyan-500/20 hover:text-cyan-300 border border-white/10 transition-all text-zinc-300 truncate"
+              className="px-3 py-1 rounded bg-zinc-900 hover:bg-zinc-800 text-zinc-200 border border-zinc-800 transition-colors truncate"
             >
-              🎓 Certificaciones
+              Certificaciones →
             </a>
-          </div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="mt-8 flex justify-center">
-          <div className="scroll-indicator">
-            <span>SCROLL</span>
-            <div className="scroll-line"></div>
           </div>
         </div>
       </div>

@@ -1,61 +1,61 @@
 ---
-import { Heart, Github, Linkedin, Mail, Phone, ShieldCheck, Code2 } from "lucide-react";
+import { Github, Linkedin, Mail, Phone } from "lucide-react";
 
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="border-t border-white/10 bg-[#04060a] text-zinc-400 py-16 px-4 sm:px-8 relative z-10">
+<footer class="border-t border-zinc-800 bg-[#09090b] text-zinc-400 py-12 px-4 sm:px-8 relative z-10">
   <div class="max-w-7xl mx-auto">
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/5">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pb-10 border-b border-zinc-800">
       {/* Brand Column */}
-      <div class="md:col-span-6 space-y-4">
+      <div class="md:col-span-6 space-y-3">
         <span class="text-[10px] font-mono uppercase tracking-widest text-cyan-400 font-bold block">
-          SITIO OFICIAL
+          PORTAFOLIO OFICIAL
         </span>
-        <div class="text-2xl font-display font-bold tracking-wider text-white uppercase">
+        <div class="text-xl font-display font-bold tracking-wider text-white uppercase">
           PAULO ESPINOZA
         </div>
-        <p class="text-xs font-mono text-cyan-400">
+        <p class="text-xs font-mono text-zinc-400">
           Ingeniero de Sistemas de Información · Universidad Peruana de Ciencias Aplicadas (UPC)
         </p>
         <p class="text-xs text-zinc-400 max-w-md leading-relaxed">
-          Diseño e implementación de arquitectura backend en Java (Spring Boot) &amp; .NET, persistencia relacional en SQL Server / Oracle y desarrollo web acelerado con Inteligencia Artificial.
+          Arquitectura backend en Java (Spring Boot) &amp; .NET, persistencia relacional en SQL Server / Oracle y desarrollo web asistido por Inteligencia Artificial.
         </p>
       </div>
 
       {/* Navigation Column */}
-      <div class="md:col-span-3 space-y-3">
+      <div class="md:col-span-3 space-y-2.5">
         <span class="text-xs font-mono uppercase tracking-wider text-white font-bold block">
           Navegación
         </span>
-        <ul class="space-y-2 text-xs font-mono">
+        <ul class="space-y-1.5 text-xs font-mono">
           <li>
-            <a href="/" class="hover:text-cyan-400 transition-colors uppercase">Inicio</a>
+            <a href="/" class="hover:text-white transition-colors uppercase">Inicio</a>
           </li>
           <li>
-            <a href="/profile" class="hover:text-cyan-400 transition-colors uppercase">Perfil Oficial</a>
+            <a href="/profile" class="hover:text-white transition-colors uppercase">Perfil Oficial</a>
           </li>
           <li>
-            <a href="/services" class="hover:text-cyan-400 transition-colors uppercase">Servicios</a>
+            <a href="/services" class="hover:text-white transition-colors uppercase">Servicios</a>
           </li>
           <li>
-            <a href="/portfolio" class="hover:text-cyan-400 transition-colors uppercase">Portafolio</a>
+            <a href="/portfolio" class="hover:text-white transition-colors uppercase">Portafolio</a>
           </li>
           <li>
-            <a href="/certificates" class="hover:text-cyan-400 transition-colors uppercase">Certificaciones</a>
+            <a href="/certificates" class="hover:text-white transition-colors uppercase">Certificaciones</a>
           </li>
           <li>
-            <a href="/contact" class="hover:text-cyan-400 transition-colors uppercase">Contacto</a>
+            <a href="/contact" class="hover:text-white transition-colors uppercase">Contacto</a>
           </li>
         </ul>
       </div>
 
       {/* Connect Column */}
-      <div class="md:col-span-3 space-y-3">
+      <div class="md:col-span-3 space-y-2.5">
         <span class="text-xs font-mono uppercase tracking-wider text-white font-bold block">
-          Conectar
+          Canales Directos
         </span>
-        <ul class="space-y-2.5 text-xs font-mono">
+        <ul class="space-y-2 text-xs font-mono">
           <li>
             <a
               href="https://www.linkedin.com/in/paulo-espinoza9/"
@@ -71,9 +71,9 @@ const currentYear = new Date().getFullYear();
               href="https://github.com/paulollito29-sketch"
               target="_blank"
               rel="noopener noreferrer"
-              class="flex items-center gap-2 hover:text-cyan-400 transition-colors"
+              class="flex items-center gap-2 hover:text-white transition-colors"
             >
-              <Github className="w-3.5 h-3.5 text-cyan-400" /> GitHub
+              <Github className="w-3.5 h-3.5" /> GitHub
             </a>
           </li>
           <li>
@@ -89,9 +89,9 @@ const currentYear = new Date().getFullYear();
           <li>
             <a
               href="mailto:paulespinoza951@gmail.com"
-              class="flex items-center gap-2 hover:text-cyan-400 transition-colors"
+              class="flex items-center gap-2 hover:text-white transition-colors"
             >
-              <Mail className="w-3.5 h-3.5 text-cyan-400" /> Email Corporativo
+              <Mail className="w-3.5 h-3.5" /> Email Corporativo
             </a>
           </li>
         </ul>
@@ -99,12 +99,12 @@ const currentYear = new Date().getFullYear();
     </div>
 
     {/* Bottom Bar */}
-    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-500">
+    <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-zinc-500">
       <div>
         &copy; {currentYear} Paulo Espinoza. Todos los derechos reservados.
       </div>
-      <div class="flex items-center gap-1.5 text-zinc-500">
-        <span>Ingeniería de Sistemas de Información · UPC Lima</span>
+      <div>
+        <span>Ingeniería de Sistemas de Información · UPC</span>
       </div>
     </div>
   </div>
