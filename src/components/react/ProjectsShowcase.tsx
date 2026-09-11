@@ -98,25 +98,31 @@ const categories = [
   { id: "database", label: "Bases de Datos & .NET" },
 ];
 
-export default function ProjectsShowcase() {
+interface ProjectsShowcaseProps {
+  hideHeader?: boolean;
+}
+
+export default function ProjectsShowcase({ hideHeader = false }: ProjectsShowcaseProps) {
   const [filter, setFilter] = useState("all");
 
   const filtered = filter === "all" ? portfolioCards : portfolioCards.filter((p) => p.category === filter);
 
   return (
-    <section id="portfolios" className="max-w-7xl mx-auto px-4 sm:px-8 py-12 relative z-10">
+    <section id="portfolios" className={`max-w-7xl mx-auto px-4 sm:px-8 ${hideHeader ? "pt-2 pb-12" : "py-12"} relative z-10`}>
       {/* Flat Section Header */}
-      <div className="mb-10 text-center sm:text-left border-b border-zinc-800 pb-5">
-        <span className="text-xs font-mono uppercase tracking-widest text-cyan-400 font-bold block mb-1">
-          SISTEMAS DESARROLLADOS
-        </span>
-        <h2 className="text-2xl sm:text-4xl font-display font-bold text-white uppercase tracking-tight">
-          Portafolio &amp; Casos de Estudio
-        </h2>
-        <p className="text-xs sm:text-sm text-zinc-400 mt-1">
-          Proyectos empresariales con código fuente auditado y arquitecturas listas para producción.
-        </p>
-      </div>
+      {!hideHeader && (
+        <div className="mb-10 text-center sm:text-left border-b border-zinc-800 pb-5">
+          <span className="text-xs font-mono uppercase tracking-widest text-cyan-400 font-bold block mb-1">
+            SISTEMAS DESARROLLADOS
+          </span>
+          <h2 className="text-2xl sm:text-4xl font-display font-bold text-white uppercase tracking-tight">
+            Portafolio &amp; Casos de Estudio
+          </h2>
+          <p className="text-xs sm:text-sm text-zinc-400 mt-1">
+            Proyectos empresariales con código fuente auditado y arquitecturas listas para producción.
+          </p>
+        </div>
+      )}
 
       {/* Lead Featured Case Study (Flat) */}
       <div className="mb-10 rounded-lg bg-[#121215] border border-zinc-800 p-6 sm:p-8">

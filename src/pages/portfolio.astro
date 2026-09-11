@@ -18,7 +18,7 @@ import ScrollToTop from "../components/react/ScrollToTop";
 
   <main class="relative z-10 pt-20 pb-16 space-y-8">
     <!-- Page Header Banner -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-8 pt-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 pt-6 border-b border-zinc-800 pb-6">
       <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-xs font-mono text-cyan-400 uppercase tracking-widest mb-3">
         <span>SISTEMAS DESARROLLADOS &amp; CASOS DE ESTUDIO</span>
       </div>
@@ -31,7 +31,7 @@ import ScrollToTop from "../components/react/ScrollToTop";
     </div>
 
     <!-- Projects Showcase Component with lead case and filters -->
-    <ProjectsShowcase client:load />
+    <ProjectsShowcase hideHeader client:load />
 
     <!-- GitHub CTA Card (Flat) -->
     <div class="max-w-7xl mx-auto px-4 sm:px-8 py-6">
