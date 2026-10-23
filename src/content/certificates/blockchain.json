@@ -1,0 +1,24 @@
+{
+  "id": "blockchain",
+  "file": "blockchain.pdf",
+  "title": {
+    "es": "Arquitectura Blockchain & Libros Contables Distribuidos",
+    "en": "Blockchain Architecture & Distributed Ledgers"
+  },
+  "issuer": "University of Cape Town (Coursera)",
+  "institution": "University of Cape Town",
+  "category": {
+    "es": "Sistemas Distribuidos",
+    "en": "Distributed Systems"
+  },
+  "icon": "🔗",
+  "skillsValidated": {
+    "es": ["Criptografía", "Protocolos de Consenso", "Smart Contracts", "Seguridad Distribuida"],
+    "en": ["Cryptography", "Consensus Protocols", "Smart Contracts", "Distributed Security"]
+  },
+  "credentialId": "DZZ4J4GGN3HQ",
+  "verificationUrl": "https://coursera.org/verify/DZZ4J4GGN3HQ",
+  "issueDate": "2024-11-18",
+  "duration": "Especialización Tech",
+  "order": 9
+}

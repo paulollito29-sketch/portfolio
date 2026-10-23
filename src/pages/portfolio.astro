@@ -1,19 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Navbar from "../components/astro/Navbar.astro";
-import Footer from "../components/astro/Footer.astro";
-import ScrollProgress from "../components/react/ScrollProgress";
-import BackgroundScroll from "../components/react/BackgroundScroll";
-import ProjectsShowcase from "../components/react/ProjectsShowcase";
-import ScrollToTop from "../components/react/ScrollToTop";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import ScrollProgress from "../components/ScrollProgress.astro";
+import BackgroundScroll from "../components/BackgroundScroll.astro";
+import ProjectsShowcase from "../components/ProjectsShowcase.astro";
+import ScrollToTop from "../components/ScrollToTop.astro";
 ---
 
 <Layout
   title="Portafolio & Casos de Estudio | Paulo Espinoza · Ingeniero de Sistemas"
   description="Casos de estudio y sistemas empresariales desarrollados por Paulo Espinoza: microservicios en Spring Boot, aplicaciones comerciales en SQL Server, sistemas offline PWA y algoritmos."
 >
-  <ScrollProgress client:load />
-  <BackgroundScroll client:load />
+  <ScrollProgress />
+  <BackgroundScroll />
   <Navbar />
 
   <main class="relative z-10 pt-20 pb-16 space-y-8">
@@ -31,7 +31,7 @@ import ScrollToTop from "../components/react/ScrollToTop";
     </div>
 
     <!-- Projects Showcase Component with lead case and filters -->
-    <ProjectsShowcase hideHeader client:load />
+    <ProjectsShowcase hideHeader />
 
     <!-- GitHub CTA Card (Flat) -->
     <div class="max-w-7xl mx-auto px-4 sm:px-8 py-6">
@@ -57,5 +57,5 @@ import ScrollToTop from "../components/react/ScrollToTop";
   </main>
 
   <Footer />
-  <ScrollToTop client:load />
+  <ScrollToTop />
 </Layout>

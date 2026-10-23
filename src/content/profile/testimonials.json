@@ -1,0 +1,50 @@
+{
+  "id": "testimonials",
+  "testimonials": [
+    {
+      "name": {
+        "es": "Calidad Técnica & Arquitectura",
+        "en": "Technical Quality & Architecture"
+      },
+      "role": {
+        "es": "Evaluación de Desempeño",
+        "en": "Performance Evaluation"
+      },
+      "text": {
+        "es": "Demuestra gran rigor en el diseño estructurado de bases de datos relacionales, normalización y aplicación de principios de Clean Architecture en microservicios backend.",
+        "en": "Demonstrates exceptional rigor in structured relational database design, normalization, and the application of Clean Architecture principles across backend microservices."
+      },
+      "tags": ["Clean Code", "Microservicios", "SQL Server", "Spring Boot"]
+    },
+    {
+      "name": {
+        "es": "Innovación & Productividad con IA",
+        "en": "Innovation & AI Productivity"
+      },
+      "role": {
+        "es": "Desarrollo Acelerado",
+        "en": "Accelerated Engineering"
+      },
+      "text": {
+        "es": "Criterio sobresaliente al integrar modelos y agentes de IA en su flujo de trabajo diario, logrando prototipar y construir sistemas completos en tiempos récord sin sacrificar calidad.",
+        "en": "Outstanding engineering judgment when integrating AI models and agents into daily workflows, prototyping and shipping full systems in record time without compromising quality."
+      },
+      "tags": ["IA Integrada", "Full Stack", "Clean Architecture"]
+    },
+    {
+      "name": {
+        "es": "Compromiso & Adaptabilidad",
+        "en": "Commitment & Adaptability"
+      },
+      "role": {
+        "es": "Ingeniería de Sistemas",
+        "en": "Systems Engineering"
+      },
+      "text": {
+        "es": "Curva de aprendizaje acelerada para asimilar nuevos frameworks, resolver incidentes y adoptar herramientas de frontend y backend con solidez técnica.",
+        "en": "Accelerated learning curve in adopting new frameworks, debugging critical production incidents, and mastering frontend and backend tooling with technical depth."
+      },
+      "tags": ["Resolución de Problemas", "React", ".NET"]
+    }
+  ]
+}

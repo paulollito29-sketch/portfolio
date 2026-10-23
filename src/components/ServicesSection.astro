@@ -1,0 +1,126 @@
+---
+import { getCollection } from "astro:content";
+import Icon from "./icons/Icon.astro";
+
+const serviceEntries = await getCollection("services").catch(() => []);
+const sortedServices = serviceEntries.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
+
+// Fallback in case collections are not yet synced or empty
+const services = sortedServices.length > 0 ? sortedServices.map((s) => s.data) : [
+  {
+    tag: { es: "Metodología SDD" },
+    name: { es: "Especificación & Diseño de Sistemas (SDD)" },
+    description: { es: "Elaboración de Software Design Documents (SDD), especificación formal de requerimientos, contratos OpenAPI y arquitectura Clean/SOLID previa a la implementación." },
+    icon: "Layers",
+    points: {
+      es: [
+        "Diseño de Software Design Documents (SDD) y especificaciones técnicas",
+        "Definición formal de contratos API RESTful con OpenAPI / Swagger",
+        "Arquitectura desacoplada en capas (Clean / Hexagonal) y principios SOLID",
+        "Modelado de dominio de negocio y casos de uso empresariales"
+      ]
+    }
+  },
+  {
+    tag: { es: "Backend" },
+    name: { es: "Desarrollo de Servicios & APIs" },
+    description: { es: "Construcción de APIs RESTful de alto rendimiento en Java (Spring Boot) y C# (.NET Core) con seguridad JWT." },
+    icon: "Server",
+    points: {
+      es: [
+        "Microservicios desacoplados con Spring Boot & .NET Core",
+        "Autenticación segura basada en tokens JWT y roles",
+        "Documentación interactiva con Swagger / OpenAPI 3.0",
+        "Contenedorización con Docker y Docker Compose"
+      ]
+    }
+  },
+  {
+    tag: { es: "Bases de Datos" },
+    name: { es: "Modelado Relacional & SQL" },
+    description: { es: "Diseño de esquemas relacionales, transacciones ACID, optimización de consultas complejas y procedimientos almacenados." },
+    icon: "Database",
+    points: {
+      es: [
+        "Modelado relacional en PostgreSQL, SQL Server y MariaDB",
+        "Optimización de índices y planes de ejecución",
+        "Mapeo eficiente con ORMs (JPA/Hibernate y EF Core)",
+        "Integridad referencial y políticas transaccionales"
+      ]
+    }
+  },
+  {
+    tag: { es: "Desarrollo con IA" },
+    name: { es: "Desarrollo Asistido por IA & Full Stack" },
+    description: { es: "Construcción acelerada de sistemas web y microservicios mediante flujos asistidos por IA (LLMs, Copilot, Cursor y testing guiado)." },
+    icon: "Sparkles",
+    points: {
+      es: [
+        "Ciclo de desarrollo acelerado con herramientas de IA generativa",
+        "Interfaces reactivas con Angular, React, Next.js y Astro",
+        "Generación y ejecución automatizada de tests unitarios",
+        "Código con tipado estricto en TypeScript y arquitectura modular"
+      ]
+    }
+  }
+];
+---
+
+<section id="services" class="max-w-7xl mx-auto px-4 sm:px-8 py-12 relative z-10">
+  <!-- Friendly Section Header (Flat) -->
+  <div class="mb-10 text-center sm:text-left border-b border-slate-800/80 pb-5">
+    <span class="text-xs font-mono uppercase tracking-widest text-sky-400 font-bold block mb-1">
+      CAPACIDADES TÉCNICAS
+    </span>
+    <h2 class="text-2xl sm:text-4xl font-display font-bold text-white uppercase tracking-tight">
+      Servicios de Ingeniería de Sistemas
+    </h2>
+    <p class="text-xs sm:text-sm text-slate-300 mt-1">
+      Soluciones integrales de software con especificaciones formales, código limpio y aceleración con IA.
+    </p>
+  </div>
+
+  <!-- Services Grid (Flat) -->
+  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+    {services.map((s) => (
+      <div class="bg-[#131d33] border border-[#24324f] rounded-xl p-5 flex flex-col justify-between hover:border-sky-500/50 hover:bg-[#1a2744] transition-all">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-9 h-9 rounded-lg bg-slate-900 border border-[#24324f] flex items-center justify-center text-sky-400">
+              <Icon name={s.icon} class="w-4.5 h-4.5" />
+            </div>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-900 border border-[#24324f] text-sky-300 uppercase">
+              {s.tag.es}
+            </span>
+          </div>
+
+          <h3 class="text-base font-bold text-white mb-2">
+            {s.name.es}
+          </h3>
+          <p class="text-xs text-slate-300 leading-relaxed mb-4">
+            {s.description.es}
+          </p>
+
+          <ul class="space-y-1.5 mb-5 border-t border-[#24324f] pt-3">
+            {s.points.es.map((pt: string) => (
+              <li class="flex items-start gap-2 text-[11px] text-slate-300">
+                <Icon name="check-circle-2" class="w-3.5 h-3.5 text-sky-400 shrink-0 mt-0.5" />
+                <span>{pt}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="pt-3 border-t border-[#24324f]">
+          <a
+            href="/contact"
+            class="inline-flex items-center gap-1 text-xs font-mono text-sky-400 hover:text-sky-300 transition-colors uppercase font-medium"
+          >
+            <span>Consultar Servicio</span>
+            <Icon name="arrow-right" class="w-3 h-3" />
+          </a>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

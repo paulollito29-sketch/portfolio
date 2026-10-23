@@ -1,0 +1,24 @@
+{
+  "id": "react",
+  "file": "react.pdf",
+  "title": {
+    "es": "Desarrollo con React & Aplicaciones Web",
+    "en": "React Development & Web Applications"
+  },
+  "issuer": "Udemy / Fernando Herrera ({d/t} DevTalles) — Meta Curriculum",
+  "institution": "Meta",
+  "category": {
+    "es": "Arquitectura Frontend",
+    "en": "Frontend Architecture"
+  },
+  "icon": "⚛️",
+  "skillsValidated": {
+    "es": ["React Hooks", "Ciclo de Vida de Componentes", "Gestión de Estado", "JSX"],
+    "en": ["React Hooks", "Component Lifecycle", "State Management", "JSX"]
+  },
+  "credentialId": "UC-8597b55e-5659-4715-a9e2-13ad87e233c7",
+  "verificationUrl": "https://ude.my/UC-8597b55e-5659-4715-a9e2-13ad87e233c7",
+  "issueDate": "2026-03-21",
+  "duration": "46 horas / hours",
+  "order": 1
+}

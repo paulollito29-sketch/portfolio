@@ -1,0 +1,38 @@
+---
+import Icon from "./icons/Icon.astro";
+---
+
+<button
+  id="scrollToTopBtn"
+  class="fixed bottom-6 right-6 z-40 p-3 rounded-lg bg-[#131d33] border border-[#24324f] hover:border-cyan-400 text-cyan-400 hover:text-white transition-all cursor-pointer opacity-0 pointer-events-none duration-200"
+  aria-label="Volver arriba"
+  title="Volver al inicio"
+>
+  <Icon name="arrow-up" class="w-5 h-5" />
+</button>
+
+<script>
+  function initScrollToTop() {
+    const btn = document.getElementById("scrollToTopBtn");
+    if (!btn) return;
+
+    const handleScroll = () => {
+      if (window.scrollY > 400) {
+        btn.classList.remove("opacity-0", "pointer-events-none");
+        btn.classList.add("opacity-100", "pointer-events-auto");
+      } else {
+        btn.classList.add("opacity-0", "pointer-events-none");
+        btn.classList.remove("opacity-100", "pointer-events-auto");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    btn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+    handleScroll();
+  }
+
+  initScrollToTop();
+  document.addEventListener("astro:page-load", initScrollToTop);
+</script>

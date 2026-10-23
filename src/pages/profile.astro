@@ -1,22 +1,22 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Navbar from "../components/astro/Navbar.astro";
-import Footer from "../components/astro/Footer.astro";
-import ScrollProgress from "../components/react/ScrollProgress";
-import BackgroundScroll from "../components/react/BackgroundScroll";
-import OfficialUpdatePanel from "../components/react/OfficialUpdatePanel";
-import AboutSection from "../components/react/AboutSection";
-import SkillsMatrix from "../components/react/SkillsMatrix";
-import TestimonialsTrack from "../components/react/TestimonialsTrack";
-import ScrollToTop from "../components/react/ScrollToTop";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import ScrollProgress from "../components/ScrollProgress.astro";
+import BackgroundScroll from "../components/BackgroundScroll.astro";
+import OfficialUpdatePanel from "../components/OfficialUpdatePanel.astro";
+import AboutSection from "../components/AboutSection.astro";
+import SkillsMatrix from "../components/SkillsMatrix.astro";
+import TestimonialsTrack from "../components/TestimonialsTrack.astro";
+import ScrollToTop from "../components/ScrollToTop.astro";
 ---
 
 <Layout
   title="Perfil Oficial | Paulo Espinoza · Ingeniero de Sistemas de Información (UPC)"
   description="Perfil profesional, trayectoria académica en la UPC, pilares de ingeniería de sistemas y matriz de habilidades técnicas de Paulo Espinoza."
 >
-  <ScrollProgress client:load />
-  <BackgroundScroll client:load />
+  <ScrollProgress />
+  <BackgroundScroll />
   <Navbar />
 
   <main class="relative z-10 pt-20 pb-16 space-y-8">
@@ -34,16 +34,16 @@ import ScrollToTop from "../components/react/ScrollToTop";
     </div>
 
     <!-- Official Live Facts -->
-    <OfficialUpdatePanel client:load />
+    <OfficialUpdatePanel />
 
     <!-- Executive About & Core Capabilities -->
-    <AboutSection client:load />
+    <AboutSection />
 
     <!-- Technical Skills Matrix -->
-    <SkillsMatrix client:load />
+    <SkillsMatrix />
 
     <!-- Testimonials Track -->
-    <TestimonialsTrack client:load />
+    <TestimonialsTrack />
 
     <!-- Direct CTA (Flat) -->
     <div class="max-w-7xl mx-auto px-4 sm:px-8 py-6">
@@ -67,5 +67,5 @@ import ScrollToTop from "../components/react/ScrollToTop";
   </main>
 
   <Footer />
-  <ScrollToTop client:load />
+  <ScrollToTop />
 </Layout>

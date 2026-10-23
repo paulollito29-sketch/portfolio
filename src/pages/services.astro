@@ -1,19 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Navbar from "../components/astro/Navbar.astro";
-import Footer from "../components/astro/Footer.astro";
-import ScrollProgress from "../components/react/ScrollProgress";
-import BackgroundScroll from "../components/react/BackgroundScroll";
-import ServicesSection from "../components/react/ServicesSection";
-import ScrollToTop from "../components/react/ScrollToTop";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import ScrollProgress from "../components/ScrollProgress.astro";
+import BackgroundScroll from "../components/BackgroundScroll.astro";
+import ServicesSection from "../components/ServicesSection.astro";
+import ScrollToTop from "../components/ScrollToTop.astro";
 ---
 
 <Layout
   title="Servicios Especializados | Paulo Espinoza · Soluciones de Sistemas"
   description="Servicios profesionales de ingeniería de sistemas de información: auditoría y arquitectura de sistemas, desarrollo backend en Spring Boot y .NET, modelado de bases de datos y soluciones web con IA."
 >
-  <ScrollProgress client:load />
-  <BackgroundScroll client:load />
+  <ScrollProgress />
+  <BackgroundScroll />
   <Navbar />
 
   <main class="relative z-10 pt-20 pb-16 space-y-8">
@@ -31,7 +31,7 @@ import ScrollToTop from "../components/react/ScrollToTop";
     </div>
 
     <!-- Services Section with flat cards -->
-    <ServicesSection client:load />
+    <ServicesSection />
 
     <!-- Methodology & Quality Process (Flat) -->
     <div class="max-w-7xl mx-auto px-4 sm:px-8 py-8 border-t border-zinc-800">
@@ -81,5 +81,5 @@ import ScrollToTop from "../components/react/ScrollToTop";
   </main>
 
   <Footer />
-  <ScrollToTop client:load />
+  <ScrollToTop />
 </Layout>

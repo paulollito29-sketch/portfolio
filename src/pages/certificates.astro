@@ -1,19 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Navbar from "../components/astro/Navbar.astro";
-import Footer from "../components/astro/Footer.astro";
-import ScrollProgress from "../components/react/ScrollProgress";
-import BackgroundScroll from "../components/react/BackgroundScroll";
-import CertificatesModal from "../components/react/CertificatesModal";
-import ScrollToTop from "../components/react/ScrollToTop";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import ScrollProgress from "../components/ScrollProgress.astro";
+import BackgroundScroll from "../components/BackgroundScroll.astro";
+import CertificatesModal from "../components/CertificatesModal.astro";
+import ScrollToTop from "../components/ScrollToTop.astro";
 ---
 
 <Layout
   title="Certificaciones Oficiales | Paulo Espinoza · Meta, Oracle & Michigan"
   description="Certificaciones auditadas y acreditaciones oficiales obtenidas por Paulo Espinoza de Meta, Oracle Academy y University of Michigan en desarrollo web, SQL y Python."
 >
-  <ScrollProgress client:load />
-  <BackgroundScroll client:load />
+  <ScrollProgress />
+  <BackgroundScroll />
   <Navbar />
 
   <main class="relative z-10 pt-20 pb-16 space-y-8">
@@ -31,9 +31,9 @@ import ScrollToTop from "../components/react/ScrollToTop";
     </div>
 
     <!-- Certificates Modal Component with PDF Viewer -->
-    <CertificatesModal client:load />
+    <CertificatesModal />
   </main>
 
   <Footer />
-  <ScrollToTop client:load />
+  <ScrollToTop />
 </Layout>

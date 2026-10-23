@@ -1,0 +1,27 @@
+{
+  "id": "huffman-compressor",
+  "title": "Huffman File Compressor & Decompressor",
+  "category": "database",
+  "categoryName": {
+    "es": "Algoritmos & Estructuras",
+    "en": "Algorithms & Data Structures"
+  },
+  "year": "2024",
+  "description": {
+    "es": "Compresor de archivos sin pérdida basado en frecuencias estadísticas y árboles binarios de Huffman con interfaz gráfica.",
+    "en": "Lossless file compressor based on statistical character frequency and Huffman binary trees with a desktop graphical interface."
+  },
+  "impact": {
+    "es": "Impacto: Reducción comprobada del tamaño de archivos de texto con compresión exacta sin pérdida.",
+    "en": "Impact: Proven text file size reduction with 100% exact lossless reconstruction."
+  },
+  "tags": [
+    "Python",
+    "Estructuras de Datos",
+    "Algoritmos",
+    "GUI"
+  ],
+  "repo": "https://github.com/paulollito29-sketch/huffman-compressor",
+  "featured": false,
+  "order": 6
+}

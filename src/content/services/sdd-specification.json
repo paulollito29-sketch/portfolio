@@ -1,0 +1,31 @@
+{
+  "id": "sdd-specification",
+  "tag": {
+    "es": "Metodología SDD",
+    "en": "SDD Methodology"
+  },
+  "name": {
+    "es": "Especificación & Diseño de Sistemas (SDD)",
+    "en": "System Specification & Architecture (SDD)"
+  },
+  "description": {
+    "es": "Elaboración de Software Design Documents (SDD), especificación formal de requerimientos, contratos OpenAPI y arquitectura Clean/SOLID previa a la implementación.",
+    "en": "Authoring Software Design Documents (SDD), formal requirements specifications, OpenAPI contracts, and Clean/SOLID architecture prior to coding."
+  },
+  "icon": "Layers",
+  "points": {
+    "es": [
+      "Diseño de Software Design Documents (SDD) y especificaciones técnicas",
+      "Definición formal de contratos API RESTful con OpenAPI / Swagger",
+      "Arquitectura desacoplada en capas (Clean / Hexagonal) y principios SOLID",
+      "Modelado de dominio de negocio y casos de uso empresariales"
+    ],
+    "en": [
+      "Authoring Software Design Documents (SDD) and rigorous technical specs",
+      "Formal RESTful API contract definitions using OpenAPI / Swagger",
+      "Decoupled layered architecture (Clean / Hexagonal) and SOLID principles",
+      "Enterprise business domain modeling and transactional use case mapping"
+    ]
+  },
+  "order": 1
+}

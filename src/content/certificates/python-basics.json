@@ -1,0 +1,24 @@
+{
+  "id": "python-basics",
+  "file": "python basics.pdf",
+  "title": {
+    "es": "Fundamentos de Programación en Python",
+    "en": "Programming Fundamentals in Python"
+  },
+  "issuer": "University of Michigan (Coursera)",
+  "institution": "University of Michigan",
+  "category": {
+    "es": "Núcleo de Programación",
+    "en": "Programming Core"
+  },
+  "icon": "🐍",
+  "skillsValidated": {
+    "es": ["Funciones", "Flujo de Control", "Depuración", "Código Modular"],
+    "en": ["Functions", "Control Flow", "Debugging", "Modular Code"]
+  },
+  "credentialId": "KVIF7717DB9A",
+  "verificationUrl": "https://coursera.org/verify/KVIF7717DB9A",
+  "issueDate": "2026-04-09",
+  "duration": "19 horas / hours",
+  "order": 8
+}

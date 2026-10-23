@@ -1,0 +1,24 @@
+{
+  "id": "capstone",
+  "file": "capstone.pdf",
+  "title": {
+    "es": "Capstone: Recuperación, Procesamiento & Visualización de Datos",
+    "en": "Capstone: Retrieving, Processing & Visualizing Data"
+  },
+  "issuer": "University of Michigan (Coursera)",
+  "institution": "University of Michigan",
+  "category": {
+    "es": "Proyecto Capstone",
+    "en": "Capstone Project"
+  },
+  "icon": "🎓",
+  "skillsValidated": {
+    "es": ["Pipeline End-to-End", "Arquitectura de Sistemas", "Almacenamiento de Datos"],
+    "en": ["End-to-End Pipeline", "Systems Architecture", "Data Storage"]
+  },
+  "credentialId": "KIR3XCOOMQ7D",
+  "verificationUrl": "https://coursera.org/verify/KIR3XCOOMQ7D",
+  "issueDate": "2026-04-21",
+  "duration": "Capstone Project",
+  "order": 7
+}

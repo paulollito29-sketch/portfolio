@@ -1,17 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Navbar from "../components/astro/Navbar.astro";
-import Footer from "../components/astro/Footer.astro";
-import ScrollProgress from "../components/react/ScrollProgress";
-import BackgroundScroll from "../components/react/BackgroundScroll";
-import HeroSlider from "../components/react/HeroSlider";
-import OfficialUpdatePanel from "../components/react/OfficialUpdatePanel";
-import DualPanels from "../components/react/DualPanels";
-import ServicesSection from "../components/react/ServicesSection";
-import ProjectsShowcase from "../components/react/ProjectsShowcase";
-import CertificatesModal from "../components/react/CertificatesModal";
-import ContactInteractive from "../components/react/ContactInteractive";
-import ScrollToTop from "../components/react/ScrollToTop";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import ScrollProgress from "../components/ScrollProgress.astro";
+import BackgroundScroll from "../components/BackgroundScroll.astro";
+import HeroSlider from "../components/HeroSlider.astro";
+import OfficialUpdatePanel from "../components/OfficialUpdatePanel.astro";
+import DualPanels from "../components/DualPanels.astro";
+import ServicesSection from "../components/ServicesSection.astro";
+import ProjectsShowcase from "../components/ProjectsShowcase.astro";
+import CertificatesModal from "../components/CertificatesModal.astro";
+import ContactInteractive from "../components/ContactInteractive.astro";
+import ScrollToTop from "../components/ScrollToTop.astro";
 ---
 
 <Layout
@@ -19,10 +19,10 @@ import ScrollToTop from "../components/react/ScrollToTop";
   description="Sitio oficial de Paulo Espinoza — Ingeniero de Sistemas de Información de la UPC. Especializado en arquitectura backend en Java (Spring Boot), .NET, bases de datos relacionales y desarrollo asistido por IA."
 >
   <!-- Top Progress Bar -->
-  <ScrollProgress client:load />
+  <ScrollProgress />
 
   <!-- Flat Technical Grid Background -->
-  <BackgroundScroll client:load />
+  <BackgroundScroll />
 
   <!-- Flat Navbar -->
   <Navbar />
@@ -30,30 +30,30 @@ import ScrollToTop from "../components/react/ScrollToTop";
   <!-- Main Content Flow (Flat Design) -->
   <main class="relative z-10 space-y-8">
     <!-- Hero Slider with Flat Controls -->
-    <HeroSlider client:load />
+    <HeroSlider />
 
     <!-- Official Live Facts Collapsible Bar -->
-    <OfficialUpdatePanel client:load />
+    <OfficialUpdatePanel />
 
     <!-- Dual Facets Panels (Professional & Academic) -->
-    <DualPanels client:load />
+    <DualPanels />
 
     <!-- Featured Services Overview -->
-    <ServicesSection client:load />
+    <ServicesSection />
 
     <!-- Featured Portfolio Cases -->
-    <ProjectsShowcase client:load />
+    <ProjectsShowcase />
 
     <!-- Verified Credentials & Certificates -->
-    <CertificatesModal client:load />
+    <CertificatesModal />
 
     <!-- Official Recruiter Contact Section -->
-    <ContactInteractive client:load />
+    <ContactInteractive />
   </main>
 
   <!-- Official Flat Footer -->
   <Footer />
 
   <!-- Floating Back to Top Button -->
-  <ScrollToTop client:load />
+  <ScrollToTop />
 </Layout>

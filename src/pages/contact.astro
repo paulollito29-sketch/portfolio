@@ -1,19 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Navbar from "../components/astro/Navbar.astro";
-import Footer from "../components/astro/Footer.astro";
-import ScrollProgress from "../components/react/ScrollProgress";
-import BackgroundScroll from "../components/react/BackgroundScroll";
-import ContactInteractive from "../components/react/ContactInteractive";
-import ScrollToTop from "../components/react/ScrollToTop";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import ScrollProgress from "../components/ScrollProgress.astro";
+import BackgroundScroll from "../components/BackgroundScroll.astro";
+import ContactInteractive from "../components/ContactInteractive.astro";
+import ScrollToTop from "../components/ScrollToTop.astro";
 ---
 
 <Layout
   title="Contacto & Contratación | Paulo Espinoza · Ingeniero de Sistemas"
   description="Canal oficial de contacto y reclutamiento para Paulo Espinoza. Disponibilidad inmediata para roles en Ingeniería de Sistemas, Backend y Full Stack."
 >
-  <ScrollProgress client:load />
-  <BackgroundScroll client:load />
+  <ScrollProgress />
+  <BackgroundScroll />
   <Navbar />
 
   <main class="relative z-10 pt-20 pb-16 space-y-8">
@@ -31,9 +31,9 @@ import ScrollToTop from "../components/react/ScrollToTop";
     </div>
 
     <!-- Contact Interactive Form -->
-    <ContactInteractive client:load />
+    <ContactInteractive />
   </main>
 
   <Footer />
-  <ScrollToTop client:load />
+  <ScrollToTop />
 </Layout>

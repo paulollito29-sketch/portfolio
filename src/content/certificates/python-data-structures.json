@@ -1,0 +1,24 @@
+{
+  "id": "python-data-structures",
+  "file": "python data structures.pdf",
+  "title": {
+    "es": "Estructuras de Datos en Python & Pensamiento Computacional",
+    "en": "Python Data Structures & Computational Thinking"
+  },
+  "issuer": "University of Michigan (Coursera)",
+  "institution": "University of Michigan",
+  "category": {
+    "es": "Ciencias de la Computación",
+    "en": "Computer Science"
+  },
+  "icon": "📊",
+  "skillsValidated": {
+    "es": ["Listas", "Diccionarios", "Tuplas", "Análisis de Complejidad"],
+    "en": ["Lists", "Dictionaries", "Tuples", "Complexity Analysis"]
+  },
+  "credentialId": "87GWPATT6UM0",
+  "verificationUrl": "https://coursera.org/verify/87GWPATT6UM0",
+  "issueDate": "2026-04-21",
+  "duration": "19 horas / hours",
+  "order": 4
+}

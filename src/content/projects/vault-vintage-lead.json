@@ -1,0 +1,58 @@
+{
+  "id": "vault-vintage-lead",
+  "title": "Vault Vintage & Store Backend Ecosystem",
+  "category": "backend",
+  "categoryName": {
+    "es": "Backend & Microservicios",
+    "en": "Backend & Microservices"
+  },
+  "year": "2026",
+  "badge": {
+    "es": "Caso Destacado",
+    "en": "Featured Case Study"
+  },
+  "kicker": {
+    "es": "Caso Líder de Ingeniería de Sistemas",
+    "en": "Lead Information Systems Engineering Case"
+  },
+  "summary": {
+    "es": "Plataforma empresarial integral que combina punto de venta, control de inventario transaccional y microservicios con seguridad JWT.",
+    "en": "Comprehensive enterprise platform combining point of sale, transactional inventory control, and microservices with JWT security."
+  },
+  "description": {
+    "es": "Plataforma empresarial integral que combina punto de venta, control de inventario transaccional y microservicios con seguridad JWT.",
+    "en": "Comprehensive enterprise platform combining point of sale, transactional inventory control, and microservices with JWT security."
+  },
+  "impact": {
+    "es": "Impacto: Persistencia transaccional ACID, seguridad perimetral JWT y APIs estandarizadas para altos volúmenes de peticiones.",
+    "en": "Impact: ACID transactional persistence, perimeter JWT security, and standardized APIs handling high-throughput request loads."
+  },
+  "architecture": {
+    "es": "Arquitectura en Capas (Controller-Service-Repository) con microservicios REST, seguridad por roles y persistencia transaccional.",
+    "en": "Layered Architecture (Controller-Service-Repository) with REST microservices, role-based security, and transactional persistence."
+  },
+  "points": {
+    "es": [
+      "Diseño de persistencia transaccional en SQL Server con integridad referencial ACID.",
+      "Seguridad perimetral mediante tokens JWT con control de expiración y roles.",
+      "Documentación completa de endpoints con Swagger / OpenAPI 3.0 y contenedorización Docker."
+    ],
+    "en": [
+      "Transactional persistence design in SQL Server with ACID referential integrity.",
+      "Perimeter security using JWT tokens with expiration control and role-based permissions.",
+      "Comprehensive endpoint documentation with Swagger / OpenAPI 3.0 and Docker containerization."
+    ]
+  },
+  "tags": [
+    "Java",
+    "Spring Boot",
+    "SQL Server",
+    "JWT Security",
+    "Docker",
+    "React"
+  ],
+  "repo": "https://github.com/paulollito29-sketch/store-backend-v2",
+  "frontendRepo": "https://github.com/paulollito29-sketch/vault-vintage-frontend",
+  "featured": true,
+  "order": 1
+}

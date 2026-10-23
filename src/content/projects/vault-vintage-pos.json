@@ -1,0 +1,28 @@
+{
+  "id": "vault-vintage-pos",
+  "title": "Vault Vintage - POS & Control de Inventario",
+  "category": "fullstack",
+  "categoryName": {
+    "es": "Sistema Comercial Full Stack",
+    "en": "Full Stack Commercial System"
+  },
+  "year": "2026",
+  "description": {
+    "es": "Sistema empresarial de facturación, punto de venta y control de stock con reportería analítica y gestión de permisos.",
+    "en": "Enterprise billing, point-of-sale, and inventory system with analytical reporting and role-based permissions."
+  },
+  "impact": {
+    "es": "Impacto: Trazabilidad total de ventas, control de caja y sincronización en tiempo real.",
+    "en": "Impact: End-to-end sales traceability, cash drawer management, and real-time synchronization."
+  },
+  "tags": [
+    "Java",
+    "Spring Boot",
+    "SQL Server",
+    "React",
+    "REST API"
+  ],
+  "repo": "https://github.com/paulollito29-sketch/vault-vintage-frontend",
+  "featured": false,
+  "order": 3
+}

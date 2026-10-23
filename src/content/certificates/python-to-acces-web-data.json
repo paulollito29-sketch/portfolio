@@ -1,0 +1,24 @@
+{
+  "id": "python-to-acces-web-data",
+  "file": "python to acces web data.pdf",
+  "title": {
+    "es": "Uso de Python para Acceder a Datos Web & APIs",
+    "en": "Using Python to Access Web Data & APIs"
+  },
+  "issuer": "University of Michigan (Coursera)",
+  "institution": "University of Michigan",
+  "category": {
+    "es": "APIs & Servicios Web",
+    "en": "APIs & Web Services"
+  },
+  "icon": "🌐",
+  "skillsValidated": {
+    "es": ["APIs REST", "Parsing JSON/XML", "Protocolos HTTP", "Web Scraping"],
+    "en": ["REST APIs", "JSON/XML Parsing", "HTTP Protocols", "Web Scraping"]
+  },
+  "credentialId": "BGJJVJ7D5JNM",
+  "verificationUrl": "https://coursera.org/verify/BGJJVJ7D5JNM",
+  "issueDate": "2026-06-22",
+  "duration": "19 horas / hours",
+  "order": 5
+}

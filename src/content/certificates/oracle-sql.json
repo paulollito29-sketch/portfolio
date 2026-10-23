@@ -1,0 +1,24 @@
+{
+  "id": "oracle-sql",
+  "file": "oracle sql.pdf",
+  "title": {
+    "es": "Diseño de Bases de Datos & Programación Oracle SQL",
+    "en": "Database Design & Oracle SQL Programming"
+  },
+  "issuer": "Udemy / Apasoft Training — Oracle Academy Standards",
+  "institution": "Oracle",
+  "category": {
+    "es": "Bases de Datos Empresariales",
+    "en": "Enterprise Databases"
+  },
+  "icon": "🗄️",
+  "skillsValidated": {
+    "es": ["Oracle SQL", "PL/SQL", "Modelado Relacional", "Transacciones ACID"],
+    "en": ["Oracle SQL", "PL/SQL", "Relational Modeling", "ACID Transactions"]
+  },
+  "credentialId": "UC-680a7a93-3519-4c12-b042-a1c833b38ffc",
+  "verificationUrl": "https://ude.my/UC-680a7a93-3519-4c12-b042-a1c833b38ffc",
+  "issueDate": "2026-03-21",
+  "duration": "16 horas / hours",
+  "order": 2
+}

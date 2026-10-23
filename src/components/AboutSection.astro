@@ -1,0 +1,106 @@
+---
+import { getCollection } from "astro:content";
+import Icon from "./icons/Icon.astro";
+
+// Query the profile collection for capabilities and personal information
+const profileEntries = await getCollection("profile").catch(() => []);
+const personalEntry = profileEntries.find((entry) => entry.id === "personal");
+const capabilitiesEntry = profileEntries.find((entry) => entry.id === "capabilities");
+
+const personal = personalEntry?.data?.personal;
+const capabilitiesList = capabilitiesEntry?.data?.capabilities || [
+  {
+    title: { es: "Metodología SDD & Especificación de Software" },
+    description: { es: "Diseño riguroso mediante Software Design Documents (SDD), definición de contratos OpenAPI/Swagger, diagramas de arquitectura y modelado de sistemas antes de la fase de código." },
+    icon: "FileText",
+    tags: { es: ["Metodología SDD", "Software Design Docs", "OpenAPI", "Clean Architecture"] }
+  },
+  {
+    title: { es: "Desarrollo Asistido por Inteligencia Artificial" },
+    description: { es: "Aceleración sistemática del ciclo de vida del software mediante flujos con IA (LLMs, Copilot, Cursor), scaffolding automatizado, generación de tests y refactorización continua." },
+    icon: "Cpu",
+    tags: { es: ["DevOps AI", "Prompt Engineering", "Testing con IA", "Alta Velocidad"] }
+  },
+  {
+    title: { es: "Backend Core & Gestión Relacional" },
+    description: { es: "Microservicios desacoplados en Java (Spring Boot) con persistencia transaccional ACID en PostgreSQL y SQL Server, principios SOLID y seguridad perimetral JWT." },
+    icon: "Database",
+    tags: { es: ["Spring Boot", "PostgreSQL", "SQL Server", "Seguridad JWT"] }
+  }
+];
+
+const bioParagraphs = personal?.bioParagraphs?.es || [
+  "Como Ingeniero de Sistemas de Información de la UPC, combino una sólida formación en sistemas computacionales con capacidad demostrada para diseñar, desarrollar y desplegar sistemas de información listos para producción.",
+  "Mi metodología de trabajo integra la metodología SDD (Spec-Driven Development) y el desarrollo asistido por Inteligencia Artificial, garantizando microservicios seguros y escalables en Java (Spring Boot) y bases de datos relacionales, complementado con interfaces modernas en Angular, React, Next.js y Astro.",
+  "Busco incorporarme a equipos de tecnología de alto rendimiento donde pueda aportar valor inmediato, resolver problemas complejos de negocio y acelerar el cumplimiento de objetivos estratégicos."
+];
+---
+
+<section id="about" class="py-12 px-4 sm:px-8 relative z-10">
+  <div class="max-w-7xl mx-auto">
+    <!-- Friendly Section Header (Flat) -->
+    <div class="mb-10 text-center sm:text-left border-b border-slate-800/80 pb-5">
+      <span class="text-xs font-mono uppercase tracking-widest text-sky-400 font-bold block mb-1">
+        PERFIL &amp; TRAYECTORIA
+      </span>
+      <h2 class="text-2xl sm:text-4xl font-display font-bold text-white uppercase tracking-tight">
+        Sobre Mi Formación &amp; Enfoque
+      </h2>
+    </div>
+
+    <!-- Executive Profile Grid (Flat) -->
+    <div class="grid lg:grid-cols-12 gap-6 mb-12">
+      <div class="lg:col-span-5 bg-[#131d33] border border-[#24324f] rounded-xl p-6 space-y-4">
+        <span class="text-xs font-mono uppercase tracking-wider text-sky-400 font-semibold block">
+          Formación Universitaria
+        </span>
+        <h3 class="text-lg font-bold text-white leading-tight">
+          Ingeniería de Sistemas de Información
+        </h3>
+        <p class="text-xs font-mono text-slate-400">
+          Universidad Peruana de Ciencias Aplicadas (UPC)
+        </p>
+
+        <div class="pt-3 border-t border-[#24324f] space-y-2 text-xs text-slate-300 font-mono">
+          <div class="flex items-center gap-2">
+            <Icon name="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0" />
+            <span>Disponibilidad inmediata para contratación</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <Icon name="check-circle-2" class="w-4 h-4 text-sky-400 shrink-0" />
+            <span>Modalidad Remota o Híbrida (Lima)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 bg-[#131d33] border border-[#24324f] rounded-xl p-6 space-y-3 text-xs sm:text-sm text-slate-300 leading-relaxed">
+        {bioParagraphs.map((p) => (
+          <p>{p}</p>
+        ))}
+      </div>
+    </div>
+
+    <!-- Pillars Grid (Flat) -->
+    <div class="grid md:grid-cols-3 gap-5">
+      {capabilitiesList.map((c) => (
+        <div class="bg-[#131d33] border border-[#24324f] rounded-xl p-5 flex flex-col justify-between hover:border-sky-500/50 hover:bg-[#1a2744] transition-all">
+          <div>
+            <div class="w-9 h-9 rounded-lg bg-slate-900 border border-[#24324f] flex items-center justify-center text-sky-400 mb-4">
+              <Icon name={c.icon} class="w-4.5 h-4.5" />
+            </div>
+            <h3 class="text-sm font-bold text-white mb-2">{c.title.es}</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">{c.description.es}</p>
+          </div>
+
+          <div class="flex flex-wrap gap-1.5 pt-3 border-t border-[#24324f]">
+            {c.tags.es.map((tag: string) => (
+              <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-slate-900 border border-[#24324f] text-slate-300">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

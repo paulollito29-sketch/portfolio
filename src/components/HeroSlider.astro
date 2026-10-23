@@ -1,0 +1,232 @@
+---
+import Icon from "./icons/Icon.astro";
+
+const slides = [
+  {
+    title: "Ingeniería de Sistemas",
+    subtitle: "Arquitectura Backend & Soluciones Empresariales Escalables",
+    badge: "UPC · Sistemas de Información",
+    tags: ["Arquitectura en Capas", "Microservicios REST", "Clean Architecture", "IA Integrada"],
+  },
+  {
+    title: "Backend & Microservicios",
+    subtitle: "Java (Spring Boot) · C# (.NET Core) · Seguridad JWT · Docker",
+    badge: "Enterprise Core",
+    tags: ["Spring Security", "JPA / Hibernate", "OpenAPI / Swagger", "Docker Compose"],
+  },
+  {
+    title: "Bases de Datos & Persistencia",
+    subtitle: "SQL Server (T-SQL) · Oracle PL/SQL · Transacciones ACID · Rendimiento",
+    badge: "Data Systems",
+    tags: ["Modelado Relacional", "Triggers & Procedures", "Integridad Referencial", "Optimización"],
+  },
+];
+
+const highlights = [
+  {
+    tag: "Sistemas Backend",
+    title: "Arquitectura de Microservicios & Seguridad JWT en Spring Boot",
+    href: "/portfolio",
+  },
+  {
+    tag: "Acreditación Oficial",
+    title: "Certificaciones emitidas por Meta, Oracle Academy y Univ. of Michigan",
+    href: "/certificates",
+  },
+  {
+    tag: "Sistemas & IA",
+    title: "Desarrollo acelerado mediante flujos asistidos con Inteligencia Artificial",
+    href: "/services",
+  },
+];
+---
+
+<section id="home" class="relative min-h-[75vh] flex flex-col justify-between pt-20 pb-6 px-4 sm:px-8 z-10">
+  <div class="max-w-7xl mx-auto w-full flex-1 flex flex-col justify-center py-8">
+    <!-- Slides Container -->
+    <div class="relative min-h-[280px] flex flex-col justify-center">
+      {slides.map((slide, idx) => (
+        <div
+          class={`hero-slide space-y-5 transition-opacity duration-300 ${idx === 0 ? "block" : "hidden"}`}
+          data-slide-index={idx}
+        >
+          <!-- Flat Badge -->
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-mono text-cyan-400 uppercase tracking-widest w-fit">
+            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+            <span>{slide.badge}</span>
+          </div>
+
+          <!-- Title -->
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-display font-bold tracking-tight text-white uppercase leading-tight">
+            {slide.title}
+          </h1>
+
+          <!-- Subtitle -->
+          <p class="text-sm sm:text-lg font-normal text-zinc-300 max-w-3xl leading-relaxed">
+            {slide.subtitle}
+          </p>
+
+          <!-- Tag Badges (Flat) -->
+          <div class="flex flex-wrap gap-1.5 pt-1">
+            {slide.tags.map((tag) => (
+              <span class="px-2.5 py-0.5 text-xs font-mono rounded bg-zinc-900 border border-zinc-800 text-zinc-300">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      <!-- Slide Navigation Controls -->
+      <div class="flex items-center gap-4 pt-6">
+        <div class="flex gap-1.5">
+          {slides.map((_, idx) => (
+            <button
+              class={`hero-dot h-1 transition-all cursor-pointer ${idx === 0 ? "w-8 bg-cyan-400" : "w-2.5 bg-zinc-700 hover:bg-zinc-500"}`}
+              data-dot-index={idx}
+              aria-label={`Ir al slide ${idx + 1}`}
+            ></button>
+          ))}
+        </div>
+
+        <div class="flex items-center gap-1 ml-4">
+          <button
+            id="heroPrevBtn"
+            class="p-1.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-600 transition-colors cursor-pointer"
+            aria-label="Slide anterior"
+          >
+            <Icon name="chevron-left" class="w-3.5 h-3.5" />
+          </button>
+          <button
+            id="heroNextBtn"
+            class="p-1.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-600 transition-colors cursor-pointer"
+            aria-label="Slide siguiente"
+          >
+            <Icon name="chevron-right" class="w-3.5 h-3.5" />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Latest Highlights Banner Ticker (Flat) -->
+  <div class="max-w-7xl mx-auto w-full mt-auto">
+    <div class="grid lg:grid-cols-12 gap-3 p-3.5 rounded bg-[#121215] border border-[#24324f] items-center">
+      <!-- Ticker Column -->
+      <div class="lg:col-span-6 flex items-center gap-3 pr-4 lg:border-r border-zinc-800">
+        <div class="px-2 py-0.5 rounded bg-zinc-800 border border-zinc-700 text-zinc-200 font-mono font-bold text-[11px] tracking-wider uppercase shrink-0">
+          DESTACADOS
+        </div>
+        <div class="flex-1 overflow-hidden h-6 flex items-center relative" id="heroTickerContainer">
+          {highlights.map((h, i) => (
+            <a
+              href={h.href}
+              class={`hero-highlight text-xs font-mono text-zinc-300 hover:text-cyan-400 transition-colors truncate ${i === 0 ? "block" : "hidden"}`}
+              data-highlight-index={i}
+            >
+              <span class="text-cyan-400 font-semibold mr-1.5">[{h.tag}]</span>
+              <span>{h.title}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Action Links -->
+      <div class="lg:col-span-6 flex items-center justify-between gap-2 overflow-x-auto text-xs font-mono">
+        <a
+          href="/portfolio"
+          class="px-3 py-1 rounded bg-zinc-900 hover:bg-zinc-800 text-zinc-200 border border-zinc-800 transition-colors truncate"
+        >
+          Portafolio →
+        </a>
+        <a
+          href="/services"
+          class="px-3 py-1 rounded bg-zinc-900 hover:bg-zinc-800 text-zinc-200 border border-zinc-800 transition-colors truncate"
+        >
+          Servicios →
+        </a>
+        <a
+          href="/certificates"
+          class="px-3 py-1 rounded bg-zinc-900 hover:bg-zinc-800 text-zinc-200 border border-zinc-800 transition-colors truncate"
+        >
+          Certificaciones →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function initHeroSlider() {
+    const slides = document.querySelectorAll<HTMLElement>(".hero-slide");
+    const dots = document.querySelectorAll<HTMLElement>(".hero-dot");
+    const prevBtn = document.getElementById("heroPrevBtn");
+    const nextBtn = document.getElementById("heroNextBtn");
+    const highlights = document.querySelectorAll<HTMLElement>(".hero-highlight");
+
+    if (!slides.length) return;
+
+    let currentSlide = 0;
+    let currentHighlight = 0;
+
+    function showSlide(index: number) {
+      currentSlide = (index + slides.length) % slides.length;
+      slides.forEach((s, idx) => {
+        if (idx === currentSlide) {
+          s.classList.remove("hidden");
+          s.classList.add("block");
+        } else {
+          s.classList.add("hidden");
+          s.classList.remove("block");
+        }
+      });
+
+      dots.forEach((d, idx) => {
+        if (idx === currentSlide) {
+          d.className = "hero-dot h-1 transition-all cursor-pointer w-8 bg-cyan-400";
+        } else {
+          d.className = "hero-dot h-1 transition-all cursor-pointer w-2.5 bg-zinc-700 hover:bg-zinc-500";
+        }
+      });
+    }
+
+    function showHighlight(index: number) {
+      currentHighlight = (index + highlights.length) % highlights.length;
+      highlights.forEach((h, idx) => {
+        if (idx === currentHighlight) {
+          h.classList.remove("hidden");
+          h.classList.add("block");
+        } else {
+          h.classList.add("hidden");
+          h.classList.remove("block");
+        }
+      });
+    }
+
+    prevBtn?.addEventListener("click", () => showSlide(currentSlide - 1));
+    nextBtn?.addEventListener("click", () => showSlide(currentSlide + 1));
+
+    dots.forEach((d, idx) => {
+      d.addEventListener("click", () => showSlide(idx));
+    });
+
+    // Auto-advance slides every 6s
+    const slideTimer = setInterval(() => {
+      showSlide(currentSlide + 1);
+    }, 6000);
+
+    // Auto-advance highlights every 4.5s
+    const highlightTimer = setInterval(() => {
+      showHighlight(currentHighlight + 1);
+    }, 4500);
+
+    // Cleanup on before-preparation if using View Transitions
+    document.addEventListener("astro:before-preparation", () => {
+      clearInterval(slideTimer);
+      clearInterval(highlightTimer);
+    }, { once: true });
+  }
+
+  initHeroSlider();
+  document.addEventListener("astro:page-load", initHeroSlider);
+</script>

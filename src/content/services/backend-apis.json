@@ -1,0 +1,31 @@
+{
+  "id": "backend-apis",
+  "tag": {
+    "es": "Backend",
+    "en": "Backend Core"
+  },
+  "name": {
+    "es": "Desarrollo de Servicios & APIs",
+    "en": "Backend Services & API Engineering"
+  },
+  "description": {
+    "es": "Construcción de APIs RESTful de alto rendimiento en Java (Spring Boot) y C# (.NET Core) con seguridad JWT.",
+    "en": "Building high-performance RESTful APIs in Java (Spring Boot) and C# (.NET Core) with robust JWT security."
+  },
+  "icon": "Server",
+  "points": {
+    "es": [
+      "Microservicios desacoplados con Spring Boot & .NET Core",
+      "Autenticación segura basada en tokens JWT y roles",
+      "Documentación interactiva con Swagger / OpenAPI 3.0",
+      "Contenedorización con Docker y Docker Compose"
+    ],
+    "en": [
+      "Decoupled microservices architecture using Spring Boot & .NET Core",
+      "Hardened security with JWT bearer authentication and role-based access control",
+      "Interactive API documentation via OpenAPI 3.0 / Swagger UI",
+      "Container packaging and orchestration with Docker and Docker Compose"
+    ]
+  },
+  "order": 2
+}

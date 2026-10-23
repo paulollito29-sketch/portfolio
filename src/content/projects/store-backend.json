@@ -1,0 +1,29 @@
+{
+  "id": "store-backend",
+  "title": "Store Backend Microservices Ecosystem",
+  "category": "backend",
+  "categoryName": {
+    "es": "Backend & Microservicios",
+    "en": "Backend & Microservices"
+  },
+  "year": "2026",
+  "description": {
+    "es": "Arquitectura modular de microservicios para comercio con seguridad JWT, validaciones estrictas y persistencia relacional.",
+    "en": "Modular microservices architecture for commerce with JWT security, strict validation, and relational persistence."
+  },
+  "impact": {
+    "es": "Impacto: APIs estandarizadas con OpenAPI y autenticación segura para altos volúmenes de peticiones.",
+    "en": "Impact: Standardized OpenAPI endpoints and secure authentication handling high-throughput request loads."
+  },
+  "tags": [
+    "Java",
+    "Spring Boot",
+    "JWT",
+    "MySQL",
+    "Docker",
+    "Swagger"
+  ],
+  "repo": "https://github.com/paulollito29-sketch/store-backend-v2",
+  "featured": false,
+  "order": 2
+}

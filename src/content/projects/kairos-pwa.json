@@ -1,0 +1,28 @@
+{
+  "id": "kairos-pwa",
+  "title": "KAIROS - Sistema de Asistencia PWA",
+  "category": "fullstack",
+  "categoryName": {
+    "es": "Solución Operacional",
+    "en": "Operational Solution"
+  },
+  "year": "2025",
+  "description": {
+    "es": "Sistema de control de asistencia de personal para restaurante con funcionamiento offline y sincronización como Progressive Web App.",
+    "en": "Restaurant employee attendance management system with offline capability and background sync as a Progressive Web App."
+  },
+  "impact": {
+    "es": "Impacto: Operatividad ininterrumpida sin conexión a internet y control automático de horas laboradas.",
+    "en": "Impact: Uninterrupted operations without internet connectivity and automated labor hour tracking."
+  },
+  "tags": [
+    "Java",
+    "Spring Boot",
+    "PWA",
+    "PostgreSQL",
+    "Service Workers"
+  ],
+  "repo": "https://github.com/paulollito29-sketch/kairos-asistencia",
+  "featured": false,
+  "order": 4
+}

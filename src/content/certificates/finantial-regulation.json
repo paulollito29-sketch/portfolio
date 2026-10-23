@@ -1,0 +1,24 @@
+{
+  "id": "finantial-regulation",
+  "file": "finantial regulation.pdf",
+  "title": {
+    "es": "Regulación Financiera, Cumplimiento & Fintech",
+    "en": "Financial Regulation, Compliance & Fintech"
+  },
+  "issuer": "University of Cape Town (Coursera)",
+  "institution": "University of Cape Town",
+  "category": {
+    "es": "Fintech & Regulación",
+    "en": "Fintech & Compliance"
+  },
+  "icon": "🏦",
+  "skillsValidated": {
+    "es": ["Gobernanza Fintech", "Estándares Regulatorios", "Gestión de Riesgo", "Cumplimiento Normativo"],
+    "en": ["Fintech Governance", "Regulatory Standards", "Risk Management", "Compliance"]
+  },
+  "credentialId": "BNY7Q2QWA0DW",
+  "verificationUrl": "https://coursera.org/verify/BNY7Q2QWA0DW",
+  "issueDate": "2024-11-16",
+  "duration": "Especialización Tech",
+  "order": 10
+}

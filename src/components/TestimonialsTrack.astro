@@ -1,0 +1,131 @@
+---
+import { getCollection } from "astro:content";
+import Icon from "./icons/Icon.astro";
+
+const profileEntries = await getCollection("profile").catch(() => []);
+const testimonialsEntry = profileEntries.find((entry) => entry.id === "testimonials");
+
+const testimonials = testimonialsEntry?.data?.testimonials || [
+  {
+    name: { es: "Calidad Técnica & Arquitectura" },
+    role: { es: "Evaluación de Desempeño" },
+    text: { es: "Demuestra gran rigor en el diseño estructurado de bases de datos relacionales, normalización y aplicación de principios de Clean Architecture en microservicios backend." },
+    tags: ["Clean Code", "Microservicios", "SQL Server", "Spring Boot"],
+  },
+  {
+    name: { es: "Innovación & Productividad con IA" },
+    role: { es: "Desarrollo Acelerado" },
+    text: { es: "Criterio sobresaliente al integrar modelos y agentes de IA en su flujo de trabajo diario, logrando prototipar y construir sistemas completos en tiempos récord sin sacrificar calidad." },
+    tags: ["IA Integrada", "Full Stack", "Clean Architecture"],
+  },
+  {
+    name: { es: "Compromiso & Adaptabilidad" },
+    role: { es: "Ingeniería de Sistemas" },
+    text: { es: "Curva de aprendizaje acelerada para asimilar nuevos frameworks, resolver incidentes y adoptar herramientas de frontend y backend con solidez técnica." },
+    tags: ["Resolución de Problemas", "React", ".NET"],
+  },
+];
+---
+
+<section class="py-12 px-4 sm:px-8 relative z-10">
+  <div class="max-w-7xl mx-auto">
+    <!-- Flat Header -->
+    <div class="mb-10 text-center sm:text-left border-b border-zinc-800 pb-5">
+      <span class="text-xs font-mono uppercase tracking-widest text-cyan-400 font-bold block mb-1">
+        APTITUDES PROFESIONALES
+      </span>
+      <h2 class="text-2xl sm:text-4xl font-display font-bold text-white uppercase tracking-tight">
+        Feedback &amp; Apreciación Técnica
+      </h2>
+    </div>
+
+    <!-- Carousel Container (Flat) -->
+    <div class="bg-[#121215] border border-[#24324f] rounded-lg p-6 sm:p-8 space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div>
+          <h3 id="testimonialName" class="text-base sm:text-lg font-bold text-white">
+            {testimonials[0].name.es}
+          </h3>
+          <p id="testimonialRole" class="text-xs font-mono text-cyan-400">
+            {testimonials[0].role.es}
+          </p>
+        </div>
+
+        <div class="flex items-center gap-1.5">
+          <button
+            id="testimonialPrev"
+            type="button"
+            class="p-1.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white transition-colors cursor-pointer"
+            aria-label="Anterior"
+          >
+            <Icon name="chevron-left" class="w-4 h-4" />
+          </button>
+          <span id="testimonialCounter" class="text-xs font-mono text-zinc-500 px-2">
+            1 / {testimonials.length}
+          </span>
+          <button
+            id="testimonialNext"
+            type="button"
+            class="p-1.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white transition-colors cursor-pointer"
+            aria-label="Siguiente"
+          >
+            <Icon name="chevron-right" class="w-4 h-4" />
+          </button>
+        </div>
+      </div>
+
+      <p id="testimonialText" class="text-xs sm:text-sm text-zinc-300 leading-relaxed italic border-l-2 border-zinc-700 pl-4">
+        &ldquo;{testimonials[0].text.es}&rdquo;
+      </p>
+
+      <div id="testimonialTags" class="flex flex-wrap gap-1 pt-3 border-t border-zinc-800">
+        {testimonials[0].tags.map((tag: string) => (
+          <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-zinc-900 border border-zinc-800 text-zinc-400">
+            {tag}
+          </span>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Embedded data for zero-runtime client navigation -->
+<script is:inline define:vars={{ testimonials }}>
+  function initTestimonialsTrack() {
+    const prevBtn = document.getElementById("testimonialPrev");
+    const nextBtn = document.getElementById("testimonialNext");
+    const nameEl = document.getElementById("testimonialName");
+    const roleEl = document.getElementById("testimonialRole");
+    const textEl = document.getElementById("testimonialText");
+    const counterEl = document.getElementById("testimonialCounter");
+    const tagsEl = document.getElementById("testimonialTags");
+
+    if (!prevBtn || !nextBtn || !nameEl || !roleEl || !textEl || !counterEl || !tagsEl) return;
+
+    let currentIndex = 0;
+
+    function render(index) {
+      currentIndex = (index + testimonials.length) % testimonials.length;
+      const t = testimonials[currentIndex];
+
+      nameEl.textContent = t.name.es || t.name;
+      roleEl.textContent = t.role.es || t.role;
+      textEl.innerHTML = `&ldquo;${t.text.es || t.text}&rdquo;`;
+      counterEl.textContent = `${currentIndex + 1} / ${testimonials.length}`;
+
+      tagsEl.innerHTML = "";
+      (t.tags || []).forEach((tag) => {
+        const span = document.createElement("span");
+        span.className = "px-2 py-0.5 text-[10px] font-mono rounded bg-zinc-900 border border-zinc-800 text-zinc-400";
+        span.textContent = tag;
+        tagsEl.appendChild(span);
+      });
+    }
+
+    prevBtn.addEventListener("click", () => render(currentIndex - 1));
+    nextBtn.addEventListener("click", () => render(currentIndex + 1));
+  }
+
+  initTestimonialsTrack();
+  document.addEventListener("astro:page-load", initTestimonialsTrack);
+</script>

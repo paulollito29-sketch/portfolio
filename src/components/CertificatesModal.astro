@@ -1,0 +1,202 @@
+---
+import { getCollection } from "astro:content";
+import Icon from "./icons/Icon.astro";
+
+const certEntries = await getCollection("certificates").catch(() => []);
+const sortedCerts = certEntries.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
+
+const certificates = sortedCerts.map((c) => ({
+  file: c.data.file,
+  encodedFile: encodeURIComponent(c.data.file),
+  title: c.data.title.es,
+  issuer: c.data.issuer,
+  institution: c.data.institution,
+  icon: c.data.icon,
+  category: c.data.category.es,
+  skillsValidated: c.data.skillsValidated.es,
+}));
+---
+
+<section id="certificates" class="max-w-7xl mx-auto px-4 sm:px-8 py-12 relative z-10">
+  <!-- Flat Header -->
+  <div class="mb-10 text-center sm:text-left border-b border-zinc-800 pb-5">
+    <span class="text-xs font-mono uppercase tracking-widest text-cyan-400 font-bold block mb-1">
+      ACREDITACIONES DE LA INDUSTRIA
+    </span>
+    <h2 class="text-2xl sm:text-4xl font-display font-bold text-white uppercase tracking-tight">
+      Certificaciones Oficiales
+    </h2>
+    <p class="text-xs sm:text-sm text-zinc-400 mt-1">
+      Credenciales verificadas de Meta, Oracle Academy y University of Michigan.
+    </p>
+  </div>
+
+  <!-- Certificates Grid (Flat) -->
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    {certificates.map((cert) => (
+      <div
+        class="cert-card bg-[#121215] border border-[#24324f] rounded-lg p-5 flex flex-col justify-between hover:border-zinc-700 transition-colors cursor-pointer group"
+        data-file={cert.encodedFile}
+        data-raw-file={cert.file}
+        data-title={cert.title}
+        data-issuer={cert.issuer}
+      >
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xl p-2 rounded bg-zinc-900 border border-zinc-800">
+              {cert.icon}
+            </span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-900 text-zinc-300 border border-zinc-800 font-semibold uppercase">
+              {cert.institution}
+            </span>
+          </div>
+
+          <h3 class="text-sm sm:text-base font-bold text-white group-hover:text-cyan-400 transition-colors line-clamp-2 mb-1">
+            {cert.title}
+          </h3>
+          <p class="text-xs text-zinc-400 mb-3">{cert.issuer}</p>
+
+          <div class="space-y-1 mb-4">
+            {cert.skillsValidated.slice(0, 3).map((skill) => (
+              <div class="flex items-center gap-1.5 text-[11px] text-zinc-300 font-mono">
+                <Icon name="check-circle-2" class="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                <span>{skill}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="pt-3 border-t border-zinc-800 flex items-center justify-between">
+          <span class="inline-flex items-center gap-1 text-xs font-mono text-zinc-400 group-hover:text-white transition-colors">
+            <Icon name="eye" class="w-3.5 h-3.5" /> Ver PDF
+          </span>
+
+          <a
+            href={`/certificates/${cert.encodedFile}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            download={cert.file}
+            class="cert-download-link p-1.5 rounded bg-zinc-900 hover:bg-zinc-800 text-zinc-400 hover:text-white border border-zinc-800 transition-colors"
+            aria-label={`Descargar PDF de ${cert.title}`}
+            title="Descargar PDF"
+          >
+            <Icon name="download" class="w-3.5 h-3.5" />
+          </a>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <!-- Native HTML5 Dialog Modal PDF Viewer (Flat) -->
+  <dialog
+    id="certModalDialog"
+    class="fixed inset-0 m-auto p-0 bg-transparent backdrop:bg-black/85 max-w-4xl w-[95vw] h-[85vh] border-0 outline-none z-50 rounded-lg overflow-hidden"
+  >
+    <div class="w-full h-full bg-[#121215] border border-zinc-700 rounded-lg overflow-hidden flex flex-col">
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between px-5 py-3.5 bg-[#09090b] border-b border-zinc-800 shrink-0">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded bg-zinc-900 border border-zinc-800 flex items-center justify-center text-cyan-400">
+            <Icon name="file-text" class="w-4 h-4" />
+          </div>
+          <div>
+            <h3 id="certModalTitle" class="text-sm font-bold text-white">Certificado</h3>
+            <p id="certModalIssuer" class="text-xs text-zinc-400">Emisor Oficial</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <a
+            id="certModalOpenBtn"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1 text-xs font-mono font-medium text-black bg-white hover:bg-cyan-400 px-3 py-1.5 rounded transition-colors"
+          >
+            <Icon name="external-link" class="w-3.5 h-3.5" />
+            <span>Abrir</span>
+          </a>
+
+          <button
+            id="certModalCloseBtn"
+            type="button"
+            class="p-1.5 rounded text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors cursor-pointer"
+            aria-label="Cerrar modal"
+          >
+            <Icon name="x" class="w-4 h-4" />
+          </button>
+        </div>
+      </div>
+
+      <!-- PDF Viewer Frame -->
+      <div class="flex-1 w-full bg-zinc-950 relative">
+        <iframe
+          id="certModalIframe"
+          src="about:blank"
+          class="w-full h-full border-0"
+          title="Vista previa del certificado"
+        ></iframe>
+      </div>
+    </div>
+  </dialog>
+</section>
+
+<script>
+  function initCertificatesModal() {
+    const dialog = document.getElementById("certModalDialog") as HTMLDialogElement | null;
+    const iframe = document.getElementById("certModalIframe") as HTMLIFrameElement | null;
+    const titleEl = document.getElementById("certModalTitle");
+    const issuerEl = document.getElementById("certModalIssuer");
+    const openBtn = document.getElementById("certModalOpenBtn") as HTMLAnchorElement | null;
+    const closeBtn = document.getElementById("certModalCloseBtn");
+    const certCards = document.querySelectorAll<HTMLElement>(".cert-card");
+    const downloadLinks = document.querySelectorAll<HTMLElement>(".cert-download-link");
+
+    if (!dialog || !iframe) return;
+
+    // Stop propagation on download links so clicking download does not open modal
+    downloadLinks.forEach((dl) => {
+      dl.addEventListener("click", (e) => e.stopPropagation());
+    });
+
+    certCards.forEach((card) => {
+      card.addEventListener("click", () => {
+        const file = card.getAttribute("data-file") || "";
+        const title = card.getAttribute("data-title") || "";
+        const issuer = card.getAttribute("data-issuer") || "";
+
+        if (titleEl) titleEl.textContent = title;
+        if (issuerEl) issuerEl.textContent = issuer;
+        if (openBtn) openBtn.href = `/certificates/${file}`;
+
+        iframe.src = `/certificates/${file}#toolbar=0`;
+        dialog.showModal();
+        document.body.style.overflow = "hidden";
+      });
+    });
+
+    const closeModal = () => {
+      iframe.src = "about:blank";
+      dialog.close();
+      document.body.style.overflow = "";
+    };
+
+    closeBtn?.addEventListener("click", closeModal);
+
+    // Close when clicking dialog backdrop
+    dialog.addEventListener("click", (e) => {
+      if (e.target === dialog) {
+        closeModal();
+      }
+    });
+
+    // Close on escape
+    dialog.addEventListener("cancel", () => {
+      iframe.src = "about:blank";
+      document.body.style.overflow = "";
+    });
+  }
+
+  initCertificatesModal();
+  document.addEventListener("astro:page-load", initCertificatesModal);
+</script>

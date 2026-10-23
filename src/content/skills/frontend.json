@@ -1,0 +1,55 @@
+{
+  "id": "frontend",
+  "category": "frontend",
+  "label": {
+    "es": "Frontend & Aplicaciones Web",
+    "en": "Frontend & Web Applications"
+  },
+  "icon": "Globe",
+  "summary": {
+    "es": "Desarrollo de interfaces reactivas modernas, tipado estricto y alto rendimiento.",
+    "en": "Modern reactive UI engineering, strict typing, and high performance."
+  },
+  "order": 3,
+  "competencies": [
+    {
+      "name": "React & TypeScript",
+      "levelText": {
+        "es": "Avanzado",
+        "en": "Advanced"
+      },
+      "levelPercent": 90,
+      "description": {
+        "es": "Desarrollo de SPAs y componentes interactivos con React Hooks, Context API y tipado estricto con TypeScript.",
+        "en": "SPA and interactive component development with React Hooks, Context API, and strict TypeScript typing."
+      },
+      "tags": ["React 19", "TypeScript", "Hooks", "Component Architecture"]
+    },
+    {
+      "name": "Astro & Next.js",
+      "levelText": {
+        "es": "Avanzado",
+        "en": "Advanced"
+      },
+      "levelPercent": 88,
+      "description": {
+        "es": "Construcción de sitios web ultrarrápidos con Astro (Island Architecture) y aplicaciones con SSR en Next.js.",
+        "en": "Building ultra-fast websites with Astro (Island Architecture) and SSR applications with Next.js."
+      },
+      "tags": ["Astro", "Next.js", "Islands", "SSR", "Static Generation"]
+    },
+    {
+      "name": "Tailwind CSS & Maquetación Responsiva",
+      "levelText": {
+        "es": "Avanzado",
+        "en": "Advanced"
+      },
+      "levelPercent": 92,
+      "description": {
+        "es": "Diseño responsivo móvil-first, sistemas de diseño utilitarios, animaciones con Framer Motion y CSS semántico.",
+        "en": "Mobile-first responsive design, utility-first systems, Framer Motion animations, and semantic CSS."
+      },
+      "tags": ["Tailwind CSS", "Framer Motion", "Responsive Design", "Flexbox/Grid"]
+    }
+  ]
+}

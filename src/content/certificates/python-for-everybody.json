@@ -1,0 +1,24 @@
+{
+  "id": "python-for-everybody",
+  "file": "python for everybody.pdf",
+  "title": {
+    "es": "Especialización Python para Todos",
+    "en": "Python for Everybody Specialization"
+  },
+  "issuer": "University of Michigan (Coursera Specialization)",
+  "institution": "University of Michigan",
+  "category": {
+    "es": "Backend & Estructuras de Datos",
+    "en": "Backend & Data Structures"
+  },
+  "icon": "🐍",
+  "skillsValidated": {
+    "es": ["Python Core", "Estructuras de Datos", "Algoritmos", "Orientación a Objetos"],
+    "en": ["Python Core", "Data Structures", "Algorithms", "Object-Oriented"]
+  },
+  "credentialId": "5YC7IYEHTK12",
+  "verificationUrl": "https://coursera.org/verify/specialization/5YC7IYEHTK12",
+  "issueDate": "2026-07-06",
+  "duration": "Specialization (5 Cursos)",
+  "order": 3
+}

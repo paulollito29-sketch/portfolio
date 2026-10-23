@@ -1,0 +1,27 @@
+{
+  "id": "flappy-bird-dotnet",
+  "title": "Flappy Bird Clone (Motor en C# / .NET)",
+  "category": "database",
+  "categoryName": {
+    "es": "Desarrollo en .NET",
+    "en": ".NET Development"
+  },
+  "year": "2024",
+  "description": {
+    "es": "Recreación del clásico videojuego utilizando el runtime de C# y .NET con simulación matemática de gravedad y colisiones.",
+    "en": "Recreation of the classic game using the C#/.NET runtime featuring mathematical physics simulation for gravity and bounding-box collisions."
+  },
+  "impact": {
+    "es": "Impacto: Estructuración rigurosa de código orientada a objetos en la plataforma .NET.",
+    "en": "Impact: Rigorous object-oriented software architecture implemented on the modern .NET platform."
+  },
+  "tags": [
+    "C#",
+    ".NET",
+    "Windows Forms",
+    "POO"
+  ],
+  "repo": "https://github.com/paulollito29-sketch/Trabajo_juego",
+  "featured": false,
+  "order": 7
+}

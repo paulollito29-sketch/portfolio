@@ -1,0 +1,41 @@
+{
+  "id": "personal",
+  "personal": {
+    "name": "Paulo Espinoza",
+    "fullName": "Paulo Daniel Espinoza Gamboa",
+    "title": {
+      "es": "Ingeniero de Sistemas de Información",
+      "en": "Information Systems Engineer"
+    },
+    "university": "Universidad Peruana de Ciencias Aplicadas (UPC)",
+    "degree": {
+      "es": "Ingeniero de Sistemas de Información",
+      "en": "Information Systems Engineer"
+    },
+    "location": {
+      "es": "Lima, Perú (Modalidad Remota o Híbrida)",
+      "en": "Lima, Peru (Remote or Hybrid)"
+    },
+    "availability": {
+      "es": "Disponibilidad Inmediata para Contratación (Open to Work)",
+      "en": "Immediately Available for Hire (Open to Work)"
+    },
+    "email": "paulespinoza951@gmail.com",
+    "phone": "+51 906 920 958",
+    "whatsappUrl": "https://wa.me/51906920958",
+    "linkedinUrl": "https://www.linkedin.com/in/paulo-espinoza9/",
+    "githubUrl": "https://github.com/paulollito29-sketch",
+    "bioParagraphs": {
+      "es": [
+        "Como Ingeniero de Sistemas de Información de la UPC, combino una sólida formación en sistemas computacionales con capacidad demostrada para diseñar, desarrollar y desplegar sistemas de información listos para producción.",
+        "Mi metodología de trabajo integra la metodología SDD (Spec-Driven Development) y el desarrollo asistido por Inteligencia Artificial, garantizando microservicios seguros y escalables en Java (Spring Boot) y bases de datos relacionales, complementado con interfaces modernas en Angular, React, Next.js y Astro.",
+        "Busco incorporarme a equipos de tecnología de alto rendimiento donde pueda aportar valor inmediato, resolver problemas complejos de negocio y acelerar el cumplimiento de objetivos estratégicos."
+      ],
+      "en": [
+        "As an Information Systems Engineer from UPC, I combine a rigorous foundation in computational systems with proven ability to architect, engineer, and deploy production-ready enterprise systems.",
+        "My engineering methodology integrates Spec-Driven Development (SDD) and AI-augmented workflows, ensuring robust and scalable microservices in Java (Spring Boot) and relational databases, complemented by modern web interfaces in Angular, React, Next.js, and Astro.",
+        "I am seeking to join high-performing engineering teams where I can deliver immediate value, solve complex business challenges, and accelerate strategic objectives."
+      ]
+    }
+  }
+}

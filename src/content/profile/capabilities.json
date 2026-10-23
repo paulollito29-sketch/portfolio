@@ -1,0 +1,50 @@
+{
+  "id": "capabilities",
+  "capabilities": [
+    {
+      "title": {
+        "es": "Metodología SDD & Especificación de Software",
+        "en": "SDD Methodology & Software Specification"
+      },
+      "description": {
+        "es": "Diseño riguroso mediante Software Design Documents (SDD), definición de contratos OpenAPI/Swagger, diagramas de arquitectura y modelado de sistemas antes de la fase de código.",
+        "en": "Rigorous architecture design via Software Design Documents (SDD), OpenAPI/Swagger API contract definitions, architectural diagrams, and systems domain modeling before coding."
+      },
+      "icon": "FileText",
+      "tags": {
+        "es": ["Metodología SDD", "Software Design Docs", "OpenAPI", "Clean Architecture"],
+        "en": ["SDD Methodology", "Software Design Docs", "OpenAPI", "Clean Architecture"]
+      }
+    },
+    {
+      "title": {
+        "es": "Desarrollo Asistido por Inteligencia Artificial",
+        "en": "AI-Assisted Systems Development"
+      },
+      "description": {
+        "es": "Aceleración sistemática del ciclo de vida del software mediante flujos con IA (LLMs, Copilot, Cursor), scaffolding automatizado, generación de tests y refactorización continua.",
+        "en": "Systematic acceleration of software delivery lifecycle leveraging AI workflows (LLMs, Copilot, Cursor), automated scaffolding, test generation, and continuous refactoring."
+      },
+      "icon": "Cpu",
+      "tags": {
+        "es": ["DevOps AI", "Prompt Engineering", "Testing con IA", "Alta Velocidad"],
+        "en": ["DevOps AI", "Prompt Engineering", "AI Testing", "High Velocity"]
+      }
+    },
+    {
+      "title": {
+        "es": "Backend Core & Gestión Relacional",
+        "en": "Backend Core & Relational Database Systems"
+      },
+      "description": {
+        "es": "Microservicios desacoplados en Java (Spring Boot) con persistencia transaccional ACID en PostgreSQL y SQL Server, principios SOLID y seguridad perimetral JWT.",
+        "en": "Decoupled microservices in Java (Spring Boot) with ACID transactional persistence in PostgreSQL and SQL Server, SOLID principles, and perimeter JWT security."
+      },
+      "icon": "Database",
+      "tags": {
+        "es": ["Spring Boot", "PostgreSQL", "SQL Server", "Seguridad JWT"],
+        "en": ["Spring Boot", "PostgreSQL", "SQL Server", "JWT Security"]
+      }
+    }
+  ]
+}

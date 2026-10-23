@@ -1,0 +1,28 @@
+{
+  "id": "limasync",
+  "title": "LimaSync - Plataforma Comunitaria",
+  "category": "fullstack",
+  "categoryName": {
+    "es": "Frontend Web",
+    "en": "Web Frontend"
+  },
+  "year": "2025",
+  "description": {
+    "es": "Aplicación web moderna para sincronización de calendarios comunitarios y reserva de eventos con Server-Side Rendering.",
+    "en": "Modern web application for community calendar synchronization and event booking powered by Server-Side Rendering."
+  },
+  "impact": {
+    "es": "Impacto: Carga ultrarrápida, SEO optimizado y experiencia de usuario fluida.",
+    "en": "Impact: Ultra-fast loading speeds, optimized technical SEO, and fluid user experience."
+  },
+  "tags": [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "SSR"
+  ],
+  "repo": "https://github.com/paulollito29-sketch/LimaSync",
+  "featured": false,
+  "order": 5
+}

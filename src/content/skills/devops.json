@@ -1,0 +1,42 @@
+{
+  "id": "devops",
+  "category": "devops",
+  "label": {
+    "es": "Herramientas & Entornos",
+    "en": "Tools & Environments"
+  },
+  "icon": "Cpu",
+  "summary": {
+    "es": "Herramientas de desarrollo, contenedorización y documentación de sistemas.",
+    "en": "Developer tooling, containerization, and systems documentation."
+  },
+  "order": 4,
+  "competencies": [
+    {
+      "name": "Docker & Contenedorización",
+      "levelText": {
+        "es": "Sólido",
+        "en": "Solid"
+      },
+      "levelPercent": 82,
+      "description": {
+        "es": "Creación de Dockerfiles para Java/.NET, configuración de entornos multi-contenedor con Docker Compose.",
+        "en": "Authoring Dockerfiles for Java/.NET, configuring multi-container setups with Docker Compose."
+      },
+      "tags": ["Docker", "Docker Compose", "Multi-stage Builds", "Containers"]
+    },
+    {
+      "name": "Git & Documentación con Swagger",
+      "levelText": {
+        "es": "Avanzado",
+        "en": "Advanced"
+      },
+      "levelPercent": 90,
+      "description": {
+        "es": "Control de versiones, Git Flow, resolución de conflictos, Pull Requests y documentación técnica mediante OpenAPI / Swagger.",
+        "en": "Version control, Git Flow, merge conflict resolution, PR workflows, and technical OpenAPI/Swagger documentation."
+      },
+      "tags": ["Git", "GitHub", "Git Flow", "Swagger/OpenAPI", "Postman"]
+    }
+  ]
+}

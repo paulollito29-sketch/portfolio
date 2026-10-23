@@ -1,0 +1,31 @@
+{
+  "id": "ai-fullstack",
+  "tag": {
+    "es": "Desarrollo con IA",
+    "en": "AI-Assisted Dev"
+  },
+  "name": {
+    "es": "Desarrollo Asistido por IA & Full Stack",
+    "en": "AI-Assisted Full Stack Engineering"
+  },
+  "description": {
+    "es": "Construcción acelerada de sistemas web y microservicios mediante flujos asistidos por IA (LLMs, Copilot, Cursor y testing guiado).",
+    "en": "Accelerated construction of web systems and microservices leveraging AI-augmented workflows (LLMs, Copilot, Cursor, and automated test synthesis)."
+  },
+  "icon": "Sparkles",
+  "points": {
+    "es": [
+      "Ciclo de desarrollo acelerado con herramientas de IA generativa",
+      "Interfaces reactivas con Angular, React, Next.js y Astro",
+      "Generación y ejecución automatizada de tests unitarios",
+      "Código con tipado estricto en TypeScript y arquitectura modular"
+    ],
+    "en": [
+      "Accelerated software delivery lifecycle with generative AI tooling",
+      "Modern reactive web user interfaces with Angular, React, Next.js, and Astro",
+      "Automated unit test generation and continuous verification suites",
+      "Strictly typed TypeScript codebase with clean modular separation"
+    ]
+  },
+  "order": 4
+}

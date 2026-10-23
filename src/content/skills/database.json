@@ -1,0 +1,55 @@
+{
+  "id": "database",
+  "category": "database",
+  "label": {
+    "es": "Bases de Datos & Persistencia",
+    "en": "Databases & Persistence"
+  },
+  "icon": "Database",
+  "summary": {
+    "es": "Modelado relacional, consultas optimizadas, integridad transaccional ACID y procedimientos almacenados.",
+    "en": "Relational modeling, query optimization, transactional ACID integrity, and stored procedures."
+  },
+  "order": 2,
+  "competencies": [
+    {
+      "name": "Microsoft SQL Server & T-SQL",
+      "levelText": {
+        "es": "Avanzado",
+        "en": "Advanced"
+      },
+      "levelPercent": 88,
+      "description": {
+        "es": "Modelado relacional, normalización (3FN), creación de índices, triggers, transacciones complejas y procedimientos almacenados.",
+        "en": "Relational modeling, normalization (3NF), indexing, triggers, complex transactions, and stored procedures."
+      },
+      "tags": ["SQL Server", "T-SQL", "Stored Procedures", "Triggers", "Índices"]
+    },
+    {
+      "name": "Oracle Database & PL/SQL",
+      "levelText": {
+        "es": "Sólido",
+        "en": "Solid"
+      },
+      "levelPercent": 85,
+      "description": {
+        "es": "Diseño de esquemas, consultas SQL avanzadas, optimización de rendimiento y procedimientos PL/SQL.",
+        "en": "Schema design, advanced SQL queries, performance optimization, and PL/SQL procedures."
+      },
+      "tags": ["Oracle SQL", "PL/SQL", "Packages", "Funciones", "Diseño Relacional"]
+    },
+    {
+      "name": "MySQL & PostgreSQL",
+      "levelText": {
+        "es": "Sólido",
+        "en": "Solid"
+      },
+      "levelPercent": 86,
+      "description": {
+        "es": "Administración de bases de datos open source, diseño de esquemas, migraciones y persistencia con ORMs.",
+        "en": "Open source database management, schema migrations, and persistence with ORMs."
+      },
+      "tags": ["PostgreSQL", "MySQL", "DBeaver", "Migraciones"]
+    }
+  ]
+}

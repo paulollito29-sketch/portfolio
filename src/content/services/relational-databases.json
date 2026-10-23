@@ -1,0 +1,31 @@
+{
+  "id": "relational-databases",
+  "tag": {
+    "es": "Bases de Datos",
+    "en": "Database Systems"
+  },
+  "name": {
+    "es": "Modelado Relacional & SQL",
+    "en": "Relational Modeling & SQL Architecture"
+  },
+  "description": {
+    "es": "Diseño de esquemas relacionales, transacciones ACID, optimización de consultas complejas y procedimientos almacenados.",
+    "en": "Relational schema design, ACID transactions, complex query tuning, and stored procedure engineering."
+  },
+  "icon": "Database",
+  "points": {
+    "es": [
+      "Modelado relacional en PostgreSQL, SQL Server y MariaDB",
+      "Optimización de índices y planes de ejecución",
+      "Mapeo eficiente con ORMs (JPA/Hibernate y EF Core)",
+      "Integridad referencial y políticas transaccionales"
+    ],
+    "en": [
+      "Relational database modeling in PostgreSQL, SQL Server, and MariaDB",
+      "Query execution plan analysis and index optimization",
+      "High-performance object-relational mapping (JPA/Hibernate & EF Core)",
+      "ACID referential integrity guarantees and transactional rollback policies"
+    ]
+  },
+  "order": 3
+}

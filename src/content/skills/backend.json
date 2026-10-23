@@ -1,0 +1,68 @@
+{
+  "id": "backend",
+  "category": "backend",
+  "label": {
+    "es": "Backend & Microservicios",
+    "en": "Backend & Microservices"
+  },
+  "icon": "Server",
+  "summary": {
+    "es": "Ingeniería de servidores, diseño de APIs RESTful escalables, seguridad de datos y arquitectura desacoplada.",
+    "en": "Server engineering, scalable RESTful API design, data security, and decoupled architectures."
+  },
+  "order": 1,
+  "competencies": [
+    {
+      "name": "Java & Ecosistema Spring Boot",
+      "levelText": {
+        "es": "Avanzado",
+        "en": "Advanced"
+      },
+      "levelPercent": 90,
+      "description": {
+        "es": "Construcción de APIs RESTful, inyección de dependencias, Spring Security con JWT, JPA/Hibernate y validaciones.",
+        "en": "Building RESTful APIs, dependency injection, Spring Security with JWT, JPA/Hibernate, and validation."
+      },
+      "tags": ["Spring Boot", "Spring Security", "JPA/Hibernate", "REST APIs", "Maven/Gradle"]
+    },
+    {
+      "name": "C# & Plataforma .NET Core",
+      "levelText": {
+        "es": "Sólido",
+        "en": "Solid"
+      },
+      "levelPercent": 86,
+      "description": {
+        "es": "Desarrollo backend en .NET, LINQ, Entity Framework Core y arquitecturas orientadas a objetos.",
+        "en": "Backend development in .NET, LINQ, Entity Framework Core, and object-oriented architectures."
+      },
+      "tags": [".NET Core", "Entity Framework", "LINQ", "C# Moderno", "Windows Forms"]
+    },
+    {
+      "name": "Arquitectura de Sistemas & Buenas Prácticas",
+      "levelText": {
+        "es": "Avanzado",
+        "en": "Advanced"
+      },
+      "levelPercent": 88,
+      "description": {
+        "es": "Aplicación rigurosa de principios SOLID, Clean Architecture, separación de capas y patrones de diseño (Factory, Singleton, Repository).",
+        "en": "Rigorous application of SOLID principles, Clean Architecture, layered separation, and design patterns (Factory, Singleton, Repository)."
+      },
+      "tags": ["SOLID", "Clean Architecture", "Design Patterns", "Layered Architecture"]
+    },
+    {
+      "name": "Python & Procesamiento de Datos",
+      "levelText": {
+        "es": "Sólido",
+        "en": "Solid"
+      },
+      "levelPercent": 84,
+      "description": {
+        "es": "Desarrollo de scripts, estructuras de datos avanzadas y algoritmos de optimización.",
+        "en": "Scripting development, advanced data structures, and algorithmic optimization."
+      },
+      "tags": ["Python 3", "Algoritmos", "Estructuras de Datos", "Data Processing"]
+    }
+  ]
+}

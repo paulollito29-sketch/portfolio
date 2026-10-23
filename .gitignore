@@ -1,31 +1,7 @@
-# Dependencies
-node_modules/
-
-# Build output
 dist/
+node_modules/
+node_modules.nosync/
 .astro/
-
-# Environment variables
-.env
-.env.local
-.env.*.local
-
-# Editor
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# OS
+.env*
 .DS_Store
-Thumbs.db
-
-# Logs
-*.log
-npm-debug.log*
-
-# TypeScript
-*.tsbuildinfo
-
-.vercel
+.agents/

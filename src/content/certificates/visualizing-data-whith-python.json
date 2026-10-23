@@ -1,0 +1,24 @@
+{
+  "id": "visualizing-data-whith-python",
+  "file": "visualizing data whith python.pdf",
+  "title": {
+    "es": "Procesamiento & Visualización de Datos con Python",
+    "en": "Data Processing & Visualization with Python"
+  },
+  "issuer": "University of Michigan (Coursera)",
+  "institution": "University of Michigan",
+  "category": {
+    "es": "Analítica de Datos",
+    "en": "Data Analytics"
+  },
+  "icon": "📈",
+  "skillsValidated": {
+    "es": ["Pipelines de Datos", "Dashboards Visuales", "Integración de Bases de Datos"],
+    "en": ["Data Pipelines", "Visual Dashboards", "Database Integration"]
+  },
+  "credentialId": "KIR3XCOOMQ7D",
+  "verificationUrl": "https://coursera.org/verify/KIR3XCOOMQ7D",
+  "issueDate": "2026-04-21",
+  "duration": "16 horas / hours",
+  "order": 6
+}
