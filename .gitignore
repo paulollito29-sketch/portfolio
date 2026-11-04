@@ -6,3 +6,4 @@ node_modules.cloud_trash/
 .env*
 .DS_Store
 .agents/
+node_modules
