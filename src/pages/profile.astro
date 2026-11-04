@@ -19,17 +19,14 @@ import ScrollToTop from "../components/ScrollToTop.astro";
   <BackgroundScroll />
   <Navbar />
 
-  <main class="relative z-10 pt-20 pb-16 space-y-8">
+  <main class="relative z-10 pt-20 pb-16 space-y-10">
     <!-- Page Header Banner -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-8 pt-6">
-      <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-xs font-mono text-cyan-400 uppercase tracking-widest mb-3">
-        <span>PERFIL PROFESIONAL &amp; TRAYECTORIA</span>
-      </div>
-      <h1 class="text-3xl sm:text-5xl font-display font-bold text-white uppercase tracking-tight">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 pt-8 space-y-3">
+      <h1 class="text-3xl sm:text-5xl font-display font-bold text-white tracking-tight">
         Ingeniero de Sistemas de Información
       </h1>
-      <p class="text-xs sm:text-sm text-zinc-400 max-w-3xl mt-2 leading-relaxed">
-        Formación universitaria en la <strong class="text-white">Universidad Peruana de Ciencias Aplicadas (UPC)</strong>, orientada al diseño de sistemas backend escalables, persistencia de datos relacional y arquitecturas de microservicios.
+      <p class="text-sm sm:text-base text-zinc-300 max-w-3xl leading-relaxed">
+        Formación universitaria en la <strong class="text-white">Universidad Peruana de Ciencias Aplicadas (UPC)</strong>, orientada al diseño de sistemas backend escalables, persistencia transaccional y microservicios de alto desempeño.
       </p>
     </div>
 
@@ -45,20 +42,20 @@ import ScrollToTop from "../components/ScrollToTop.astro";
     <!-- Testimonials Track -->
     <TestimonialsTrack />
 
-    <!-- Direct CTA (Flat) -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-8 py-6">
-      <div class="p-6 rounded-lg bg-[#121215] border border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <!-- Direct CTA -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 py-4">
+      <div class="p-6 sm:p-7 rounded-lg bg-[#10121a] border border-[#1d2230] flex flex-col sm:flex-row items-center justify-between gap-5">
         <div>
-          <h3 class="text-lg font-bold text-white uppercase mb-1">
+          <h2 class="text-lg font-bold text-white mb-1">
             ¿Interesado en coordinar una entrevista técnica?
-          </h3>
+          </h2>
           <p class="text-xs text-zinc-400">
-            Disponible para incorporación inmediata en roles de Sistemas, Backend en Java / .NET o Desarrollo Full Stack.
+            Disponible para incorporación inmediata en roles de Ingeniería de Sistemas, Backend en Java / .NET o Desarrollo Full Stack.
           </p>
         </div>
         <a
           href="/contact"
-          class="px-5 py-2.5 rounded bg-white hover:bg-cyan-400 text-black font-semibold text-xs uppercase tracking-wider transition-colors shrink-0"
+          class="flat-btn-primary active:scale-95 shrink-0 text-xs"
         >
           Contactar Ahora →
         </a>

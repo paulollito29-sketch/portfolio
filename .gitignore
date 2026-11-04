@@ -1,6 +1,7 @@
 dist/
 node_modules/
 node_modules.nosync/
+node_modules.cloud_trash/
 .astro/
 .env*
 .DS_Store

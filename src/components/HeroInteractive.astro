@@ -1,64 +1,35 @@
 ---
 import Icon from "./icons/Icon.astro";
-
-const enterpriseStrengths = [
-  { label: "Metodología SDD", desc: "Spec-Driven Dev", icon: "file-text" },
-  { label: "Desarrollo con IA", desc: "Workflows con LLMs", icon: "cpu" },
-  { label: "Backend Core", desc: "Spring Boot & Java", icon: "server" },
-  { label: "Data Integrity", desc: "PostgreSQL & SQL Server", icon: "database" },
-];
 ---
 
-<section id="hero" class="relative min-h-[90vh] flex items-center justify-center pt-28 pb-16 px-4 sm:px-6 z-10">
-  <div class="max-w-6xl mx-auto w-full">
-    <!-- Recruiter Top Notice Bar (Flat) -->
-    <div class="flex flex-wrap items-center justify-center gap-3 mb-8">
-      <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#131d33] border border-emerald-500/40 text-xs text-slate-200">
-        <span class="relative flex h-2.5 w-2.5">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-        </span>
-        <span class="font-semibold text-emerald-400">Open to Work</span>
-        <span class="text-slate-600">|</span>
-        <span class="text-slate-300">Disponible para Roles en Ingeniería de Sistemas &amp; Desarrollo Full Stack</span>
-      </div>
-
-      <div class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#131d33] border border-[#24324f] text-xs text-slate-400 font-mono">
-        <Icon name="map-pin" class="w-3.5 h-3.5 text-sky-400" /> Lima, Perú · Modalidad Remota / Híbrida
-      </div>
+<section id="hero" class="relative min-h-[85svh] flex flex-col justify-center pt-28 pb-16 px-4 sm:px-8 z-10">
+  <div class="max-w-6xl mx-auto w-full space-y-10">
+    <!-- Status Indicator (Subtle, No Looping Ping) -->
+    <div class="flex items-center gap-2">
+      <span class="inline-block w-2 h-2 rounded-full bg-emerald-400"></span>
+      <span class="text-xs font-medium text-zinc-300 tracking-tight">
+        Disponible para Contratación Inmediata · UPC Lima, Perú
+      </span>
     </div>
 
-    <!-- Executive Headline & Value Proposition -->
-    <div class="text-center max-w-4xl mx-auto">
-      <div class="flex items-center justify-center gap-2 mb-3 text-xs sm:text-sm font-mono text-sky-400 uppercase tracking-widest">
-        <Icon name="building" class="w-4 h-4" />
-        <span>Ingeniero de Sistemas de Información · UPC</span>
-      </div>
-
-      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-5 leading-[1.1] uppercase">
+    <!-- Main Title & Value Proposition -->
+    <div class="space-y-6 max-w-4xl">
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold tracking-tight text-white leading-[1.05]">
         Paulo Espinoza
-        <span class="block text-2xl sm:text-4xl lg:text-5xl mt-2 font-bold text-cyan-400">
+        <span class="block text-2xl sm:text-4xl lg:text-5xl mt-2 font-semibold text-sky-400">
           Ingeniero de Sistemas de Información
         </span>
       </h1>
 
-      <!-- Dynamic Specialization Bar with Vanilla Typewriter -->
-      <div class="h-10 flex items-center justify-center text-base sm:text-xl font-mono text-slate-300 mb-6">
-        <span class="text-sky-400 font-bold mr-2">&gt;</span>
-        <span id="heroTypewriterText">Ingeniero de Sistemas de Información · UPC</span>
-        <span class="w-2 h-5 bg-sky-400 ml-1 animate-pulse inline-block align-middle"></span>
-      </div>
-
-      <!-- Recruiter Elevator Pitch -->
-      <p class="text-sm sm:text-lg text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
-        <strong>Ingeniero de Sistemas de Información de la Universidad Peruana de Ciencias Aplicadas (UPC)</strong>. Especializado en el diseño e implementación de sistemas backend robustos en <strong class="text-sky-300">Java / Spring Boot</strong> y <strong class="text-indigo-300">C# / .NET</strong>, bases de datos relacionales y aplicaciones web modernas con <strong class="text-emerald-300">React &amp; Astro</strong>, aplicando patrones de arquitectura de sistemas y desarrollo acelerado con IA.
+      <p class="text-base sm:text-lg text-zinc-300 max-w-3xl leading-relaxed">
+        Graduado de la <strong class="text-white">Universidad Peruana de Ciencias Aplicadas (UPC)</strong>. Diseño e implementación de microservicios de alto rendimiento en <strong class="text-sky-300">Java (Spring Boot)</strong> y <strong class="text-white">C# (.NET)</strong>, persistencia relacional transaccional (PostgreSQL / SQL Server / Oracle) y desarrollo sistemático con metodología SDD.
       </p>
 
-      <!-- Recruiter Action Buttons (Flat) -->
-      <div class="flex flex-wrap items-center justify-center gap-3.5 mb-14">
+      <!-- Action Buttons with Emil Kowalski Micro-Feedback -->
+      <div class="flex flex-wrap items-center gap-3 pt-2">
         <a
           href="/contact"
-          class="px-7 py-3.5 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 text-sm font-semibold transition-colors flex items-center gap-2"
+          class="flat-btn-primary"
         >
           <Icon name="briefcase" class="w-4 h-4" />
           <span>Contactar para Entrevista</span>
@@ -66,105 +37,74 @@ const enterpriseStrengths = [
 
         <a
           href="/portfolio"
-          class="px-6 py-3.5 rounded-lg bg-[#131d33] border border-[#24324f] hover:border-cyan-400 text-slate-200 hover:text-white text-sm font-semibold transition-all flex items-center gap-2"
+          class="flat-btn-outline"
         >
           <span>Ver Casos de Estudio</span>
           <Icon name="arrow-right" class="w-4 h-4 text-sky-400" />
         </a>
 
-        <a
-          href="https://www.linkedin.com/in/paulo-espinoza9/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="p-3.5 rounded-lg bg-[#131d33] border border-[#24324f] text-slate-300 hover:text-white hover:border-cyan-400 transition-all"
-          aria-label="Perfil de LinkedIn de Paulo Espinoza"
-          title="LinkedIn Profesional"
-        >
-          <Icon name="linkedin" class="w-4.5 h-4.5 text-[#0a66c2]" />
-        </a>
+        <div class="flex items-center gap-2 pl-2">
+          <a
+            href="https://www.linkedin.com/in/paulo-espinoza9/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="p-2.5 rounded-md bg-[#11131a] border border-[#202533] hover:border-sky-400 text-zinc-300 hover:text-white transition-[border-color,color,transform] duration-150 active:scale-95"
+            aria-label="LinkedIn de Paulo Espinoza"
+            title="LinkedIn Profesional"
+          >
+            <Icon name="linkedin" class="w-4 h-4 text-sky-400" />
+          </a>
 
-        <a
-          href="https://github.com/paulollito29-sketch"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="p-3.5 rounded-lg bg-[#131d33] border border-[#24324f] text-slate-300 hover:text-white hover:border-cyan-400 transition-all"
-          aria-label="GitHub de Paulo Espinoza"
-          title="Repositorios de GitHub"
-        >
-          <Icon name="github" class="w-4.5 h-4.5 text-slate-200" />
-        </a>
+          <a
+            href="https://github.com/paulollito29-sketch"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="p-2.5 rounded-md bg-[#11131a] border border-[#202533] hover:border-white text-zinc-300 hover:text-white transition-[border-color,color,transform] duration-150 active:scale-95"
+            aria-label="GitHub de Paulo Espinoza"
+            title="Repositorios GitHub"
+          >
+            <Icon name="github" class="w-4 h-4" />
+          </a>
+        </div>
       </div>
     </div>
 
-    <!-- Enterprise Strengths Metric Cards (Flat) -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
-      {enterpriseStrengths.map((item) => (
-        <div class="bg-[#131d33] p-4 sm:p-5 rounded-lg border border-[#24324f] hover:border-sky-500/40 transition-all flex items-start gap-3.5">
-          <div class="w-8 h-8 rounded-lg bg-slate-900 border border-[#24324f] flex items-center justify-center text-sky-400 shrink-0 mt-0.5">
-            <Icon name={item.icon} class="w-4 h-4" />
-          </div>
-          <div>
-            <div class="text-xs text-slate-400 font-mono">{item.label}</div>
-            <div class="text-sm font-bold text-white mt-0.5">{item.desc}</div>
-          </div>
+    <!-- Authentic Systems Engineering Fragment (data-ui) -->
+    <div data-ui class="max-w-4xl p-5 sm:p-6 bg-[#0c0e14] border border-[#1e2330] rounded-lg">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 mb-4 border-b border-[#1c212e]">
+        <div class="flex items-center gap-2">
+          <span class="inline-block w-2.5 h-2.5 rounded-full bg-sky-400"></span>
+          <span class="text-xs font-semibold text-white tracking-tight">
+            Arquitectura de Sistemas &amp; Stack de Producción
+          </span>
         </div>
-      ))}
+        <div class="text-[11px] text-zinc-400">
+          Metodología SDD · UPC Engineering Standard
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
+        <div class="space-y-1">
+          <div class="text-zinc-500 uppercase tracking-wider text-[10px]">Núcleo Backend</div>
+          <div class="font-semibold text-zinc-100">Java · Spring Boot</div>
+          <div class="text-zinc-400 text-[11px]">C# · .NET Core · REST APIs</div>
+        </div>
+        <div class="space-y-1">
+          <div class="text-zinc-500 uppercase tracking-wider text-[10px]">Persistencia Relacional</div>
+          <div class="font-semibold text-zinc-100">PostgreSQL · SQL Server</div>
+          <div class="text-zinc-400 text-[11px]">Oracle SQL · ACID · JPA/Hibernate</div>
+        </div>
+        <div class="space-y-1">
+          <div class="text-zinc-500 uppercase tracking-wider text-[10px]">Frontend &amp; Delivery</div>
+          <div class="font-semibold text-zinc-100">Astro · React · Next.js</div>
+          <div class="text-zinc-400 text-[11px]">TypeScript · Tailwind CSS</div>
+        </div>
+        <div class="space-y-1">
+          <div class="text-zinc-500 uppercase tracking-wider text-[10px]">Estandarización</div>
+          <div class="font-semibold text-zinc-100">Spec-Driven Dev (SDD)</div>
+          <div class="text-zinc-400 text-[11px]">Workflows con IA &amp; Git CI/CD</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
-
-<script>
-  function initTypewriter() {
-    const el = document.getElementById("heroTypewriterText");
-    if (!el) return;
-
-    const specializations = [
-      "Ingeniero de Sistemas de Información · UPC",
-      "Desarrollo Asistido por Inteligencia Artificial (IA)",
-      "Metodología SDD (Spec-Driven Development)",
-      "Arquitectura Backend en Java (Spring Boot) & C# (.NET)",
-      "Bases de Datos Relacionales (PostgreSQL / SQL Server)",
-      "Frontend Moderno (Angular / React / Next.js / Astro)",
-    ];
-
-    let specIdx = 0;
-    let charIdx = 0;
-    let isDeleting = false;
-    let timeoutId: number;
-
-    function typeLoop() {
-      const current = specializations[specIdx];
-      if (!isDeleting) {
-        if (charIdx < current.length) {
-          charIdx++;
-          el!.textContent = current.substring(0, charIdx);
-          timeoutId = window.setTimeout(typeLoop, 50);
-        } else {
-          timeoutId = window.setTimeout(() => {
-            isDeleting = true;
-            typeLoop();
-          }, 2400);
-        }
-      } else {
-        if (charIdx > 0) {
-          charIdx--;
-          el!.textContent = current.substring(0, charIdx);
-          timeoutId = window.setTimeout(typeLoop, 25);
-        } else {
-          isDeleting = false;
-          specIdx = (specIdx + 1) % specializations.length;
-          timeoutId = window.setTimeout(typeLoop, 200);
-        }
-      }
-    }
-
-    typeLoop();
-
-    document.addEventListener("astro:before-preparation", () => {
-      clearTimeout(timeoutId);
-    }, { once: true });
-  }
-
-  initTypewriter();
-  document.addEventListener("astro:page-load", initTypewriter);
-</script>

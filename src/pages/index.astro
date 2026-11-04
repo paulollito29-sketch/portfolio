@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import ScrollProgress from "../components/ScrollProgress.astro";
 import BackgroundScroll from "../components/BackgroundScroll.astro";
-import HeroSlider from "../components/HeroSlider.astro";
+import HeroInteractive from "../components/HeroInteractive.astro";
 import OfficialUpdatePanel from "../components/OfficialUpdatePanel.astro";
 import DualPanels from "../components/DualPanels.astro";
 import ServicesSection from "../components/ServicesSection.astro";
@@ -15,45 +15,23 @@ import ScrollToTop from "../components/ScrollToTop.astro";
 ---
 
 <Layout
-  title="Paulo Espinoza | Ingeniero de Sistemas de Información · Sitio Oficial"
+  title="Paulo Espinoza | Ingeniero de Sistemas de Información · UPC"
   description="Sitio oficial de Paulo Espinoza — Ingeniero de Sistemas de Información de la UPC. Especializado en arquitectura backend en Java (Spring Boot), .NET, bases de datos relacionales y desarrollo asistido por IA."
 >
-  <!-- Top Progress Bar -->
   <ScrollProgress />
-
-  <!-- Flat Technical Grid Background -->
   <BackgroundScroll />
-
-  <!-- Flat Navbar -->
   <Navbar />
 
-  <!-- Main Content Flow (Flat Design) -->
   <main class="relative z-10 space-y-8">
-    <!-- Hero Slider with Flat Controls -->
-    <HeroSlider />
-
-    <!-- Official Live Facts Collapsible Bar -->
+    <HeroInteractive />
     <OfficialUpdatePanel />
-
-    <!-- Dual Facets Panels (Professional & Academic) -->
     <DualPanels />
-
-    <!-- Featured Services Overview -->
     <ServicesSection />
-
-    <!-- Featured Portfolio Cases -->
     <ProjectsShowcase />
-
-    <!-- Verified Credentials & Certificates -->
     <CertificatesModal />
-
-    <!-- Official Recruiter Contact Section -->
     <ContactInteractive />
   </main>
 
-  <!-- Official Flat Footer -->
   <Footer />
-
-  <!-- Floating Back to Top Button -->
   <ScrollToTop />
 </Layout>

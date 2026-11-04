@@ -2,30 +2,30 @@
 import Icon from "./icons/Icon.astro";
 ---
 
-<section id="official-facts" class="max-w-7xl mx-auto px-4 sm:px-8 py-4 relative z-10">
-  <div class="border border-[#24324f] bg-[#121215] rounded-lg overflow-hidden transition-all">
+<section id="official-facts" class="max-w-7xl mx-auto px-4 sm:px-8 py-3 relative z-10">
+  <div class="border border-[#1d2230] bg-[#10121a] rounded-lg overflow-hidden">
     <!-- Collapsible Header -->
     <button
       id="factsToggleBtn"
       type="button"
-      class="w-full flex items-center justify-between p-4 hover:bg-zinc-800/50 transition-colors cursor-pointer text-left"
+      class="w-full flex items-center justify-between p-4 hover:bg-[#161922] transition-[background-color] duration-150 cursor-pointer text-left active:scale-[0.99]"
       aria-expanded="true"
       aria-controls="factsContent"
     >
       <div class="flex items-center gap-3">
-        <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
-        <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
-          <span class="font-display font-bold text-sm tracking-wider text-white uppercase">
-            INFORMACIÓN OFICIAL DEL CANDIDATO
+        <span class="w-2 h-2 rounded-full bg-sky-400"></span>
+        <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2.5">
+          <span class="font-display font-semibold text-sm text-white">
+            Información Oficial del Candidato
           </span>
-          <span class="hidden sm:inline text-zinc-600">/</span>
-          <span class="text-xs font-mono text-zinc-400">
+          <span class="hidden sm:inline text-zinc-600">|</span>
+          <span class="text-xs text-zinc-400">
             Universidad Peruana de Ciencias Aplicadas (UPC)
           </span>
         </div>
       </div>
 
-      <div class="flex items-center gap-2 text-xs font-mono text-zinc-400">
+      <div class="flex items-center gap-2 text-xs text-zinc-400">
         <span id="factsToggleText" class="hidden sm:inline">Colapsar</span>
         <div id="factsChevron" class="transition-transform duration-200 rotate-180">
           <Icon name="chevron-down" class="w-4 h-4 text-zinc-400" />
@@ -34,36 +34,36 @@ import Icon from "./icons/Icon.astro";
     </button>
 
     <!-- Collapsible Content -->
-    <div id="factsContent" class="border-t border-[#24324f] bg-[#0c0c0e] p-5 sm:p-6 grid md:grid-cols-3 gap-5 text-xs sm:text-sm">
+    <div id="factsContent" class="border-t border-[#181d29] bg-[#0a0b10] p-5 sm:p-6 grid md:grid-cols-3 gap-5 text-xs sm:text-sm">
       <!-- Academic & Degree -->
-      <div class="space-y-1.5 p-3 rounded bg-[#121215] border border-zinc-800">
-        <div class="flex items-center gap-2 font-mono text-cyan-400 font-semibold uppercase tracking-wider text-xs">
+      <div class="space-y-1.5 p-3.5 rounded-lg bg-[#10121a] border border-[#181d29]">
+        <div class="flex items-center gap-2 text-sky-400 font-semibold text-xs">
           <Icon name="graduation-cap" class="w-4 h-4" /> Formación Universitaria
         </div>
-        <h4 class="text-sm font-bold text-white">Ingeniería de Sistemas de Información</h4>
+        <h3 class="text-sm font-bold text-white">Ingeniería de Sistemas de Información</h3>
         <p class="text-zinc-400 text-xs leading-relaxed">
-          Universidad Peruana de Ciencias Aplicadas (UPC). Formación en arquitectura de sistemas, ingeniería de datos y gestión tecnológica.
+          Universidad Peruana de Ciencias Aplicadas (UPC). Arquitectura de sistemas, persistencia relacional y gobernanza de software.
         </p>
       </div>
 
       <!-- Core Specialization -->
-      <div class="space-y-1.5 p-3 rounded bg-[#121215] border border-zinc-800">
-        <div class="flex items-center gap-2 font-mono text-cyan-400 font-semibold uppercase tracking-wider text-xs">
+      <div class="space-y-1.5 p-3.5 rounded-lg bg-[#10121a] border border-[#181d29]">
+        <div class="flex items-center gap-2 text-sky-400 font-semibold text-xs">
           <Icon name="shield-check" class="w-4 h-4" /> Especialidad &amp; Backend
         </div>
-        <h4 class="text-sm font-bold text-white">Java / Spring Boot &amp; .NET Core</h4>
+        <h3 class="text-sm font-bold text-white">Java / Spring Boot &amp; .NET Core</h3>
         <p class="text-zinc-400 text-xs leading-relaxed">
-          APIs RESTful, microservicios, seguridad JWT, modelado relacional en SQL Server / Oracle y desarrollo web en React &amp; Astro.
+          APIs RESTful de alto desempeño, seguridad perimetral JWT, modelado relacional ACID en SQL Server y Oracle SQL.
         </p>
       </div>
 
       <!-- Availability & Location -->
-      <div class="space-y-1.5 p-3 rounded bg-[#121215] border border-zinc-800">
-        <div class="flex items-center gap-2 font-mono text-emerald-400 font-semibold uppercase tracking-wider text-xs">
+      <div class="space-y-1.5 p-3.5 rounded-lg bg-[#10121a] border border-[#181d29]">
+        <div class="flex items-center gap-2 text-emerald-400 font-semibold text-xs">
           <Icon name="briefcase" class="w-4 h-4" /> Estado Laboral
         </div>
-        <h4 class="text-sm font-bold text-white">Disponibilidad Inmediata</h4>
-        <div class="flex flex-col gap-1 text-xs text-zinc-300 font-mono pt-1">
+        <h3 class="text-sm font-bold text-white">Disponibilidad Inmediata</h3>
+        <div class="flex flex-col gap-1 text-xs text-zinc-300 pt-1">
           <span class="flex items-center gap-1.5">
             <Icon name="map-pin" class="w-3.5 h-3.5 text-zinc-400" /> Lima, Perú (Remoto / Híbrido)
           </span>
