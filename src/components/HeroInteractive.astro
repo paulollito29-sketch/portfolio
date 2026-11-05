@@ -2,112 +2,94 @@
 import Icon from "./icons/Icon.astro";
 ---
 
-<section id="hero" class="relative min-h-[85svh] flex flex-col justify-center pt-28 pb-16 px-4 sm:px-8 z-10">
-  <div class="max-w-6xl mx-auto w-full space-y-10">
-    <!-- Status Indicator (Glass Pill with Emerald Glow) -->
-    <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 backdrop-blur-md shadow-sm shadow-emerald-500/10">
-      <span class="relative flex h-2 w-2">
-        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
-      </span>
-      <span class="text-xs font-semibold text-zinc-200 tracking-tight">
-        Disponible para Contratación Inmediata · 7º Ciclo UPC Lima, Perú
+<section id="hero" class="relative min-h-[85svh] flex flex-col justify-center pt-24 pb-16 px-4 sm:px-8 z-10">
+  <div class="max-w-6xl mx-auto w-full space-y-8">
+    <!-- Status Indicator (Plain solid pill without ping or glass) -->
+    <div class="reveal-entry inline-flex items-center gap-2 px-3 py-1.5 rounded bg-[#1a1a1a] text-zinc-300 text-xs w-fit">
+      <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+      <span class="font-medium">
+        Disponible para contratación inmediata · 7º Ciclo UPC Lima, Perú
       </span>
     </div>
 
-    <!-- Main Title & Value Proposition -->
-    <div class="space-y-6 max-w-4xl">
-      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold tracking-tight leading-[1.08]">
-        <span class="block gradient-text-hero">
-          Paulo Espinoza
-        </span>
-        <span class="block text-3xl sm:text-5xl lg:text-6xl mt-2.5 font-bold gradient-text-sky">
-          Ingeniero de Sistemas de Información
-        </span>
+    <!-- Main Title & Value Proposition: 2 lines maximum at all widths -->
+    <div class="space-y-4 max-w-4xl">
+      <h1 class="reveal-entry reveal-delay-1 text-4xl sm:text-6xl lg:text-7xl font-display font-bold tracking-tight text-[#efefef] leading-tight">
+        Paulo Espinoza
       </h1>
-
-      <p class="text-base sm:text-lg text-zinc-300 max-w-3xl leading-relaxed">
-        Estudiante de 7º ciclo en la <strong class="text-white font-semibold">Universidad Peruana de Ciencias Aplicadas (UPC)</strong> con experiencia en el <strong class="text-sky-300 font-semibold">Servicio de Informática de la Fuerza Aérea</strong>. Especialista en microservicios backend en <strong class="text-sky-300 font-semibold">Java (Spring Boot)</strong> y <strong class="text-indigo-300 font-semibold">C# (.NET)</strong>, persistencia relacional transaccional (PostgreSQL / SQL Server) y desarrollo con metodología SDD y flujos asistidos por IA.
+      <p class="reveal-entry reveal-delay-2 text-2xl sm:text-3xl text-zinc-300 font-medium">
+        Ingeniero de Sistemas de Información (UPC)
       </p>
 
-      <!-- Action Buttons with Emil Kowalski Micro-Feedback & Glassmorphism -->
-      <div class="flex flex-wrap items-center gap-3.5 pt-2">
-        <a
-          href="/contact"
-          class="btn-gradient-primary"
-        >
+      <p class="reveal-entry reveal-delay-3 text-base sm:text-lg text-zinc-400 max-w-3xl leading-relaxed pt-1">
+        Estudiante de 7º ciclo en la Universidad Peruana de Ciencias Aplicadas con 8 meses de experiencia como Full Stack Developer en el Servicio de Informática de la Fuerza Aérea. Especialista en microservicios backend en Java (Spring Boot), persistencia transaccional ACID (PostgreSQL y SQL Server) y arquitectura de software con metodología SDD.
+      </p>
+
+      <!-- Action Buttons (Solid colors with Emil Kowalski micro-feedback) -->
+      <div class="reveal-entry reveal-delay-4 flex flex-wrap items-center gap-3 pt-3">
+        <a href="/contact" class="btn-primary">
           <Icon name="briefcase" class="w-4 h-4" />
-          <span>Contactar para Entrevista</span>
+          <span>Contactar para entrevista</span>
         </a>
 
-        <a
-          href="/portfolio"
-          class="btn-glass-outline"
-        >
-          <span>Ver Casos de Estudio</span>
-          <Icon name="arrow-right" class="w-4 h-4 text-sky-400" />
+        <a href="/portfolio" class="btn-secondary">
+          <span>Ver sistemas en producción</span>
+          <Icon name="arrow-right" class="w-4 h-4 text-zinc-400" />
         </a>
 
-        <div class="flex items-center gap-2 pl-2">
-          <a
-            href="https://www.linkedin.com/in/paulo-espinoza9/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="p-2.5 rounded-lg bg-white/[0.04] border border-white/10 hover:border-sky-400/50 hover:bg-white/[0.08] text-zinc-300 hover:text-white transition-[border-color,background-color,color,transform] duration-150 active:scale-95 shadow-sm"
-            aria-label="LinkedIn de Paulo Espinoza"
-            title="LinkedIn Profesional"
-          >
-            <Icon name="linkedin" class="w-4 h-4 text-sky-400" />
-          </a>
-
-          <a
-            href="https://github.com/paulollito29-sketch"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="p-2.5 rounded-lg bg-white/[0.04] border border-white/10 hover:border-white/30 hover:bg-white/[0.08] text-zinc-300 hover:text-white transition-[border-color,background-color,color,transform] duration-150 active:scale-95 shadow-sm"
-            aria-label="GitHub de Paulo Espinoza"
-            title="Repositorios GitHub"
-          >
-            <Icon name="github" class="w-4 h-4" />
-          </a>
-        </div>
+        <a href="/cv" class="btn-secondary">
+          <Icon name="file-text" class="w-4 h-4 text-zinc-400" />
+          <span>Curriculum Vitae (PDF)</span>
+        </a>
       </div>
     </div>
 
-    <!-- Authentic Systems Engineering Fragment with Glassmorphic Card (data-ui) -->
-    <div data-ui class="max-w-4xl p-5 sm:p-7 glass-card">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 mb-5 border-b border-white/[0.08]">
-        <div class="flex items-center gap-2.5">
-          <span class="inline-block w-2.5 h-2.5 rounded-full bg-sky-400 shadow-sm shadow-sky-400/80"></span>
-          <span class="text-xs font-bold text-white tracking-tight uppercase">
-            Arquitectura de Sistemas &amp; Stack de Producción
+    <!-- Real Archival Systems Engineering Photograph -->
+    <div class="reveal-entry reveal-delay-5 max-w-4xl overflow-hidden rounded-lg">
+      <img
+        src="/assets/technician-with-laptop-working-on-server-rack.jpg"
+        width="1920"
+        height="1275"
+        alt="Ingeniería de sistemas e infraestructura de servidores en producción"
+        class="w-full h-56 sm:h-72 object-cover rounded-lg hero-photo-drift"
+        decoding="async"
+      />
+    </div>
+
+    <!-- Authentic Systems Engineering Fragment (data-ui) with interactive live schema -->
+    <div data-ui class="max-w-4xl p-5 sm:p-6 bg-[#121212] rounded-lg">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 mb-4">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-[#b11226]"></span>
+          <span class="text-xs font-semibold text-white">
+            Especificación técnica de sistemas y arquitectura
           </span>
         </div>
-        <div class="text-[11px] text-sky-300/80 font-medium">
-          Metodología SDD · UPC Engineering Standard
+        <div class="text-xs text-zinc-400">
+          Metodología SDD · Estándar de ingeniería UPC
         </div>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 text-xs">
-        <div class="space-y-1.5 p-3 rounded-lg bg-white/[0.02] border border-white/[0.04]">
-          <div class="text-sky-400 uppercase tracking-wider text-[10px] font-semibold">Núcleo Backend</div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
+        <div class="p-3 bg-[#181818] rounded space-y-1">
+          <div class="text-zinc-400 text-xs font-medium">Núcleo backend</div>
           <div class="font-bold text-white text-sm">Java · Spring Boot</div>
           <div class="text-zinc-400 text-xs">C# · .NET Core · REST APIs</div>
         </div>
-        <div class="space-y-1.5 p-3 rounded-lg bg-white/[0.02] border border-white/[0.04]">
-          <div class="text-indigo-400 uppercase tracking-wider text-[10px] font-semibold">Persistencia Relacional</div>
+        <div class="p-3 bg-[#181818] rounded space-y-1">
+          <div class="text-zinc-400 text-xs font-medium">Persistencia relacional</div>
           <div class="font-bold text-white text-sm">PostgreSQL · SQL Server</div>
-          <div class="text-zinc-400 text-xs">Oracle SQL · ACID · JPA/Hibernate</div>
+          <div class="text-zinc-400 text-xs">Oracle SQL · ACID · JPA</div>
         </div>
-        <div class="space-y-1.5 p-3 rounded-lg bg-white/[0.02] border border-white/[0.04]">
-          <div class="text-teal-400 uppercase tracking-wider text-[10px] font-semibold">Frontend &amp; Delivery</div>
-          <div class="font-bold text-white text-sm">Astro · React.js · Next.js</div>
-          <div class="text-zinc-400 text-xs">TypeScript · Tailwind CSS</div>
+        <div class="p-3 bg-[#181818] rounded space-y-1">
+          <div class="text-zinc-400 text-xs font-medium">Trayectoria práctica</div>
+          <div class="font-bold text-white text-sm">Fuerza Aérea (FAP)</div>
+          <div class="text-zinc-400 text-xs">8 meses servicio de informática</div>
         </div>
-        <div class="space-y-1.5 p-3 rounded-lg bg-white/[0.02] border border-white/[0.04]">
-          <div class="text-purple-400 uppercase tracking-wider text-[10px] font-semibold">Estandarización</div>
-          <div class="font-bold text-white text-sm">Spec-Driven Dev (SDD)</div>
-          <div class="text-zinc-400 text-xs">Workflows con IA &amp; Git CI/CD</div>
+        <div class="p-3 bg-[#181818] rounded space-y-1">
+          <div class="text-zinc-400 text-xs font-medium">Frontend &amp; metodologías</div>
+          <div class="font-bold text-white text-sm">React.js · Tailwind CSS</div>
+          <div class="text-zinc-400 text-xs">SDD · OpenAPI · Flujos con IA</div>
         </div>
       </div>
     </div>

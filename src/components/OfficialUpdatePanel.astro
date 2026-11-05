@@ -3,23 +3,23 @@ import Icon from "./icons/Icon.astro";
 ---
 
 <section id="official-facts" class="max-w-7xl mx-auto px-4 sm:px-8 py-3 relative z-10">
-  <div class="glass-card overflow-hidden">
+  <div class="bg-[#151515] rounded-lg overflow-hidden">
     <!-- Collapsible Header -->
     <button
       id="factsToggleBtn"
       type="button"
-      class="w-full flex items-center justify-between p-4.5 hover:bg-white/[0.04] transition-[background-color] duration-150 cursor-pointer text-left active:scale-[0.99]"
+      class="w-full flex items-center justify-between p-4.5 hover:bg-[#1a1a1a] transition-colors cursor-pointer text-left active:scale-[0.99]"
       aria-expanded="true"
       aria-controls="factsContent"
     >
       <div class="flex items-center gap-3">
-        <span class="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-sky-400 to-indigo-500 shadow-sm shadow-sky-400/80"></span>
+        <span class="w-2.5 h-2.5 rounded-full bg-[#b11226]"></span>
         <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2.5">
           <span class="font-display font-bold text-sm text-white">
-            Información Oficial del Candidato
+            Información oficial del candidato
           </span>
-          <span class="hidden sm:inline text-zinc-600">|</span>
-          <span class="text-xs text-sky-300/80 font-medium">
+          <span class="hidden sm:inline text-zinc-600">/</span>
+          <span class="text-xs text-zinc-400 font-medium">
             Universidad Peruana de Ciencias Aplicadas (UPC) · 7º Ciclo
           </span>
         </div>
@@ -28,49 +28,47 @@ import Icon from "./icons/Icon.astro";
       <div class="flex items-center gap-2 text-xs text-zinc-400">
         <span id="factsToggleText" class="hidden sm:inline font-medium">Colapsar</span>
         <div id="factsChevron" class="transition-transform duration-200 rotate-180">
-          <Icon name="chevron-down" class="w-4 h-4 text-sky-400" />
+          <Icon name="chevron-down" class="w-4 h-4 text-zinc-400" />
         </div>
       </div>
     </button>
 
     <!-- Collapsible Content -->
-    <div id="factsContent" class="border-t border-white/[0.08] bg-white/[0.01] p-5 sm:p-6 grid md:grid-cols-3 gap-5 text-xs sm:text-sm">
+    <div id="factsContent" class="bg-[#121212] p-6 sm:p-8 grid md:grid-cols-3 gap-8 text-base">
       <!-- Academic & Degree -->
-      <div class="space-y-1.5 p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]">
-        <div class="flex items-center gap-2 text-sky-400 font-semibold text-xs">
-          <Icon name="graduation-cap" class="w-4 h-4" /> Formación Universitaria
+      <div class="space-y-2">
+        <div class="flex items-center gap-2 text-zinc-300 font-semibold text-sm">
+          <span class="w-2 h-2 rounded-full bg-[#b11226]"></span>
+          <span>Formación universitaria</span>
         </div>
-        <h3 class="text-sm font-bold text-white">Ingeniería de Sistemas de Información</h3>
-        <p class="text-zinc-300 text-xs leading-relaxed">
+        <h3 class="text-lg font-bold text-white">Ingeniería de Sistemas de Información</h3>
+        <p class="text-base text-zinc-300 leading-relaxed">
           Universidad Peruana de Ciencias Aplicadas (UPC) · 7º Ciclo. Arquitectura de microservicios, persistencia relacional y gobernanza de software.
         </p>
       </div>
 
       <!-- Core Specialization -->
-      <div class="space-y-1.5 p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]">
-        <div class="flex items-center gap-2 text-indigo-400 font-semibold text-xs">
-          <Icon name="shield-check" class="w-4 h-4" /> Especialidad &amp; Backend
+      <div class="space-y-2">
+        <div class="flex items-center gap-2 text-zinc-300 font-semibold text-sm">
+          <span class="w-2 h-2 rounded-full bg-[#b11226]"></span>
+          <span>Especialidad backend</span>
         </div>
-        <h3 class="text-sm font-bold text-white">Java / Spring Boot &amp; .NET Core</h3>
-        <p class="text-zinc-300 text-xs leading-relaxed">
+        <h3 class="text-lg font-bold text-white">Java / Spring Boot &amp; .NET Core</h3>
+        <p class="text-base text-zinc-300 leading-relaxed">
           Experiencia en el Servicio de Informática de la Fuerza Aérea. APIs RESTful seguras con JWT y persistencia ACID en PostgreSQL y SQL Server.
         </p>
       </div>
 
       <!-- Availability & Location -->
-      <div class="space-y-1.5 p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]">
-        <div class="flex items-center gap-2 text-emerald-400 font-semibold text-xs">
-          <Icon name="briefcase" class="w-4 h-4" /> Estado Laboral
+      <div class="space-y-2">
+        <div class="flex items-center gap-2 text-emerald-400 font-semibold text-sm">
+          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          <span>Disponibilidad y ubicación</span>
         </div>
-        <h3 class="text-sm font-bold text-white">Disponibilidad Inmediata</h3>
-        <div class="flex flex-col gap-1 text-xs text-zinc-300 pt-1">
-          <span class="flex items-center gap-1.5">
-            <Icon name="map-pin" class="w-3.5 h-3.5 text-zinc-400" /> Lima, Perú (Remoto / Híbrido)
-          </span>
-          <span class="flex items-center gap-1.5">
-            <Icon name="clock" class="w-3.5 h-3.5 text-emerald-400" /> Incorporación Inmediata
-          </span>
-        </div>
+        <h3 class="text-lg font-bold text-white">Contratación inmediata (Open to Work)</h3>
+        <p class="text-base text-zinc-300 leading-relaxed">
+          Modalidad remota o híbrida en Lima, Perú. Experiencia en metodologías ágiles, control de versiones Git y flujos acelerados por IA.
+        </p>
       </div>
     </div>
   </div>
@@ -85,19 +83,18 @@ import Icon from "./icons/Icon.astro";
 
     if (!btn || !content) return;
 
-    let isOpen = true;
-
     btn.addEventListener("click", () => {
-      isOpen = !isOpen;
-      btn.setAttribute("aria-expanded", String(isOpen));
-      if (isOpen) {
-        content.classList.remove("hidden");
-        if (text) text.textContent = "Colapsar";
-        if (chevron) chevron.classList.add("rotate-180");
-      } else {
+      const isExpanded = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", isExpanded ? "false" : "true");
+
+      if (isExpanded) {
         content.classList.add("hidden");
         if (text) text.textContent = "Expandir";
-        if (chevron) chevron.classList.remove("rotate-180");
+        chevron?.classList.remove("rotate-180");
+      } else {
+        content.classList.remove("hidden");
+        if (text) text.textContent = "Colapsar";
+        chevron?.classList.add("rotate-180");
       }
     });
   }

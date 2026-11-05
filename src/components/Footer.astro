@@ -4,66 +4,66 @@ import Icon from "./icons/Icon.astro";
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="border-t border-white/[0.08] bg-[#06070a]/85 backdrop-blur-xl text-zinc-400 py-14 px-4 sm:px-8 relative z-10 shadow-2xl">
-  <div class="max-w-7xl mx-auto space-y-12">
+<footer class="bg-[#0a0a0a] text-zinc-400 py-12 px-4 sm:px-8 relative z-10">
+  <div class="max-w-7xl mx-auto space-y-10">
     <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
-      {/* Brand Column */}
-      <div class="md:col-span-6 space-y-3.5">
-        <div class="text-xl font-display font-extrabold tracking-tight gradient-text-hero">
-          PAULO ESPINOZA
+      <!-- Brand Column -->
+      <div class="md:col-span-6 space-y-3">
+        <div class="text-xl font-display font-bold text-white tracking-tight">
+          Paulo Espinoza
         </div>
-        <p class="text-xs text-sky-400 font-semibold">
+        <p class="text-xs text-zinc-300 font-medium">
           Ingeniero de Sistemas de Información · Universidad Peruana de Ciencias Aplicadas (UPC)
         </p>
-        <p class="text-xs text-zinc-300 max-w-md leading-relaxed">
-          Diseño e implementación de microservicios backend en Java (Spring Boot) &amp; .NET, persistencia relacional en SQL Server y PostgreSQL, y desarrollo sistemático con metodología SDD y flujos asistidos por IA.
+        <p class="text-xs text-zinc-400 max-w-md leading-relaxed">
+          Diseño e implementación de microservicios backend en Java (Spring Boot) y .NET, persistencia relacional en SQL Server y PostgreSQL, y desarrollo con metodología SDD.
         </p>
       </div>
 
-      {/* Navigation Column */}
-      <div class="md:col-span-3 space-y-3">
-        <span class="text-xs font-bold text-white uppercase tracking-wider block">
+      <!-- Navigation Column -->
+      <div class="md:col-span-3 space-y-2">
+        <span class="text-xs font-semibold text-zinc-300 block">
           Navegación
         </span>
-        <ul class="space-y-2 text-xs">
+        <ul class="space-y-1.5 text-xs">
           <li>
-            <a href="/" class="hover:text-white transition-colors duration-150">Inicio</a>
+            <a href="/" class="hover:text-white transition-colors">Inicio</a>
           </li>
           <li>
-            <a href="/profile" class="hover:text-white transition-colors duration-150">Perfil Oficial</a>
+            <a href="/profile" class="hover:text-white transition-colors">Perfil oficial</a>
           </li>
           <li>
-            <a href="/services" class="hover:text-white transition-colors duration-150">Servicios</a>
+            <a href="/services" class="hover:text-white transition-colors">Servicios</a>
           </li>
           <li>
-            <a href="/portfolio" class="hover:text-white transition-colors duration-150">Portafolio</a>
+            <a href="/portfolio" class="hover:text-white transition-colors">Portafolio</a>
           </li>
           <li>
-            <a href="/certificates" class="hover:text-white transition-colors duration-150">Certificaciones</a>
+            <a href="/certificates" class="hover:text-white transition-colors">Certificaciones</a>
           </li>
           <li>
-            <a href="/cv" class="hover:text-white transition-colors duration-150">Curriculum Vitae</a>
+            <a href="/cv" class="hover:text-white transition-colors">Curriculum Vitae</a>
           </li>
           <li>
-            <a href="/contact" class="hover:text-white transition-colors duration-150">Contacto</a>
+            <a href="/contact" class="hover:text-white transition-colors">Contacto</a>
           </li>
         </ul>
       </div>
 
-      {/* Connect Column */}
-      <div class="md:col-span-3 space-y-3">
-        <span class="text-xs font-bold text-white uppercase tracking-wider block">
-          Canales Directos
+      <!-- Connect Column -->
+      <div class="md:col-span-3 space-y-2">
+        <span class="text-xs font-semibold text-zinc-300 block">
+          Canales directos
         </span>
-        <ul class="space-y-2.5 text-xs">
+        <ul class="space-y-2 text-xs">
           <li>
             <a
               href="https://www.linkedin.com/in/paulo-espinoza9/"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 hover:text-sky-400 transition-colors duration-150 active:scale-95 text-zinc-300"
+              class="inline-flex items-center gap-2 hover:text-white transition-colors text-zinc-300"
             >
-              <Icon name="linkedin" class="w-3.5 h-3.5 text-sky-400" /> LinkedIn Profesional
+              <Icon name="linkedin" class="w-3.5 h-3.5" /> LinkedIn profesional
             </a>
           </li>
           <li>
@@ -71,7 +71,7 @@ const currentYear = new Date().getFullYear();
               href="https://github.com/paulollito29-sketch"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 hover:text-white transition-colors duration-150 active:scale-95 text-zinc-300"
+              class="inline-flex items-center gap-2 hover:text-white transition-colors text-zinc-300"
             >
               <Icon name="github" class="w-3.5 h-3.5" /> Repositorios GitHub
             </a>
@@ -81,31 +81,36 @@ const currentYear = new Date().getFullYear();
               href="https://wa.me/51906920958"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 hover:text-emerald-400 transition-colors duration-150 active:scale-95 text-zinc-300"
+              class="inline-flex items-center gap-2 hover:text-white transition-colors text-zinc-300"
             >
-              <Icon name="phone" class="w-3.5 h-3.5 text-emerald-400" /> WhatsApp Directo
+              <Icon name="phone" class="w-3.5 h-3.5" /> WhatsApp (+51 906 920 958)
             </a>
           </li>
           <li>
             <a
               href="mailto:pauloespinoza951@gmail.com"
-              class="inline-flex items-center gap-2 hover:text-white transition-colors duration-150 active:scale-95 text-zinc-300"
+              class="inline-flex items-center gap-2 hover:text-white transition-colors text-zinc-300"
             >
-              <Icon name="mail" class="w-3.5 h-3.5 text-sky-400" /> pauloespinoza951@gmail.com
+              <Icon name="mail" class="w-3.5 h-3.5" /> pauloespinoza951@gmail.com
             </a>
           </li>
         </ul>
       </div>
     </div>
 
-    {/* Bottom Bar */}
-    <div class="pt-6 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-zinc-400">
+    <!-- Copyright & Integrity Statement -->
+    <div class="pt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs text-zinc-400">
       <div>
-        &copy; {currentYear} Paulo Daniel Espinoza Gamboa. Todos los derechos reservados.
+        &copy; {currentYear} Paulo Daniel Espinoza Gamboa. Portafolio de ingeniería de sistemas de información.
       </div>
       <div>
-        <span>Ingeniería de Sistemas de Información · UPC Lima, Perú</span>
+        Universidad Peruana de Ciencias Aplicadas (UPC) · Lima, Perú
       </div>
     </div>
+
+    <!-- Archival Media Credits (taste-skill assets) -->
+    <p class="text-[13px] text-zinc-500 leading-relaxed pt-2">
+      Fotografías de contexto técnico: <a href="https://commons.wikimedia.org/wiki/File:Technician_with_laptop_working_on_server_rack_at_NERSC.jpg" class="text-zinc-400 underline hover:text-zinc-200">Servidores NERSC</a> (Derrick Coetzee, CC0), <a href="https://commons.wikimedia.org/w/index.php?curid=171982146" class="text-zinc-400 underline hover:text-zinc-200">ICL Trimetra Server</a> (Hubcapp, CC BY 4.0), <a href="https://commons.wikimedia.org/wiki/File:Iglesia_de_Santo_Domingo,_Lima,_Per%C3%BA,_2015-07-28,_DD_52-54_HDR.JPG" class="text-zinc-400 underline hover:text-zinc-200">Lima Centro</a> (Diego Delso, CC BY-SA 4.0).
+    </p>
   </div>
 </footer>

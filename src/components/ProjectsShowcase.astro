@@ -33,10 +33,10 @@ const portfolioCards = sortedProjects
   .map((p) => p.data);
 
 const categories = [
-  { id: "all", label: "Todos los Casos" },
-  { id: "backend", label: "Backend Core" },
+  { id: "all", label: "Todos los casos" },
+  { id: "backend", label: "Backend core" },
   { id: "fullstack", label: "Full Stack" },
-  { id: "database", label: "Bases de Datos & .NET" },
+  { id: "database", label: "Bases de datos y .NET" },
 ];
 ---
 
@@ -44,7 +44,7 @@ const categories = [
   {!hideHeader && (
     <div class="space-y-2">
       <h2 class="text-2xl sm:text-4xl font-display font-bold text-white tracking-tight">
-        Portafolio &amp; <span class="gradient-text-sky">Casos de Estudio</span>
+        Portafolio y casos de estudio
       </h2>
       <p class="text-xs sm:text-sm text-zinc-300 max-w-2xl leading-relaxed">
         Proyectos de ingeniería de sistemas de información con código auditado y arquitecturas listas para producción.
@@ -52,45 +52,46 @@ const categories = [
     </div>
   )}
 
-  <!-- Lead Featured Case Study (Glassmorphic Container with Subtle Gradient Halo) -->
-  <div class="glass-card p-6 sm:p-9 space-y-6 relative overflow-hidden">
-    <div class="flex flex-wrap items-center justify-between gap-3">
-      <div class="inline-flex items-center gap-2">
-        <span class="px-3 py-1 rounded-full bg-gradient-to-r from-sky-500/20 to-indigo-500/20 text-sky-300 border border-sky-400/30 text-xs font-semibold">
-          {featuredProject.badge?.es || "Caso Destacado"}
-        </span>
-        <span class="text-xs text-zinc-400 font-medium">
-          {featuredProject.kicker?.es || "Ingeniería Backend"}
-        </span>
+  <!-- Lead Featured Case Study (Solid Surface Container) -->
+  <div class="bg-[#151515] rounded-lg p-6 sm:p-9 space-y-6">
+    <div class="flex flex-col sm:flex-row gap-6 items-start">
+      <img
+        src="/assets/icl-trimetra-dy-server.jpg"
+        width="1920"
+        height="2880"
+        alt="Servidor backend e infraestructura empresarial"
+        class="w-full sm:w-1/3 h-52 object-cover rounded"
+        loading="lazy"
+        decoding="async"
+      />
+      <div class="flex-1 space-y-3">
+        <h3 class="text-2xl sm:text-3xl font-display font-bold text-white tracking-tight">
+          {featuredProject.title}
+        </h3>
+
+        {featuredProject.summary?.es && (
+          <p class="text-base sm:text-lg text-zinc-300 leading-relaxed">
+            {featuredProject.summary.es}
+          </p>
+        )}
+
+        <!-- Tags -->
+        <div class="flex flex-wrap gap-2 pt-1">
+          {featuredProject.tags.map((t: string) => (
+            <span class="px-2.5 py-1 text-xs rounded bg-[#202020] text-zinc-300 font-medium">
+              {t}
+            </span>
+          ))}
+        </div>
       </div>
-      <span class="text-xs text-zinc-400">2026</span>
-    </div>
-
-    <h3 class="text-2xl sm:text-3xl font-display font-bold text-white tracking-tight">
-      {featuredProject.title}
-    </h3>
-
-    {featuredProject.summary?.es && (
-      <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed max-w-3xl">
-        {featuredProject.summary.es}
-      </p>
-    )}
-
-    <!-- Tags -->
-    <div class="flex flex-wrap gap-2 pt-1">
-      {featuredProject.tags.map((t: string) => (
-        <span class="px-3 py-1 text-xs rounded-lg bg-white/[0.04] border border-white/10 text-zinc-200">
-          {t}
-        </span>
-      ))}
     </div>
 
     <!-- Points -->
     {featuredProject.points?.es && (
-      <ul class="space-y-2 pt-2 border-t border-white/[0.08]">
+      <ul class="space-y-2 pt-2">
         {featuredProject.points.es.map((pt: string) => (
-          <li class="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-300">
-            <span class="w-1.5 h-1.5 rounded-full bg-sky-400 shrink-0 mt-2 shadow-sm shadow-sky-400"></span>
+          <li class="flex items-start gap-2.5 text-base text-zinc-300">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#b11226] shrink-0 mt-2.5"></span>
             <span class="leading-relaxed">{pt}</span>
           </li>
         ))}
@@ -98,12 +99,12 @@ const categories = [
     )}
 
     <!-- Actions -->
-    <div class="flex flex-wrap items-center gap-3.5 pt-4 border-t border-white/[0.08]">
+    <div class="flex flex-wrap items-center gap-3 pt-4">
       <a
         href={featuredProject.repo}
         target="_blank"
         rel="noopener noreferrer"
-        class="btn-gradient-primary text-xs"
+        class="btn-primary text-xs"
       >
         <Icon name="github" class="w-4 h-4" />
         <span>Repositorio Backend</span>
@@ -113,7 +114,7 @@ const categories = [
           href={featuredProject.frontendRepo}
           target="_blank"
           rel="noopener noreferrer"
-          class="btn-glass-outline text-xs"
+          class="btn-secondary text-xs"
         >
           <Icon name="github" class="w-4 h-4" />
           <span>Repositorio Frontend</span>
@@ -124,19 +125,19 @@ const categories = [
 
   <!-- Toolbar & Filters -->
   <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-2">
-    <span class="text-xs font-bold uppercase tracking-wider text-sky-400">
-      Casos por Especialidad
+    <span class="text-xs font-semibold text-zinc-300">
+      Casos por especialidad
     </span>
 
-    <div class="flex flex-wrap gap-1.5 p-1 rounded-xl bg-white/[0.03] border border-white/[0.08] backdrop-blur-md" id="projectFilterGroup">
+    <div class="flex flex-wrap gap-1 p-1 rounded bg-[#121212]" id="projectFilterGroup">
       {categories.map((c, idx) => (
         <button
           type="button"
           data-category={c.id}
-          class={`project-filter-btn px-3 py-1.5 text-xs font-medium rounded-lg transition-[background-color,color,transform] duration-150 cursor-pointer active:scale-95 ${
+          class={`project-filter-btn px-3 py-1.5 text-xs font-medium rounded transition-colors cursor-pointer active:scale-95 ${
             idx === 0
-              ? "active bg-gradient-to-r from-sky-500/25 to-indigo-500/25 text-white font-semibold border border-sky-400/30"
-              : "text-zinc-400 hover:text-white hover:bg-white/[0.06]"
+              ? "active bg-[#222222] text-white font-semibold"
+              : "text-zinc-400 hover:text-white hover:bg-[#1a1a1a]"
           }`}
         >
           {c.label}
@@ -145,30 +146,30 @@ const categories = [
     </div>
   </div>
 
-  <!-- Portfolio Grid with Glassmorphic Cards -->
+  <!-- Portfolio Grid with Solid Surface Cards -->
   <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="projectsGrid">
     {portfolioCards.map((p) => (
       <article
-        class="project-card glass-card p-6 flex flex-col justify-between group"
+        class="project-card bg-[#151515] rounded-lg p-6 flex flex-col justify-between group"
         data-project-category={p.category}
       >
         <div>
           <div class="flex items-center justify-between gap-2 mb-3">
-            <span class="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-sky-500/10 text-sky-300 border border-sky-400/20">
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-[#202020] text-zinc-300">
               {p.categoryName.es}
             </span>
             <span class="text-xs text-zinc-400 font-medium">{p.year}</span>
           </div>
 
-          <h3 class="text-base font-bold text-white mb-2 line-clamp-2 group-hover:text-sky-300 transition-colors duration-150">
+          <h3 class="text-lg font-bold text-white mb-2 line-clamp-2 group-hover:text-zinc-200 transition-colors">
             {p.title}
           </h3>
 
-          <p class="text-xs text-zinc-300 leading-relaxed mb-3.5 line-clamp-3">
+          <p class="text-base text-zinc-300 leading-relaxed mb-3.5">
             {p.description.es}
           </p>
 
-          <p class="text-[11px] text-zinc-300 mb-4 border-l-2 border-sky-400/80 pl-2.5 leading-relaxed">
+          <p class="text-base text-zinc-400 mb-4 pl-3 leading-relaxed bg-[#1a1a1a] p-3 rounded">
             {p.impact.es}
           </p>
         </div>
@@ -176,22 +177,20 @@ const categories = [
         <div>
           <div class="flex flex-wrap gap-1.5 mb-4">
             {p.tags.map((t: string) => (
-              <span class="text-[11px] px-2.5 py-0.5 rounded-md bg-white/[0.04] border border-white/[0.06] text-zinc-200">
+              <span class="text-xs px-2.5 py-0.5 rounded bg-[#202020] text-zinc-300">
                 {t}
               </span>
             ))}
           </div>
 
-          <div class="pt-3 border-t border-white/[0.08]">
+          <div class="pt-2">
             <a
               href={p.repo}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-1.5 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors active:scale-95"
+              class="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-200 hover:text-white transition-colors active:scale-95"
             >
-              <Icon name="github" class="w-3.5 h-3.5" />
-              <span>Ver en GitHub</span>
-              <Icon name="arrow-right" class="w-3 h-3 text-sky-400" />
+              <span>Ver repositorio en GitHub &rarr;</span>
             </a>
           </div>
         </div>
@@ -210,9 +209,9 @@ const categories = [
         const cat = btn.getAttribute("data-category") || "all";
 
         filterBtns.forEach((b) => {
-          b.className = "project-filter-btn px-3 py-1.5 text-xs font-medium rounded-lg transition-[background-color,color,transform] duration-150 cursor-pointer active:scale-95 text-zinc-400 hover:text-white hover:bg-white/[0.06]";
+          b.className = "project-filter-btn px-3 py-1.5 text-xs font-medium rounded transition-colors cursor-pointer active:scale-95 text-zinc-400 hover:text-white hover:bg-[#1a1a1a]";
         });
-        btn.className = "project-filter-btn px-3 py-1.5 text-xs font-medium rounded-lg transition-[background-color,color,transform] duration-150 cursor-pointer active:scale-95 active bg-gradient-to-r from-sky-500/25 to-indigo-500/25 text-white font-semibold border border-sky-400/30";
+        btn.className = "project-filter-btn px-3 py-1.5 text-xs font-medium rounded transition-colors cursor-pointer active:scale-95 active bg-[#222222] text-white font-semibold";
 
         cards.forEach((card) => {
           const cardCat = card.getAttribute("data-project-category");

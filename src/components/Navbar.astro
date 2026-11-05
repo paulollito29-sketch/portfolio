@@ -14,30 +14,30 @@ const navLinks = [
 ];
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 glass-header transition-[background-color,border-color] duration-150" id="mainHeader">
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a] transition-colors duration-150" id="mainHeader">
   <div class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-8 py-3.5">
     <!-- Brand Logo -->
-    <a href="/" class="flex items-center gap-2.5 group cursor-pointer pressable">
-      <span class="font-display font-bold text-base sm:text-lg tracking-tight gradient-text-hero group-hover:text-sky-300 transition-colors">
-        PAULO ESPINOZA
+    <a href="/" class="flex items-center gap-2.5 group cursor-pointer">
+      <span class="font-display font-bold text-base sm:text-lg tracking-tight text-[#efefef] group-hover:text-white transition-colors">
+        Paulo Espinoza
       </span>
-      <span class="text-zinc-600 text-xs hidden sm:inline">|</span>
-      <span class="text-xs text-sky-400/90 hidden sm:inline font-medium">
-        Ingeniero de Sistemas · UPC
+      <span class="text-zinc-500 text-xs hidden sm:inline">/</span>
+      <span class="text-xs text-zinc-400 hidden sm:inline font-medium">
+        Ingeniero de Sistemas de Información (UPC)
       </span>
     </a>
 
     <!-- Desktop Navigation Links -->
-    <nav class="hidden lg:flex items-center gap-1.5 p-1 rounded-full bg-white/[0.03] border border-white/[0.08] backdrop-blur-md">
+    <nav class="hidden lg:flex items-center gap-1 p-1 rounded-md bg-[#121212]">
       {navLinks.map((link) => {
         const isActive = (link.href === "/" && pathname === "/") || (link.href !== "/" && pathname.startsWith(link.href));
         return (
           <a
             href={link.href}
-            class={`px-3.5 py-1.5 text-xs font-medium tracking-tight rounded-full transition-[background-color,color,transform,box-shadow] duration-150 active:scale-95 ${
+            class={`px-3.5 py-1.5 text-xs font-medium tracking-tight rounded transition-[background-color,color] duration-150 active:scale-95 ${
               isActive
-                ? "bg-gradient-to-r from-sky-500/25 via-indigo-500/25 to-purple-500/25 text-white font-semibold border border-sky-400/40 shadow-sm shadow-sky-500/20"
-                : "text-zinc-400 hover:text-zinc-100 hover:bg-white/[0.06]"
+                ? "bg-[#222222] text-white font-semibold"
+                : "text-zinc-400 hover:text-white hover:bg-[#1a1a1a]"
             }`}
           >
             {link.label}
@@ -48,12 +48,12 @@ const navLinks = [
 
     <!-- Utilities / Social Icons -->
     <div class="hidden sm:flex items-center gap-3">
-      <div class="flex items-center gap-1.5 pr-3 border-r border-white/10">
+      <div class="flex items-center gap-1.5 pr-2">
         <a
           href="https://github.com/paulollito29-sketch"
           target="_blank"
           rel="noopener noreferrer"
-          class="p-1.5 rounded-lg text-zinc-400 hover:text-white hover:bg-white/[0.08] transition-[color,transform] duration-150 active:scale-90"
+          class="p-1.5 rounded text-zinc-400 hover:text-white hover:bg-[#1a1a1a] transition-colors"
           aria-label="GitHub de Paulo Espinoza"
           title="GitHub"
         >
@@ -63,7 +63,7 @@ const navLinks = [
           href="https://www.linkedin.com/in/paulo-espinoza9/"
           target="_blank"
           rel="noopener noreferrer"
-          class="p-1.5 rounded-lg text-zinc-400 hover:text-sky-400 hover:bg-white/[0.08] transition-[color,transform] duration-150 active:scale-90"
+          class="p-1.5 rounded text-zinc-400 hover:text-white hover:bg-[#1a1a1a] transition-colors"
           aria-label="LinkedIn de Paulo Espinoza"
           title="LinkedIn"
         >
@@ -73,7 +73,7 @@ const navLinks = [
           href="https://wa.me/51906920958"
           target="_blank"
           rel="noopener noreferrer"
-          class="p-1.5 rounded-lg text-zinc-400 hover:text-emerald-400 hover:bg-white/[0.08] transition-[color,transform] duration-150 active:scale-90"
+          class="p-1.5 rounded text-zinc-400 hover:text-white hover:bg-[#1a1a1a] transition-colors"
           aria-label="WhatsApp de Paulo Espinoza"
           title="WhatsApp"
         >
@@ -81,7 +81,7 @@ const navLinks = [
         </a>
         <a
           href="mailto:pauloespinoza951@gmail.com"
-          class="p-1.5 rounded-lg text-zinc-400 hover:text-white hover:bg-white/[0.08] transition-[color,transform] duration-150 active:scale-90"
+          class="p-1.5 rounded text-zinc-400 hover:text-white hover:bg-[#1a1a1a] transition-colors"
           aria-label="Email de Paulo Espinoza"
           title="Email"
         >
@@ -91,10 +91,10 @@ const navLinks = [
 
       <a
         href="/contact"
-        class={`px-3.5 py-1.5 rounded-lg text-xs font-semibold tracking-tight transition-[background-color,color,transform,box-shadow] duration-150 active:scale-95 ${
+        class={`px-3.5 py-1.5 rounded text-xs font-semibold tracking-tight transition-[background-color,color,transform] duration-150 active:scale-95 ${
           pathname === "/contact"
-            ? "btn-gradient-primary"
-            : "btn-glass-outline"
+            ? "btn-primary"
+            : "btn-secondary"
         }`}
       >
         Contacto
@@ -104,29 +104,29 @@ const navLinks = [
     <!-- Mobile Hamburger Toggle -->
     <button
       id="menuToggle"
-      class="lg:hidden p-2 rounded-lg text-zinc-300 hover:text-white hover:bg-white/[0.08] transition-[transform] duration-150 active:scale-90 cursor-pointer"
+      class="lg:hidden p-2 rounded text-zinc-300 hover:text-white hover:bg-[#1a1a1a] transition-transform duration-150 active:scale-90 cursor-pointer"
       aria-label="Abrir menú de navegación"
     >
       <Icon name="menu" class="w-5 h-5" />
     </button>
   </div>
 
-  <!-- Mobile Overlay Menu with Glassmorphism -->
+  <!-- Mobile Overlay Menu -->
   <div
     id="mobileMenu"
-    class="lg:hidden fixed inset-0 top-[53px] bg-[#08090e]/95 backdrop-blur-2xl p-6 overflow-y-auto opacity-0 pointer-events-none transition-opacity duration-200 z-50 flex flex-col justify-between"
+    class="hidden lg:hidden fixed inset-0 top-[53px] bg-[#0a0a0a] p-6 overflow-y-auto z-50 flex flex-col justify-between"
   >
     <div>
-      <div class="flex items-center justify-between pb-3 border-b border-white/10 mb-5">
-        <span class="text-xs uppercase tracking-wider font-semibold text-sky-400">
-          Navegación del Portafolio
+      <div class="flex items-center justify-between pb-3 mb-5">
+        <span class="text-xs font-semibold text-zinc-300">
+          Navegación del portafolio
         </span>
         <button
           id="menuClose"
-          class="p-1.5 rounded text-zinc-400 hover:text-white hover:bg-white/10 cursor-pointer"
+          class="p-1.5 rounded text-zinc-400 hover:text-white hover:bg-[#1a1a1a] cursor-pointer"
           aria-label="Cerrar menú"
         >
-          ✕
+          <Icon name="x" class="w-4 h-4" />
         </button>
       </div>
 
@@ -136,71 +136,88 @@ const navLinks = [
           return (
             <a
               href={link.href}
-              class={`flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium transition-[background-color,color] duration-150 ${
+              class={`flex items-center justify-between px-4 py-3 rounded text-sm font-medium transition-colors ${
                 isActive
-                  ? "bg-gradient-to-r from-sky-500/25 to-indigo-500/25 text-white font-bold border border-sky-400/40"
-                  : "text-zinc-300 hover:text-white hover:bg-white/[0.06]"
+                  ? "bg-[#222222] text-white font-semibold"
+                  : "text-zinc-300 hover:text-white hover:bg-[#141414]"
               }`}
             >
               <span>{link.label}</span>
-              <Icon name="arrow-right" class="w-4 h-4 text-sky-400" />
+              <Icon name="chevron-right" class="w-4 h-4 text-zinc-500" />
             </a>
           );
         })}
       </nav>
     </div>
 
-    <div class="pt-6 border-t border-white/10 space-y-4">
-      <div class="flex items-center justify-around text-zinc-300">
-        <a href="https://github.com/paulollito29-sketch" target="_blank" rel="noopener noreferrer" class="p-2 hover:text-white">
+    <div class="pt-6 space-y-4">
+      <div class="flex items-center justify-center gap-4">
+        <a
+          href="https://github.com/paulollito29-sketch"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="p-2.5 rounded text-zinc-400 hover:text-white hover:bg-[#1a1a1a] transition-colors"
+          aria-label="GitHub"
+        >
           <Icon name="github" class="w-5 h-5" />
         </a>
-        <a href="https://www.linkedin.com/in/paulo-espinoza9/" target="_blank" rel="noopener noreferrer" class="p-2 hover:text-sky-400">
+        <a
+          href="https://www.linkedin.com/in/paulo-espinoza9/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="p-2.5 rounded text-zinc-400 hover:text-white hover:bg-[#1a1a1a] transition-colors"
+          aria-label="LinkedIn"
+        >
           <Icon name="linkedin" class="w-5 h-5" />
         </a>
-        <a href="https://wa.me/51906920958" target="_blank" rel="noopener noreferrer" class="p-2 hover:text-emerald-400">
-          <Icon name="phone" class="w-5 h-5" />
-        </a>
-        <a href="mailto:pauloespinoza951@gmail.com" class="p-2 hover:text-white">
+        <a
+          href="mailto:pauloespinoza951@gmail.com"
+          class="p-2.5 rounded text-zinc-400 hover:text-white hover:bg-[#1a1a1a] transition-colors"
+          aria-label="Email"
+        >
           <Icon name="mail" class="w-5 h-5" />
         </a>
       </div>
 
-      <div class="text-center text-[11px] text-zinc-500">
-        Paulo Daniel Espinoza Gamboa · UPC Lima
-      </div>
+      <a
+        href="/cv"
+        class="w-full btn-primary text-center block text-xs"
+      >
+        Ver Curriculum Vitae Oficial (PDF)
+      </a>
     </div>
   </div>
 </header>
 
-<script is:inline>
-  function setupNav() {
-    var toggle = document.getElementById("menuToggle");
-    var close = document.getElementById("menuClose");
-    var menu = document.getElementById("mobileMenu");
+<div class="h-[54px]"></div>
 
-    if (!toggle || !menu) return;
+<script>
+  function setupNavbar() {
+    const menuToggle = document.getElementById("menuToggle");
+    const menuClose = document.getElementById("menuClose");
+    const mobileMenu = document.getElementById("mobileMenu");
 
-    function open() {
-      menu.classList.remove("opacity-0", "pointer-events-none");
-      menu.classList.add("opacity-100", "pointer-events-auto");
+    if (!menuToggle || !mobileMenu) return;
+
+    function openMenu() {
+      mobileMenu?.classList.remove("hidden");
       document.body.style.overflow = "hidden";
     }
 
-    function hide() {
-      menu.classList.add("opacity-0", "pointer-events-none");
-      menu.classList.remove("opacity-100", "pointer-events-auto");
+    function closeMenu() {
+      mobileMenu?.classList.add("hidden");
       document.body.style.overflow = "";
     }
 
-    toggle.addEventListener("click", open);
-    if (close) close.addEventListener("click", hide);
+    menuToggle.addEventListener("click", openMenu);
+    menuClose?.addEventListener("click", closeMenu);
 
-    menu.querySelectorAll("a").forEach(function(link) {
-      link.addEventListener("click", hide);
+    const mobileLinks = mobileMenu.querySelectorAll("a");
+    mobileLinks.forEach((link) => {
+      link.addEventListener("click", closeMenu);
     });
   }
 
-  setupNav();
-  document.addEventListener("astro:page-load", setupNav);
+  setupNavbar();
+  document.addEventListener("astro:page-load", setupNavbar);
 </script>

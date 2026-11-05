@@ -24,23 +24,23 @@ const categories = sortedSkills.map((entry) => ({
   <div class="max-w-7xl mx-auto space-y-8">
     <div class="space-y-2">
       <h2 class="text-2xl sm:text-4xl font-display font-bold text-white tracking-tight">
-        Matriz de <span class="gradient-text-sky">Competencias Técnicas</span>
+        Matriz de competencias técnicas
       </h2>
       <p class="text-xs sm:text-sm text-zinc-300 max-w-2xl leading-relaxed">
-        Dominio práctico en arquitectura backend (Java &amp; .NET), modelado relacional ACID y desarrollo web moderno asistido por IA.
+        Dominio práctico en arquitectura backend (Java y .NET), modelado relacional ACID y desarrollo web moderno asistido por IA.
       </p>
     </div>
 
-    <!-- Tab Navigation with Glassmorphism -->
-    <div class="flex flex-wrap gap-1.5 p-1.5 rounded-xl bg-white/[0.03] border border-white/10 backdrop-blur-md w-fit">
+    <!-- Tab Navigation -->
+    <div class="flex flex-wrap gap-1 p-1 rounded bg-[#121212] w-fit">
       {categories.map((cat, idx) => (
         <button
           type="button"
           data-tab={cat.id}
-          class={`skill-tab-btn flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-medium tracking-tight transition-[background-color,color,transform,box-shadow] duration-150 active:scale-95 cursor-pointer ${
+          class={`skill-tab-btn flex items-center gap-2 px-4 py-2 rounded text-xs font-medium tracking-tight transition-colors active:scale-95 cursor-pointer ${
             idx === 0
-              ? "active bg-gradient-to-r from-sky-500/25 to-indigo-500/25 text-white font-semibold border border-sky-400/40 shadow-sm shadow-sky-500/20"
-              : "text-zinc-400 hover:text-white hover:bg-white/[0.06]"
+              ? "active bg-[#222222] text-white font-semibold"
+              : "text-zinc-400 hover:text-white hover:bg-[#1a1a1a]"
           }`}
         >
           <Icon name={cat.icon} class="w-3.5 h-3.5" />
@@ -49,7 +49,7 @@ const categories = sortedSkills.map((entry) => ({
       ))}
     </div>
 
-    <!-- Competencies Panels with Glassmorphic Cards -->
+    <!-- Competencies Panels with Solid Cards -->
     {categories.map((cat, idx) => (
       <div
         id={`skills-tab-${cat.id}`}
@@ -57,33 +57,33 @@ const categories = sortedSkills.map((entry) => ({
         class={`skill-panel grid md:grid-cols-2 gap-5 ${idx === 0 ? "grid" : "hidden"}`}
       >
         {cat.competencies.map((comp: any) => (
-          <div class="glass-card p-6 flex flex-col justify-between group">
+          <div class="bg-[#151515] rounded-lg p-6 flex flex-col justify-between group">
             <div>
               <div class="flex items-center justify-between gap-2 mb-2.5">
-                <h3 class="text-base font-bold text-white group-hover:text-sky-300 transition-colors duration-150">
+                <h3 class="text-base font-bold text-white group-hover:text-zinc-200 transition-colors">
                   {comp.name}
                 </h3>
-                <span class="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-sky-500/10 text-sky-300 border border-sky-400/20">
+                <span class="text-xs font-semibold px-2 py-0.5 rounded bg-[#202020] text-zinc-300">
                   {comp.levelText}
                 </span>
               </div>
 
-              <p class="text-xs text-zinc-300 leading-relaxed mb-4">
+              <p class="text-base text-zinc-300 leading-relaxed mb-4">
                 {comp.description}
               </p>
 
-              <!-- Gradient Progress bar -->
-              <div class="w-full bg-white/[0.05] h-2 rounded-full overflow-hidden mb-4 p-0.5 border border-white/[0.04]">
+              <!-- Solid Progress bar -->
+              <div class="w-full bg-[#202020] h-2 rounded overflow-hidden mb-4">
                 <div
-                  class="h-full rounded-full bg-gradient-to-r from-sky-400 via-indigo-400 to-purple-400 shadow-sm shadow-sky-400/50 transition-[width] duration-300 ease-out"
+                  class="h-full bg-[#b11226] rounded transition-[width] duration-300 ease-out"
                   style={`width: ${comp.levelPercent}%;`}
                 ></div>
               </div>
             </div>
 
-            <div class="flex flex-wrap gap-1.5 pt-3.5 border-t border-white/[0.08]">
+            <div class="flex flex-wrap gap-1.5 pt-3">
               {comp.tags.map((tag: string) => (
-                <span class="px-2.5 py-0.5 text-[11px] rounded-md bg-white/[0.04] border border-white/[0.06] text-zinc-200">
+                <span class="px-2.5 py-1 text-xs rounded bg-[#202020] text-zinc-300">
                   {tag}
                 </span>
               ))}
@@ -96,23 +96,21 @@ const categories = sortedSkills.map((entry) => ({
 </section>
 
 <script>
-  function initSkillsTabs() {
+  function initSkillTabs() {
     const tabBtns = document.querySelectorAll<HTMLButtonElement>(".skill-tab-btn");
     const panels = document.querySelectorAll<HTMLElement>(".skill-panel");
 
     tabBtns.forEach((btn) => {
       btn.addEventListener("click", () => {
-        const targetId = btn.getAttribute("data-tab");
-        if (!targetId) return;
+        const tab = btn.getAttribute("data-tab");
 
         tabBtns.forEach((b) => {
-          b.className = "skill-tab-btn flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-medium tracking-tight transition-[background-color,color,transform] duration-150 active:scale-95 cursor-pointer text-zinc-400 hover:text-white hover:bg-white/[0.06]";
+          b.className = "skill-tab-btn flex items-center gap-2 px-4 py-2 rounded text-xs font-medium tracking-tight transition-colors active:scale-95 cursor-pointer text-zinc-400 hover:text-white hover:bg-[#1a1a1a]";
         });
-
-        btn.className = "skill-tab-btn flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold tracking-tight transition-[background-color,color,transform,box-shadow] duration-150 active:scale-95 cursor-pointer active bg-gradient-to-r from-sky-500/25 to-indigo-500/25 text-white border border-sky-400/40 shadow-sm shadow-sky-500/20";
+        btn.className = "skill-tab-btn flex items-center gap-2 px-4 py-2 rounded text-xs font-medium tracking-tight transition-colors active:scale-95 cursor-pointer active bg-[#222222] text-white font-semibold";
 
         panels.forEach((p) => {
-          if (p.getAttribute("data-tab-content") === targetId) {
+          if (p.getAttribute("data-tab-content") === tab) {
             p.classList.remove("hidden");
             p.classList.add("grid");
           } else {
@@ -124,6 +122,6 @@ const categories = sortedSkills.map((entry) => ({
     });
   }
 
-  initSkillsTabs();
-  document.addEventListener("astro:page-load", initSkillsTabs);
+  initSkillTabs();
+  document.addEventListener("astro:page-load", initSkillTabs);
 </script>

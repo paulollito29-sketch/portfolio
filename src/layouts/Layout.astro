@@ -7,8 +7,8 @@ interface Props {
 }
 
 const {
-  title = "Paulo Espinoza | Ingeniero de Sistemas de Información · Sitio Oficial",
-  description = "Sitio oficial de Paulo Espinoza — Ingeniero de Sistemas de Información de la UPC. Especialista en arquitectura backend en Java (Spring Boot), .NET, metodología SDD, bases de datos relacionales y desarrollo web.",
+  title = "Paulo Espinoza · Ingeniero de Sistemas de Información (UPC)",
+  description = "Portafolio oficial de Paulo Daniel Espinoza Gamboa — Estudiante de 7º ciclo de Ingeniería de Sistemas de Información (UPC) con 8 meses de experiencia en el Servicio de Informática de la Fuerza Aérea. Especializado en Java, Spring Boot, bases de datos relacionales y arquitectura SDD.",
 } = Astro.props;
 ---
 
@@ -25,7 +25,7 @@ const {
     <meta name="title" content={title} />
     <meta name="description" content={description} />
     <meta name="author" content="Paulo Espinoza" />
-    <meta name="theme-color" content="#0a0b10" />
+    <meta name="theme-color" content="#0a0a0a" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -33,15 +33,15 @@ const {
     <meta property="og:description" content={description} />
     <meta property="og:locale" content="es_PE" />
 
-    <!-- Google Fonts for Typography: Plus Jakarta Sans & JetBrains Mono -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Fontshare Clash Grotesk Typography (taste-skill dark-room direction) -->
+    <link rel="preconnect" href="https://api.fontshare.com" />
+    <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600&display=swap"
       rel="stylesheet"
     />
   </head>
-  <body class="bg-[#0a0b10] text-zinc-100 min-h-[100svh] antialiased selection:bg-sky-400 selection:text-zinc-950 font-sans">
+  <body class="bg-[#0a0a0a] text-[#efefef] min-h-[100svh] antialiased selection:bg-[#b11226] selection:text-white font-sans overflow-x-clip">
     <slot />
   </body>
 </html>

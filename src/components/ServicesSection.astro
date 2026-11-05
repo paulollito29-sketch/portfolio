@@ -1,6 +1,5 @@
 ---
 import { getCollection } from "astro:content";
-import Icon from "./icons/Icon.astro";
 
 const serviceEntries = await getCollection("services").catch(() => []);
 const sortedServices = serviceEntries.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
@@ -8,37 +7,34 @@ const sortedServices = serviceEntries.sort((a, b) => (a.data.order ?? 0) - (b.da
 const services = sortedServices.length > 0 ? sortedServices.map((s) => s.data) : [
   {
     tag: { es: "Metodología SDD" },
-    name: { es: "Especificación & Diseño de Sistemas (SDD)" },
+    name: { es: "Especificación y diseño de sistemas (SDD)" },
     description: { es: "Elaboración de Software Design Documents (SDD), especificación formal de requerimientos, contratos OpenAPI y arquitectura Clean/SOLID previa a la implementación." },
-    icon: "layers",
     points: {
       es: [
         "Diseño de Software Design Documents (SDD) y especificaciones técnicas",
-        "Definición formal de contratos API RESTful con OpenAPI / Swagger",
-        "Arquitectura desacoplada en capas (Clean / Hexagonal) y principios SOLID",
+        "Definición formal de contratos API RESTful con OpenAPI y Swagger",
+        "Arquitectura desacoplada en capas y principios SOLID",
         "Modelado de dominio de negocio y casos de uso empresariales"
       ]
     }
   },
   {
-    tag: { es: "Backend Core" },
-    name: { es: "Desarrollo de Servicios & APIs" },
+    tag: { es: "Backend core" },
+    name: { es: "Desarrollo de servicios y APIs" },
     description: { es: "Construcción de APIs RESTful de alto rendimiento en Java (Spring Boot) y C# (.NET Core) con seguridad JWT." },
-    icon: "server",
     points: {
       es: [
-        "Microservicios desacoplados con Spring Boot & .NET Core",
+        "Microservicios desacoplados con Spring Boot y .NET Core",
         "Autenticación segura basada en tokens JWT y roles",
-        "Documentación interactiva con Swagger / OpenAPI 3.0",
+        "Documentación interactiva con Swagger y OpenAPI 3.0",
         "Contenedorización con Docker y Docker Compose"
       ]
     }
   },
   {
     tag: { es: "Persistencia" },
-    name: { es: "Modelado Relacional & SQL" },
+    name: { es: "Modelado relacional y SQL" },
     description: { es: "Diseño de esquemas relacionales, transacciones ACID, optimización de consultas complejas y procedimientos almacenados." },
-    icon: "database",
     points: {
       es: [
         "Modelado relacional en PostgreSQL, SQL Server y Oracle SQL",
@@ -50,81 +46,76 @@ const services = sortedServices.length > 0 ? sortedServices.map((s) => s.data) :
   },
   {
     tag: { es: "Aceleración con IA" },
-    name: { es: "Desarrollo Asistido por IA & Full Stack" },
+    name: { es: "Desarrollo asistido por IA y Full Stack" },
     description: { es: "Construcción acelerada de sistemas web y microservicios mediante flujos asistidos por IA (LLMs, Copilot, Cursor y testing guiado)." },
-    icon: "sparkles",
     points: {
       es: [
         "Ciclo de desarrollo acelerado con herramientas de IA generativa",
-        "Interfaces reactivas con Angular, React, Next.js y Astro",
+        "Interfaces reactivas con React, Next.js y Astro",
         "Generación y ejecución automatizada de tests unitarios",
-        "Código con tipado estricto en TypeScript y arquitectura modular"
+        "Refactorización continua y aseguramiento de calidad de código"
       ]
     }
   }
 ];
 ---
 
-<section id="services" class="max-w-7xl mx-auto px-4 sm:px-8 py-12 relative z-10 space-y-10">
-  <div class="space-y-2">
-    <h2 class="text-2xl sm:text-4xl font-display font-bold text-white tracking-tight">
-      Servicios de <span class="gradient-text-sky">Ingeniería de Sistemas</span>
-    </h2>
-    <p class="text-xs sm:text-sm text-zinc-300 max-w-2xl leading-relaxed">
-      Soluciones integrales de software con especificaciones formales, código limpio, arquitectura escalable y flujos asistidos por IA.
-    </p>
-  </div>
+<section id="services" class="py-12 px-4 sm:px-8 relative z-10">
+  <div class="max-w-7xl mx-auto space-y-8">
+    <div class="space-y-2">
+      <h2 class="text-2xl sm:text-4xl font-display font-bold text-white tracking-tight">
+        Servicios de ingeniería de software
+      </h2>
+      <p class="text-base sm:text-lg text-zinc-300 max-w-2xl leading-relaxed">
+        Capacidades técnicas estructuradas para el desarrollo integral de sistemas de información empresariales, desde la especificación hasta el despliegue.
+      </p>
+    </div>
 
-  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-    {services.map((s, idx) => {
-      const gradientGlows = [
-        "from-sky-500/20 to-blue-600/10 text-sky-400",
-        "from-indigo-500/20 to-blue-600/10 text-indigo-400",
-        "from-purple-500/20 to-indigo-600/10 text-purple-400",
-        "from-teal-500/20 to-cyan-600/10 text-teal-400"
-      ];
-      const glow = gradientGlows[idx % gradientGlows.length];
-
-      return (
-        <div class="glass-card p-6 flex flex-col justify-between group">
+    <!-- Services Grid (Editorial layout without icon squares) -->
+    <div class="grid md:grid-cols-2 gap-6">
+      {services.map((svc: any) => (
+        <div class="bg-[#151515] rounded-lg p-6 sm:p-8 flex flex-col justify-between">
           <div>
-            <div class="flex items-center justify-between mb-4">
-              <div class={`w-10 h-10 rounded-xl bg-gradient-to-br ${glow} flex items-center justify-center border border-white/10 shadow-sm`}>
-                <Icon name={s.icon} class="w-5 h-5" />
-              </div>
-              <span class="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-white/[0.05] border border-white/10 text-sky-300">
-                {s.tag.es}
+            <div class="mb-3">
+              <span class="text-xs px-2.5 py-1 rounded bg-[#202020] text-zinc-300 font-medium">
+                {svc.tag.es}
               </span>
             </div>
 
-            <h3 class="text-base font-bold text-white mb-2 group-hover:text-sky-300 transition-colors duration-150">
-              {s.name.es}
+            <h3 class="text-xl font-bold text-white mb-2">
+              {svc.name.es}
             </h3>
-            <p class="text-xs text-zinc-300 leading-relaxed mb-4">
-              {s.description.es}
+
+            <p class="text-base text-zinc-300 leading-relaxed mb-5">
+              {svc.description.es}
             </p>
 
-            <ul class="space-y-2 mb-5 border-t border-white/[0.08] pt-3.5">
-              {s.points.es.map((pt: string) => (
-                <li class="flex items-start gap-2 text-xs text-zinc-300 leading-relaxed">
-                  <span class="w-1.5 h-1.5 rounded-full bg-sky-400 shrink-0 mt-1.5 shadow-sm shadow-sky-400"></span>
-                  <span>{pt}</span>
+            <ul class="space-y-2.5 mb-6">
+              {svc.points.es.map((pt: string) => (
+                <li class="flex items-start gap-2.5 text-sm sm:text-base text-zinc-300">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#b11226] mt-2 shrink-0"></span>
+                  <span class="leading-relaxed">{pt}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div class="pt-3 border-t border-white/[0.08]">
+          <div class="pt-4 flex items-center justify-between">
             <a
               href="/contact"
-              class="inline-flex items-center gap-1.5 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors active:scale-95"
+              class="btn-primary text-xs"
             >
-              <span>Consultar Servicio</span>
-              <Icon name="arrow-right" class="w-3.5 h-3.5" />
+              Consultar servicio
+            </a>
+            <a
+              href="/portfolio"
+              class="text-xs text-zinc-400 hover:text-white transition-colors"
+            >
+              Ver proyectos relacionados &rarr;
             </a>
           </div>
         </div>
-      );
-    })}
+      ))}
+    </div>
   </div>
 </section>
