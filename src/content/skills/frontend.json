@@ -13,6 +13,19 @@
   "order": 3,
   "competencies": [
     {
+      "name": "Angular.ts & TypeScript",
+      "levelText": {
+        "es": "Experto",
+        "en": "Expert"
+      },
+      "levelPercent": 100,
+      "description": {
+        "es": "Desarrollo de SPAs y arquitectura basada en componentes con Angular, TypeScript, RxJS e inyección de dependencias modular.",
+        "en": "SPA and component-based architecture with Angular, TypeScript, RxJS, and modular dependency injection."
+      },
+      "tags": ["Angular", "TypeScript", "RxJS", "Components", "Signals"]
+    },
+    {
       "name": "React & TypeScript",
       "levelText": {
         "es": "Avanzado",
