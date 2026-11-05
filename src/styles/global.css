@@ -2,46 +2,26 @@
 
 :root {
   /* Emil Kowalski custom easing curves */
-  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
   --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
 
-  /* Direction Palette: Precision Systems Obsidian & Cobalt/Cyan */
-  --ground: #0a0b10;
-  --surface-1: #11131a;
-  --surface-2: #181b24;
-  --surface-hover: #202430;
-  --border-subtle: #202533;
-  --border-active: #38bdf8;
-  --accent: #38bdf8;
-  --accent-glow: rgba(56, 189, 248, 0.12);
+  /* Deep Space Base Ground */
+  --ground: #08090e;
+  --surface-glass: rgba(18, 22, 34, 0.65);
+  --surface-glass-hover: rgba(28, 34, 52, 0.75);
+  --border-glass: rgba(255, 255, 255, 0.08);
+  --border-glass-hover: rgba(56, 189, 248, 0.4);
+
+  /* Vibrant Accent Gradients */
+  --accent-cyan: #38bdf8;
+  --accent-indigo: #818cf8;
+  --accent-violet: #a855f7;
+
   --ink-primary: #f8fafc;
-  --ink-secondary: #94a3b8;
-  --ink-muted: #64748b;
-}
-
-@theme {
-  --color-ground: var(--ground);
-  --color-surface-1: var(--surface-1);
-  --color-surface-2: var(--surface-2);
-  --color-surface-hover: var(--surface-hover);
-  --color-border-subtle: var(--border-subtle);
-  --color-border-active: var(--border-active);
-  --color-accent: var(--accent);
-
-  --color-flat-bg: #0a0b10;
-  --color-flat-surface: #11131a;
-  --color-flat-surface-hover: #181b24;
-  --color-flat-border: #202533;
-  --color-flat-cyan: #38bdf8;
-  --color-flat-blue: #0284c7;
-
-  --color-zinc-950: #0a0b10;
-  --color-zinc-900: #11131a;
-  --color-zinc-800: #181b24;
-  --color-zinc-700: #262b3a;
-  --color-zinc-600: #475569;
+  --ink-secondary: #cbd5e1;
+  --ink-muted: #94a3b8;
 }
 
 @layer base {
@@ -58,8 +38,8 @@
     min-height: 100svh;
   }
   ::selection {
-    background: #38bdf8;
-    color: #0a0b10;
+    background: rgba(56, 189, 248, 0.35);
+    color: #ffffff;
   }
 }
 
@@ -72,104 +52,153 @@
   font-family: 'JetBrains Mono', ui-monospace, monospace;
 }
 
-/* Emil Kowalski Button & Pressable Feedback */
-button,
-a.btn,
-.pressable {
-  transition: transform 160ms var(--ease-out), background-color 160ms ease, opacity 160ms ease;
+/* ==========================================================
+   GRADIENT UTILITIES
+   ========================================================== */
+.gradient-text-hero {
+  background: linear-gradient(135deg, #ffffff 30%, #e2e8f0 70%, #93c5fd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-button:active,
-a.btn:active,
-.pressable:active {
-  transform: scale(0.97);
+.gradient-text-sky {
+  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .pressable-hover:hover {
-    transform: translateY(-1px);
-  }
+.gradient-text-cyan {
+  background: linear-gradient(135deg, #38bdf8 0%, #2dd4bf 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Flat Surface Architecture */
-.flat-card {
-  background-color: var(--surface-1);
-  border: 1px solid var(--border-subtle);
-  border-radius: 8px;
+.gradient-border-glow {
+  position: relative;
+}
+.gradient-border-glow::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.4), rgba(129, 140, 248, 0.2), rgba(255, 255, 255, 0.05));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
-.flat-card-hover {
-  transition: transform 160ms var(--ease-out), background-color 160ms ease, border-color 160ms ease;
+/* ==========================================================
+   GLASSMORPHISM ARCHITECTURE
+   ========================================================== */
+.glass-header {
+  background: rgba(8, 9, 14, 0.72);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .flat-card-hover:hover {
-    background-color: var(--surface-2);
-    border-color: #38bdf8;
-  }
+.glass-card {
+  background: rgba(18, 22, 34, 0.6);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37), inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  transition: transform 180ms var(--ease-out), background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
-/* Primary Button - Pure Flat Contrast */
+.glass-card:hover {
+  background: rgba(26, 32, 48, 0.75);
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: 0 12px 40px -4px rgba(56, 189, 248, 0.15), inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
+}
+
+.glass-panel {
+  background: rgba(14, 17, 26, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+}
+
+/* ==========================================================
+   BUTTONS (GRADIENT & GLASS WITH EMIL FEEDBACK)
+   ========================================================== */
+.btn-gradient-primary,
 .flat-btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.625rem 1.25rem;
-  background-color: #ffffff;
-  color: #0a0b10;
-  border-radius: 6px;
+  padding: 0.625rem 1.35rem;
+  background: linear-gradient(135deg, #38bdf8 0%, #6366f1 50%, #8b5cf6 100%);
+  color: #ffffff;
+  border-radius: 8px;
   font-weight: 600;
   font-size: 0.875rem;
-  transition: transform 160ms var(--ease-out), background-color 160ms ease;
+  box-shadow: 0 4px 16px -2px rgba(56, 189, 248, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.25);
+  transition: transform 160ms var(--ease-out), filter 160ms ease, box-shadow 160ms ease;
+  position: relative;
+  overflow: hidden;
 }
 
+.btn-gradient-primary:hover,
+.flat-btn-primary:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 6px 24px -2px rgba(99, 102, 241, 0.55), inset 0 1px 0 0 rgba(255, 255, 255, 0.35);
+}
+
+.btn-gradient-primary:active,
 .flat-btn-primary:active {
-  transform: scale(0.97);
+  transform: scale(0.96);
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .flat-btn-primary:hover {
-    background-color: #38bdf8;
-    color: #0a0b10;
-  }
-}
-
-/* Outline Button */
+.btn-glass-outline,
 .flat-btn-outline {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.625rem 1.25rem;
-  background-color: var(--surface-1);
+  padding: 0.625rem 1.35rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   color: #f8fafc;
-  border: 1px solid var(--border-subtle);
-  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
   font-weight: 500;
   font-size: 0.875rem;
-  transition: transform 160ms var(--ease-out), background-color 160ms ease, border-color 160ms ease;
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+  transition: transform 160ms var(--ease-out), background-color 160ms ease, border-color 160ms ease, color 160ms ease;
 }
 
+.btn-glass-outline:hover,
+.flat-btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(56, 189, 248, 0.45);
+  color: #38bdf8;
+  box-shadow: 0 4px 20px -2px rgba(56, 189, 248, 0.15);
+}
+
+.btn-glass-outline:active,
 .flat-btn-outline:active {
-  transform: scale(0.97);
+  transform: scale(0.96);
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .flat-btn-outline:hover {
-    background-color: var(--surface-2);
-    border-color: #38bdf8;
-    color: #38bdf8;
-  }
-}
-
-/* Authentic Interface Fragment (data-ui) */
+/* Authentic Interface Fragment (data-ui) with frosted styling */
 [data-ui] {
   font-family: 'JetBrains Mono', ui-monospace, monospace;
   font-size: 0.8125rem;
-  background-color: #08090d;
-  border: 1px solid var(--border-subtle);
-  border-radius: 8px;
+  background: rgba(11, 14, 22, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
   overflow: hidden;
 }
 

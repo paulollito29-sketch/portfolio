@@ -3,62 +3,62 @@ import Icon from "./icons/Icon.astro";
 ---
 
 <section id="official-facts" class="max-w-7xl mx-auto px-4 sm:px-8 py-3 relative z-10">
-  <div class="border border-[#1d2230] bg-[#10121a] rounded-lg overflow-hidden">
+  <div class="glass-card overflow-hidden">
     <!-- Collapsible Header -->
     <button
       id="factsToggleBtn"
       type="button"
-      class="w-full flex items-center justify-between p-4 hover:bg-[#161922] transition-[background-color] duration-150 cursor-pointer text-left active:scale-[0.99]"
+      class="w-full flex items-center justify-between p-4.5 hover:bg-white/[0.04] transition-[background-color] duration-150 cursor-pointer text-left active:scale-[0.99]"
       aria-expanded="true"
       aria-controls="factsContent"
     >
       <div class="flex items-center gap-3">
-        <span class="w-2 h-2 rounded-full bg-sky-400"></span>
+        <span class="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-sky-400 to-indigo-500 shadow-sm shadow-sky-400/80"></span>
         <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2.5">
-          <span class="font-display font-semibold text-sm text-white">
+          <span class="font-display font-bold text-sm text-white">
             Información Oficial del Candidato
           </span>
           <span class="hidden sm:inline text-zinc-600">|</span>
-          <span class="text-xs text-zinc-400">
-            Universidad Peruana de Ciencias Aplicadas (UPC)
+          <span class="text-xs text-sky-300/80 font-medium">
+            Universidad Peruana de Ciencias Aplicadas (UPC) · 7º Ciclo
           </span>
         </div>
       </div>
 
       <div class="flex items-center gap-2 text-xs text-zinc-400">
-        <span id="factsToggleText" class="hidden sm:inline">Colapsar</span>
+        <span id="factsToggleText" class="hidden sm:inline font-medium">Colapsar</span>
         <div id="factsChevron" class="transition-transform duration-200 rotate-180">
-          <Icon name="chevron-down" class="w-4 h-4 text-zinc-400" />
+          <Icon name="chevron-down" class="w-4 h-4 text-sky-400" />
         </div>
       </div>
     </button>
 
     <!-- Collapsible Content -->
-    <div id="factsContent" class="border-t border-[#181d29] bg-[#0a0b10] p-5 sm:p-6 grid md:grid-cols-3 gap-5 text-xs sm:text-sm">
+    <div id="factsContent" class="border-t border-white/[0.08] bg-white/[0.01] p-5 sm:p-6 grid md:grid-cols-3 gap-5 text-xs sm:text-sm">
       <!-- Academic & Degree -->
-      <div class="space-y-1.5 p-3.5 rounded-lg bg-[#10121a] border border-[#181d29]">
+      <div class="space-y-1.5 p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]">
         <div class="flex items-center gap-2 text-sky-400 font-semibold text-xs">
           <Icon name="graduation-cap" class="w-4 h-4" /> Formación Universitaria
         </div>
         <h3 class="text-sm font-bold text-white">Ingeniería de Sistemas de Información</h3>
-        <p class="text-zinc-400 text-xs leading-relaxed">
-          Universidad Peruana de Ciencias Aplicadas (UPC). Arquitectura de sistemas, persistencia relacional y gobernanza de software.
+        <p class="text-zinc-300 text-xs leading-relaxed">
+          Universidad Peruana de Ciencias Aplicadas (UPC) · 7º Ciclo. Arquitectura de microservicios, persistencia relacional y gobernanza de software.
         </p>
       </div>
 
       <!-- Core Specialization -->
-      <div class="space-y-1.5 p-3.5 rounded-lg bg-[#10121a] border border-[#181d29]">
-        <div class="flex items-center gap-2 text-sky-400 font-semibold text-xs">
+      <div class="space-y-1.5 p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+        <div class="flex items-center gap-2 text-indigo-400 font-semibold text-xs">
           <Icon name="shield-check" class="w-4 h-4" /> Especialidad &amp; Backend
         </div>
         <h3 class="text-sm font-bold text-white">Java / Spring Boot &amp; .NET Core</h3>
-        <p class="text-zinc-400 text-xs leading-relaxed">
-          APIs RESTful de alto desempeño, seguridad perimetral JWT, modelado relacional ACID en SQL Server y Oracle SQL.
+        <p class="text-zinc-300 text-xs leading-relaxed">
+          Experiencia en el Servicio de Informática de la Fuerza Aérea. APIs RESTful seguras con JWT y persistencia ACID en PostgreSQL y SQL Server.
         </p>
       </div>
 
       <!-- Availability & Location -->
-      <div class="space-y-1.5 p-3.5 rounded-lg bg-[#10121a] border border-[#181d29]">
+      <div class="space-y-1.5 p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]">
         <div class="flex items-center gap-2 text-emerald-400 font-semibold text-xs">
           <Icon name="briefcase" class="w-4 h-4" /> Estado Laboral
         </div>

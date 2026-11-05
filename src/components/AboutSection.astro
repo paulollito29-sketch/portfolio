@@ -29,9 +29,9 @@ const capabilitiesList = capabilitiesEntry?.data?.capabilities || [
 ];
 
 const bioParagraphs = personal?.bioParagraphs?.es || [
-  "Como Ingeniero de Sistemas de Información de la UPC, combino una sólida formación en sistemas computacionales con capacidad demostrada para diseñar, desarrollar y desplegar sistemas de información listos para producción.",
-  "Mi metodología de trabajo integra la metodología SDD (Spec-Driven Development) y el desarrollo asistido por Inteligencia Artificial, garantizando microservicios seguros y escalables en Java (Spring Boot) y bases de datos relacionales, complementado con interfaces modernas en Angular, React, Next.js y Astro.",
-  "Busco incorporarme a equipos de tecnología de alto rendimiento donde pueda aportar valor inmediato, resolver problemas complejos de negocio y acelerar el cumplimiento de objetivos estratégicos."
+  "Estudiante de 7º ciclo de Ingeniería de Sistemas de Información en la UPC con 8 meses de experiencia práctica en desarrollo Full Stack en el Servicio de Informática de la Fuerza Aérea.",
+  "Especializado en backend con Java (Spring Boot, Spring Data JPA) y frontend dinámico con React.js y JavaScript, con experiencia en APIs RESTful seguras, optimización de consultas SQL y desarrollo asistido por IA.",
+  "Enfoque riguroso en buenas prácticas de arquitectura, principios SOLID, código limpio y resolución ágil de problemas."
 ];
 ---
 
@@ -39,66 +39,83 @@ const bioParagraphs = personal?.bioParagraphs?.es || [
   <div class="max-w-7xl mx-auto space-y-10">
     <div class="space-y-2">
       <h2 class="text-2xl sm:text-4xl font-display font-bold text-white tracking-tight">
-        Formación Académica &amp; Metodología de Ingeniería
+        Formación Académica &amp; <span class="gradient-text-sky">Metodología de Ingeniería</span>
       </h2>
-      <p class="text-xs sm:text-sm text-zinc-400 max-w-2xl">
-        Bases rigurosas de ingeniería de sistemas de información orientadas al diseño de arquitecturas escalables, persistencia estructurada y entrega continua.
+      <p class="text-xs sm:text-sm text-zinc-300 max-w-2xl leading-relaxed">
+        Bases rigurosas de ingeniería de sistemas de información orientadas al diseño de microservicios escalables, persistencia relacional transaccional y flujos asistidos por IA.
       </p>
     </div>
 
     <!-- Executive Profile Grid -->
     <div class="grid lg:grid-cols-12 gap-6">
-      <div class="lg:col-span-5 bg-[#10121a] border border-[#1d2230] rounded-lg p-6 space-y-4">
-        <span class="text-xs font-semibold text-sky-400 block">
+      <div class="lg:col-span-5 glass-card p-6 sm:p-7 space-y-4">
+        <span class="text-xs font-bold uppercase tracking-wider text-sky-400 block">
           Formación Universitaria
         </span>
-        <h3 class="text-lg font-bold text-white leading-tight">
+        <h3 class="text-xl font-extrabold text-white leading-tight">
           Ingeniería de Sistemas de Información
         </h3>
-        <p class="text-xs text-zinc-400">
-          Universidad Peruana de Ciencias Aplicadas (UPC)
+        <p class="text-xs text-sky-300 font-medium">
+          Universidad Peruana de Ciencias Aplicadas (UPC) · 7º Ciclo en Curso
         </p>
 
-        <div class="pt-4 border-t border-[#1a1f2c] space-y-2.5 text-xs text-zinc-300">
-          <div class="flex items-center gap-2">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-            <span>Disponibilidad inmediata para contratación (Open to Work)</span>
+        <div class="pt-4 border-t border-white/[0.08] space-y-2.5 text-xs text-zinc-300">
+          <div class="flex items-center gap-2.5">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 shadow-sm shadow-emerald-400"></span>
+            <span class="font-medium text-white">Disponibilidad inmediata para contratación (Open to Work)</span>
           </div>
-          <div class="flex items-center gap-2">
-            <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
+          <div class="flex items-center gap-2.5">
+            <span class="w-2 h-2 rounded-full bg-sky-400 shadow-sm shadow-sky-400"></span>
             <span>Modalidad Remota o Híbrida (Lima, Perú)</span>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <span class="w-2 h-2 rounded-full bg-indigo-400 shadow-sm shadow-indigo-400"></span>
+            <span>Experiencia: Servicio de Informática de la Fuerza Aérea (8 meses)</span>
           </div>
         </div>
       </div>
 
-      <div class="lg:col-span-7 bg-[#10121a] border border-[#1d2230] rounded-lg p-6 space-y-3.5 text-xs sm:text-sm text-zinc-300 leading-relaxed">
-        {bioParagraphs.map((p) => (
-          <p>{p}</p>
+      <div class="lg:col-span-7 glass-card p-6 sm:p-7 space-y-3.5 text-xs sm:text-sm text-zinc-300 leading-relaxed">
+        {bioParagraphs.map((p: string) => (
+          <p class="leading-relaxed">{p}</p>
         ))}
       </div>
     </div>
 
-    <!-- Pillars Grid -->
-    <div class="grid md:grid-cols-3 gap-5">
-      {capabilitiesList.map((c) => (
-        <div class="bg-[#10121a] border border-[#1d2230] rounded-lg p-5 flex flex-col justify-between hover:border-[#2b3347] transition-[border-color] duration-150">
-          <div>
-            <div class="w-8 h-8 rounded-md bg-[#181b24] flex items-center justify-center text-sky-400 mb-3.5">
-              <Icon name={c.icon} class="w-4 h-4" />
-            </div>
-            <h3 class="text-sm font-bold text-white mb-2">{c.title.es}</h3>
-            <p class="text-xs text-zinc-400 leading-relaxed mb-4">{c.description.es}</p>
-          </div>
+    <!-- Pillars Grid with Frosted Glass & Gradient Glow -->
+    <div class="grid md:grid-cols-3 gap-6">
+      {capabilitiesList.map((c: any, idx: number) => {
+        const gradientGlows = [
+          "from-sky-500/20 to-blue-600/10 text-sky-400",
+          "from-indigo-500/20 to-purple-600/10 text-indigo-400",
+          "from-purple-500/20 to-pink-600/10 text-purple-400"
+        ];
+        const glow = gradientGlows[idx % gradientGlows.length];
 
-          <div class="flex flex-wrap gap-1.5 pt-3 border-t border-[#181d29]">
-            {c.tags.es.map((tag: string) => (
-              <span class="px-2 py-0.5 text-[11px] rounded bg-[#161922] text-zinc-300">
-                {tag}
-              </span>
-            ))}
+        return (
+          <div class="glass-card p-6 flex flex-col justify-between group">
+            <div>
+              <div class={`w-10 h-10 rounded-xl bg-gradient-to-br ${glow} flex items-center justify-center mb-4 border border-white/10 shadow-sm`}>
+                <Icon name={c.icon} class="w-5 h-5" />
+              </div>
+              <h3 class="text-base font-bold text-white mb-2 group-hover:text-sky-300 transition-colors duration-150">
+                {c.title.es}
+              </h3>
+              <p class="text-xs text-zinc-300 leading-relaxed mb-4">
+                {c.description.es}
+              </p>
+            </div>
+
+            <div class="flex flex-wrap gap-1.5 pt-3 border-t border-white/[0.08]">
+              {c.tags.es.map((tag: string) => (
+                <span class="px-2.5 py-0.5 text-[11px] rounded-md bg-white/[0.04] text-zinc-200 border border-white/[0.06]">
+                  {tag}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   </div>
 </section>

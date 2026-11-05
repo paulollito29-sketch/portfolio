@@ -10,7 +10,7 @@ const categories = sortedSkills.map((entry) => ({
   label: entry.data.label.es,
   icon: entry.data.icon,
   summary: entry.data.summary.es,
-  competencies: entry.data.competencies.map((comp) => ({
+  competencies: entry.data.competencies.map((comp: any) => ({
     name: comp.name,
     levelText: comp.levelText.es,
     levelPercent: comp.levelPercent,
@@ -24,23 +24,23 @@ const categories = sortedSkills.map((entry) => ({
   <div class="max-w-7xl mx-auto space-y-8">
     <div class="space-y-2">
       <h2 class="text-2xl sm:text-4xl font-display font-bold text-white tracking-tight">
-        Matriz de Competencias Técnicas
+        Matriz de <span class="gradient-text-sky">Competencias Técnicas</span>
       </h2>
-      <p class="text-xs sm:text-sm text-zinc-400 max-w-2xl">
-        Dominio práctico en arquitectura backend, modelado relacional ACID y desarrollo web moderno.
+      <p class="text-xs sm:text-sm text-zinc-300 max-w-2xl leading-relaxed">
+        Dominio práctico en arquitectura backend (Java &amp; .NET), modelado relacional ACID y desarrollo web moderno asistido por IA.
       </p>
     </div>
 
-    <!-- Tab Navigation -->
-    <div class="flex flex-wrap gap-1.5 p-1 rounded-md bg-[#10121a] border border-[#1d2230] w-fit">
+    <!-- Tab Navigation with Glassmorphism -->
+    <div class="flex flex-wrap gap-1.5 p-1.5 rounded-xl bg-white/[0.03] border border-white/10 backdrop-blur-md w-fit">
       {categories.map((cat, idx) => (
         <button
           type="button"
           data-tab={cat.id}
-          class={`skill-tab-btn flex items-center gap-2 px-3.5 py-1.5 rounded text-xs font-medium tracking-tight transition-[background-color,color,transform] duration-150 active:scale-95 cursor-pointer ${
+          class={`skill-tab-btn flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-medium tracking-tight transition-[background-color,color,transform,box-shadow] duration-150 active:scale-95 cursor-pointer ${
             idx === 0
-              ? "active bg-zinc-800 text-white font-semibold"
-              : "text-zinc-400 hover:text-white hover:bg-zinc-900/60"
+              ? "active bg-gradient-to-r from-sky-500/25 to-indigo-500/25 text-white font-semibold border border-sky-400/40 shadow-sm shadow-sky-500/20"
+              : "text-zinc-400 hover:text-white hover:bg-white/[0.06]"
           }`}
         >
           <Icon name={cat.icon} class="w-3.5 h-3.5" />
@@ -49,39 +49,41 @@ const categories = sortedSkills.map((entry) => ({
       ))}
     </div>
 
-    <!-- Competencies Panels -->
+    <!-- Competencies Panels with Glassmorphic Cards -->
     {categories.map((cat, idx) => (
       <div
         id={`skills-tab-${cat.id}`}
         data-tab-content={cat.id}
-        class={`skill-panel grid md:grid-cols-2 gap-4 ${idx === 0 ? "grid" : "hidden"}`}
+        class={`skill-panel grid md:grid-cols-2 gap-5 ${idx === 0 ? "grid" : "hidden"}`}
       >
-        {cat.competencies.map((comp) => (
-          <div class="bg-[#10121a] border border-[#1d2230] rounded-lg p-5 flex flex-col justify-between hover:border-[#2b3347] transition-[border-color] duration-150">
+        {cat.competencies.map((comp: any) => (
+          <div class="glass-card p-6 flex flex-col justify-between group">
             <div>
-              <div class="flex items-center justify-between gap-2 mb-2">
-                <h3 class="text-sm font-bold text-white">{comp.name}</h3>
-                <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-[#161922] text-sky-400">
+              <div class="flex items-center justify-between gap-2 mb-2.5">
+                <h3 class="text-base font-bold text-white group-hover:text-sky-300 transition-colors duration-150">
+                  {comp.name}
+                </h3>
+                <span class="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-sky-500/10 text-sky-300 border border-sky-400/20">
                   {comp.levelText}
                 </span>
               </div>
 
-              <p class="text-xs text-zinc-400 leading-relaxed mb-4">
+              <p class="text-xs text-zinc-300 leading-relaxed mb-4">
                 {comp.description}
               </p>
 
-              <!-- Progress bar -->
-              <div class="w-full bg-[#181b24] h-1.5 rounded-full overflow-hidden mb-4">
+              <!-- Gradient Progress bar -->
+              <div class="w-full bg-white/[0.05] h-2 rounded-full overflow-hidden mb-4 p-0.5 border border-white/[0.04]">
                 <div
-                  class="h-full bg-sky-400 transition-[width] duration-300 ease-out"
+                  class="h-full rounded-full bg-gradient-to-r from-sky-400 via-indigo-400 to-purple-400 shadow-sm shadow-sky-400/50 transition-[width] duration-300 ease-out"
                   style={`width: ${comp.levelPercent}%;`}
                 ></div>
               </div>
             </div>
 
-            <div class="flex flex-wrap gap-1.5 pt-3 border-t border-[#181d29]">
-              {comp.tags.map((tag) => (
-                <span class="px-2 py-0.5 text-[11px] rounded bg-[#161922] text-zinc-300">
+            <div class="flex flex-wrap gap-1.5 pt-3.5 border-t border-white/[0.08]">
+              {comp.tags.map((tag: string) => (
+                <span class="px-2.5 py-0.5 text-[11px] rounded-md bg-white/[0.04] border border-white/[0.06] text-zinc-200">
                   {tag}
                 </span>
               ))}
@@ -104,12 +106,10 @@ const categories = sortedSkills.map((entry) => ({
         if (!targetId) return;
 
         tabBtns.forEach((b) => {
-          b.classList.remove("active", "bg-zinc-800", "text-white", "font-semibold");
-          b.classList.add("text-zinc-400", "hover:text-white", "hover:bg-zinc-900/60");
+          b.className = "skill-tab-btn flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-medium tracking-tight transition-[background-color,color,transform] duration-150 active:scale-95 cursor-pointer text-zinc-400 hover:text-white hover:bg-white/[0.06]";
         });
 
-        btn.classList.add("active", "bg-zinc-800", "text-white", "font-semibold");
-        btn.classList.remove("text-zinc-400", "hover:text-white", "hover:bg-zinc-900/60");
+        btn.className = "skill-tab-btn flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold tracking-tight transition-[background-color,color,transform,box-shadow] duration-150 active:scale-95 cursor-pointer active bg-gradient-to-r from-sky-500/25 to-indigo-500/25 text-white border border-sky-400/40 shadow-sm shadow-sky-500/20";
 
         panels.forEach((p) => {
           if (p.getAttribute("data-tab-content") === targetId) {

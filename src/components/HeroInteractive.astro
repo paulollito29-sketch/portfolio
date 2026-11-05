@@ -4,32 +4,37 @@ import Icon from "./icons/Icon.astro";
 
 <section id="hero" class="relative min-h-[85svh] flex flex-col justify-center pt-28 pb-16 px-4 sm:px-8 z-10">
   <div class="max-w-6xl mx-auto w-full space-y-10">
-    <!-- Status Indicator (Subtle, No Looping Ping) -->
-    <div class="flex items-center gap-2">
-      <span class="inline-block w-2 h-2 rounded-full bg-emerald-400"></span>
-      <span class="text-xs font-medium text-zinc-300 tracking-tight">
-        Disponible para Contratación Inmediata · UPC Lima, Perú
+    <!-- Status Indicator (Glass Pill with Emerald Glow) -->
+    <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 backdrop-blur-md shadow-sm shadow-emerald-500/10">
+      <span class="relative flex h-2 w-2">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+      </span>
+      <span class="text-xs font-semibold text-zinc-200 tracking-tight">
+        Disponible para Contratación Inmediata · 7º Ciclo UPC Lima, Perú
       </span>
     </div>
 
     <!-- Main Title & Value Proposition -->
     <div class="space-y-6 max-w-4xl">
-      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold tracking-tight text-white leading-[1.05]">
-        Paulo Espinoza
-        <span class="block text-2xl sm:text-4xl lg:text-5xl mt-2 font-semibold text-sky-400">
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold tracking-tight leading-[1.08]">
+        <span class="block gradient-text-hero">
+          Paulo Espinoza
+        </span>
+        <span class="block text-3xl sm:text-5xl lg:text-6xl mt-2.5 font-bold gradient-text-sky">
           Ingeniero de Sistemas de Información
         </span>
       </h1>
 
       <p class="text-base sm:text-lg text-zinc-300 max-w-3xl leading-relaxed">
-        Graduado de la <strong class="text-white">Universidad Peruana de Ciencias Aplicadas (UPC)</strong>. Diseño e implementación de microservicios de alto rendimiento en <strong class="text-sky-300">Java (Spring Boot)</strong> y <strong class="text-white">C# (.NET)</strong>, persistencia relacional transaccional (PostgreSQL / SQL Server / Oracle) y desarrollo sistemático con metodología SDD.
+        Estudiante de 7º ciclo en la <strong class="text-white font-semibold">Universidad Peruana de Ciencias Aplicadas (UPC)</strong> con experiencia en el <strong class="text-sky-300 font-semibold">Servicio de Informática de la Fuerza Aérea</strong>. Especialista en microservicios backend en <strong class="text-sky-300 font-semibold">Java (Spring Boot)</strong> y <strong class="text-indigo-300 font-semibold">C# (.NET)</strong>, persistencia relacional transaccional (PostgreSQL / SQL Server) y desarrollo con metodología SDD y flujos asistidos por IA.
       </p>
 
-      <!-- Action Buttons with Emil Kowalski Micro-Feedback -->
-      <div class="flex flex-wrap items-center gap-3 pt-2">
+      <!-- Action Buttons with Emil Kowalski Micro-Feedback & Glassmorphism -->
+      <div class="flex flex-wrap items-center gap-3.5 pt-2">
         <a
           href="/contact"
-          class="flat-btn-primary"
+          class="btn-gradient-primary"
         >
           <Icon name="briefcase" class="w-4 h-4" />
           <span>Contactar para Entrevista</span>
@@ -37,7 +42,7 @@ import Icon from "./icons/Icon.astro";
 
         <a
           href="/portfolio"
-          class="flat-btn-outline"
+          class="btn-glass-outline"
         >
           <span>Ver Casos de Estudio</span>
           <Icon name="arrow-right" class="w-4 h-4 text-sky-400" />
@@ -48,7 +53,7 @@ import Icon from "./icons/Icon.astro";
             href="https://www.linkedin.com/in/paulo-espinoza9/"
             target="_blank"
             rel="noopener noreferrer"
-            class="p-2.5 rounded-md bg-[#11131a] border border-[#202533] hover:border-sky-400 text-zinc-300 hover:text-white transition-[border-color,color,transform] duration-150 active:scale-95"
+            class="p-2.5 rounded-lg bg-white/[0.04] border border-white/10 hover:border-sky-400/50 hover:bg-white/[0.08] text-zinc-300 hover:text-white transition-[border-color,background-color,color,transform] duration-150 active:scale-95 shadow-sm"
             aria-label="LinkedIn de Paulo Espinoza"
             title="LinkedIn Profesional"
           >
@@ -59,7 +64,7 @@ import Icon from "./icons/Icon.astro";
             href="https://github.com/paulollito29-sketch"
             target="_blank"
             rel="noopener noreferrer"
-            class="p-2.5 rounded-md bg-[#11131a] border border-[#202533] hover:border-white text-zinc-300 hover:text-white transition-[border-color,color,transform] duration-150 active:scale-95"
+            class="p-2.5 rounded-lg bg-white/[0.04] border border-white/10 hover:border-white/30 hover:bg-white/[0.08] text-zinc-300 hover:text-white transition-[border-color,background-color,color,transform] duration-150 active:scale-95 shadow-sm"
             aria-label="GitHub de Paulo Espinoza"
             title="Repositorios GitHub"
           >
@@ -69,40 +74,40 @@ import Icon from "./icons/Icon.astro";
       </div>
     </div>
 
-    <!-- Authentic Systems Engineering Fragment (data-ui) -->
-    <div data-ui class="max-w-4xl p-5 sm:p-6 bg-[#0c0e14] border border-[#1e2330] rounded-lg">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 mb-4 border-b border-[#1c212e]">
-        <div class="flex items-center gap-2">
-          <span class="inline-block w-2.5 h-2.5 rounded-full bg-sky-400"></span>
-          <span class="text-xs font-semibold text-white tracking-tight">
+    <!-- Authentic Systems Engineering Fragment with Glassmorphic Card (data-ui) -->
+    <div data-ui class="max-w-4xl p-5 sm:p-7 glass-card">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 mb-5 border-b border-white/[0.08]">
+        <div class="flex items-center gap-2.5">
+          <span class="inline-block w-2.5 h-2.5 rounded-full bg-sky-400 shadow-sm shadow-sky-400/80"></span>
+          <span class="text-xs font-bold text-white tracking-tight uppercase">
             Arquitectura de Sistemas &amp; Stack de Producción
           </span>
         </div>
-        <div class="text-[11px] text-zinc-400">
+        <div class="text-[11px] text-sky-300/80 font-medium">
           Metodología SDD · UPC Engineering Standard
         </div>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
-        <div class="space-y-1">
-          <div class="text-zinc-500 uppercase tracking-wider text-[10px]">Núcleo Backend</div>
-          <div class="font-semibold text-zinc-100">Java · Spring Boot</div>
-          <div class="text-zinc-400 text-[11px]">C# · .NET Core · REST APIs</div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 text-xs">
+        <div class="space-y-1.5 p-3 rounded-lg bg-white/[0.02] border border-white/[0.04]">
+          <div class="text-sky-400 uppercase tracking-wider text-[10px] font-semibold">Núcleo Backend</div>
+          <div class="font-bold text-white text-sm">Java · Spring Boot</div>
+          <div class="text-zinc-400 text-xs">C# · .NET Core · REST APIs</div>
         </div>
-        <div class="space-y-1">
-          <div class="text-zinc-500 uppercase tracking-wider text-[10px]">Persistencia Relacional</div>
-          <div class="font-semibold text-zinc-100">PostgreSQL · SQL Server</div>
-          <div class="text-zinc-400 text-[11px]">Oracle SQL · ACID · JPA/Hibernate</div>
+        <div class="space-y-1.5 p-3 rounded-lg bg-white/[0.02] border border-white/[0.04]">
+          <div class="text-indigo-400 uppercase tracking-wider text-[10px] font-semibold">Persistencia Relacional</div>
+          <div class="font-bold text-white text-sm">PostgreSQL · SQL Server</div>
+          <div class="text-zinc-400 text-xs">Oracle SQL · ACID · JPA/Hibernate</div>
         </div>
-        <div class="space-y-1">
-          <div class="text-zinc-500 uppercase tracking-wider text-[10px]">Frontend &amp; Delivery</div>
-          <div class="font-semibold text-zinc-100">Astro · React · Next.js</div>
-          <div class="text-zinc-400 text-[11px]">TypeScript · Tailwind CSS</div>
+        <div class="space-y-1.5 p-3 rounded-lg bg-white/[0.02] border border-white/[0.04]">
+          <div class="text-teal-400 uppercase tracking-wider text-[10px] font-semibold">Frontend &amp; Delivery</div>
+          <div class="font-bold text-white text-sm">Astro · React.js · Next.js</div>
+          <div class="text-zinc-400 text-xs">TypeScript · Tailwind CSS</div>
         </div>
-        <div class="space-y-1">
-          <div class="text-zinc-500 uppercase tracking-wider text-[10px]">Estandarización</div>
-          <div class="font-semibold text-zinc-100">Spec-Driven Dev (SDD)</div>
-          <div class="text-zinc-400 text-[11px]">Workflows con IA &amp; Git CI/CD</div>
+        <div class="space-y-1.5 p-3 rounded-lg bg-white/[0.02] border border-white/[0.04]">
+          <div class="text-purple-400 uppercase tracking-wider text-[10px] font-semibold">Estandarización</div>
+          <div class="font-bold text-white text-sm">Spec-Driven Dev (SDD)</div>
+          <div class="text-zinc-400 text-xs">Workflows con IA &amp; Git CI/CD</div>
         </div>
       </div>
     </div>
