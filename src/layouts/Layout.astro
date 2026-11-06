@@ -33,13 +33,13 @@ const {
     <meta property="og:description" content={description} />
     <meta property="og:locale" content="es_PE" />
 
-    <!-- Fontshare Clash Grotesk Typography (taste-skill dark-room direction) -->
-    <link rel="preconnect" href="https://api.fontshare.com" />
-    <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin />
-    <link
-      href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Local Clash Grotesk Typography Preload -->
+    <link rel="preload" href="/fonts/clash-grotesk-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/clash-grotesk-500.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/clash-grotesk-600.woff2" as="font" type="font/woff2" crossorigin />
+
+    <!-- LCP Hero Image Preload -->
+    <link rel="preload" as="image" href="/assets/technician-with-laptop-working-on-server-rack.webp" type="image/webp" fetchpriority="high" />
   </head>
   <body class="bg-[#0a0a0a] text-[#efefef] min-h-[100svh] antialiased selection:bg-[#b11226] selection:text-white font-sans overflow-x-clip">
     <slot />
