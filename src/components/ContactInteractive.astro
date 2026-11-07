@@ -153,6 +153,7 @@ import Icon from "./icons/Icon.astro";
               name="reason"
               class="w-full px-3.5 py-2.5 rounded-lg bg-[var(--surface-lift)] border border-[var(--border)] focus:border-[var(--accent)] text-xs text-[var(--ink)] transition-colors outline-none cursor-pointer"
             >
+              <option value="Realizar Test Gratuito">Realizar Test Gratuito / Prueba Técnica</option>
               <option value="Oportunidad Laboral / Sistemas">Oportunidad Laboral / Contratación</option>
               <option value="Entrevista Técnica">Coordinar Entrevista Técnica</option>
               <option value="Consultoría de Sistemas">Consultoría / Proyecto</option>
@@ -208,6 +209,14 @@ import Icon from "./icons/Icon.astro";
     const statusMsg = document.getElementById("formStatusMessage");
 
     if (!form || !submitBtn || !btnText || !statusMsg) return;
+
+    try {
+      const urlParams = new URLSearchParams(window.location.search);
+      const reasonSelect = document.getElementById("contactReason") as HTMLSelectElement | null;
+      if (reasonSelect && (urlParams.get("reason") === "test" || window.location.hash === "#test-gratuito")) {
+        reasonSelect.value = "Realizar Test Gratuito";
+      }
+    } catch (_) {}
 
     form.addEventListener("submit", async (e) => {
       e.preventDefault();

@@ -2,8 +2,8 @@
 import Icon from "./icons/Icon.astro";
 ---
 
-<section id="hero" class="relative min-h-[85svh] flex flex-col justify-center pt-24 pb-16 px-4 sm:px-8 z-10">
-  <div class="max-w-7xl mx-auto w-full space-y-8">
+<section id="hero" class="relative min-h-[100svh] w-full flex flex-col justify-center pt-24 pb-14 sm:pt-28 sm:pb-16 px-4 sm:px-8 z-10">
+  <div class="max-w-7xl mx-auto w-full space-y-8 flex-1 flex flex-col justify-center">
     <!-- Status Indicator (Dynamic pulsing radar ring) -->
     <div class="reveal-entry inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[var(--surface-lift)] text-[var(--ink-secondary)] text-xs font-medium w-fit">
       <span class="relative flex h-2.5 w-2.5 items-center justify-center">
@@ -33,6 +33,11 @@ import Icon from "./icons/Icon.astro";
         <a href="/contact" class="btn-primary">
           <Icon name="briefcase" class="w-4 h-4" />
           <span>Contactar para entrevista</span>
+        </a>
+
+        <a href="#contact" id="heroFreeTestBtn" class="btn-secondary">
+          <Icon name="checkcircle2" class="w-4 h-4 text-[var(--badge-emerald-text)]" />
+          <span>Realizar test gratuito</span>
         </a>
 
         <a href="/portfolio" class="btn-secondary">
@@ -115,3 +120,30 @@ import Icon from "./icons/Icon.astro";
     </div>
   </div>
 </section>
+
+<script>
+  function initHeroActions() {
+    const freeTestBtn = document.getElementById("heroFreeTestBtn");
+    if (!freeTestBtn) return;
+
+    freeTestBtn.addEventListener("click", (e) => {
+      const isHome = window.location.pathname === "/" || window.location.pathname === "";
+      if (isHome) {
+        e.preventDefault();
+        const contactSection = document.getElementById("contact");
+        const reasonSelect = document.getElementById("contactReason") as HTMLSelectElement | null;
+        if (reasonSelect) {
+          reasonSelect.value = "Realizar Test Gratuito";
+        }
+        if (contactSection) {
+          contactSection.scrollIntoView({ behavior: "smooth" });
+          const nameInput = document.getElementById("contactName");
+          setTimeout(() => nameInput?.focus(), 500);
+        }
+      }
+    });
+  }
+
+  initHeroActions();
+  document.addEventListener("astro:page-load", initHeroActions);
+</script>
