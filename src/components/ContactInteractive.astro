@@ -4,38 +4,38 @@ import Icon from "./icons/Icon.astro";
 
 <section id="contact" class="max-w-7xl mx-auto px-4 sm:px-8 py-12 relative z-10 space-y-10">
   <div class="space-y-2">
-    <h2 class="text-2xl sm:text-4xl font-display font-bold text-white tracking-tight">
+    <h2 class="text-2xl sm:text-4xl font-display font-bold text-[var(--ink)] tracking-tight">
       Contacto y contrataciones
     </h2>
-    <p class="text-xs sm:text-sm text-zinc-300 max-w-2xl leading-relaxed">
+    <p class="text-sm sm:text-base text-[var(--ink-muted)] max-w-2xl leading-relaxed">
       Canal directo para coordinar entrevistas técnicas, oportunidades laborales o proyectos de sistemas.
     </p>
   </div>
 
   <div class="grid lg:grid-cols-12 gap-7 items-start">
     <!-- Recruiter Details Card -->
-    <div class="lg:col-span-5 bg-[#151515] rounded-lg p-6 sm:p-8 space-y-6">
+    <div class="lg:col-span-5 bg-[var(--surface-card)] rounded-xl p-6 sm:p-8 space-y-6 transition-colors duration-200">
       <div>
-        <h3 class="font-display font-bold text-xl text-white mb-1.5">
+        <h3 class="font-display font-bold text-xl text-[var(--ink)] mb-1.5">
           Disponibilidad de contratación
         </h3>
-        <p class="text-base text-zinc-300 leading-relaxed">
-          Disponible para incorporación inmediata en roles de <strong class="text-white font-semibold">Ingeniería de Sistemas, Backend en Java (Spring Boot) o Full Stack</strong>.
+        <p class="text-base text-[var(--ink-secondary)] leading-relaxed">
+          Disponible para incorporación inmediata en roles de <strong class="text-[var(--ink)] font-semibold">Ingeniería de Sistemas, Backend en Java (Spring Boot) o Full Stack</strong>.
         </p>
       </div>
 
       <!-- Recruitment Facts -->
-      <div class="space-y-3 p-5 rounded bg-[#1c1c1c] text-base text-zinc-200">
+      <div class="space-y-3 p-5 rounded-lg bg-[var(--surface-lift)] text-base text-[var(--ink-secondary)]">
         <div class="flex items-center gap-2.5">
-          <Icon name="clock" class="w-4 h-4 text-emerald-400 shrink-0" />
+          <Icon name="clock" class="w-4 h-4 text-[var(--badge-emerald-text)] shrink-0" />
           <span><strong>Disponibilidad:</strong> Inmediata (Open to Work)</span>
         </div>
         <div class="flex items-center gap-2.5">
-          <Icon name="map-pin" class="w-4 h-4 text-zinc-400 shrink-0" />
+          <Icon name="map-pin" class="w-4 h-4 text-[var(--ink-muted)] shrink-0" />
           <span><strong>Modalidad:</strong> Remota o Híbrida (Lima, Perú)</span>
         </div>
         <div class="flex items-center gap-2.5">
-          <Icon name="calendar" class="w-4 h-4 text-zinc-400 shrink-0" />
+          <Icon name="calendar" class="w-4 h-4 text-[var(--ink-muted)] shrink-0" />
           <span><strong>Grado:</strong> Ing. de Sistemas de Información · 7º Ciclo UPC</span>
         </div>
       </div>
@@ -44,14 +44,14 @@ import Icon from "./icons/Icon.astro";
       <div class="space-y-3">
         <a
           href="mailto:pauloespinoza951@gmail.com"
-          class="flex items-center gap-3.5 p-4 rounded bg-[#1c1c1c] hover:bg-[#222222] transition-colors group"
+          class="flex items-center gap-3.5 p-4 rounded-lg bg-[var(--surface-lift)] hover:bg-[var(--surface)] transition-[transform,background-color] duration-150 group card-hover-lift"
         >
-          <div class="w-8 h-8 rounded bg-[#262626] flex items-center justify-center text-zinc-200">
+          <div class="w-9 h-9 rounded-md bg-[var(--surface)] flex items-center justify-center text-[var(--ink-secondary)]">
             <Icon name="mail" class="w-4 h-4" />
           </div>
           <div>
-            <div class="text-xs text-zinc-400">Email corporativo</div>
-            <div class="text-base font-bold text-white group-hover:text-zinc-200 transition-colors">
+            <div class="text-xs text-[var(--ink-muted)] font-medium">Email corporativo</div>
+            <div class="text-sm font-bold text-[var(--ink)] group-hover:text-[var(--accent)] transition-colors">
               pauloespinoza951@gmail.com
             </div>
           </div>
@@ -61,14 +61,14 @@ import Icon from "./icons/Icon.astro";
           href="https://wa.me/51906920958"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-center gap-3.5 p-4 rounded bg-[#1c1c1c] hover:bg-[#222222] transition-colors group"
+          class="flex items-center gap-3.5 p-4 rounded-lg bg-[var(--surface-lift)] hover:bg-[var(--surface)] transition-[transform,background-color] duration-150 group card-hover-lift"
         >
-          <div class="w-8 h-8 rounded bg-[#262626] flex items-center justify-center text-emerald-400">
+          <div class="w-9 h-9 rounded-md bg-emerald-50 dark:bg-emerald-950/40 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
             <Icon name="phone" class="w-4 h-4" />
           </div>
           <div>
-            <div class="text-xs text-zinc-400">WhatsApp oficial</div>
-            <div class="text-base font-bold text-white group-hover:text-emerald-300 transition-colors">
+            <div class="text-xs text-[var(--ink-muted)] font-medium">WhatsApp directo</div>
+            <div class="text-sm font-bold text-[var(--ink)] group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
               Iniciar conversación en WhatsApp &rarr;
             </div>
           </div>
@@ -81,28 +81,28 @@ import Icon from "./icons/Icon.astro";
           href="https://www.linkedin.com/in/paulo-espinoza9/"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex-1 py-2.5 px-3 rounded bg-[#202020] hover:bg-[#282828] text-xs font-semibold text-white flex items-center justify-center gap-2 transition-colors"
+          class="flex-1 py-2.5 px-3 rounded-md bg-[var(--surface-lift)] hover:bg-[var(--border-subtle)] text-xs font-semibold text-[var(--ink)] flex items-center justify-center gap-2 transition-colors active:scale-95"
         >
-          <Icon name="linkedin" class="w-3.5 h-3.5" /> LinkedIn
+          <Icon name="linkedin" class="w-3.5 h-3.5 text-[var(--ink-muted)]" /> LinkedIn
         </a>
 
         <a
           href="https://github.com/paulollito29-sketch"
           target="_blank"
           rel="noopener noreferrer"
-          class="py-2.5 px-4 rounded bg-[#202020] hover:bg-[#282828] text-xs font-semibold text-zinc-200 hover:text-white flex items-center justify-center gap-2 transition-colors"
+          class="py-2.5 px-4 rounded-md bg-[var(--surface-lift)] hover:bg-[var(--border-subtle)] text-xs font-semibold text-[var(--ink)] flex items-center justify-center gap-2 transition-colors active:scale-95"
         >
-          <Icon name="github" class="w-3.5 h-3.5" /> GitHub
+          <Icon name="github" class="w-3.5 h-3.5 text-[var(--ink-muted)]" /> GitHub
         </a>
       </div>
     </div>
 
     <!-- Form Side -->
-    <div class="lg:col-span-7 bg-[#151515] rounded-lg p-6 sm:p-8">
+    <div class="lg:col-span-7 bg-[var(--surface-card)] rounded-xl p-6 sm:p-8 transition-colors duration-200">
       <form id="recruiterContactForm" class="space-y-4">
         <div class="grid sm:grid-cols-2 gap-4">
           <div>
-            <label for="contactName" class="block text-xs font-medium text-zinc-300 mb-1.5">
+            <label for="contactName" class="block text-xs font-medium text-[var(--ink-secondary)] mb-1.5">
               Nombre o Reclutador *
             </label>
             <input
@@ -111,12 +111,12 @@ import Icon from "./icons/Icon.astro";
               type="text"
               required
               placeholder="Ej. Carlos Mendoza"
-              class="w-full px-3.5 py-2.5 rounded bg-[#101010] border border-[#242424] focus:border-zinc-400 text-xs text-white placeholder:text-zinc-400 transition-colors outline-none"
+              class="w-full px-3.5 py-2.5 rounded-lg bg-[var(--surface-lift)] border border-[var(--border)] focus:border-[var(--accent)] text-xs text-[var(--ink)] placeholder:text-[var(--ink-muted)] transition-colors outline-none"
             />
           </div>
 
           <div>
-            <label for="contactCompany" class="block text-xs font-medium text-zinc-300 mb-1.5">
+            <label for="contactCompany" class="block text-xs font-medium text-[var(--ink-secondary)] mb-1.5">
               Empresa u Organización
             </label>
             <input
@@ -124,14 +124,14 @@ import Icon from "./icons/Icon.astro";
               name="company"
               type="text"
               placeholder="Ej. Tech Enterprise"
-              class="w-full px-3.5 py-2.5 rounded bg-[#101010] border border-[#242424] focus:border-zinc-400 text-xs text-white placeholder:text-zinc-400 transition-colors outline-none"
+              class="w-full px-3.5 py-2.5 rounded-lg bg-[var(--surface-lift)] border border-[var(--border)] focus:border-[var(--accent)] text-xs text-[var(--ink)] placeholder:text-[var(--ink-muted)] transition-colors outline-none"
             />
           </div>
         </div>
 
         <div class="grid sm:grid-cols-2 gap-4">
           <div>
-            <label for="contactEmail" class="block text-xs font-medium text-zinc-300 mb-1.5">
+            <label for="contactEmail" class="block text-xs font-medium text-[var(--ink-secondary)] mb-1.5">
               Correo Electrónico *
             </label>
             <input
@@ -140,18 +140,18 @@ import Icon from "./icons/Icon.astro";
               type="email"
               required
               placeholder="contacto@empresa.com"
-              class="w-full px-3.5 py-2.5 rounded bg-[#101010] border border-[#242424] focus:border-zinc-400 text-xs text-white placeholder:text-zinc-400 transition-colors outline-none"
+              class="w-full px-3.5 py-2.5 rounded-lg bg-[var(--surface-lift)] border border-[var(--border)] focus:border-[var(--accent)] text-xs text-[var(--ink)] placeholder:text-[var(--ink-muted)] transition-colors outline-none"
             />
           </div>
 
           <div>
-            <label for="contactReason" class="block text-xs font-medium text-zinc-300 mb-1.5">
+            <label for="contactReason" class="block text-xs font-medium text-[var(--ink-secondary)] mb-1.5">
               Motivo de Contacto
             </label>
             <select
               id="contactReason"
               name="reason"
-              class="w-full px-3.5 py-2.5 rounded bg-[#101010] border border-[#242424] focus:border-zinc-400 text-xs text-white transition-colors outline-none"
+              class="w-full px-3.5 py-2.5 rounded-lg bg-[var(--surface-lift)] border border-[var(--border)] focus:border-[var(--accent)] text-xs text-[var(--ink)] transition-colors outline-none cursor-pointer"
             >
               <option value="Oportunidad Laboral / Sistemas">Oportunidad Laboral / Contratación</option>
               <option value="Entrevista Técnica">Coordinar Entrevista Técnica</option>
@@ -162,7 +162,7 @@ import Icon from "./icons/Icon.astro";
         </div>
 
         <div>
-          <label for="contactMessage" class="block text-xs font-medium text-zinc-300 mb-1.5">
+          <label for="contactMessage" class="block text-xs font-medium text-[var(--ink-secondary)] mb-1.5">
             Mensaje o Requerimiento Técnico *
           </label>
           <textarea
@@ -171,12 +171,12 @@ import Icon from "./icons/Icon.astro";
             rows="4"
             required
             placeholder="Describa el rol, perfil técnico requerido o detalles de la propuesta..."
-            class="w-full px-3.5 py-2.5 rounded bg-[#101010] border border-[#242424] focus:border-zinc-400 text-xs text-white placeholder:text-zinc-400 transition-colors outline-none resize-none"
+            class="w-full px-3.5 py-2.5 rounded-lg bg-[var(--surface-lift)] border border-[var(--border)] focus:border-[var(--accent)] text-xs text-[var(--ink)] placeholder:text-[var(--ink-muted)] transition-colors outline-none resize-none"
           ></textarea>
         </div>
 
-        <div class="flex items-center justify-between pt-2">
-          <span class="text-xs text-zinc-400">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-2">
+          <span class="text-xs text-[var(--ink-muted)]">
             Respuesta garantizada en menos de 24 horas hábiles.
           </span>
 
@@ -192,7 +192,7 @@ import Icon from "./icons/Icon.astro";
 
         <div
           id="formStatusMessage"
-          class="hidden p-3.5 rounded text-xs leading-relaxed"
+          class="hidden p-3.5 rounded-lg text-xs leading-relaxed"
           role="alert"
         ></div>
       </form>
@@ -232,7 +232,7 @@ import Icon from "./icons/Icon.astro";
       setTimeout(() => {
         window.location.href = mailtoUrl;
 
-        statusMsg.className = "p-3.5 rounded text-xs leading-relaxed bg-[#1c281e] text-emerald-300 block";
+        statusMsg.className = "p-3.5 rounded-lg text-xs leading-relaxed bg-emerald-50 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/60 block";
         statusMsg.textContent = "Se ha abierto su cliente de correo predeterminado con los datos estructurados. También puede escribir directamente a pauloespinoza951@gmail.com";
 
         submitBtn.disabled = false;

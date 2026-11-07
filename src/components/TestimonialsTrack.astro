@@ -30,22 +30,22 @@ const testimonials = testimonialsEntry?.data?.testimonials || [
 <section class="py-12 px-4 sm:px-8 relative z-10 space-y-8">
   <div class="max-w-7xl mx-auto space-y-8">
     <div class="space-y-2">
-      <h2 class="text-2xl sm:text-4xl font-display font-bold text-white tracking-tight">
+      <h2 class="text-2xl sm:text-4xl font-display font-bold text-[var(--ink)] tracking-tight">
         Apreciación Técnica &amp; Competencias
       </h2>
-      <p class="text-xs sm:text-sm text-zinc-400 max-w-2xl">
+      <p class="text-sm sm:text-base text-[var(--ink-muted)] max-w-2xl">
         Evaluaciones de desempeño sobre calidad de código, resolución de problemas y aceleración con IA.
       </p>
     </div>
 
     <!-- Carousel Container -->
-    <div class="bg-[#151515] rounded-lg p-6 sm:p-8 space-y-6">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+    <div class="bg-[var(--surface-card)] rounded-xl p-6 sm:p-8 space-y-6 transition-colors duration-200">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2">
         <div>
-          <h3 id="testimonialName" class="text-base sm:text-lg font-bold text-white">
+          <h3 id="testimonialName" class="text-base sm:text-lg font-bold text-[var(--ink)]">
             {testimonials[0].name.es}
           </h3>
-          <p id="testimonialRole" class="text-xs text-zinc-400 font-medium">
+          <p id="testimonialRole" class="text-xs text-[var(--ink-muted)] font-medium">
             {testimonials[0].role.es}
           </p>
         </div>
@@ -54,18 +54,15 @@ const testimonials = testimonialsEntry?.data?.testimonials || [
           <button
             id="testimonialPrev"
             type="button"
-            class="p-2 rounded bg-[#202020] hover:bg-[#282828] text-zinc-300 hover:text-white transition-colors duration-150 active:scale-90 cursor-pointer"
+            class="p-2 rounded-md bg-[var(--surface-lift)] hover:bg-[var(--surface)] text-[var(--ink-secondary)] hover:text-[var(--ink)] transition-[background-color,color,transform] duration-150 active:scale-90 cursor-pointer"
             aria-label="Anterior"
           >
             <Icon name="chevron-left" class="w-4 h-4" />
           </button>
-          <span id="testimonialCounter" class="text-xs text-zinc-400 px-2 font-medium">
-            1 / {testimonials.length}
-          </span>
           <button
             id="testimonialNext"
             type="button"
-            class="p-2 rounded bg-[#202020] hover:bg-[#282828] text-zinc-300 hover:text-white transition-colors duration-150 active:scale-90 cursor-pointer"
+            class="p-2 rounded-md bg-[var(--surface-lift)] hover:bg-[var(--surface)] text-[var(--ink-secondary)] hover:text-[var(--ink)] transition-[background-color,color,transform] duration-150 active:scale-90 cursor-pointer"
             aria-label="Siguiente"
           >
             <Icon name="chevron-right" class="w-4 h-4" />
@@ -73,14 +70,14 @@ const testimonials = testimonialsEntry?.data?.testimonials || [
         </div>
       </div>
 
-      <p id="testimonialText" class="text-xs sm:text-sm text-zinc-300 leading-relaxed italic pl-3">
-        &ldquo;{testimonials[0].text.es}&rdquo;
-      </p>
+      <blockquote id="testimonialText" class="text-base sm:text-lg text-[var(--ink-secondary)] leading-relaxed italic pl-4 py-1">
+        "{testimonials[0].text.es}"
+      </blockquote>
 
-      <div id="testimonialTags" class="flex flex-wrap gap-1.5 pt-2">
-        {testimonials[0].tags.map((tag: string) => (
-          <span class="px-2.5 py-0.5 text-xs rounded bg-[#202020] text-zinc-300">
-            {tag}
+      <div class="flex flex-wrap gap-1.5 pt-2" id="testimonialTags">
+        {testimonials[0].tags.map((t: string) => (
+          <span class="px-2.5 py-0.5 text-xs rounded-md bg-[var(--surface-lift)] text-[var(--ink-secondary)] font-medium">
+            {t}
           </span>
         ))}
       </div>
@@ -88,43 +85,45 @@ const testimonials = testimonialsEntry?.data?.testimonials || [
   </div>
 </section>
 
-<!-- Embedded data for zero-runtime client navigation -->
-<script is:inline define:vars={{ testimonials }}>
-  function initTestimonialsTrack() {
-    const prevBtn = document.getElementById("testimonialPrev");
-    const nextBtn = document.getElementById("testimonialNext");
+<script define:vars={{ testimonials }}>
+  let currentIndex = 0;
+
+  function updateTestimonial(index) {
     const nameEl = document.getElementById("testimonialName");
     const roleEl = document.getElementById("testimonialRole");
     const textEl = document.getElementById("testimonialText");
-    const counterEl = document.getElementById("testimonialCounter");
     const tagsEl = document.getElementById("testimonialTags");
 
-    if (!prevBtn || !nextBtn || !nameEl || !roleEl || !textEl || !counterEl || !tagsEl) return;
+    if (!nameEl || !roleEl || !textEl || !tagsEl) return;
 
-    let currentIndex = 0;
+    const t = testimonials[index];
+    nameEl.textContent = t.name.es;
+    roleEl.textContent = t.role.es;
+    textEl.textContent = `"${t.text.es}"`;
 
-    function render(index) {
-      currentIndex = (index + testimonials.length) % testimonials.length;
-      const t = testimonials[currentIndex];
-
-      nameEl.textContent = t.name.es || t.name;
-      roleEl.textContent = t.role.es || t.role;
-      textEl.innerHTML = `&ldquo;${t.text.es || t.text}&rdquo;`;
-      counterEl.textContent = `${currentIndex + 1} / ${testimonials.length}`;
-
-      tagsEl.innerHTML = "";
-      (t.tags || []).forEach((tag) => {
-        const span = document.createElement("span");
-        span.className = "px-2.5 py-0.5 text-xs rounded bg-[#202020] text-zinc-300";
-        span.textContent = tag;
-        tagsEl.appendChild(span);
-      });
-    }
-
-    prevBtn.addEventListener("click", () => render(currentIndex - 1));
-    nextBtn.addEventListener("click", () => render(currentIndex + 1));
+    tagsEl.innerHTML = t.tags
+      .map(
+        (tag) =>
+          `<span class="px-2.5 py-0.5 text-xs rounded-md bg-[var(--surface-lift)] text-[var(--ink-secondary)] font-medium">${tag}</span>`
+      )
+      .join("");
   }
 
-  initTestimonialsTrack();
-  document.addEventListener("astro:page-load", initTestimonialsTrack);
+  function initTestimonials() {
+    const prevBtn = document.getElementById("testimonialPrev");
+    const nextBtn = document.getElementById("testimonialNext");
+
+    prevBtn?.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+      updateTestimonial(currentIndex);
+    });
+
+    nextBtn?.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % testimonials.length;
+      updateTestimonial(currentIndex);
+    });
+  }
+
+  initTestimonials();
+  document.addEventListener("astro:page-load", initTestimonials);
 </script>

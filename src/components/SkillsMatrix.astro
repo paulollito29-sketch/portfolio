@@ -23,24 +23,24 @@ const categories = sortedSkills.map((entry) => ({
 <section id="skills" class="py-12 px-4 sm:px-8 relative z-10 space-y-8">
   <div class="max-w-7xl mx-auto space-y-8">
     <div class="space-y-2">
-      <h2 class="text-2xl sm:text-4xl font-display font-bold text-white tracking-tight">
+      <h2 class="text-2xl sm:text-4xl font-display font-bold text-[var(--ink)] tracking-tight">
         Matriz de competencias técnicas
       </h2>
-      <p class="text-xs sm:text-sm text-zinc-300 max-w-2xl leading-relaxed">
+      <p class="text-sm sm:text-base text-[var(--ink-muted)] max-w-2xl leading-relaxed">
         Dominio práctico en arquitectura backend (Java y .NET), modelado relacional ACID y desarrollo web moderno asistido por IA.
       </p>
     </div>
 
     <!-- Tab Navigation -->
-    <div class="flex flex-wrap gap-1 p-1 rounded bg-[#121212] w-fit">
+    <div class="flex flex-wrap gap-1 p-1 rounded-lg bg-[var(--surface-lift)] w-fit">
       {categories.map((cat, idx) => (
         <button
           type="button"
           data-tab={cat.id}
-          class={`skill-tab-btn flex items-center gap-2 px-4 py-2 rounded text-xs font-medium tracking-tight transition-colors active:scale-95 cursor-pointer ${
+          class={`skill-tab-btn flex items-center gap-2 px-4 py-2 rounded-md text-xs font-medium tracking-tight transition-[background-color,color] duration-150 active:scale-95 cursor-pointer ${
             idx === 0
-              ? "active bg-[#222222] text-white font-semibold"
-              : "text-zinc-400 hover:text-white hover:bg-[#1a1a1a]"
+              ? "active bg-[var(--surface)] text-[var(--ink)] font-semibold"
+              : "text-[var(--ink-muted)] hover:text-[var(--ink)] hover:bg-[var(--border-subtle)]"
           }`}
         >
           <Icon name={cat.icon} class="w-3.5 h-3.5" />
@@ -57,25 +57,25 @@ const categories = sortedSkills.map((entry) => ({
         class={`skill-panel grid md:grid-cols-2 gap-5 ${idx === 0 ? "grid" : "hidden"}`}
       >
         {cat.competencies.map((comp: any) => (
-          <div class="bg-[#151515] rounded-lg p-6 flex flex-col justify-between group">
+          <div class="bg-[var(--surface-card)] rounded-xl p-6 flex flex-col justify-between group card-hover-lift transition-colors duration-200">
             <div>
               <div class="flex items-center justify-between gap-2 mb-2.5">
-                <h3 class="text-base font-bold text-white group-hover:text-zinc-200 transition-colors">
+                <h3 class="text-base font-bold text-[var(--ink)] group-hover:text-[var(--accent)] transition-colors">
                   {comp.name}
                 </h3>
-                <span class="text-xs font-semibold px-2 py-0.5 rounded bg-[#202020] text-zinc-300">
+                <span class="text-xs font-semibold px-2.5 py-0.5 rounded-md bg-[var(--surface-lift)] text-[var(--ink-secondary)]">
                   {comp.levelText}
                 </span>
               </div>
 
-              <p class="text-base text-zinc-300 leading-relaxed mb-4">
+              <p class="text-sm text-[var(--ink-secondary)] leading-relaxed mb-4">
                 {comp.description}
               </p>
 
-              <!-- Solid Progress bar -->
-              <div class="w-full bg-[#202020] h-2 rounded overflow-hidden mb-4">
+              <!-- Progress bar -->
+              <div class="w-full bg-[var(--surface-lift)] h-2 rounded-full overflow-hidden mb-4">
                 <div
-                  class="h-full bg-[#b11226] rounded transition-[width] duration-300 ease-out"
+                  class="h-full bg-[var(--accent)] rounded-full transition-[width] duration-500 ease-out"
                   style={`width: ${comp.levelPercent}%;`}
                 ></div>
               </div>
@@ -83,7 +83,7 @@ const categories = sortedSkills.map((entry) => ({
 
             <div class="flex flex-wrap gap-1.5 pt-3">
               {comp.tags.map((tag: string) => (
-                <span class="px-2.5 py-1 text-xs rounded bg-[#202020] text-zinc-300">
+                <span class="px-2.5 py-0.5 text-xs rounded-md bg-[var(--surface-lift)] text-[var(--ink-secondary)] font-medium">
                   {tag}
                 </span>
               ))}
@@ -105,9 +105,9 @@ const categories = sortedSkills.map((entry) => ({
         const tab = btn.getAttribute("data-tab");
 
         tabBtns.forEach((b) => {
-          b.className = "skill-tab-btn flex items-center gap-2 px-4 py-2 rounded text-xs font-medium tracking-tight transition-colors active:scale-95 cursor-pointer text-zinc-400 hover:text-white hover:bg-[#1a1a1a]";
+          b.className = "skill-tab-btn flex items-center gap-2 px-4 py-2 rounded-md text-xs font-medium tracking-tight transition-[background-color,color] duration-150 active:scale-95 cursor-pointer text-[var(--ink-muted)] hover:text-[var(--ink)] hover:bg-[var(--border-subtle)]";
         });
-        btn.className = "skill-tab-btn flex items-center gap-2 px-4 py-2 rounded text-xs font-medium tracking-tight transition-colors active:scale-95 cursor-pointer active bg-[#222222] text-white font-semibold";
+        btn.className = "skill-tab-btn flex items-center gap-2 px-4 py-2 rounded-md text-xs font-medium tracking-tight transition-[background-color,color] duration-150 active:scale-95 cursor-pointer active bg-[var(--surface)] text-[var(--ink)] font-semibold";
 
         panels.forEach((p) => {
           if (p.getAttribute("data-tab-content") === tab) {

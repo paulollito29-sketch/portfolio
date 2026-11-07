@@ -4,28 +4,31 @@ import Icon from "./icons/Icon.astro";
 
 <section id="hero" class="relative min-h-[85svh] flex flex-col justify-center pt-24 pb-16 px-4 sm:px-8 z-10">
   <div class="max-w-7xl mx-auto w-full space-y-8">
-    <!-- Status Indicator (Plain solid pill without ping or glass) -->
-    <div class="reveal-entry inline-flex items-center gap-2 px-3 py-1.5 rounded bg-[#1a1a1a] text-zinc-300 text-xs w-fit">
-      <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-      <span class="font-medium">
+    <!-- Status Indicator (Dynamic pulsing radar ring) -->
+    <div class="reveal-entry inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[var(--surface-lift)] text-[var(--ink-secondary)] text-xs font-medium w-fit">
+      <span class="relative flex h-2.5 w-2.5 items-center justify-center">
+        <span class="live-pulse-dot absolute inline-flex h-full w-full rounded-full bg-emerald-500"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-600"></span>
+      </span>
+      <span>
         Disponible para contratación inmediata · 7º Ciclo UPC Lima, Perú
       </span>
     </div>
 
-    <!-- Main Title & Value Proposition: 2 lines maximum at all widths -->
+    <!-- Main Title & Value Proposition -->
     <div class="space-y-4 max-w-4xl">
-      <h1 class="reveal-entry reveal-delay-1 text-4xl sm:text-6xl lg:text-7xl font-display font-bold tracking-tight text-[#efefef] leading-tight">
+      <h1 class="reveal-entry reveal-delay-1 text-4xl sm:text-6xl lg:text-7xl font-display font-bold tracking-tight text-[var(--ink)] leading-tight">
         Paulo Espinoza
       </h1>
-      <p class="reveal-entry reveal-delay-2 text-2xl sm:text-3xl text-zinc-300 font-medium">
+      <p class="reveal-entry reveal-delay-2 text-2xl sm:text-3xl text-[var(--ink-secondary)] font-medium">
         Ingeniero de Sistemas de Información (UPC)
       </p>
 
-      <p class="reveal-entry reveal-delay-3 text-base sm:text-lg text-zinc-400 max-w-3xl leading-relaxed pt-1">
+      <p class="reveal-entry reveal-delay-3 text-base sm:text-lg text-[var(--ink-muted)] max-w-3xl leading-relaxed pt-1">
         Estudiante de 7º ciclo en la Universidad Peruana de Ciencias Aplicadas con 8 meses de experiencia como Full Stack Developer en el Servicio de Informática de la Fuerza Aérea. Especialista en microservicios backend en Java (Spring Boot), persistencia transaccional ACID (PostgreSQL y SQL Server), desarrollo frontend en Angular.ts y React.js, y arquitectura de software con metodología SDD.
       </p>
 
-      <!-- Action Buttons (Solid colors with Emil Kowalski micro-feedback) -->
+      <!-- Action Buttons with Emil Kowalski click physics -->
       <div class="reveal-entry reveal-delay-4 flex flex-wrap items-center gap-3 pt-3">
         <a href="/contact" class="btn-primary">
           <Icon name="briefcase" class="w-4 h-4" />
@@ -34,76 +37,79 @@ import Icon from "./icons/Icon.astro";
 
         <a href="/portfolio" class="btn-secondary">
           <span>Ver sistemas en producción</span>
-          <Icon name="arrow-right" class="w-4 h-4 text-zinc-400" />
+          <Icon name="arrow-right" class="w-4 h-4 text-[var(--ink-muted)]" />
         </a>
 
         <a href="/cv" class="btn-secondary">
-          <Icon name="file-text" class="w-4 h-4 text-zinc-400" />
+          <Icon name="file-text" class="w-4 h-4 text-[var(--ink-muted)]" />
           <span>Curriculum Vitae (PDF)</span>
         </a>
       </div>
     </div>
 
-    <!-- Real Archival Systems Engineering Photograph (100% width) -->
-    <div class="reveal-entry reveal-delay-5 w-full overflow-hidden rounded-lg">
+    <!-- Archival Systems Engineering Photograph with smooth ambient motion -->
+    <div class="reveal-entry reveal-delay-5 w-full overflow-hidden rounded-xl">
       <img
         src="/assets/technician-with-laptop-working-on-server-rack.webp"
         width="900"
         height="598"
         alt="Ingeniería de sistemas e infraestructura de servidores en producción"
-        class="w-full h-56 sm:h-80 object-cover rounded-lg hero-photo-drift"
+        class="w-full h-56 sm:h-80 object-cover rounded-xl hero-photo-drift"
         loading="eager"
         fetchpriority="high"
         decoding="async"
       />
     </div>
 
-    <!-- Authentic Systems Engineering Fragment (data-ui) - 100% width -->
-    <div data-ui class="w-full p-5 sm:p-6 bg-[#121212] rounded-lg">
+    <!-- Authentic Systems Engineering Fragment (data-ui) -->
+    <div data-ui class="w-full p-5 sm:p-6 bg-[var(--surface-card)] rounded-xl">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 mb-4">
         <div class="flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-[#b11226]"></span>
-          <span class="text-xs font-semibold text-white">
+          <span class="w-2.5 h-2.5 rounded-full bg-[var(--accent)]"></span>
+          <span class="text-xs font-semibold text-[var(--ink)]">
             Especificación técnica de sistemas y arquitectura
           </span>
         </div>
-        <div class="text-xs text-zinc-400">
+        <div class="text-xs text-[var(--ink-muted)] font-medium">
           Metodología SDD · Estándar de ingeniería UPC
         </div>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
-        <div class="p-3 bg-[#181818] rounded space-y-1">
+        <div class="p-3.5 bg-[var(--surface-lift)] rounded-lg space-y-1 card-hover-lift">
           <div class="flex items-center justify-between text-xs">
-            <span class="text-zinc-400 font-medium">Núcleo backend</span>
-            <span class="text-zinc-400 font-medium">100%</span>
+            <span class="text-[var(--ink-muted)] font-medium">Núcleo backend</span>
+            <span class="text-[var(--accent)] font-semibold">100%</span>
           </div>
-          <div class="font-bold text-white text-sm">Java · Spring Boot</div>
-          <div class="text-zinc-400 text-xs">C# · .NET Core · REST APIs</div>
+          <div class="font-bold text-[var(--ink)] text-sm">Java · Spring Boot</div>
+          <div class="text-[var(--ink-muted)] text-xs">C# · .NET Core · REST APIs</div>
         </div>
-        <div class="p-3 bg-[#181818] rounded space-y-1">
+
+        <div class="p-3.5 bg-[var(--surface-lift)] rounded-lg space-y-1 card-hover-lift">
           <div class="flex items-center justify-between text-xs">
-            <span class="text-zinc-400 font-medium">Persistencia relacional</span>
-            <span class="text-zinc-400 font-medium">100%</span>
+            <span class="text-[var(--ink-muted)] font-medium">Persistencia relacional</span>
+            <span class="text-[var(--accent)] font-semibold">100%</span>
           </div>
-          <div class="font-bold text-white text-sm">PostgreSQL · SQL Server</div>
-          <div class="text-zinc-400 text-xs">Oracle SQL · ACID · JPA</div>
+          <div class="font-bold text-[var(--ink)] text-sm">PostgreSQL · SQL Server</div>
+          <div class="text-[var(--ink-muted)] text-xs">Oracle SQL · ACID · JPA</div>
         </div>
-        <div class="p-3 bg-[#181818] rounded space-y-1">
+
+        <div class="p-3.5 bg-[var(--surface-lift)] rounded-lg space-y-1 card-hover-lift">
           <div class="flex items-center justify-between text-xs">
-            <span class="text-zinc-400 font-medium">Trayectoria práctica</span>
-            <span class="text-zinc-400 font-medium">100%</span>
+            <span class="text-[var(--ink-muted)] font-medium">Trayectoria práctica</span>
+            <span class="text-[var(--accent)] font-semibold">100%</span>
           </div>
-          <div class="font-bold text-white text-sm">Fuerza Aérea (FAP)</div>
-          <div class="text-zinc-400 text-xs">8 meses servicio de informática</div>
+          <div class="font-bold text-[var(--ink)] text-sm">Fuerza Aérea (FAP)</div>
+          <div class="text-[var(--ink-muted)] text-xs">8 meses servicio de informática</div>
         </div>
-        <div class="p-3 bg-[#181818] rounded space-y-1">
+
+        <div class="p-3.5 bg-[var(--surface-lift)] rounded-lg space-y-1 card-hover-lift">
           <div class="flex items-center justify-between text-xs">
-            <span class="text-zinc-400 font-medium">Frontend &amp; metodologías</span>
-            <span class="text-emerald-400 font-semibold">100%</span>
+            <span class="text-[var(--ink-muted)] font-medium">Frontend &amp; metodologías</span>
+            <span class="text-[var(--badge-emerald-text)] font-semibold">100%</span>
           </div>
-          <div class="font-bold text-white text-sm">Angular.ts · React.js</div>
-          <div class="text-zinc-400 text-xs">TypeScript · Tailwind · SDD</div>
+          <div class="font-bold text-[var(--ink)] text-sm">Angular.ts · React.js</div>
+          <div class="text-[var(--ink-muted)] text-xs">TypeScript · Tailwind · SDD</div>
         </div>
       </div>
     </div>

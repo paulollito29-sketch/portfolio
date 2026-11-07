@@ -4,52 +4,52 @@ import Icon from "./icons/Icon.astro";
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="bg-[#0a0a0a] text-zinc-400 py-12 px-4 sm:px-8 relative z-10">
+<footer class="bg-[var(--surface-lift)] text-[var(--ink-secondary)] py-12 px-4 sm:px-8 relative z-10 transition-colors duration-250">
   <div class="max-w-7xl mx-auto space-y-10">
     <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
       <!-- Brand Column -->
       <div class="md:col-span-6 space-y-3">
-        <div class="text-xl font-display font-bold text-white tracking-tight">
+        <div class="text-xl font-display font-bold text-[var(--ink)] tracking-tight">
           Paulo Espinoza
         </div>
-        <p class="text-xs text-zinc-300 font-medium">
+        <p class="text-xs text-[var(--ink-secondary)] font-medium">
           Ingeniero de Sistemas de Información · Universidad Peruana de Ciencias Aplicadas (UPC)
         </p>
-        <p class="text-xs text-zinc-400 max-w-md leading-relaxed">
+        <p class="text-xs text-[var(--ink-muted)] max-w-md leading-relaxed">
           Diseño e implementación de microservicios backend en Java (Spring Boot) y .NET, persistencia relacional en SQL Server y PostgreSQL, y desarrollo con metodología SDD.
         </p>
       </div>
 
       <!-- Navigation Column -->
       <div class="md:col-span-3 space-y-2">
-        <span class="text-xs font-semibold text-zinc-300 block">
+        <span class="text-xs font-semibold text-[var(--ink)] block">
           Navegación
         </span>
         <ul class="space-y-1.5 text-xs">
           <li>
-            <a href="/" class="hover:text-white transition-colors">Inicio</a>
+            <a href="/" class="text-[var(--ink-secondary)] hover:text-[var(--accent)] transition-colors">Inicio</a>
           </li>
           <li>
-            <a href="/profile" class="hover:text-white transition-colors">Perfil oficial</a>
+            <a href="/profile" class="text-[var(--ink-secondary)] hover:text-[var(--accent)] transition-colors">Perfil oficial</a>
           </li>
           <li>
-            <a href="/portfolio" class="hover:text-white transition-colors">Portafolio</a>
+            <a href="/portfolio" class="text-[var(--ink-secondary)] hover:text-[var(--accent)] transition-colors">Portafolio</a>
           </li>
           <li>
-            <a href="/certificates" class="hover:text-white transition-colors">Certificaciones</a>
+            <a href="/certificates" class="text-[var(--ink-secondary)] hover:text-[var(--accent)] transition-colors">Certificaciones</a>
           </li>
           <li>
-            <a href="/cv" class="hover:text-white transition-colors">Curriculum Vitae</a>
+            <a href="/cv" class="text-[var(--ink-secondary)] hover:text-[var(--accent)] transition-colors">Curriculum Vitae</a>
           </li>
           <li>
-            <a href="/contact" class="hover:text-white transition-colors">Contacto</a>
+            <a href="/contact" class="text-[var(--ink-secondary)] hover:text-[var(--accent)] transition-colors">Contacto</a>
           </li>
         </ul>
       </div>
 
       <!-- Connect Column -->
       <div class="md:col-span-3 space-y-2">
-        <span class="text-xs font-semibold text-zinc-300 block">
+        <span class="text-xs font-semibold text-[var(--ink)] block">
           Canales directos
         </span>
         <ul class="space-y-2 text-xs">
@@ -58,7 +58,7 @@ const currentYear = new Date().getFullYear();
               href="https://www.linkedin.com/in/paulo-espinoza9/"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 hover:text-white transition-colors text-zinc-300"
+              class="inline-flex items-center gap-2 text-[var(--ink-secondary)] hover:text-[var(--accent)] transition-colors"
             >
               <Icon name="linkedin" class="w-3.5 h-3.5" /> LinkedIn profesional
             </a>
@@ -68,7 +68,7 @@ const currentYear = new Date().getFullYear();
               href="https://github.com/paulollito29-sketch"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 hover:text-white transition-colors text-zinc-300"
+              class="inline-flex items-center gap-2 text-[var(--ink-secondary)] hover:text-[var(--accent)] transition-colors"
             >
               <Icon name="github" class="w-3.5 h-3.5" /> Repositorios GitHub
             </a>
@@ -78,7 +78,7 @@ const currentYear = new Date().getFullYear();
               href="https://wa.me/51906920958"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 hover:text-white transition-colors text-zinc-300"
+              class="inline-flex items-center gap-2 text-[var(--ink-secondary)] hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
             >
               <Icon name="phone" class="w-3.5 h-3.5" /> WhatsApp directo
             </a>
@@ -86,7 +86,7 @@ const currentYear = new Date().getFullYear();
           <li>
             <a
               href="mailto:pauloespinoza951@gmail.com"
-              class="inline-flex items-center gap-2 hover:text-white transition-colors text-zinc-300"
+              class="inline-flex items-center gap-2 text-[var(--ink-secondary)] hover:text-[var(--accent)] transition-colors"
             >
               <Icon name="mail" class="w-3.5 h-3.5" /> pauloespinoza951@gmail.com
             </a>
@@ -96,7 +96,7 @@ const currentYear = new Date().getFullYear();
     </div>
 
     <!-- Copyright & Integrity Statement -->
-    <div class="pt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs text-zinc-400">
+    <div class="pt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs text-[var(--ink-muted)]">
       <div>
         &copy; {currentYear} Paulo Daniel Espinoza Gamboa. Portafolio de ingeniería de sistemas de información.
       </div>
@@ -105,9 +105,9 @@ const currentYear = new Date().getFullYear();
       </div>
     </div>
 
-    <!-- Archival Media Credits (taste-skill assets) -->
-    <p class="text-[13px] text-zinc-400 leading-relaxed pt-2">
-      Fotografías de contexto técnico: <a href="https://commons.wikimedia.org/wiki/File:Technician_with_laptop_working_on_server_rack_at_NERSC.jpg" class="text-zinc-300 underline hover:text-white">Servidores NERSC</a> (Derrick Coetzee, CC0), <a href="https://commons.wikimedia.org/w/index.php?curid=171982146" class="text-zinc-300 underline hover:text-white">ICL Trimetra Server</a> (Hubcapp, CC BY 4.0), <a href="https://commons.wikimedia.org/wiki/File:Iglesia_de_Santo_Domingo,_Lima,_Per%C3%BA,_2015-07-28,_DD_52-54_HDR.JPG" class="text-zinc-300 underline hover:text-white">Lima Centro</a> (Diego Delso, CC BY-SA 4.0).
+    <!-- Archival Media Credits -->
+    <p class="text-[13px] text-[var(--ink-muted)] leading-relaxed pt-2">
+      Fotografías de contexto técnico: <a href="https://commons.wikimedia.org/wiki/File:Technician_with_laptop_working_on_server_rack_at_NERSC.jpg" class="text-[var(--ink-secondary)] underline hover:text-[var(--accent)]">Servidores NERSC</a> (Derrick Coetzee, CC0), <a href="https://commons.wikimedia.org/w/index.php?curid=171982146" class="text-[var(--ink-secondary)] underline hover:text-[var(--accent)]">ICL Trimetra Server</a> (Hubcapp, CC BY 4.0), <a href="https://commons.wikimedia.org/wiki/File:Iglesia_de_Santo_Domingo,_Lima,_Per%C3%BA,_2015-07-28,_DD_52-54_HDR.JPG" class="text-[var(--ink-secondary)] underline hover:text-[var(--accent)]">Lima Centro</a> (Diego Delso, CC BY-SA 4.0).
     </p>
   </div>
 </footer>

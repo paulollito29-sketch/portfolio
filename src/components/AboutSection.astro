@@ -26,7 +26,7 @@ const capabilitiesList = capabilitiesEntry?.data?.capabilities || [
 
 const bioParagraphs = personal?.bioParagraphs?.es || [
   "Estudiante de 7º ciclo de Ingeniería de Sistemas de Información en la UPC con 8 meses de experiencia práctica en desarrollo Full Stack en el Servicio de Informática de la Fuerza Aérea.",
-  "Especializado en backend con Java (Spring Boot, Spring Data JPA) y frontend moderno con React.js y JavaScript, con experiencia en APIs RESTful seguras, optimización de consultas SQL y desarrollo asistido por IA.",
+  "Especializado en backend con Java (Spring Boot, Spring Data JPA) y frontend moderno con React.js y Angular.ts, con experiencia en APIs RESTful seguras, optimización de consultas SQL y desarrollo asistido por IA.",
   "Enfoque riguroso en buenas prácticas de arquitectura, principios SOLID, código limpio y resolución ágil de problemas."
 ];
 ---
@@ -34,68 +34,68 @@ const bioParagraphs = personal?.bioParagraphs?.es || [
 <section id="about" class="py-12 px-4 sm:px-8 relative z-10">
   <div class="max-w-7xl mx-auto space-y-8">
     <div class="space-y-2">
-      <h2 class="text-2xl sm:text-4xl font-display font-bold text-white tracking-tight">
+      <h2 class="text-2xl sm:text-4xl font-display font-bold text-[var(--ink)] tracking-tight">
         Perfil profesional y trayectoria
       </h2>
-      <p class="text-base sm:text-lg text-zinc-300 max-w-2xl leading-relaxed">
+      <p class="text-sm sm:text-base text-[var(--ink-muted)] max-w-2xl leading-relaxed">
         Ingeniero de Sistemas de Información de la UPC con formación técnica orientada al diseño de software robusto, arquitecturas escalables y gestión de datos empresariales.
       </p>
     </div>
 
     <!-- Candidate Core Facts Section (Editorial narrative split) -->
     <div class="grid lg:grid-cols-12 gap-6 items-stretch">
-      <div class="lg:col-span-5 bg-[#151515] rounded-lg p-6 sm:p-8 flex flex-col justify-between space-y-4">
+      <div class="lg:col-span-5 bg-[var(--surface-card)] rounded-xl p-6 sm:p-8 flex flex-col justify-between space-y-4 transition-colors duration-200">
         <div>
-          <span class="text-xs font-semibold text-zinc-400 block mb-1">
+          <span class="text-xs font-semibold text-[var(--ink-muted)] block mb-1">
             Datos clave del candidato
           </span>
-          <h3 class="text-xl sm:text-2xl font-bold text-white mb-2">
+          <h3 class="text-xl sm:text-2xl font-bold text-[var(--ink)] mb-2">
             Paulo Daniel Espinoza Gamboa
           </h3>
-          <p class="text-base text-zinc-300 leading-relaxed">
+          <p class="text-sm text-[var(--ink-secondary)] leading-relaxed">
             Estudiante de 7º ciclo en la Universidad Peruana de Ciencias Aplicadas (UPC). Perteneciente al tercio superior académico.
           </p>
         </div>
 
-        <div class="pt-4 space-y-3 text-sm text-zinc-300">
+        <div class="pt-4 space-y-3 text-sm text-[var(--ink-secondary)]">
           <div class="flex items-center gap-2.5">
             <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-            <span class="font-medium text-white">Disponibilidad inmediata para contratación (Open to Work)</span>
+            <span class="font-medium text-[var(--ink)]">Disponibilidad inmediata (Open to Work)</span>
           </div>
           <div class="flex items-center gap-2.5">
-            <span class="w-2 h-2 rounded-full bg-zinc-400"></span>
+            <span class="w-2 h-2 rounded-full bg-[var(--ink-faint)]"></span>
             <span>Modalidad remota o híbrida (Lima, Perú)</span>
           </div>
           <div class="flex items-center gap-2.5">
-            <span class="w-2 h-2 rounded-full bg-[#b11226]"></span>
-            <span>Experiencia: Servicio de Informática de la Fuerza Aérea (8 meses)</span>
+            <span class="w-2 h-2 rounded-full bg-[var(--accent)]"></span>
+            <span>Experiencia: Servicio de Informática de la FAP (8 meses)</span>
           </div>
         </div>
       </div>
 
-      <div class="lg:col-span-7 bg-[#151515] rounded-lg p-6 sm:p-8 space-y-4 text-base text-zinc-300 leading-relaxed">
+      <div class="lg:col-span-7 bg-[var(--surface-card)] rounded-xl p-6 sm:p-8 space-y-4 text-sm sm:text-base text-[var(--ink-secondary)] leading-relaxed transition-colors duration-200">
         {bioParagraphs.map((p: string) => (
           <p class="leading-relaxed">{p}</p>
         ))}
       </div>
     </div>
 
-    <!-- Pillars Grid (Editorial layout without icon squares) -->
+    <!-- Pillars Grid (Editorial layout with card-hover-lift) -->
     <div class="grid md:grid-cols-3 gap-6">
       {capabilitiesList.map((c: any) => (
-        <div class="bg-[#151515] rounded-lg p-6 sm:p-7 flex flex-col justify-between">
+        <div class="bg-[var(--surface-card)] rounded-xl p-6 sm:p-7 flex flex-col justify-between card-hover-lift transition-colors duration-200">
           <div>
-            <h3 class="text-lg font-bold text-white mb-2">
+            <h3 class="text-lg font-bold text-[var(--ink)] mb-2">
               {c.title.es}
             </h3>
-            <p class="text-base text-zinc-300 leading-relaxed mb-4">
+            <p class="text-sm text-[var(--ink-secondary)] leading-relaxed mb-4">
               {c.description.es}
             </p>
           </div>
 
           <div class="flex flex-wrap gap-1.5 pt-3">
             {c.tags.es.map((tag: string) => (
-              <span class="text-xs px-2.5 py-1 rounded bg-[#222222] text-zinc-300">
+              <span class="text-xs px-2.5 py-0.5 rounded-md bg-[var(--surface-lift)] text-[var(--ink-secondary)] font-medium">
                 {tag}
               </span>
             ))}

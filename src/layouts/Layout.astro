@@ -13,19 +13,33 @@ const {
 ---
 
 <!doctype html>
-<html lang="es" class="dark scroll-smooth">
+<html lang="es" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
+    <!-- Synchronous zero-FOUC theme detector: defaults strictly to LIGHT mode -->
+    <script is:inline>
+      (function() {
+        try {
+          const stored = localStorage.getItem('theme');
+          if (stored === 'dark') {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (_) {}
+      })();
+    </script>
+
     <!-- Primary Meta Tags -->
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
     <meta name="author" content="Paulo Espinoza" />
-    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="theme-color" content="#f8f9fa" id="metaThemeColor" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -41,7 +55,7 @@ const {
     <!-- LCP Hero Image Preload -->
     <link rel="preload" as="image" href="/assets/technician-with-laptop-working-on-server-rack.webp" type="image/webp" fetchpriority="high" />
   </head>
-  <body class="bg-[#0a0a0a] text-[#efefef] min-h-[100svh] antialiased selection:bg-[#b11226] selection:text-white font-sans overflow-x-clip">
+  <body class="bg-[var(--bg)] text-[var(--ink)] min-h-[100svh] antialiased selection:bg-[#b11226] selection:text-white font-sans overflow-x-clip transition-colors duration-250">
     <slot />
   </body>
 </html>

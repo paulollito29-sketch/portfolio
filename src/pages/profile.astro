@@ -22,11 +22,11 @@ import ScrollToTop from "../components/ScrollToTop.astro";
   <main class="relative z-10 pt-20 pb-16 space-y-10">
     <!-- Page Header Banner -->
     <div class="max-w-7xl mx-auto px-4 sm:px-8 pt-8 space-y-3">
-      <h1 class="text-3xl sm:text-5xl font-display font-bold text-white tracking-tight">
+      <h1 class="text-3xl sm:text-5xl font-display font-bold text-[var(--ink)] tracking-tight">
         Ingeniero de Sistemas de Información
       </h1>
-      <p class="text-sm sm:text-base text-zinc-300 max-w-3xl leading-relaxed">
-        Formación universitaria en la <strong class="text-white">Universidad Peruana de Ciencias Aplicadas (UPC)</strong>, orientada al diseño de sistemas backend escalables, persistencia transaccional y microservicios de alto desempeño.
+      <p class="text-sm sm:text-base text-[var(--ink-secondary)] max-w-3xl leading-relaxed">
+        Formación universitaria en la <strong class="text-[var(--ink)]">Universidad Peruana de Ciencias Aplicadas (UPC)</strong>, orientada al diseño de sistemas backend escalables, persistencia transaccional y microservicios de alto desempeño.
       </p>
     </div>
 
@@ -44,12 +44,12 @@ import ScrollToTop from "../components/ScrollToTop.astro";
 
     <!-- Direct CTA -->
     <div class="max-w-7xl mx-auto px-4 sm:px-8 py-4">
-      <div class="p-6 sm:p-7 rounded bg-[#151515] flex flex-col sm:flex-row items-center justify-between gap-5">
+      <div class="p-6 sm:p-7 rounded-xl bg-[var(--surface-card)] flex flex-col sm:flex-row items-center justify-between gap-5 transition-colors duration-200">
         <div>
-          <h2 class="text-lg font-bold text-white mb-1">
+          <h2 class="text-lg font-bold text-[var(--ink)] mb-1">
             ¿Interesado en coordinar una entrevista técnica?
           </h2>
-          <p class="text-xs text-zinc-400">
+          <p class="text-xs text-[var(--ink-muted)]">
             Disponible para incorporación inmediata en roles de Ingeniería de Sistemas, Backend en Java / .NET o Desarrollo Full Stack.
           </p>
         </div>

@@ -19,19 +19,19 @@ const certificates = sortedCerts.map((c) => ({
 
 <section id="certificates" class="max-w-7xl mx-auto px-4 sm:px-8 py-12 relative z-10 space-y-10">
   <div class="space-y-2">
-    <h2 class="text-2xl sm:text-4xl font-display font-bold text-white tracking-tight">
+    <h2 class="text-2xl sm:text-4xl font-display font-bold text-[var(--ink)] tracking-tight">
       Certificaciones oficiales verificables
     </h2>
-    <p class="text-base text-zinc-300 max-w-2xl leading-relaxed">
+    <p class="text-sm sm:text-base text-[var(--ink-muted)] max-w-2xl leading-relaxed">
       Credenciales académicas verificables otorgadas por Meta, Oracle Academy y University of Michigan (10 certificados PDF disponibles).
     </p>
   </div>
 
   <!-- Certificates Registry (Editorial list layout) -->
-  <div class="bg-[#151515] rounded-lg p-6 sm:p-8 space-y-4">
+  <div class="bg-[var(--surface-card)] rounded-xl p-6 sm:p-8 space-y-3.5 transition-colors duration-200">
     {certificates.map((cert) => (
       <div
-        class="cert-card p-5 rounded hover:bg-[#1c1c1c] transition-colors flex flex-col md:flex-row md:items-center justify-between gap-4 cursor-pointer group active:scale-[0.99]"
+        class="cert-card p-5 rounded-lg bg-[var(--surface-lift)] hover:bg-[var(--surface)] transition-[transform,background-color] duration-150 flex flex-col md:flex-row md:items-center justify-between gap-4 cursor-pointer group card-hover-lift active:scale-[0.99]"
         data-file={cert.encodedFile}
         data-raw-file={cert.file}
         data-title={cert.title}
@@ -39,24 +39,24 @@ const certificates = sortedCerts.map((c) => ({
       >
         <div class="flex-1 space-y-2">
           <div class="flex items-center gap-2">
-            <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-[#202020] text-zinc-300">
+            <span class="text-xs font-semibold px-2.5 py-0.5 rounded-md bg-[var(--bg)] text-[var(--ink-secondary)]">
               {cert.institution}
             </span>
-            <span class="text-xs text-zinc-400 font-medium">· {cert.issuer}</span>
+            <span class="text-xs text-[var(--ink-muted)] font-medium">· {cert.issuer}</span>
           </div>
 
-          <h3 class="text-lg font-bold text-white group-hover:text-zinc-200 transition-colors leading-snug">
+          <h3 class="text-lg font-bold text-[var(--ink)] group-hover:text-[var(--accent)] transition-colors leading-snug">
             {cert.title}
           </h3>
 
-          <p class="text-base text-zinc-300 leading-relaxed">
+          <p class="text-base text-[var(--ink-secondary)] leading-relaxed">
             {cert.skillsValidated.join(" · ")}
           </p>
         </div>
 
         <div class="flex items-center gap-3 shrink-0 pt-2 md:pt-0">
-          <span class="text-xs font-semibold px-3.5 py-2 rounded bg-[#222222] text-white group-hover:bg-[#282828] transition-colors">
-            Ver documento PDF &rarr;
+          <span class="btn-primary !text-xs !py-1.5 !px-3.5">
+            Ver PDF &rarr;
           </span>
 
           <a
@@ -64,7 +64,7 @@ const certificates = sortedCerts.map((c) => ({
             target="_blank"
             rel="noopener noreferrer"
             download={cert.file}
-            class="cert-download-link text-xs font-medium px-3.5 py-2 rounded bg-[#1e1e1e] hover:bg-[#262626] text-zinc-300 hover:text-white transition-colors"
+            class="cert-download-link btn-secondary !text-xs !py-1.5 !px-3.5"
             aria-label={`Descargar PDF de ${cert.title}`}
             title="Descargar PDF"
           >
@@ -78,19 +78,19 @@ const certificates = sortedCerts.map((c) => ({
   <!-- PDF Preview Modal -->
   <div
     id="certModal"
-    class="hidden fixed inset-0 z-50 bg-[#000000]/90 flex items-center justify-center p-4"
+    class="hidden fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4 transition-opacity duration-200"
     role="dialog"
     aria-modal="true"
     aria-label="Visor de Certificado Oficial"
   >
-    <div class="bg-[#151515] rounded-lg w-full max-w-5xl h-[88vh] flex flex-col overflow-hidden">
+    <div class="bg-[var(--surface-card)] rounded-xl w-full max-w-5xl h-[88vh] flex flex-col overflow-hidden">
       <!-- Modal Header -->
-      <div class="flex items-center justify-between px-5 sm:px-7 py-4 bg-[#121212]">
+      <div class="flex items-center justify-between px-5 sm:px-7 py-4 bg-[var(--surface-lift)]">
         <div>
-          <h3 id="modalTitle" class="text-base font-bold text-white line-clamp-1">
+          <h3 id="modalTitle" class="text-base font-bold text-[var(--ink)] line-clamp-1">
             Certificado oficial
           </h3>
-          <p id="modalIssuer" class="text-xs text-zinc-400 font-medium"></p>
+          <p id="modalIssuer" class="text-xs text-[var(--ink-muted)] font-medium"></p>
         </div>
 
         <div class="flex items-center gap-2">
@@ -108,7 +108,7 @@ const certificates = sortedCerts.map((c) => ({
 
           <button
             id="modalClose"
-            class="p-2 rounded text-zinc-400 hover:text-white hover:bg-[#222222] transition-colors cursor-pointer"
+            class="p-2 rounded-md text-[var(--ink-muted)] hover:text-[var(--ink)] hover:bg-[var(--border-subtle)] transition-colors cursor-pointer"
             aria-label="Cerrar visor"
           >
             <Icon name="x" class="w-4 h-4" />
@@ -117,7 +117,7 @@ const certificates = sortedCerts.map((c) => ({
       </div>
 
       <!-- PDF Frame -->
-      <div class="flex-1 bg-[#0d0d0d] relative">
+      <div class="flex-1 bg-[var(--bg)] relative">
         <iframe
           id="certFrame"
           src="about:blank"

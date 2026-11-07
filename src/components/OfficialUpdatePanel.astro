@@ -3,70 +3,70 @@ import Icon from "./icons/Icon.astro";
 ---
 
 <section id="official-facts" class="max-w-7xl mx-auto px-4 sm:px-8 py-3 relative z-10">
-  <div class="bg-[#151515] rounded-lg overflow-hidden">
+  <div class="bg-[var(--surface-card)] rounded-xl overflow-hidden transition-colors duration-200">
     <!-- Collapsible Header -->
     <button
       id="factsToggleBtn"
       type="button"
-      class="w-full flex items-center justify-between p-4.5 hover:bg-[#1a1a1a] transition-colors cursor-pointer text-left active:scale-[0.99]"
+      class="w-full flex items-center justify-between p-4 sm:p-4.5 hover:bg-[var(--surface-lift)] transition-colors cursor-pointer text-left active:scale-[0.99]"
       aria-expanded="true"
       aria-controls="factsContent"
     >
       <div class="flex items-center gap-3">
-        <span class="w-2.5 h-2.5 rounded-full bg-[#b11226]"></span>
+        <span class="w-2.5 h-2.5 rounded-full bg-[var(--accent)] shrink-0"></span>
         <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2.5">
-          <h2 class="font-display font-bold text-sm text-white">
+          <h2 class="font-display font-bold text-sm text-[var(--ink)]">
             Información oficial del candidato
           </h2>
-          <span class="hidden sm:inline text-zinc-400">/</span>
-          <span class="text-xs text-zinc-400 font-medium">
+          <span class="hidden sm:inline text-[var(--ink-faint)]">/</span>
+          <span class="text-xs text-[var(--ink-muted)] font-medium">
             Universidad Peruana de Ciencias Aplicadas (UPC) · 7º Ciclo
           </span>
         </div>
       </div>
 
-      <div class="flex items-center gap-2 text-xs text-zinc-400">
+      <div class="flex items-center gap-2 text-xs text-[var(--ink-muted)]">
         <span id="factsToggleText" class="hidden sm:inline font-medium">Colapsar</span>
         <div id="factsChevron" class="transition-transform duration-200 rotate-180">
-          <Icon name="chevron-down" class="w-4 h-4 text-zinc-400" />
+          <Icon name="chevron-down" class="w-4 h-4 text-[var(--ink-muted)]" />
         </div>
       </div>
     </button>
 
     <!-- Collapsible Content -->
-    <div id="factsContent" class="bg-[#121212] p-6 sm:p-8 grid md:grid-cols-3 gap-8 text-base">
+    <div id="factsContent" class="bg-[var(--surface-lift)] p-6 sm:p-8 grid md:grid-cols-3 gap-6 sm:gap-8 text-base transition-colors duration-200">
       <!-- Academic & Degree -->
       <div class="space-y-2">
-        <div class="flex items-center gap-2 text-zinc-300 font-semibold text-sm">
-          <span class="w-2 h-2 rounded-full bg-[#b11226]"></span>
+        <div class="flex items-center gap-2 text-[var(--ink-muted)] font-semibold text-xs">
+          <span class="w-2 h-2 rounded-full bg-[var(--accent)]"></span>
           <span>Formación universitaria</span>
         </div>
-        <h3 class="text-lg font-bold text-white">Ingeniería de Sistemas de Información</h3>
-        <p class="text-base text-zinc-300 leading-relaxed">
+        <h3 class="text-lg font-bold text-[var(--ink)]">Ingeniería de Sistemas de Información</h3>
+        <p class="text-base text-[var(--ink-secondary)] leading-relaxed">
           Universidad Peruana de Ciencias Aplicadas (UPC) · 7º Ciclo. Arquitectura de microservicios, persistencia relacional y gobernanza de software.
         </p>
       </div>
 
       <!-- Core Specialization -->
       <div class="space-y-2">
-        <div class="flex items-center gap-2 text-zinc-300 font-semibold text-sm">
-          <span class="w-2 h-2 rounded-full bg-[#b11226]"></span>
+        <div class="flex items-center gap-2 text-[var(--ink-muted)] font-semibold text-xs">
+          <span class="w-2 h-2 rounded-full bg-[var(--accent)]"></span>
           <span>Especialidad backend</span>
         </div>
-        <h3 class="text-lg font-bold text-white">Java / Spring Boot &amp; .NET Core</h3>
-        <p class="text-base text-zinc-300 leading-relaxed">
+        <h3 class="text-lg font-bold text-[var(--ink)]">Java / Spring Boot &amp; .NET Core</h3>
+        <p class="text-base text-[var(--ink-secondary)] leading-relaxed">
           Experiencia en el Servicio de Informática de la Fuerza Aérea. APIs RESTful seguras con JWT y persistencia ACID en PostgreSQL y SQL Server.
         </p>
       </div>
 
       <!-- Availability & Location -->
       <div class="space-y-2">
-        <div class="flex items-center gap-2 text-emerald-400 font-semibold text-sm">
-          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+        <div class="flex items-center gap-2 text-[var(--badge-emerald-text)] font-semibold text-xs">
+          <span class="w-2 h-2 rounded-full bg-[var(--badge-emerald-text)]"></span>
           <span>Disponibilidad y ubicación</span>
         </div>
-        <h3 class="text-lg font-bold text-white">Contratación inmediata (Open to Work)</h3>
-        <p class="text-base text-zinc-300 leading-relaxed">
+        <h3 class="text-lg font-bold text-[var(--ink)]">Contratación inmediata (Open to Work)</h3>
+        <p class="text-base text-[var(--ink-secondary)] leading-relaxed">
           Modalidad remota o híbrida en Lima, Perú. Experiencia en metodologías ágiles, control de versiones Git y flujos acelerados por IA.
         </p>
       </div>

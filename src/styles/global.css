@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: 'Clash Grotesk', sans-serif;
-  --font-display: 'Clash Grotesk', sans-serif;
-  --text-xs: 0.8125rem; /* 13px - anti-slop house style floor */
+  --font-sans: 'Clash Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Clash Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --text-xs: 0.8125rem; /* 13px */
   --text-xs--line-height: 1.25rem;
   --text-sm: 0.875rem; /* 14px */
   --text-base: 1rem; /* 16px */
@@ -14,6 +14,7 @@
   --text-4xl: 2.5rem; /* 40px */
 }
 
+/* Local Clash Grotesk Typography */
 @font-face {
   font-family: 'Clash Grotesk';
   src: url('/fonts/clash-grotesk-400.woff2') format('woff2');
@@ -38,147 +39,194 @@
   font-style: normal;
 }
 
+/* ==========================================================
+   DESIGN CRAFT TOKENS: LIGHT (DEFAULT) & DARK THEMES
+   ========================================================== */
 :root {
-  /* Direction: dark-room (The dark room) */
-  --bg: #0a0a0a;
-  --surface: #151515;
-  --surface-lift: #1f1f1f;
-  --ink: #efefef;
-  --muted: #8c8c8c;
+  /* LIGHT THEME (DEFAULT) */
+  --bg: #f8f9fa;
+  --bg-subtle: #f1f5f9;
+  --surface: #ffffff;
+  --surface-lift: #f8fafc;
+  --surface-card: #ffffff;
+  --border: #e2e8f0;
+  --border-subtle: #f1f5f9;
+  --border-strong: #cbd5e1;
+  
+  --ink: #0f172a;
+  --ink-secondary: #1e293b;
+  --ink-muted: #475569;
+  --ink-faint: #64748b;
+  
   --accent: #b11226;
+  --accent-hover: #930f20;
+  --accent-subtle: #fef2f2;
+  --accent-border: #fecaca;
   --accent-ink: #ffffff;
+  
+  --badge-emerald-bg: #ecfdf5;
+  --badge-emerald-text: #065f46;
+  --badge-emerald-border: #a7f3d0;
 
-  /* Typography scale */
-  --step-small: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
-  --step-body: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
-  --step-lead: clamp(1.1875rem, 1.1rem + 0.4vw, 1.5rem);
-  --step-head: clamp(2rem, 1.4rem + 3vw, 4.5rem);
-
-  /* Emil Kowalski custom easing curves */
+  /* Emil Kowalski custom physics & easing curves */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html.dark {
+  /* DARK THEME (ATMOSPHERIC DEEP ROOM) */
+  --bg: #0a0a0a;
+  --bg-subtle: #121212;
+  --surface: #151515;
+  --surface-lift: #1c1c1c;
+  --surface-card: #151515;
+  --border: #262626;
+  --border-subtle: #1a1a1a;
+  --border-strong: #3f3f46;
+  
+  --ink: #f4f4f5;
+  --ink-secondary: #e4e4e7;
+  --ink-muted: #a1a1aa;
+  --ink-faint: #71717a;
+  
+  --accent: #b11226;
+  --accent-hover: #c91830;
+  --accent-subtle: #261215;
+  --accent-border: #4c1d24;
+  --accent-ink: #ffffff;
+  
+  --badge-emerald-bg: rgba(6, 78, 59, 0.35);
+  --badge-emerald-text: #34d399;
+  --badge-emerald-border: rgba(5, 150, 105, 0.4);
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
-    color-scheme: dark;
     background-color: var(--bg);
+    color: var(--ink);
+    transition: background-color 0.25s ease, color 0.25s ease;
     overflow-x: clip;
   }
+  
   body {
     background-color: var(--bg);
     color: var(--ink);
-    font-family: 'Clash Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.6;
     overflow-x: clip;
     min-height: 100svh;
+    transition: background-color 0.25s ease, color 0.25s ease;
   }
+  
   ::selection {
     background: var(--accent);
     color: var(--accent-ink);
   }
+  
   p {
     max-width: 68ch;
   }
 }
 
-/* Typography styles */
 .font-display {
   font-family: 'Clash Grotesk', sans-serif;
   letter-spacing: -0.02em;
 }
 
 /* ==========================================================
-   SOLID SURFACE & CARD ARCHITECTURE (ANTI-SLOP HOUSE STYLE)
+   SOLID SURFACE & CARD ARCHITECTURE
    ========================================================== */
 .surface-card {
-  background-color: #151515;
+  background-color: var(--surface);
   border-radius: 8px;
-  transition: transform 180ms var(--ease-out), background-color 180ms ease;
+  transition: transform 0.22s var(--ease-out), background-color 0.2s ease;
 }
 
 .surface-card:hover {
-  background-color: #1c1c1c;
+  background-color: var(--surface-lift);
+}
+
+.card-hover-lift {
+  transition: transform 0.22s var(--ease-out), background-color 0.2s ease;
+}
+
+.card-hover-lift:hover {
+  transform: translateY(-4px);
 }
 
 /* ==========================================================
-   BUTTONS (SOLID COLOR WITH EMIL MICRO-FEEDBACK)
+   BUTTONS & TACTILE CLICK PHYSICS (EMIL KOWALSKI STANDARD)
    ========================================================== */
-.btn-primary,
-.btn-gradient-primary,
-.flat-btn-primary {
+.btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.7rem 1.5rem;
-  min-height: 44px;
+  padding: 0.65rem 1.4rem;
+  min-height: 42px;
   background-color: var(--accent);
   color: #ffffff;
   border-radius: 6px;
   font-weight: 600;
   font-size: 0.875rem;
-  transition: transform 140ms var(--ease-out), background-color 140ms ease;
+  transition: transform 0.18s var(--ease-out), background-color 0.18s ease;
+  cursor: pointer;
 }
 
-.btn-primary:hover,
-.btn-gradient-primary:hover,
-.flat-btn-primary:hover {
-  background-color: #c91830;
+.btn-primary:hover {
+  background-color: var(--accent-hover);
 }
 
-.btn-primary:active,
-.btn-gradient-primary:active,
-.flat-btn-primary:active {
-  transform: scale(0.96);
-}
-
-.btn-secondary,
-.btn-glass-outline,
-.flat-btn-outline {
+.btn-secondary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.7rem 1.5rem;
-  min-height: 44px;
-  background-color: #1c1c1c;
-  color: #efefef;
+  padding: 0.65rem 1.4rem;
+  min-height: 42px;
+  background-color: var(--surface-lift);
+  color: var(--ink);
   border-radius: 6px;
   font-weight: 500;
   font-size: 0.875rem;
-  transition: transform 140ms var(--ease-out), background-color 140ms ease, color 140ms ease;
+  transition: transform 0.18s var(--ease-out), background-color 0.18s ease, color 0.18s ease;
+  cursor: pointer;
 }
 
-.btn-secondary:hover,
-.btn-glass-outline:hover,
-.flat-btn-outline:hover {
-  background-color: #262626;
-  color: #ffffff;
+.btn-secondary:hover {
+  background-color: var(--border-subtle);
+  color: var(--ink);
 }
 
+/* Mandatory physical depression on :active */
+button:active,
+.btn-primary:active,
 .btn-secondary:active,
-.btn-glass-outline:active,
-.flat-btn-outline:active {
-  transform: scale(0.96);
+a.btn-primary:active,
+a.btn-secondary:active,
+.interactive-card:active {
+  transform: translateY(2px) scale(0.98) !important;
+  transition-duration: 0.04s !important;
 }
 
 /* Authentic Interface Fragment (data-ui) */
 [data-ui] {
   font-size: 0.8125rem;
-  background-color: #0d0d0d;
-  border: 1px solid #222222;
+  background-color: var(--surface-lift);
   border-radius: 8px;
   overflow: hidden;
 }
 
 /* ==========================================================
-   MOTION LAYER (ANTI-SLOP HOUSE STYLE)
+   DYNAMIC MOTION & ANIMATIONS
    ========================================================== */
-@keyframes fadeInUp {
+@keyframes dynamicReveal {
   from {
     opacity: 0;
-    transform: translateY(16px);
+    transform: translateY(18px);
   }
   to {
     opacity: 1;
@@ -186,21 +234,18 @@
   }
 }
 
-@keyframes slowDrift {
-  0% {
-    transform: scale(1);
+@keyframes subtleDrift {
+  0%, 100% {
+    transform: scale(1) translateY(0);
   }
   50% {
-    transform: scale(1.03);
-  }
-  100% {
-    transform: scale(1);
+    transform: scale(1.02) translateY(-3px);
   }
 }
 
-.animate-entrance,
 .reveal-entry {
-  animation: fadeInUp 450ms var(--ease-out) both;
+  opacity: 0;
+  animation: dynamicReveal 0.5s var(--ease-out) forwards;
 }
 
 .reveal-delay-1 { animation-delay: 60ms; }
@@ -210,7 +255,7 @@
 .reveal-delay-5 { animation-delay: 300ms; }
 
 .hero-photo-drift {
-  animation: slowDrift 16s ease-in-out infinite;
+  animation: subtleDrift 14s ease-in-out infinite;
 }
 
 /* Accessibility: Prefers Reduced Motion */
@@ -225,7 +270,7 @@
     transform: none !important;
     opacity: 1 !important;
   }
-  .animate-entrance,
+  .reveal-entry,
   .hero-photo-drift {
     animation: none !important;
     transform: none !important;
