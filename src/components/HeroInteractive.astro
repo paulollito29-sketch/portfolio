@@ -30,14 +30,14 @@ import Icon from "./icons/Icon.astro";
 
       <!-- Action Buttons with Emil Kowalski click physics -->
       <div class="reveal-entry reveal-delay-4 flex flex-wrap items-center gap-3 pt-3">
-        <a href="/contact" class="btn-primary">
-          <Icon name="briefcase" class="w-4 h-4" />
-          <span>Contactar para entrevista</span>
+        <a href="/contact?reason=test#test-gratuito" id="heroFreeTestBtn" class="btn-primary">
+          <Icon name="checkcircle2" class="w-4 h-4" />
+          <span>Realizar test gratuito</span>
         </a>
 
-        <a href="#contact" id="heroFreeTestBtn" class="btn-secondary">
-          <Icon name="checkcircle2" class="w-4 h-4 text-[var(--badge-emerald-text)]" />
-          <span>Realizar test gratuito</span>
+        <a href="/contact" class="btn-secondary">
+          <Icon name="briefcase" class="w-4 h-4 text-[var(--ink-muted)]" />
+          <span>Contactar para entrevista</span>
         </a>
 
         <a href="/portfolio" class="btn-secondary">
